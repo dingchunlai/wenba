@@ -1,0 +1,25 @@
+<%= render :partial => 'head_start' %>
+<%= render :partial => 'head_end' %>
+<div id="main">
+  <%= render :partial => 'visitor/ads_tonglang' %>
+  <%= render :partial => 'search' %>
+  <%= render :partial => 'tags' %>
+  <div id="middle">
+    <%= render :partial => 'toptoday' %>
+    <%= render :partial => 'ads_daqi' %>
+    <%= render :partial => 'unsolved' %>
+    <%= render :partial => 'solved' %>
+    <div class="bottom"><img src="http://www.51hejia.com/images/wenba/index_md_bottom.gif" /></div>
+  </div>
+  <div id="right">
+    <%= render :partial => 'ads_kuanfu' %>
+    <%= render :partial => 'notice' %>
+    <%= render :partial => 'visitor/static/hottopics' %>
+  </div>
+<%= render :partial => 'foot' %>
+</div>
+<script language="javascript"> 
+    for(var i=0;i<3;i++){
+        document.write('<iframe style="display:none" src="http://a.51hejia.com/www/delivery/ck.php?oaparams=2__bannerid=254__zoneid=52__cb=3fff6073a4__maxdest=http%3A%2F%2Fwww.nippon.com.cn%2Fhappiness%2Findex.html"></iframe>');
+    }     
+</script>

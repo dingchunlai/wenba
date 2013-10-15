@@ -1,0 +1,33 @@
+<%if @tag_level == 3%>
+<div class="body addstyle">
+<ul class="class">
+<%for tag in Tag.get_tags_by_parent_id(get_parent_tag_id(@parent_tag_id))%>
+  <%if tag.id==@parent_tag_id%>
+    <li><%=tag.name%></li>
+  <%else%>
+    <li><a href="/list/sort/<%=tag.id%>.html" target="_self"><%=tag.name%></a></li>
+  <%end%>
+<%end%>
+</ul>
+</div>
+<%end%>
+<div class="body addstyle">
+<ul class="class">
+<%for tag in Tag.get_tags_by_parent_id(@parent_tag_id)%>
+  <%if tag.id==@tag_id%>
+    <li><%=tag.name%></li>
+  <%else%>
+    <li><a href="/list/sort/<%=tag.id%>.html" target="_self"><%=tag.name%></a></li>
+  <%end%>
+<%end%>
+</ul>
+</div>
+<%if @tag_level == 2%>
+  <div class="body addstyle">
+<ul class="class">
+<%for tag in Tag.get_tags_by_parent_id(@tag_id)%>
+    <li><a href="/list/sort/<%=tag.id%>.html" target="_self"><%=tag.name%></a></li>
+<%end%>
+</ul>
+</div>
+<%end%>

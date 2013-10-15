@@ -1,0 +1,9 @@
+<div class="Lungonggao">推荐问答</div>
+<div class="LunBorder LunMBb">
+  <ul class="LunIconwF">
+    <% for topic in @topics %>
+      <%=  %>
+      <li>·<a href="<%=BASEURL%>visitor/question/<%= topic.id %>.html" target="_blank"><%= get_short_str(topic.subject, 13) %></a></li>
+    <% end %>
+  </ul>
+</div>

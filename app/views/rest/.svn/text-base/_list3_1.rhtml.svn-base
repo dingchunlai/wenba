@@ -1,0 +1,24 @@
+document.writeln("<link href=\"http:\/\/d.51hejia.com\/css\/wenba\/answerlist.css\" rel=\"stylesheet\" type=\"text\/css\"\/>");
+document.writeln("<div class=\"left462l\">");
+document.writeln("  <div class=\"mdbox06l\">");
+document.writeln("    <h3>已解决的问题<\/h3>");
+document.writeln("    <div class=\"box2l\">");
+document.writeln("      <ul>");
+<%- for topic in @topics1 -%>
+document.writeln("          <li>[<%= get_tag_name_by_tag_id(topic.tag_id) %>]&nbsp;<a href=\"http:\/\/ask.51hejia.com\/visitor\/question\/<%= topic.id %>.html\" target=\"_blank\" title=\"<%= topic.subject %>\"><%= get_short_str(topic.subject, 10) %><\/a><\/li>");
+<%- end -%>
+document.writeln("      <\/ul>");
+document.writeln("    <\/div>");
+document.writeln("  <\/div>");
+document.writeln("");
+document.writeln("  <div class=\"mdbox07l\">");
+document.writeln("    <h3>待解决的问题<\/h3>");
+document.writeln("    <div class=\"box2l\">");
+document.writeln("      <ul>");
+<%- for topic in @topics0 -%>
+document.writeln("          <li>[<%= get_tag_name_by_tag_id(topic.tag_id) %>]&nbsp;<a href=\"http:\/\/ask.51hejia.com\/visitor\/question\/<%= topic.id %>.html\" target=\"_blank\" title=\"<%= topic.subject %>\"><%= get_short_str(topic.subject, 10) %><\/a><\/li>");
+<%- end -%>
+document.writeln("      <\/ul>");
+document.writeln("    <\/div>");
+document.writeln("  <\/div>");
+document.writeln("<\/div>")

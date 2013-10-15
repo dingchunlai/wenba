@@ -1,0 +1,9 @@
+<div class="jchdtitle">精彩回答</div>
+  <div class="jchd">
+    <ul>
+      <%- for topic in @topics0 -%>
+        <li><a href="<%=BASEURL%>visitor/question/<%= topic.id %>.html" target="_blank"><%= get_short_str(topic.subject, 15) %></a>
+        <span><%=topic.created_at.strftime("%y.%m.%d") %></span></li>
+      <%- end -%>
+    </ul>
+  </div>

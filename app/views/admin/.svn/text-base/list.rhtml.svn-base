@@ -1,0 +1,13 @@
+<h1> 推荐专家列表 </h1>
+
+<%if !@admin.nil?%>
+  <% @admin.each do |admin| %>
+    <li>
+        <%= link_to iconv_gb2312(get_admin_info_by_user_id(admin.user_id).username), {:action => 'show', :id => admin.user_id } %>        
+        <%= link_to "删除", {:action => 'delete', :id => admin.id },
+                              :confirm => "确定要删除吗?", :method  => :post %>
+    </li>
+  <%  end %>
+<%  end %>
+<p><%= link_to "新增", {:action => 'new'} %></p>
+<p><%= link_to "签名信息", {:action => 'add_info'}%></p>

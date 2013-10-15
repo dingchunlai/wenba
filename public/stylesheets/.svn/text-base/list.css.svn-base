@@ -1,0 +1,271 @@
+﻿/* CSS Document */
+
+*{margin:0 auto;padding:0;}
+body{color:#4c4c4c; margin:3px 0; font-family:"宋体"; font-size:12px; color:#333; line-height:20px;}
+html,body { height:100%;} 
+a{color:#4c4c4c;text-decoration:none;}
+a:hover {color:#f60; text-decoration:underline}
+img{border:0}
+li{list-style:none}
+#main {width:960px; margin:0 auto;}
+
+.path {
+	border:1px solid #feae73;
+	width:946px;
+	float:left;
+	padding:6px 5px 5px 9px;
+	background: url(http://www.51hejia.com/images/wenba/dot03.gif) no-repeat 9px center;
+	text-indent:12px;
+}
+.path span {font-weight:bold; color:#f60;}
+
+#topmenu {background: url(http://www.51hejia.com/images/wenba/topmenu.gif) no-repeat left top; height:109px; width:960px; float:left; position:relative; margin-bottom:7px;}
+#topmenu .search {position:absolute; left:152px; top:5px;}
+.txtarea01 {width:400px; height:18px; margin-right:12px;}
+.button02 {background: url(http://www.51hejia.com/images/wenba/button02.gif) no-repeat left top; width:71px; height:22px; border:0; padding-top:3px; text-indent:10px; color:#fff;}
+.txtarea02 {width:400px; height:18px; margin-right:12px;}
+.button01 {background: url(http://www.51hejia.com/images/wenba/button01.gif) no-repeat left top; width:74px; height:22px; border:0; padding-top:3px; text-align:center;color:#000; font-weight:bold;}
+#topmenu .huida { position:absolute; left:156px; top:40px;}
+#topmenu .tiwen { position:absolute; left:432px; top:40px;}
+#topmenu .zhishi { position:absolute; left:706px; top:40px;}
+#topmenu .wenba { position:absolute; left:0; top:0; width:142px; height:109px;}
+
+
+/*#######################################list1#################################################*/
+#left1 {width:383px; float:left; margin-right:7px;}
+#middle1 {width:295px; float:left;}
+#right1 {width:268px; float:right;}
+.title01 {background: url(http://www.51hejia.com/images/wenba/list_title01.gif) no-repeat left top; height:23px; line-height:23px; font-size:14px; font-weight:bold; text-indent:16px; position:relative; color:#5a5a5a; padding-top:3px;}
+.title01 span {position:absolute; right:10px; line-height:26px; top:3px; font-size:12px; font-weight:normal;}
+.wtlb {border:1px solid #a9a9a9; padding:9px 9px 16px 9px; width:363px; float:left;}
+.wtlb h3 {background: url(http://www.51hejia.com/images/wenba/list_title01_bg.gif) no-repeat left top; height:26px; line-height:26px; font-size:14px; text-indent:25px; color:#000; margin-bottom:7px;}
+.wtlb h3 a {color:#000;}
+.wtlb li {float:left; margin-right:12px; color:#8a8a8a;}
+.wtlb p {text-indent:2em; width:100%;}
+.wtlb .detail {text-align:right; padding-right:9px; margin-bottom:3px;}
+.wtlb ul {width:100%; float:left}
+#focus {border:1px solid #cecece; padding:3px; margin-bottom:7px; background-color:#fff1ce;}
+.ad1 { margin-bottom:7px;}
+.ad1 img { width:268px; height:80px;}
+/*幻灯片开始*/
+#flash_show_out {
+	WIDTH: 375px; POSITION: relative; HEIGHT: 245px
+}
+#flash_show {
+	
+}
+#flash_img {
+	FILTER: progid:DXImageTransform.Microsoft.Fade(Overlap=1.00); OVERFLOW: hidden;WIDTH: 375px; HEIGHT: 245px
+}
+#flash_img img {WIDTH: 375px; HEIGHT: 245px}
+#flash_btn {
+	Z-INDEX: 202; RIGHT: 0px; WIDTH: 68px; POSITION: absolute; TOP: 229px; right:0;
+}
+#flash_btn DIV {
+	FLOAT: left; width:17px;
+}
+#flash_btn DIV A {
+	BORDER: #a0a0a0 1px solid; DISPLAY: block; BACKGROUND: #fff; OVERFLOW: hidden; WIDTH: 15px;HEIGHT: 15px; color:#000; text-align:center
+}
+#flash_btn DIV A:hover {
+	DISPLAY: block; BACKGROUND: #fcbd6d
+}
+#flash_show_ctl {
+	BORDER-TOP: #000 1px solid; Z-INDEX: 20; LEFT: 0; WIDTH: 375px; POSITION: absolute; TOP: 216px; HEIGHT: 30px
+}
+#flashtrans {
+	Z-INDEX: 2; BACKGROUND: #000; FILTER: Alpha(opacity=30); LEFT: 0; WIDTH: 375px; POSITION: absolute; TOP: 216px; HEIGHT: 30px; moz-opacity: .7; opacity: .7
+}
+#flash_show_ctl_msg {
+	FILTER: progid:DXImageTransform.Microsoft.Fade(Overlap=1.00); FLOAT: left; OVERFLOW: hidden; WIDTH: 289px
+}
+#flash_show_ctl A {
+	FONT: bold 14px/28px Arial,'宋体'; COLOR: #fff; TEXT-DECORATION: none; text-indent:20px;
+}
+#flash_show_ctl A:hover {
+	COLOR: #309; TEXT-DECORATION: none
+}
+#flash_show_ctl_tuber {
+	Z-INDEX: 100; LEFT: 305px; POSITION: relative; TOP: -17px
+}
+#flash_show_ctl_arrow {
+	MARGIN-RIGHT: 5px
+}
+#img_prev_btn {
+	FONT-SIZE: 12px; BACKGROUND: none transparent scroll repeat 0% 0%; COLOR: #000; BORDER-TOP-STYLE: none! important; LINE-HEIGHT: 10px; BORDER-RIGHT-STYLE: none! important; BORDER-LEFT-STYLE: none! important; HEIGHT: 12px! important; BORDER-BOTTOM-STYLE: none! important
+}
+#img_next_btn {
+	FONT-SIZE: 12px; BACKGROUND: none transparent scroll repeat 0% 0%; COLOR: #000; BORDER-TOP-STYLE: none! important; LINE-HEIGHT: 10px; BORDER-RIGHT-STYLE: none! important; BORDER-LEFT-STYLE: none! important; HEIGHT: 12px! important; BORDER-BOTTOM-STYLE: none! important
+}
+.aimg {background-color:#fcbd6d; font-weight:bold; color:#f60;}
+/*幻灯片结束*/
+.jchdtitle {background: url(http://www.51hejia.com/images/wenba/list_title02.gif) no-repeat left top; height:24px; line-height:24px; font-size:14px; font-weight:bold; text-indent:15px; padding-top:2px;}
+.jchd {border:1px solid #fdc334; padding:7px 12px 7px 12px; margin-bottom:7px;}
+.jchd li {position:relative; line-height:21px;}
+.jchd span { position:absolute; right:12px; top:-3px; color:#999;}
+.middlebox { border:1px solid #fdc334; margin-bottom:7px; padding-bottom:4px;}
+.middlebox h3 {border-bottom:1px solid #fdc334; background-color:#fefaef; line-height:24px; font-size:14px;text-indent:15px; padding-top:2px;}
+.middlebox ul {padding:7px 12px 4px 12px;}
+.middlebox li {position:relative; line-height:21px; text-indent:18px;}
+.middlebox .wen {background: url(http://www.51hejia.com/images/wenba/wenhao.gif) no-repeat left center;}
+.middlebox .da {background: url(http://www.51hejia.com/images/wenba/da.gif) no-repeat left center;}
+.middlebox span { position:absolute; right:12px; top:-3px; color:#999;}
+.ggtitle {background: url(http://www.51hejia.com/images/wenba/list_title03.gif) no-repeat left top; height:24px; line-height:24px; font-size:14px; font-weight:bold; text-indent:15px; padding-top:2px;}
+.gonggao {border:1px solid #fdc334; padding:7px 12px 4px 12px; margin-bottom:7px; background-color:#fefaef;}
+.gonggao li {position:relative; line-height:21px;}
+.gonggao span { position:absolute; right:12px; top:-3px; color:#999;}
+.title02 {background: url(http://www.51hejia.com/images/wenba/list_title04.gif) no-repeat left top; height:23px; line-height:23px; font-size:14px; font-weight:bold; text-indent:16px; position:relative; color:#5a5a5a; padding-top:3px;}
+.title02 span {position:absolute; right:10px; line-height:26px; top:3px; font-size:12px; font-weight:normal;}
+.wbzjph {border:1px solid #a9a9a9; padding:12px; padding-bottom:10px; width:242px; float:left;}
+.wbzjphinfo {margin-top:4px; border-bottom:1px dashed #cecece; padding-bottom:4px; width:242px; float:left;}
+.wbzjphinfo img {width:92px; height:99px; border:1px solid #dddddd; float:left;}
+.wbzjphinfo dl {margin-left:11px; width:137px; float:left;}
+.wbzjphinfo dt {font-weight:bold;}
+.wbzjphinfo ul {width:98%; float:left; padding-top:5px;}
+.wbzjphinfo a {color:#926605;}
+.wbzjphlist {margin-top:4px; border-bottom:1px dashed #cecece; padding-bottom:4px; width:242px; float:left;}
+.wbzjphlist dt {font-weight:bold; float:left; width:49%;}
+.wbzjphlist dd {float:left; width:49%;}
+.wbzjphlist a {color:#926605;}
+.wbzjphlist ul {width:98%; float:left;}
+/*#######################################list1结束#################################################*/
+
+/*#######################################list2#####################################################*/
+#left2 {width:141px; float:left;}
+#left2 h3 {background: url(http://www.51hejia.com/images/wenba/list_title05.gif) no-repeat left top; height:24px; text-indent:13px; font-size:14px; padding-top:4px;}
+#right2 {width:812px; float:right;}
+.leftbox1 { background-color:#fdfdf3; padding:6px; border:1px solid #fdc334; margin-bottom:7px; width:127px; float:left;}
+.leftbox1 h4 {background: url(http://www.51hejia.com/images/wenba/dot04.gif) no-repeat left center; text-indent:13px; font-size:12px; padding-top:2px;}
+.leftbox1 li { float:left; margin-right:8px;}
+.leftbox1 .sabrosus {
+	PADDING-BOTTOM: 3px; TEXT-ALIGN: center; float:left
+}
+.leftbox1 .sabrosus A {
+	PADDING:2px 0 1px 0; COLOR: #5f5e3f; TEXT-DECORATION: none; width:56px;; float:left; text-align:center;
+}
+.leftbox1 .sabrosus A:hover {
+	BORDER: #f4deac 1px solid; PADDING:1px 0 0 0; COLOR: #f60; BACKGROUND-COLOR: #fff;width:54px;; float:left; text-align:center; text-decoration:none
+}
+.leftbox1 .sabrosus A:active {
+	BORDER-RIGHT: #2b66a5 1px solid; BORDER-TOP: #2b66a5 1px solid; BORDER-LEFT: #2b66a5 1px solid; COLOR: #000; BORDER-BOTTOM: #2b66a5 1px solid; BACKGROUND-COLOR: lightyellow
+}
+.leftbox1 .sabrosus SPAN.current {
+	BORDER: #f4deac 1px solid; PADDING:2px 2px 0px 2px; COLOR: #f60; MARGIN-RIGHT: 6px; BACKGROUND-COLOR: #fff
+}
+.leftbox1 .sabrosus SPAN.disabled {
+	BORDER: #f90 1px solid; PADDING-RIGHT: 5px; PADDING-LEFT: 5px; PADDING-BOTTOM: 2px; COLOR: #f60; MARGIN-RIGHT: 2px; PADDING-TOP: 2px;
+}
+.toptags {border:1px solid #feae73; width:810px; float:left; margin-bottom:7px;}
+.toptags h3 {background: #fff1d6 url(http://www.51hejia.com/images/wenba/dot01.gif) no-repeat 10px center; line-height:25px; color:#523e03; font-size:14px; text-indent:31px; border-bottom:1px solid #feae73;}
+.toptags ul {padding:7px 0 7px 25px; float:left; }
+.toptags li {float:left; padding-right:10px; width:23%; color:#f60;}
+.toptags a { color:#101a3e; text-decoration:underline;}
+.toptags a:hover {color:#2224e9}
+.toptags span {padding-left:7px; color:#999;}
+.wytwbox {height:56px;position:relative;margin-bottom:7px;background: url(http://www.51hejia.com/images/wenba/wytw_bg.gif) no-repeat left top; width:812px; float:left; margin-bottom:7px;}
+.wytwbox .search {position:absolute; left:55px; top:15px;}
+.rightbox1 {border:1px solid #d5ab7b; position:relative; padding:4px; width:802px; float:left; margin-top:33px; margin-bottom:7px;}
+.rightbox1 h3 {height:26px;background: url(http://www.51hejia.com/images/wenba/zxwdfl.gif) no-repeat left top; font-size:14px; color:#984001; text-align:left; padding-left:12px;line-height:30px;}
+.rightbox1 h3 span {font-weight:normal;padding-left:80px;vertical-align:30%}
+.rightbox1 .num {PADDING:2px 3px 0px 3px; position:absolute; right:2px; top:-26px;}
+.rightbox1 .num A {BORDER: #cecece 1px solid; COLOR: #000; MARGIN-RIGHT: 2px; PADDING:2px 3px 0px 3px; TEXT-DECORATION: none}
+.rightbox1 .num A:hover {BORDER: #f60 1px solid; COLOR: #f60; BACKGROUND-COLOR: #fcdfbf; TEXT-DECORATION: none}
+.rightbox1 .num SPAN.current {BORDER: #f90 1px solid; PADDING:2px 3px 0px 3px; COLOR: #f60; MARGIN-RIGHT: 2px; BACKGROUND-COLOR: #fcdfbf}
+.rightbox1 .wytw {position:absolute; bottom:-50px; right:6px;}
+
+.rightbox1 .wyfx {position:absolute; top:-39px; right:6px;}
+
+.same_cha {height:20px; background-color:#fef0cd; padding-top:4px; padding-bottom:2px; position:relative;}
+.same_cha li{height:14px; float:left; line-height:14px; cursor:pointer; margin:0 6px;padding-top:3px;}
+.same_cha .menu_off{font-size:12px;text-align:center;background: url(http://www.51hejia.com/images/wenba/menu_off01.gif) no-repeat left top; width:57px; height:15px; }
+.same_cha .menu_on{font-size:12px;color:#f60;text-align:center;background: url(http://www.51hejia.com/images/wenba/menu_on01.gif) no-repeat left top; width:57px; height:15px;}
+.same_cha .jieguo {position:absolute; right:6px; top:4px; cursor:auto;}
+.same_cha .jieguo span {color:#f00;}
+#same1 { }
+#same2,#same3,#same4,#same5,#same6,#same7,#same8,#same9,#same10,#same11 {display:none;}
+.same_cha .line {width:1px; height:12px; float:left; background-color:#f60; margin-top:4px;}
+
+.fenleibox {border-bottom:1px dashed #cecece; padding:6px 98px 9px 30px; width:672px; float:left}
+.fenleibox h4 {background: url(http://www.51hejia.com/images/wenba/wenhao.gif) no-repeat left center; color:#021943; text-indent:25px; font-size:14px;}
+.fenleibox h4 a{color:#021943; text-decoration:underline;}
+.fenleibox dl {padding:3px 0;}
+.fenleibox dd {color:#b2b2b2;}
+.fenleibox dd a{color:#b2b2b2; text-decoration:underline;}
+.fenleibox p {text-indent:2em; line-height:22px;}
+.fenleibox ul {margin-top:5px; position:relative;}
+
+.fenleibox .pinlun {position:absolute; right:11px; top:0; color:#f60; font-size:12px;}
+.fenleibox .yuedu {position:absolute; right:70px; top:0; color:#3b6d9e; font-size:12px;}
+.fenleibox .wen {background: url(http://www.51hejia.com/images/wenba/wenhao.gif) no-repeat left center;}
+.fenleibox .da {background: url(http://www.51hejia.com/images/wenba/da.gif) no-repeat left center;}
+/*.fenleibox li {background: url(http://www.51hejia.com/images/wenba/wenhao.gif) no-repeat left center; position:relative; text-indent:15px; padding-top:2px; line-height:16px;}*/
+.edwyhd {background: url(http://www.51hejia.com/images/wenba/icon01.gif) no-repeat left center; text-indent:19px; cursor:pointer; float:left; margin-right:12px;}
+.edwyhd a {color:#f60;}
+.edwysc {background: url(http://www.51hejia.com/images/wenba/icon02.gif) no-repeat left center; text-indent:19px; cursor:pointer; float:left; margin-right:12px;}
+.edwysc a {color:#f60;}
+.edwydy {background: url(http://www.51hejia.com/images/wenba/icon03.gif) no-repeat left center; text-indent:19px; cursor:pointer; float:left; margin-right:12px;}
+.edwydy a {color:#f60;}
+.edwytj {background: url(http://www.51hejia.com/images/wenba/icon04.gif) no-repeat left center; text-indent:19px; cursor:pointer; float:left; margin-right:12px;}
+.edwytj a {color:#f60;}
+.edwytj a:hover {color:#f00;}
+
+
+div.sample_popup { z-index: +1; }
+div.menu_form_header{
+cursor:move
+}
+div.menu_form_header img {margin-right:5px;}
+div.sample_popup div.menu_form_header
+{
+background-color:#fef4eb;
+  cursor: default;
+  width: 300px;
+  padding-top:2px;
+  padding:4px 0 2px 0;
+  color:#f60;
+}
+div.sample_popup img.menu_form_exit
+{
+  float: right;
+  margin: 4px 5px 0px 0px;
+  cursor: pointer;
+}
+div.menu_form_header a {color:#f60;}
+
+#tags {width:958px; float:left; border:1px solid #feae73;margin-top:7px;}
+#tags h3 {
+	height:20px;
+	text-indent:34px;
+	font-size:14px;
+	border-bottom:1px solid #feae73;
+	background: #fff2d5 url(http://www.51hejia.com/images/wenba/dot02.gif) no-repeat 17px center;
+	padding-top:5px;
+	
+}
+#tags .list { border-top:0; padding:15px 25px 15px 35px; width:898px; float:left}
+#tags .list li {width:20%; float:left; line-height:30px;}
+
+.fenye1 {
+	TEXT-ALIGN: left; margin-bottom:27px; margin-top:5px;
+}
+.fenye1 A {
+	BORDER: #f90 1px solid; PADDING-RIGHT: 5px; PADDING-LEFT: 5px; PADDING-BOTTOM: 2px; COLOR: #000; MARGIN-RIGHT: 2px; PADDING-TOP: 2px; TEXT-DECORATION: none
+}
+.fenye1 A:hover {
+	BORDER: #f60 1px solid; COLOR: #fff; BACKGROUND-COLOR: #f60; TEXT-DECORATION: none
+}
+.fenye1 SPAN.current {
+	BORDER: #f90 1px solid; PADDING-RIGHT: 5px; PADDING-LEFT: 5px; FONT-WEIGHT: bold; PADDING-BOTTOM: 2px; COLOR: #fff; MARGIN-RIGHT: 2px; PADDING-TOP: 2px; BACKGROUND-COLOR: #f60
+}
+.fenye1 SPAN.disabled {
+	BORDER: #f90 1px solid; PADDING-RIGHT: 5px; PADDING-LEFT: 5px; PADDING-BOTTOM: 2px; COLOR: #f60; MARGIN-RIGHT: 2px; PADDING-TOP: 2px;
+}
+/*#######################################list2结束#################################################*/
+
+
+
+
+
+
+
+

@@ -1,0 +1,40 @@
+<div id="list_bill" class="contain">
+<div class="wenzhang"><a href="javascript:isLoginEntry()"><img src="http://www.51hejia.com/images/wenba/wenzhang2.gif" alt="我要分享" border="0" /></a></div>
+<div class="huifu" id="answer0" onClick="location.hash='reply';" style="cursor:pointer">
+<img src="http://www.51hejia.com/images/wenba/huifu2.gif" alt="我要评价" border="0" /></div>
+<div id="question">
+<h3><img src="http://www.51hejia.com/images/wenba/question2.gif"/></h3>
+<div class="qscontain">
+  <div class="top">
+    <ul>
+      <%- if @topic.user_id.to_i == 0 -%>
+        <li class="louzhu"><%= get_user_name_by_user_id(@topic.user_id) %></li>
+      <%- else -%>
+        <li class="louzhu"><a href="http://blog.51hejia.com/u/<%= @topic.user_id %>" target="_blank">
+        <%= get_user_name_by_user_id(@topic.user_id) %></a></li>
+      <%- end -%>
+      <%#*<li class="pic"><img src="http://www.51hejia.com/images/wenba/wenhao.gif" /></li>%>
+      <%#*<li class="pic"><img src="http://www.51hejia.com/images/wenba/daijj.gif" /></li>%>
+      <li class="title"><%= @topic.subject %></li>
+      <li class="date"><%= @topic.created_at.strftime("%Y-%m-%d %H:%M:%S") %></li>
+    </ul>
+  </div>
+  <div class="info">
+    <ul>
+      <%- if @topic.user_id.to_i == 0 -%>
+        <li><img src="<%= get_user_icon_link_by_user_id(@topic.user_id) %>" alt="" border="0" /></li>
+      <%- else -%>
+        <li><a href="http://blog.51hejia.com/u/<%= @topic.user_id %>" target="_blank">
+        <img src="<%= get_user_icon_link_by_user_id(@topic.user_id) %>" alt="" border="0" /></a></li>
+      <%- end -%>
+      <li><strong>楼主</strong></li> 
+      <li>评价数：<strong><%=@topic.post_counter.to_i-1 %></strong></li>
+      <li>浏览数：<strong><%= @topic.view_counter %></strong></li>
+    </ul>
+  </div>
+  <div class="art"><%= @topic.description %></div>
+  <%= get_html_of_user_sign_by_user_id(@topic.user_id) %>
+  <div  class="wyhd" id="answer0" ><img src="http://www.51hejia.com/images/wenba/wyhd2.gif" alt="我要评价" border="0" onClick="location.hash='reply';" style="cursor:pointer" /></div>
+  <div class="tags"><strong>TAG：<%= get_html_of_user_tags_by_zhishi_topic_id(@topic_id) %></div> 
+  <div class="tags"><strong>参考资料：<%= @topic.reference %></div> 
+</div>

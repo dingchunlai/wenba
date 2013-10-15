@@ -1,0 +1,58 @@
+<table width="80%" border="0" cellpadding="0" cellspacing="0" >
+  <tr valign="top">
+    <td width="110" nowrap class="f14"><B class=ttc>分类（*）：</B></td>
+    <td class=tdof id=td2>
+      <span id="classid">
+        <table border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td valign="top"><SELECT id=ClassLevel1 style="WIDTH: 125px" size=8 name=ClassLevel1><OPTION selected></OPTION></SELECT></td>
+            <td width="20"><div align="center"><B>→</B></div></td>
+            <td valign="top"><SELECT id=ClassLevel2 style="WIDTH: 90px" size=8 name=ClassLevel2><OPTION selected></OPTION></SELECT></td>
+            <td width="20"><div align="center" id=jiantou><B>→</B></div></td>
+            <td valign="top"><SELECT id=ClassLevel3 style="WIDTH: 90px" size=8 onChange="getCidValue();" name=ClassLevel3><OPTION selected></OPTION></SELECT></td>
+          </tr>
+        </table>
+        <script src="http://js.51hejia.com/js/wb/tags_data.js?20100928"></script>
+        <SCRIPT language=javascript>
+            InitClassLevelList(document.ftiwen.ClassLevel1, document.ftiwen.ClassLevel2, document.ftiwen.ClassLevel3);
+            // auto-select the init class if need
+            var selected_id_list="0"
+            var blank_pos = selected_id_list.indexOf(" ");
+            var find_blank = true;
+            if (blank_pos == -1) {
+                find_blank = false;
+                blank_pos = selected_id_list.length;
+            }
+            var id_str = selected_id_list.substr(0, blank_pos);
+            g_ClassLevel1.value = id_str;
+            ClassLevel1_onchange();
+
+            if (find_blank == true) {
+                selected_id_list = selected_id_list.substr(blank_pos + 1,
+                selected_id_list.length - blank_pos - 1);
+                blank_pos = selected_id_list.indexOf(" ");
+                if (blank_pos == -1) {
+                    find_blank = false;
+                    blank_pos = selected_id_list.length;
+                }
+                id_str = selected_id_list.substr(0, blank_pos);
+                g_ClassLevel2.value = id_str;
+                ClassLevel2_onchange();
+
+                if (find_blank == true) {
+                    selected_id_list = selected_id_list.substr(blank_pos + 1,
+                    selected_id_list.length - blank_pos - 1);
+                    blank_pos = selected_id_list.indexOf(" ");
+                    if (blank_pos == -1) {
+                        find_blank = false;
+                        blank_pos = selected_id_list.length;
+                    }
+                    id_str = selected_id_list.substr(0, blank_pos);
+                    g_ClassLevel3.value = id_str;
+                }
+            }
+        </SCRIPT>
+      </span>
+    </td>
+  </tr>
+</table>

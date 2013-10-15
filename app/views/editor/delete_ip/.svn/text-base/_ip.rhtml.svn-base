@@ -1,0 +1,7 @@
+<h5>删除指定用户的ip</h5>
+
+<form name="date" method="post" action="/editor/showip" onSubmit="return dele2(this); ">
+用户名: <input name="wd" type="text" id="wd" size="10" maxlength="20">
+<input type="hidden" name="tp" value="wd">
+<input type="submit" value ="查看ip" class ="button02" />
+</form>

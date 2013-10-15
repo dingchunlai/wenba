@@ -1,0 +1,10 @@
+<h1>讨论版列表</h1>
+
+<%- for name in @names -%>
+  <tr>
+    <ul>
+      <td><%= link_to "#{name.name}", {:action => 'xiaoqu_list', :id =>name.id },
+        :method  => :post %></td>
+    </ul>
+  </tr>
+<%- end -%>

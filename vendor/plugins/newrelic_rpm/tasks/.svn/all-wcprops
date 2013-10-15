@@ -1,0 +1,11 @@
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/!svn/ver/113/51hejia/repos/wenba/release/vendor/plugins/newrelic_rpm/tasks
+END
+agent_tests.rake
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/!svn/ver/113/51hejia/repos/wenba/release/vendor/plugins/newrelic_rpm/tasks/agent_tests.rake
+END

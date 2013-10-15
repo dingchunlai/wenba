@@ -1,0 +1,12 @@
+<% user_id = get_user_id_by_cookie_name() %>
+<% if user_id > 0 %>
+  <input name="email" id="email" type="hidden" value="<%= get_user_email_by_user_id(user_id) %>" size="24" class=formfont>
+<% else %>
+  <table width="80%" border="0" cellpadding="0" cellspacing="0" >
+    <tr valign="top">
+      <td width="110" class="f14" nowrap><B class=ttc>邮件地址（*）：</B></td>
+      <td class=tdof id=td4><input name="email" id="email" type="text" value="" size="24" class=formfont></td>
+    </tr>
+  </table>
+  <br>
+<% end %>

@@ -1,0 +1,47 @@
+<table class="comment_table" align="center" border="1" width="90%">
+  <tbody>
+    <tr>
+      <th class="comment_floor"></th>
+      <th class="comment_auther">评论人</th>
+      <th class="comment_content">评论内容</th>
+      <th class="comment_time">发表时间</th>
+    </tr>
+    <% counter = 0 %>
+    <% unless @reply_lists.blank? %>
+      <% for reply_a in @reply_lists %>
+        <tr class="<%= cycle("comment_tr_even","comment_tr_odd") %>" valign="top">
+          <td style="text-align: center"><%= counter + 1 %></td>
+          <td style="text-align: center">
+            和家网友
+          </td>
+          <td><%= get_short_str(strip_tags(reply_a[0]), 400) %></td>
+          <td style="text-align: center">
+            <%= reply_a[1] %>
+          </td>
+        </tr>
+        <% counter = counter + 1 %>
+      <% end %>
+    <% end %>
+
+    <% unless @replies.blank? %>
+      <%- for reply in @replies -%>
+        <tr class="<%= cycle("comment_tr_even","comment_tr_odd") %>" valign="top">
+          <td style="text-align: center"><%= counter + 1 %></td>
+          <td style="text-align: center">
+            <%= reply.user_id.to_i > 0 ? user_link(reply.user_id) : '和家网友' %>
+          </td>
+          <td><%= get_short_str(strip_tags(reply.content), 400) %></td>
+          <td style="text-align: center">
+            <%if reply.created_at < 1.day.from_now.midnight%>
+              <%= reply.created_at && reply.created_at.strftime("%H:%M:%S") %>
+            <%else%>
+              <%= reply.created_at && reply.created_at.strftime("%Y-%m-%d") %>
+            <%end%>
+          </td>
+        </tr>
+        <% counter = counter + 1 %>
+      <%- end -%>
+    <% end %>
+
+  </tbody>
+</table>

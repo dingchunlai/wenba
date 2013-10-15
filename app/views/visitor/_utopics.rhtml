@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <%= render :partial => 'utop' %>
+  <body>
+    <div id="main">
+      <div id="path">
+        <h3><%= get_user_name_by_user_id(params[:uid]) %></h3>
+        <ul>
+          <li><%= get_user_name_by_user_id(params[:uid]) %>首页</li>
+          <%#*<li><span>擅长领域</span>－产品&nbsp;&nbsp;装修知识&nbsp;&nbsp;设计师</li>%>
+        </ul>
+      </div>
+      <div id="left">
+        <%= render :partial => 'uinfo' %>
+        <div id="leftlist">
+          <%= render :partial => 'ulatest_posts' %>
+          <%= render :partial => 'ulatest_topics' %>
+        </div>
+        <%#= render :partial => 'ustatistics' %>
+      </div>
+      <div id="right">
+        <div class="righttitle">文章列表</div>
+        <div class="rightcontain">
+          <%- for topic in @topics -%>
+            <div class="rightlist">
+              <h3><a href="<%=BASEURL%>visitor/question/<%= topic.id %>.html" target="_blank"><%= get_short_str(topic.subject, 40) %></a></h3>
+              <ul>
+                <li>作者：<%= get_user_name_by_user_id(params[:uid]) %></li>
+                <li>分类：<a target="_blank" href="<%=BASEURL%>visitor/browse/<%= topic.tag_id %>.html"><%= get_tag_name_by_tag_id(topic.tag_id) %></a></li>
+                <li>浏览次数：<%= topic.view_counter %></li>
+              </ul>
+              <p><%= get_short_str(topic.description, 100) %></p>
+              <div class="detail">[<a href="<%=BASEURL%>visitor/question/<%= topic.id %>.html" target="_blank">阅读全文</a>]</div>
+            </div>
+          <%- end -%>
+          <div class="fenye1">
+            <%= link_to '&lt; 上一页', { :controller => 'visitor', :action => 'u', :page => @topic_pages.current.previous.to_i, :params => { :utp => params[:utp] } } if @topic_pages.current.previous %>
+            <%= pagination_links(@topic_pages, :controller => 'visitor', :action => 'u', :params => { :utp => params[:utp] }) %>
+            <%= link_to '下一页 &gt;', { :controller => 'visitor', :action => 'u', :page => @topic_pages.current.next.to_i, :params => { :utp => params[:utp] } } if @topic_pages.current.next %>
+          </div>
+        </div>
+      </div>  
+    </div>
+  </body>
+</html>

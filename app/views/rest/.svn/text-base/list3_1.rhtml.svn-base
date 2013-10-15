@@ -1,0 +1,24 @@
+<link href="http://d.51hejia.com/css/wenba/answerlist.css" rel="stylesheet" type="text/css"/>
+<div class="left462l">
+  <div class="mdbox06l">
+    <h3>已解决的问题</h3>
+    <div class="box2l">
+      <ul>
+        <%- for topic in @topics1 -%>
+          <li>[<%= get_tag_name_by_tag_id(topic.tag_id) %>]&nbsp;<a href="<%=BASEURL%>visitor/question/<%= topic.id %>.html" target="_blank" title="<%= topic.subject %>"><%= get_short_str(topic.subject, 10) %></a></li>
+        <%- end -%>
+      </ul>
+    </div>
+  </div>
+
+  <div class="mdbox07l">
+    <h3>待解决的问题</h3>
+    <div class="box2l">
+      <ul>
+        <%- for topic in @topics0 -%>
+          <li>[<%= get_tag_name_by_tag_id(topic.tag_id) %>]&nbsp;<a href="<%=BASEURL%>visitor/question/<%= topic.id %>.html" target="_blank" title="<%= topic.subject %>"><%= get_short_str(topic.subject, 10) %></a></li>
+        <%- end -%>
+      </ul>
+    </div>
+  </div>
+</div>

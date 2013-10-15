@@ -1,0 +1,8 @@
+<link href="http://d.51hejia.com/css/wenba/answerlist.css" rel="stylesheet" type="text/css"/>
+<div class="box">
+  <ul>
+    <%- for topic in @topics -%>
+      <li>[<%= get_tag_name_by_tag_id(topic.tag_id) %>]&nbsp;<a href="<%=BASEURL%>visitor/question/<%= topic.id %>.html" target="_blank" title="<%= topic.subject %>"><%= get_short_str(topic.subject, 10) %></a></li>
+    <%- end -%>
+  </ul>
+</div>

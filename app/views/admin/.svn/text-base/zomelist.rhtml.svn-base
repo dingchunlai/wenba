@@ -1,0 +1,20 @@
+<h1> 论坛列表 </h1>
+<%= flash[:notice] %>
+
+<%- for name in @names -%>
+  <tr>
+    <ul>
+      <td><a href="/visitor/discussionbrowse/<%= (name.id) %>" target="_blank"><%= name.name %></a></td>
+      <%= link_to "删除", {:action => 'dele', :id => name.id },
+        :confirm => "确定要删除吗?", :method  => :post %>
+      <%= link_to "编辑", {:action => 'edit_zome', :id => name.id },
+        :method  => :post %>
+    </ul>
+  </tr>
+<%- end -%>
+<table width="80%" border="0" cellpadding="0" cellspacing="0" >
+  <%= link_to '&lt; 上一页', { :controller => 'admin', :action => 'zomelist', :page => @name_pages.current.previous.to_i } if @name_pages.current.previous %>
+  <%= pagination_links(@name_pages, :controller => 'admin', :action => 'zomelist') %>
+  <%= link_to '下一页 &gt;', { :controller => 'admin', :action => 'zomelist', :page => @name_pages.current.next.to_i } if @name_pages.current.next %>
+</table>
+<p><%= link_to "新增讨论版", {:action => 'add'} %></p>

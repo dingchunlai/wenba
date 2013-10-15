@@ -1,0 +1,49 @@
+<div id="main">
+  <%= render :partial => 'head_start' %>
+  <%= render :partial => 'head_end' %>
+  <%= render :partial => 'visitor/ads_tonglang' %>
+  <%= render :partial => 'search' %>
+  <%= render :partial => 'tags' %>
+  <div id="right2">
+    <div class="rightbox1">
+      <%#*<div class="num">每页显示帖子数量：<span class="current">30</span><a href="#">60</a></div>%>
+      <h3>装修问答分类</h3>
+      <div class="same_cha">
+        <ul>
+          <li><strong>问题过滤</strong></li>
+          <%= get_html_of_menu_for_utlist_by_type_id(@user_tag_id) %>
+          <li class="jieguo">共搜到相关问题：<span><%= @topic_pages.item_count %></span>条</li>
+        </ul>
+      </div>
+      <div id="same1">
+        <%- for topic in @topics -%>
+          <div class="fenleibox">
+            <h4><a target="_blank" href="<%=BASEURL%>visitor/question/<%= topic.id %>.html"><%= topic.subject %></a></h4>
+            <dl>
+              <dd>提问者：<a href="http://blog.51hejia.com/u/<%= topic.user_id %>/" target="_blank"><%= get_user_name_by_user_id(topic.user_id) %></a>&nbsp;&nbsp;&nbsp;已浏览：<%= topic.view_counter %>&nbsp;&nbsp;&nbsp;已回答：<%= topic.post_counter.to_i-1 %>&nbsp;&nbsp;&nbsp;<%= get_html_of_best_post_user_for_b2list_by_best_post_id(topic.best_post_id) %></dd>
+              <dd>分类：<a target="_blank" href="<%=BASEURL%>visitor/browse/<%= topic.tag_id %>.html"><%= get_tag_name_by_tag_id(topic.tag_id) %></a>&nbsp;&nbsp;&nbsp;Tag：<%= get_html_of_user_tags_by_topic_id(topic.id) %></dd>
+            </dl>
+            <p>
+              <%- if topic.best_post_id -%>
+                <%= get_zhidao_topic_post_by_best_post_id(topic.best_post_id).content %>
+              <%- else -%>
+                <%= topic.description %>
+              <%- end -%>
+            </p>
+            <ul>
+              <li class="edwyhd"><a target="_blank" href="<%=BASEURL%>visitor/question/<%= topic.id %>.html#reply">我要回答</a></li>
+              <li></li>
+            </ul>
+          </div>
+        <%- end -%>
+      </div>
+      <div class="wytw"><a href="<%=BASEURL%>user/ask" target="_blank"><img src="http://www.51hejia.com/images/wenba/wytw.gif" alt="我要提问" border="0" /></a></div>
+    </div>
+    <div class="fenye1">
+      <%= link_to '&lt; 上一页', { :controller => 'visitor', :action => 'ut', :page => @topic_pages.current.previous.to_i, :params => { :tp => params[:tp] } } if @topic_pages.current.previous %>
+      <%= pagination_links(@topic_pages, :controller => 'visitor', :action => 'ut', :params => { :tp => params[:tp] }) %>
+      <%= link_to '下一页 &gt;', { :controller => 'visitor', :action => 'ut', :page => @topic_pages.current.next.to_i, :params => { :tp => params[:tp] } } if @topic_pages.current.next %>
+    </div>
+  </div>
+  <%= render :partial => 'foot' %>
+</div>

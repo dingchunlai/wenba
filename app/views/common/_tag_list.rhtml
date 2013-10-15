@@ -1,0 +1,21 @@
+<div class="body addstyle">
+<ul class="class">
+<%if @tag_level == 3%>
+      <%for tag in Tag.get_tags_by_parent_id(@parent_tag_id)%>
+        <%if tag.id==@tag_id%>
+          <li><%=tag.name%></li>
+        <%else%>
+          <li><a href="/list/sort/<%=tag.id%>.html" target="_self"><%=tag.name%></a></li>
+        <%end%>
+      <%end%>
+<%elsif @tag_level == 0%>
+      <%for tag in Tag.get_tags_by_parent_id(@tag_id)%>
+          <li><a href="/list/s/<%=tag.id%>.html" target="_self"><%=tag.name%></a></li>
+      <%end%>
+<%else%>
+      <%for tag in Tag.get_tags_by_parent_id(@tag_id)%>
+          <li><a href="/list/sort/<%=tag.id%>.html" target="_self"><%=tag.name%></a></li>
+      <%end%>
+<%end%>
+</ul>
+</div>

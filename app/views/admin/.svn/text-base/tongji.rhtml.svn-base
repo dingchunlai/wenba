@@ -1,0 +1,28 @@
+<h1>网站数据统计</h1>
+<form name="date" method="post" action="/admin/statistics" onSubmit="return tongji(this);">
+  日期：从<input name="date1" type="text" id="date1" onfocus="new Calendar().show(this);" size="10" maxlength="10">到
+  <input name="date2" type="text" id="date2" onfocus="new Calendar().show(this);" size="10" maxlength="10"><br>
+  编辑ID：<input name="wd" type="text" id="wd" size="10" maxlength="20"><br>
+  操作类型选择：<select name="tp" id="tp">
+        <option value="1">设置最佳答案</option>
+        <option value="2">批量打标签</option>
+        <option value="3">单个打标签</option>
+        <option value="4">删除相应的文章</option>
+        <option value="5">删除指定的帖子和回复</option>
+        <option value="6">删除指定的回复</option>
+        <option value="7">设置黑名单</option>
+        <option value="8">解析上传文件</option>
+        <option value="9">创建新专家</option>
+        <option value="10">讨论版小区名更新</option>
+        <option value="11">讨论版小区名删除</option>
+        <option value="12">讨论版小区名添加</option>
+        <option value="13">讨论版帖子固顶设置</option>
+        <option value="14">讨论版帖子置顶设置</option>
+        <option value="15">取消讨论版帖子的特权操作</option>
+        <option value="16">添加讨论版公告</option>
+        <option value="17">删除讨论版公告</option>
+        <option value="18">讨论版公告的编辑</option>
+      </select>
+  <input type="hidden" name="tp" value="wd">    
+  <input type="submit" value ="查询" class ="button02" />
+</form>

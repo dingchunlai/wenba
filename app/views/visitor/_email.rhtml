@@ -1,0 +1,16 @@
+<% user_id = get_user_id_by_cookie_name() %>
+<% if user_id > 0 %>
+  <input name="email" id="email" type="hidden" value="<%= get_user_email_by_user_id(user_id) %>">
+<% else %>
+  <tr>
+    <td width="80" class="f14" nowrap><a name="reply"></a>邮件地址：</td>
+    <td>
+      <input name="email" id="email" type="text" value="" size="24">
+
+        <span id="validate_span" style="font-family:Verdana;color:black;font-size:12px;">
+        　　验证码：<input style="width:35px;" name="validate_code" id="validate_code" type="text" value="" />
+          <B><%=session[:validate_code001]%></B>
+        </span>
+    </td>
+  </tr>
+<% end %>

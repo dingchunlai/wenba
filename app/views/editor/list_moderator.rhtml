@@ -1,0 +1,10 @@
+<h1>版主列表信息</h1>
+<% if !@moderators.nil? %>
+
+<% @moderators.each do |moderator| %>
+  <ul><%= get_moderator_info(moderator.id) %></ul>
+<% end %>
+
+<% end %>
+
+<a href="/editor/new_moderator">新增版主</a>

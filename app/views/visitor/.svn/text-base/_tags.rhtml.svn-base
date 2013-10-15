@@ -1,0 +1,67 @@
+<div id="left">
+  <h3>建材百科知识</h3>
+  <div class="leftbox1">
+    <div class="sabrosus">
+      <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000"
+              codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0"
+              width="121" height="70" id="Untitled-1" align="middle">
+        <param name="movie" value="http://www.51hejia.com/flash/tulbk139.swf" />
+        <param name="quality" value="high" />
+        <embed src="http://www.51hejia.com/flash/tulbk139.swf " quality="high" bgcolor="#ffffff" width="121"
+               height="70" name="mymovie" align="middle" allowScriptAccess="sameDomain"
+               type="application/x-shockwave-flash" pluginspage="http://www.adobe.com/go/getflashplayer" />
+      </object>
+    </div>
+  </div>
+  <h3>装修问答分类</h3>
+  <div class="leftbox1">
+    <h4><a href="<%=BASEURL%>visitor/browse/173.html?ct=1">装潢</a></h4>
+    <div class="sabrosus">
+      <a href="<%=BASEURL%>visitor/browse/174.html">装修设计</a>
+      <a href="<%=BASEURL%>visitor/browse/175.html">装潢公司</a>
+      <a href="<%=BASEURL%>visitor/browse/176.html">设计师</a>
+      <a href="<%=BASEURL%>visitor/browse/177.html">装修卖场</a>
+      <a href="<%=BASEURL%>visitor/browse/178.html">装修预算</a>
+      <a href="<%=BASEURL%>visitor/browse/179.html">合同签订</a>
+      <a href="<%=BASEURL%>visitor/browse/180.html">施工现场</a>
+      <a href="<%=BASEURL%>visitor/browse/181.html">监理验收</a>
+      <a href="<%=BASEURL%>visitor/browse/182.html">监测保养</a>
+      <a href="<%=BASEURL%>visitor/browse/183.html">维权投诉</a>
+    </div>
+  </div>
+  <div class="leftbox1">
+    <h4><a href="<%=BASEURL%>visitor/browse/38.html?ct=1">建材</a></h4>
+    <div class="sabrosus">
+      <a href="<%=BASEURL%>visitor/browse/39.html">地板</a>
+      <a href="<%=BASEURL%>visitor/browse/40.html">瓷砖/石材</a>
+      <a href="<%=BASEURL%>visitor/browse/41.html">木材/板材</a>
+      <a href="<%=BASEURL%>visitor/browse/42.html">门窗</a>
+      <a href="<%=BASEURL%>visitor/browse/43.html">建筑陶瓷</a>
+      <a href="<%=BASEURL%>visitor/browse/44.html">管线管材</a>
+      <a href="<%=BASEURL%>visitor/browse/45.html">金属材质</a>
+      <a href="<%=BASEURL%>visitor/browse/46.html">油漆涂料</a>
+      <a href="<%=BASEURL%>visitor/browse/47.html">厨房卫浴</a>
+      <a href="<%=BASEURL%>visitor/browse/48.html">五金配件</a>
+      <a href="<%=BASEURL%>visitor/browse/49.html">防水防火</a>
+      <a href="<%=BASEURL%>visitor/browse/50.html">水电</a>
+      <a href="<%=BASEURL%>visitor/browse/51.html">采暖</a>
+      <a href="<%=BASEURL%>visitor/browse/52.html">其他材料</a>
+      <a href="<%=BASEURL%>visitor/browse/53.html">其他</a>
+    </div>
+  </div>
+  <div class="leftbox1">
+    <h4><a href="<%=BASEURL%>visitor/browse/1.html?ct=1">家居</a></h4>
+    <div class="sabrosus">
+      <a href="<%=BASEURL%>visitor/browse/2.html">家居布艺</a>
+      <a href="<%=BASEURL%>visitor/browse/3.html">生活家电</a>
+      <a href="<%=BASEURL%>visitor/browse/4.html">家居饰品</a>
+      <a href="<%=BASEURL%>visitor/browse/5.html">灯具灯饰</a>
+      <a href="<%=BASEURL%>visitor/browse/6.html">家居家具</a>
+      <a href="<%=BASEURL%>visitor/browse/7.html">日常用品</a>
+      <a href="<%=BASEURL%>visitor/browse/8.html">其他</a>
+    </div>
+  </div>
+  <div class="leftbox1">
+    <h4><a href="<%=BASEURL%>visitor/companylist">诚信档案</a></h4>
+  </div>
+</div>

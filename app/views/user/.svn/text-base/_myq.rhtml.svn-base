@@ -1,0 +1,17 @@
+<div id="question">
+  <%- for topic in @topics -%>
+    <ul>
+      <li>
+        <a target="_blank" href="<%=BASEURL%>visitor/question/<%= topic.id %>.html"><%= topic.subject %></a>
+        回答数：<%= topic.post_counter.to_i-1 %>
+      </li>
+    </ul>
+  <%- end -%>
+</div>
+<div id="paginate">
+  <ul>
+    <li><%= link_to '上一页', { :page => @topic_pages.current.previous.to_i, :params => { :tp => params[:tp] } } if @topic_pages.current.previous %></li>
+    <li><%= pagination_links(@topic_pages, :params => { :tp => params[:tp] }) %></li>
+    <li><%= link_to '下一页', { :page => @topic_pages.current.next.to_i, :params => { :tp => params[:tp] } } if @topic_pages.current.next %></li>
+  </ul>
+</div>

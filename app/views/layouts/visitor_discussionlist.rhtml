@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title><%= get_seo_info("title") %></title>
+    <meta name="keywords" content="<%= get_seo_info("keywords") %>">
+    <meta name="description" content="<%= get_seo_info("description") %>">
+    <script src="/javascripts/ask080723.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        function documentWrite(innerH)
+        {
+            document.write(innerH);
+        }
+    </script>
+    <link href="http://d.51hejia.com/css/shouye/header914.css" rel="stylesheet" type="text/css" />
+    <link href="http://d.51hejia.com/css/wenba/index.css" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/list.css" rel="stylesheet" type="text/css" />
+
+    <style type="text/css">
+      <!--
+      .STYLE2 {	color: #980909;
+        font-size: 12px;
+      }
+      body {
+        margin-left: 0px;
+        margin-top: 3px;
+        margin-right: 0px;
+        margin-bottom: 0px;
+      }
+      -->
+    </style>
+    <script type="text/javascript">
+        //===========================点击展开关闭效果====================================
+        function openShutManager(oSourceObj,oTargetObj,shutAble,oOpenTip,oShutTip){
+            var sourceObj = typeof oSourceObj == "string" ? document.getElementById(oSourceObj) : oSourceObj;
+            var targetObj = typeof oTargetObj == "string" ? document.getElementById(oTargetObj) : oTargetObj;
+            var openTip = oOpenTip || "";
+            var shutTip = oShutTip || "";
+            if(targetObj.style.display!="none"){
+                if(shutAble) return;
+                targetObj.style.display="none";
+                if(openTip && shutTip){
+                    sourceObj.innerHTML = shutTip;
+                }
+            } else {
+                targetObj.style.display="block";
+                if(openTip && shutTip){
+                    sourceObj.innerHTML = openTip;
+                }
+            }
+        }
+    </script>
+  </head>
+  <body>
+    <%= yield %>
+    
+<script src="http://js.51hejia.com/js/ga.js" type="text/javascript"></script>
+<script type="text/javascript">
+    setTimeout('startGA();', 1000);
+    var pageTracker = _gat._getTracker("UA-7619267-1");
+    pageTracker._addOrganic("baidu","kw");
+    pageTracker._addOrganic("baidu","word");
+    pageTracker._addOrganic("soso","w");
+    pageTracker._addOrganic("3721","name");
+    pageTracker._addOrganic("yodao","q");
+    pageTracker._addOrganic("vnet","kw");
+    pageTracker._addOrganic("sogou","query");
+    pageTracker._setDomainName("51hejia.com");
+     
+    pageTracker._trackPageview();
+</script>
+  </body>
+</html>

@@ -1,0 +1,15 @@
+<div class="wrap1">
+
+  <div style="font-size: 12pt; color: blue; padding:0 0 10px 10px;">
+    最新回复列表：
+  </div>
+  <%i = 1%>
+  <%@posts.each do |post|%>
+    <div id="post_div_<%=post.id%>" style="border: 1px dashed #718DFF; margin-bottom: 8px; padding: 2px 5px 2px 5px;">
+      <%=i%>、
+      <input type="button" value="删除" onclick="window.open('/admin_handle/del_posts?id=<%=post.id%>&topic_id=<%=post.zhidao_topic_id%>&no_render=1', 'hideiframe');document.getElementById('post_div_<%=post.id%>').style.display='none';" />
+      <a href="/q/<%=post.zhidao_topic_id%>.html" target="_blank"><%=ul(text_to_html(post.content), 150, "...")%></a>
+    </div>
+    <%i += 1%>
+  <%end%>
+</div>

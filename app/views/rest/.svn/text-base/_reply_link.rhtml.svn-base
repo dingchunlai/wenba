@@ -1,0 +1,5 @@
+<%- if params[:tp].to_s == "all" -%>
+  &nbsp;&nbsp;
+<%- else -%>
+  <a href="<%= request.request_uri %>&tp=all" target="_blank">&gt;&gt;&gt;更多相关评论</a>
+<%- end -%>

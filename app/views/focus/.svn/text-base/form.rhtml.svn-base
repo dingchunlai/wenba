@@ -1,0 +1,38 @@
+<h1>焦点图录入</h1>
+<div><%= flash[:notice] %></div>
+
+<form action="/focus/form" method="post">
+  <span style="color: red">*</span><label for="upload_dir">焦点图1URL:</label>
+<input id="upload_dir" name="upload_dir" size="60" type="text"/>
+<br>
+<span style="color: red">*</span><label for="upload">焦点图1文章URL:</label>
+<input id="upload" name="upload" size="60" type="text"/>
+<br>
+<span style="color: red">*</span><label for="upload">焦点图1文章标题:</label>
+<input id="load" name="load" size="60" type="text"/>
+<br />
+<br />
+<span style="color: red">*</span><label for="upload_dir1">焦点图2URL:</label>
+<input id="upload_dir1" name="upload_dir1" size="60" type="text"/>
+<br>
+<span style="color: red">*</span><label for="upload1">焦点图2文章URL:</label>
+<input id="upload1" name="upload1" size="60" type="text" />
+<br>
+<span style="color: red">*</span><label for="upload">焦点图2文章标题:</label>
+<input id="load1" name="load1" size="60" type="text"/>
+<br />
+<br />
+<span style="color: red">*</span><label for="upload_dir2">焦点图3URL:</label>
+<input id="upload_dir2" name="upload_dir2" size="60" type="text"/>
+<br>
+<span style="color: red">*</span><label for="upload2">焦点图3文章URL:</label>
+<input id="upload2" name="upload2" size="60" type="text"/>
+<br>
+<span style="color: red">*</span><label for="upload">焦点图3文章标题:</label>
+<input id="load2" name="load2" size="60" type="text"/>
+<br />
+  <p><input name="commit" onclick="return check_blank()" type="submit" value="发布焦点图" />
+</form>
+<br/>
+<br/>
+<a href="/focus/index">返回</a>

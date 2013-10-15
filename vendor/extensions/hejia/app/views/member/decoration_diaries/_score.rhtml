@@ -1,0 +1,46 @@
+ <div class="zx_diaryfbgl_r f_r">
+
+		<% if current_user && $redis.get("remark:mark:user:#{current_user.USERBBSID}").nil? %>
+
+		<% form_for :decoration_diary, @decoration_diary, :url => "/decoration_diaries/score", :html=>{:id => "score_form" } do |f| -%>
+ 	  
+      <span>温馨提示：<br/>在结束更新装修日记后，请及时给该装潢公司评价。</span>
+      <h4>案例所属装修公司：</h4>
+      <p><%= @decoration_diary.deco_firm.name_zh%></p>
+
+      <h4>留言评价：</h4>
+			<div class="clearfix" id="big-star-list">
+				<div id="praise_div" class="set-praise f_l big-star" data-praise="0"></div>
+				<span id="show_key" style="color:red;border-width:0;">&nbsp;</span>
+			</div>
+			<p><%= text_area_tag :content %></p>
+			
+      
+      <h4>详细评价（非必填）</h4>
+      <p>
+				最满意：
+				<%= f.radio_button :design_praise, 10 ,:class => "best score" %>设计
+				<%= f.radio_button :construction_praise, 10 ,:class => "best score" %>施工
+				<%= f.radio_button :service_praise, 10 ,:class => "best score" %>服务
+      <p>
+				次满意：
+				<%= f.radio_button :design_praise, 9 ,:class => "better score" %>设计
+				<%= f.radio_button :construction_praise, 9 ,:class => "better score"  %>施工
+				<%= f.radio_button :service_praise, 9  ,:class => "better score" %>服务
+				
+				<%= f.hidden_field :design_praise, :value => 0, :class => "good score" %>
+				<%= f.hidden_field :construction_praise, :value => 0, :class => "good score" %>
+				<%= f.hidden_field :service_praise, :value => 0, :class => "good score" %>
+				
+				<%= f.hidden_field :praise, :value => 0, :id=>"praise" %>
+				<%= hidden_field_tag :other_id,  @decoration_diary.id %>
+			</p>
+				
+				
+      
+      <p class="zx_diaryfbgl_rbtn">
+				<input name="" type="submit" value="提交" />
+				<input name="" type="reset" value="重置" /></p>
+    <% end -%>
+		<% end -%>
+ </div>

@@ -1,0 +1,5 @@
+page.replace_html 'comment_notice', flash[:notice]
+page.visual_effect :shake, 'comment_notice'
+page.replace_html 'comment_ajaxtext', :partial => 'reply_list'
+page.visual_effect :highlight, 'comment_ajaxtext', :duration => 4
+page

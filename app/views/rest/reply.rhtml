@@ -1,0 +1,44 @@
+<div id="comment_ajaxtext">
+  <%= render :partial => 'reply_list' %>
+</div>
+
+<div id="comment_ajaxpages">
+  <div align="right">
+    <%= render :partial => 'reply_link' %>
+  </div>
+</div>
+
+<div align="center">
+
+  <%if @user_id > 0%>
+    <%=@username%>你好，您已登录本站，评论将使用该账号发表。
+  <%else%>
+    您还没有登录本网站，发表评论将使用匿名，并会记录您的IP地址。
+  <%end%> <br/>
+
+  <div id="comment_notice"></div>
+  <form action="/rest/add_reply" method="post" onsubmit="return check_form(this);">
+    评论内容（请控制在400字内）：<textarea cols="100" name="content" rows="5" id="content"></textarea>
+    <br />
+<%# = render :partial => 'reply_email' %>
+    <input name="tp" type="hidden" value="<%=params[:tp]%>" />
+    <input name="area_id" type="hidden" value="<%=@area_id%>" />
+    <input name="type_id" type="hidden" value="<%=@type_id%>" />
+    <input name="entity_id" type="hidden" value="<%=@entity_id%>" />
+    <input name="user_id" type="hidden" value="<%=@user_id%>" />
+    <input name="username" type="hidden" value="<%=@username%>" />
+    <input name="email" type="hidden" value="<%=@email%>" />
+    <input name="fbpl" value="发表评论" type="submit" />
+    <br />
+    <div style="padding: 0px 10px;" align="left">发言请遵守有关法律法规，并注意语言文明，您在51hejia.com发表的作品，51hejia.com有权转载或引用。</div>
+  </form>
+</div>
+
+<script type="text/javascript">
+  function check_form(f){
+    if (document.getElementById('content').value==''){
+      alert('请填写评论内容！');
+      return false;
+    }
+  }
+</script>

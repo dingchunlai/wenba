@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title><%= @page_title || '我的装修日记' %></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="<%= @page_meta_keywords || '和家网' %>" />
+    <meta name="description" content="<%= @page_meta_desc || '和家网' %>" />
+    <link href="http://js.51hejia.com/css/2010/header.css?31230" rel="stylesheet" type="text/css" />
+    <link href="http://js.51hejia.com/css/zx_diary.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.4/themes/base/jquery-ui.css" type="text/css" media="all" />
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.4/jquery-ui.min.js"></script>
+
+    <%= yield :head %>
+  </head>
+  <body>
+    <%= yield :for_tancbg %>
+    <%= render_shared_header %>
+    <!--content_code-->
+    <div class="width960 margin10 clearfix">
+      <!-- 左侧功能列表 -->
+      <div class="zx_diary_l f_l">
+        <h3>我的和家</h3>
+        <div class="zx_diary_info"><a href="/member/userinfo" target="_self">个人资料</a><a href="/member/userpw" target="_self">修改密码</a></div>
+        <ul class="zx_diary_menu">
+          <li><a href="/member/note_list" target="_self">我的短信</a></li>
+          <li><a href="/member/note_list" target="_self">我的主帖</a></li>
+          <li><a href="/member/userask" target="_self">我的问吧</a></li>
+          <li><a href="http://blog.51hejia.com/u/<%= current_user.id if current_user%>" target="_self">我的博客</a></li>
+          <li><a href="/member/usercollections" target="_self">我的收藏</a></li>
+          <li class="zx_diary_menucur"> <a href="/decoration_diaries" target="_self">装修日记</a>
+            <div class="zx_diary_zxrj">
+              <% if !current_user && @decoration_diary %>
+                <a href="/decoration_diaries?user_id=<%=@decoration_diary.user_id%>" target="_self">日记列表</a>
+              <% else %>
+                <a href="/decoration_diaries" target="_self">日记列表</a>
+              <% end %>
+              <a href="/decoration_diaries/new" target="_self" id="create_decoration_dairy" data-user-id=<%= current_user.id if current_user%>>新建日记</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <!-- END 左侧列表 -->
+
+      <div class="zx_diary_r f_r">
+        <%= yield %>
+      </div>
+
+
+
+    </div>
+    <!--content_code_end-->
+<%#= yield %>
+    <%= render_shared_footer %>
+    <%= yield :html_body_end %>
+  </body>
+</html>

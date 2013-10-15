@@ -1,0 +1,1 @@
+<%= get_html_of_tags_navigation_by_tag_id(@tag_id) %>

@@ -1,0 +1,15 @@
+<div class="righttitle">文章列表<span><a href="<%=BASEURL%>visitor/u/<%= params[:uid] %>.html?utp=q" target="_blank">更多>></a></span></div>
+<div class="rightcontain">
+  <%- for topic in @topics -%>
+    <div class="rightlist">
+      <h3><a href="<%=BASEURL%>visitor/question/<%= topic.id %>.html" target="_blank"><%= get_short_str(topic.subject, 40) %></a></h3>
+      <ul>
+        <li>作者：<%= get_user_name_by_user_id(params[:uid]) %></li>
+        <li>分类：<a target="_blank" href="<%=BASEURL%>visitor/browse/<%= topic.tag_id %>.html"><%= get_tag_name_by_tag_id(topic.tag_id) %></a></li>
+        <li>浏览次数：<%= topic.view_counter %></li>
+      </ul>
+      <p><%= get_short_str(topic.description, 100) %></p>
+      <div class="detail">[<a href="<%=BASEURL%>visitor/question/<%= topic.id %>.html" target="_blank">阅读全文</a>]</div>
+    </div>
+  <%- end -%>
+</div>

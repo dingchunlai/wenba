@@ -1,0 +1,42 @@
+<form target='_blank' name="myfm" action="/go/admins/urlManager.action" method="post">
+  <input type="hidden" value="/htmlPages/newStaticHtmls/1212718762685index.shtml" name="url">
+</form>
+<script language="javascript">
+    function submitForm(){
+        if(document.urlForm.wd.value.length < 1){
+            alert("请输入搜索信息");
+            document.urlForm.wd.focus();
+        }else{
+            document.urlForm.action="http://so.51hejia.com";
+            document.urlForm.submit();
+        }
+    }
+</script>
+<script language="javascript" for="document" event="onkeydown">
+    if(event.keyCode == 13 && document.activeElement.id == "wd" ){
+        event.keyCode = 9;
+        document.urlForm.action="http://so.51hejia.com";
+        document.urlForm.submit();
+    }
+</script>
+<script language="javascript">
+    var ip = "118.26.199.38";
+    var city = '11910';
+    var nowurl = location.href;
+    if(nowurl.indexOf("http://51hejia.com") != -1)
+        nowurl = nowurl.replace("51hejia","shanghai.51hejia");
+    else if(nowurl.indexOf("www") != -1)
+        nowurl = nowurl.replace("www","shanghai");
+    if(location.href != nowurl)
+        location.href = nowurl;
+    var cityzt = '0';
+    if(nowurl.indexOf('shanghai')!=-1)
+        cityzt = '11910';
+    else if(nowurl.indexOf('guangzhou')!=-1)
+        cityzt = '31959';
+    else if(nowurl.indexOf('shenzhen')!=-1)
+        cityzt = '31958';
+    else if(nowurl.indexOf('beijing')!=-1)
+        cityzt = '11905';
+</script>
+

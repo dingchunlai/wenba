@@ -1,0 +1,11 @@
+<div id="main">
+  <%= render :partial => 'head_start' %>
+  <%= render :partial => 'head_end' %>
+  <%= render :partial => 'visitor/ads_tonglang' %>
+  <%= render :partial => 'visitor/share/search' %>
+  <%= render :partial => 'visitor/share/tags' %>
+  <%= render :partial => 'visitor/share/b2tags' %>
+  <br>
+  <%= render :partial => 'visitor/share/b2list' %>
+  <%= render :partial => 'foot' %>
+</div>

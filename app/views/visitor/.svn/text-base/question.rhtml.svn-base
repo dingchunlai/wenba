@@ -1,0 +1,19 @@
+<div id="main">
+  <%= render :partial => 'head_start' %>
+  <%= render :partial => 'head_end' %>
+  <%= render :partial => 'visitor/ads_tonglang' %>
+  <%= render :partial => 'question_navigation' %>
+  <%= render :partial => 'question' %>
+  <% best_post_id = @topic.best_post_id %>
+  <% if best_post_id.nil?  #未解决 %>
+    <%= render :partial => 'answers0' %>
+  <% else %>
+    <%= render :partial => 'answers1' %>
+  <% end %>
+  <div id="answer1">
+    <form name="ftiwen" method="post" action="/user/reply" target="hideiframe" onSubmit="return checkreplyform(this);">
+      <%= render :partial => 'reply' %>
+    </form>
+  </div>
+  <%= render :partial => 'foot' %>
+</div>

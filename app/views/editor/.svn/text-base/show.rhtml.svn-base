@@ -1,0 +1,7 @@
+<div>
+  <span class="in_place_editor_field" id="ask_zhidao_topic_post_content_<%= @post.id %>_in_place_editor"><%= @post.content %></span>
+  <script type="text/javascript">
+      new Ajax.InPlaceEditor("ask_zhidao_topic_post_content_<%= @post.id %>_in_place_editor", "/editor/set_ask_zhidao_topic_post_content/<%= @post.id %>", 
+      {cancelText:'取消', loadingText:'正在加载...', okText:'保存', rows:10, cols:40, savingText:'正在保存...', clickToEditText:'点击即可编辑答案'})
+  </script>
+</div>

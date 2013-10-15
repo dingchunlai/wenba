@@ -1,0 +1,90 @@
+<script src="http://www.51hejia.com/js/wenba/tabs.js" type="text/javascript"></script>
+<script type="text/javascript">
+function gotopage(page){
+    window.open("?page="+page+"&recordcount=<%=@recordcount%>&username=<%=u(@username)%>", "_self");
+}
+</script>
+
+<div class="wrap1">
+        <div class="art_con_left">
+            
+
+            
+<div class="greenBox">
+<div class="title">
+<h6><a href="/user_question/<%=@user_id%>.html?&username=<%=@username%>"><%=@username%>提出的问题</a>　<%=@username%>参与回答的问题</h6>
+<!-- <h6>&nbsp;&nbsp;<span style="font-size:12px; color:#690">--在线时间不确定，空了来看看</span></h6> -->
+<div><input type="hidden" onclick="javascript:window.location.href='/personal.html?tabid=1'"
+                                id="btnOnline" value="设置在线时间" class="grey_btn" style="width:100px"/></div>
+</div>
+<div class="body">
+<div class="statusBar">
+<div class="theme">总共<B><%=@recordcount%></B>条记录 当前显示第 <script type="text/javascript">document.write(generate_select_by_number(1, <%=@pagecount%>, <%=@curpage%>, "", "", "onchange=\"gotopage(this.value);\""));</script> 页 共<B><%=@pagecount%></B>页</div>
+<div class="time">&nbsp;&nbsp;&nbsp;提问时间</div>
+<div class="status">状态</div>
+</div>
+<ul class="dash">
+<%for topic in @topics%>
+<li>
+  <h6><a href="/q/<%=topic.id%>.html" target="_blank"><%=topic.subject%></a></h6>
+    <p class="time"><%=topic.created_at.strftime("%Y-%m-%d") rescue ""%></p><p class="icon">
+      <%if topic.post_counter.to_i == 0%>
+        <img src="http://img.baidu.com/img/iknow/icn_time.gif" alt="待解决" />
+      <%else%>
+        <img src="/images/ok.jpg" alt="已解决" />
+      <%end%>
+    </p>
+ </li>
+<%end%>
+</ul>
+
+<style type="text/css">
+  #pagelist{
+    font-family:Verdana;
+    color:#999999;
+    font-size:14px;
+    letter-spacing:1px;
+    vertical-align: middle;
+  }
+  #pagelist a{
+    color:#000040;
+    text-decoration:none;
+  }
+  #pagelist a:hover{
+    background-color: #000040;
+    color:white;
+    text-decoration:none;
+  }
+</style>
+<center style="margin-top:15px;">
+<script type="text/javascript">
+  recordcount = <%=@recordcount%>;
+  pagesize = <%=@pagesize%>;
+  curpage = <%=@curpage%>;
+  cur_list = 0;
+  listsize = <%=@listsize%>;
+  document.write("<span id='pagelist'></span>");
+  page_index_list(recordcount, pagesize, curpage, cur_list, listsize);
+</script>
+</center>
+
+</div>
+</div>
+
+        </div>
+           <input id="txt_url" style="display:none"  type="text"/>
+    <input id="txt_pwd" style="display:none" type="text"/>
+    <input id="txt1" style="display:none" type="text"/>
+        <div class="art_con_right">
+
+           <!-- 公告/专题/活动 -->
+            <%=render :partial => "common/right_notice", :locals =>{:rows => 5, :cols => 12}%>
+
+            <!-- 积分排行榜 -->
+            <%=render :partial => "common/right_point_top", :locals =>{:rows => 12}%>
+
+            <!-- 答题数排行榜 -->
+            <%=render :partial => "common/right_answer_top", :locals =>{:rows => 12}%>
+
+        </div>
+    </div>

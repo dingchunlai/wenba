@@ -1,0 +1,13 @@
+<div class="articlelist">
+  <h3>最新文章列表</h3>
+  <div class="more"><a href="<%=BASEURL%>visitor/u/<%= params[:uid] %>.html?utp=q" target="_blank">更多>></a></div>
+  <ul>
+    <%- for topic in @topics -%>
+      <li>
+        <a href="<%=BASEURL%>visitor/question/<%= topic.id %>.html" target="_blank">
+          <%= get_short_str(topic.subject, 15) %>
+        </a>
+      </li>
+    <%- end -%>
+  </ul>
+</div>

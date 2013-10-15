@@ -1,0 +1,18 @@
+<font color="green"><%= @wiki_name %>百科知识</font>
+<br>
+  <font color="red"><%= flash[:notice] %></font>
+<br>
+<% if !@descripts.nil? %>
+    <% for descript in @descripts %>
+        <%= descript.title %>&nbsp;&nbsp;&nbsp
+        <a href="/editor/modify_wiki_descript?wd_id=<%= descript.id %>">编辑</a>&nbsp;&nbsp;&nbsp;
+        <a href="/editor/del_wiki_descript?wd_id=<%= descript.id %>"
+        onclick="if (confirm('确定要删除吗?')) { var f = document.createElement('form'); f.style.display = 'none'; this.parentNode.appendChild(f); f.method = 'POST'; f.action = this.href;f.submit(); };return false;">删除</a><br>
+    <% end %>
+<% else %>
+    <font color="red">还没有百科知识！</font>
+<% end %>
+<br>
+<a href="/editor/add_wiki_descript?wc_id=<%= @wc_id %>">增加百科知识</a>
+<br><br>
+<a href="/editor/list_wiki_content?wiki_name=<%= @wiki_name %>">返回上一级</a><br>

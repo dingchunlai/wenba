@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/!svn/ver/113/51hejia/repos/wenba/release/vendor/plugins/engines/lib/engines
+END
+plugin.rb
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/!svn/ver/113/51hejia/repos/wenba/release/vendor/plugins/engines/lib/engines/plugin.rb
+END
+deprecated_config_support.rb
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/!svn/ver/113/51hejia/repos/wenba/release/vendor/plugins/engines/lib/engines/deprecated_config_support.rb
+END
+plugin_migrator.rb
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/!svn/ver/113/51hejia/repos/wenba/release/vendor/plugins/engines/lib/engines/plugin_migrator.rb
+END
+plugin_list.rb
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/!svn/ver/113/51hejia/repos/wenba/release/vendor/plugins/engines/lib/engines/plugin_list.rb
+END
+rails_extensions.rb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/!svn/ver/113/51hejia/repos/wenba/release/vendor/plugins/engines/lib/engines/rails_extensions.rb
+END
+testing.rb
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/!svn/ver/113/51hejia/repos/wenba/release/vendor/plugins/engines/lib/engines/testing.rb
+END

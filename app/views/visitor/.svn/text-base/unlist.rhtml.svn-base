@@ -1,0 +1,19 @@
+<div id="unlist">
+  <%- for topic in @topics -%>
+    <ul>
+      <li>
+        [<a href="<%=BASEURL%>visitor/browse/<%= topic.tag_id %>.html"><%= get_tag_name_by_tag_id(topic.tag_id) %></a>]
+        <a target="_blank" href="<%=BASEURL%>visitor/question/<%= topic.id %>.html"><%= topic.subject %></a> 
+        <%= topic.view_counter %>阅读
+        <%= topic.post_counter.to_i-1 %>次评论
+      </li>
+    </ul>
+  <%- end -%>
+</div>
+<div id="paginate">
+  <ul>
+    <li><%= link_to '上一页', { :page => @topic_pages.current.previous.to_i } if @topic_pages.current.previous %></li>
+    <li><%= pagination_links(@topic_pages) %></li>
+    <li><%= link_to '下一页', { :page => @topic_pages.current.next.to_i } if @topic_pages.current.next %></li>
+  </ul>
+</div>

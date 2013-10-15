@@ -1,0 +1,15 @@
+<div class="redBox">
+      <div class="title">
+        <h1>推荐热门问题</h1>
+      </div>
+      <div class="body event">
+
+      <!-- 注释部分2 -->
+
+      <ul class="point">
+          <%for r in AskZhidaoTopic.get_hot_topics(10, 15)%>
+          <li><a href="/q/<%=r.id%>.html" target="_blank"><%=utf8_left(r.subject,14,"...")%></a></li>
+          <%end%>
+      </ul>
+      </div>
+</div>

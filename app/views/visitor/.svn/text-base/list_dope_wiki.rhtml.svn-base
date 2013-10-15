@@ -1,0 +1,348 @@
+<%= render :partial => 'head_start' %>
+<%= render :partial => 'head_end' %>
+<DIV class=navigation><SPAN><STRONG>您现在的位置：</STRONG></SPAN><A href="http://www.51hejia.com/">和家首页</A> &gt; <A href="<%=BASEURL%>">问吧</A> &gt; <A 
+href="<%=BASEURL%>visitor/list_dope_wiki">涂料百科知识</A> &gt; <A href="<%=BASEURL%>visitor/list_dope_wiki">涂料</A></DIV>
+<DIV class=content>
+<DIV class=content_title><STRONG>涂料</STRONG></DIV>
+<DIV class=contents>
+<DIV class=contents_title><STRONG>目录</STRONG></DIV>
+<UL class=contents_li>
+	<li><a style="cursor: pointer" onclick="Show(1,img1)"><img src="http://www.51hejia.com/images/Images_zhuce/Zhan.gif" width="7" height="7" align="absmiddle" id="img1"/><span>墙面涂料</span></a></li>
+	<ul id="c_1" style="display: none">
+		  <LI><A href="<%=BASEURL%>visitor/list_dope_wiki#3" 
+  target=_self>选择内墙涂料需要注意的原则</A> </LI>
+    <LI><A href="<%=BASEURL%>visitor/list_dope_wiki#4" 
+  target=_self>内墙涂料有害物质的种类</A></LI>
+    <LI><A href="<%=BASEURL%>visitor/list_dope_wiki#5" 
+  target=_self>旧墙面施工涂料的方式</A></LI>
+    <LI><A href="<%=BASEURL%>visitor/list_dope_wiki#6" 
+  target=_self>墙壁上涂防水涂料的方法</A></LI>  
+	</ul>
+	<li><a style="cursor: pointer" onclick="Show(2,img2)"><img src="http://www.51hejia.com/images/Images_zhuce/Zhan.gif" width="7" height="7" align="absmiddle" id="img2"/><span>涂料质量</span></a></li>
+	<ul id="c_2" style="display: none">
+		  <LI><A href="<%=BASEURL%>visitor/list_dope_wiki#10" 
+  target=_self>乳胶漆出现开裂的处理方法</A></LI>
+    <LI><A href="<%=BASEURL%>visitor/list_dope_wiki#11" 
+  target=_self>油漆工程质量通病的防治措施</A></LI>
+    <LI><A href="<%=BASEURL%>visitor/list_dope_wiki#12" 
+  target=_self>小面积的油漆剥落的处理方式</A></LI>
+    <LI><A href="<%=BASEURL%>visitor/list_dope_wiki#13" 
+  target=_self>涂料变色的原因和防治办法</A></LI> 
+    <LI><A href="<%=BASEURL%>visitor/list_dope_wiki#9" 
+  target=_self>鉴别乳胶漆质量的方法</A></LI>   
+	</ul>
+	<li><a style="cursor: pointer" onclick="Show(3,img3)"><img src="http://www.51hejia.com/images/Images_zhuce/Zhan.gif" width="7" height="7" align="absmiddle" id="img3"/><span>涂料特点分类</span></a></li>
+	<ul id="c_3" style="display: none">
+		  <LI><A href="<%=BASEURL%>visitor/list_dope_wiki#7" 
+  target=_self>木器漆的种类、价格、单位成本核算方法</A></LI>
+    <LI><A href="<%=BASEURL%>visitor/list_dope_wiki#20" 
+  target=_self>常见的用于建筑物上的金属漆类型</A></LI>
+    <LI><A href="<%=BASEURL%>visitor/list_dope_wiki#19" 
+  target=_self>市场主流涂料产品的类别</A> </LI>
+    <LI><A href="<%=BASEURL%>visitor/list_dope_wiki#8" 
+  target=_self>水性木器漆的优缺点</A></LI> 
+    <LI><A href="<%=BASEURL%>visitor/list_dope_wiki#2" 
+  target=_self>封闭底漆的作用</A></LI>  
+    <LI><A href="<%=BASEURL%>visitor/list_dope_wiki#16" 
+  target=_self>影响涂料涂刷面积的因素</A></LI>    
+	</ul>	
+	<li><a style="cursor: pointer" onclick="Show(4,img4)"><img src="http://www.51hejia.com/images/Images_zhuce/Zhan.gif" width="7" height="7" align="absmiddle" id="img4"/><span>涂料使用工艺</span></a></li>
+	<ul id="c_4" style="display: none">
+		  <LI><A href="<%=BASEURL%>visitor/list_dope_wiki#17" 
+  target=_self>保存油漆和漆刷的方法</A></LI>
+    <LI><A href="<%=BASEURL%>visitor/list_dope_wiki#18" 
+  target=_self>油漆涂料施工的工艺流程</A></LI>
+    <LI><A href="<%=BASEURL%>visitor/list_dope_wiki#1" 
+  target=_self>防锈底漆需要满足的要求</A></LI>
+    <LI><A href="<%=BASEURL%>visitor/list_dope_wiki#14" 
+  target=_self>不同地区对涂料质量的要求</A></LI> 
+    <LI><A href="<%=BASEURL%>visitor/list_dope_wiki#15" 
+  target=_self>挑选涂料颜色应注意事项</A></LI>     
+	</ul>	
+
+  <LI><A href="<%=BASEURL%>visitor/list_dope_wiki#21" 
+  target=_self>问题</A> 
+  <LI><A href="<%=BASEURL%>visitor/list_dope_wiki#22" 
+  target=_self>标签</A> </LI></UL>
+</DIV>
+<div class="tupian"><img src="http://www.51hejia.com/images/Images_zhuce/1.JPG"/><img src="http://www.51hejia.com/images/Images_zhuce/2.JPG"/><img src="http://www.51hejia.com/images/Images_zhuce/3.JPG"/><img src="http://www.51hejia.com/images/Images_zhuce/4.JPG"/>
+<div class="zhishi"><a href="javascript:isLogin()"><img src="http://www.51hejia.com/images/wenba/wenzhang.gif"/></a>
+<a href="<%=BASEURL%>visitor/s?page=1&wd=%E6%B6%82%E6%96%99"><img src="http://www.51hejia.com/images/wenba/sousuozhishi.gif"/></a></div>
+</div>
+  <div style="clear:both; height:20px;"></div>
+  <div class="content_title_a"><strong><a name="1" id="1"></a>防锈底漆需要满足的要求</strong><span class="back"><a href="#" target="_self">返回顶部</a></span></div>
+  <div class="content_a">
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;防锈底漆应满足以下要求：<br />
+      （1）对钢铁有良好的附着力；<br />
+      （2）有良好的防锈性能；<br />
+      （3）有良好的耐久性；<br />
+    （4）有良好的施工性能。</p>
+  </div>
+  <div class="content_title_a"><strong><a name="2" id="2">封闭底漆的作用</strong><span class="back"><a href="#" target="_self">返回顶部</a></span></div>
+  <div class="content_a">
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;封闭底漆由细粒径高分子聚合物和多种助剂组成，产品渗透力强，能封闭水泥墙面的毛细孔，起到预防返碱的作用。封闭底漆还可增强水泥基层强度，增加面漆对基层附着力。因此要保障涂料施工质量，使用封闭底漆非常关键，不容忽视。由于封闭底漆是透明的，施工时注意防止漏涂，确保封闭底漆不受到任何污染，不带任何颜色。<br />
+    正如立邦“墙面卫士”专业封闭底漆所能够提供的：</p>
+    <ol>
+      <li>&nbsp;&nbsp;&nbsp;&nbsp;优异的封闭性，有效抵抗底材的碱性腐蚀，防止面漆发生颜色变异。</li>
+      <li>&nbsp;&nbsp;&nbsp;&nbsp;超强的附着力，为面漆施工奠下良好的基础，墙面物质不易脱落。</li>
+      <li>&nbsp;&nbsp;&nbsp;&nbsp;能有效控制墙体底层水分的渗透性，全面抵御霉菌藻类滋生，确保墙面美观，呵护家人健康。</li>
+    </ol>
+  </div>
+  
+  <div class="content_title_a"><strong><a name="3" id="3"></a>选择内墙涂料需要注意的原则</strong><span class="back"><a href="#" target="_self">返回顶部</a></span></div>
+  <div class="content_a">
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;内墙装饰涂料是家装主要材料之一,他是家庭装修中起着重要作用.选用内墙涂料一般有以下几个原则.<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;一要考虑功能要求.不同的功能区对涂料的要求是不同的.如厨房,卫生间等潮湿部位应选用耐水性较好的涂料.而卧室,起居室等部位应选择装饰效果好,图层细腻,有一定耐擦洗性能的涂料,多彩涂料等。比如立邦涂料新推出的净味120产品，具有快速净味的显著特点，耐擦洗能力突出，适合家庭装修的普遍采用。</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;二要考虑装饰效果.作为内墙涂料,装饰效果是非常重要的.因为此要选择图层细腻耐看,色彩淡雅清新的涂料,同时还要和家具颜色相协调.</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;三要考虑涂料的施工性能和施工条件.一般认为家庭装饰应优先考虑单组分溶性的涂料,施工方法最好能刷涂.这类材料气味小,操作简便.若使用溶剂型涂料则要求有较好的通风条件.如果您选用双组分涂料一要注意配比要准确,二要在规定时间内使用完,不能长时间存放.</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;四是针对不同的基层选不同的涂料.如混凝土和水泥基层,要求涂料有良好的耐碱性合遮盖性.可选乳胶漆,耐擦洗内墙涂料,多彩花纹涂料等.对石灰和石膏墙面就不要选择仿瓷涂料等.在木制基层上应选用非碱性涂料为好.</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;另外，建议在粉刷墙面对时候遵守“一底两面”的规律，并且使用配套的底漆和面漆进行施工，能够获得更好的效果。</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;如果使用的是立邦的净味全效产品，则配套使用净味底漆，能够达到更佳的真正净味效果。比如立邦“墙面卫士”系列底漆就能够很好的提供以下优势</p>
+    <ol>
+      <li>&nbsp;&nbsp;&nbsp;&nbsp;优异的封闭性，有效抵抗底材的碱性腐蚀，防止面漆发生颜色变异。</li>
+      <li>&nbsp;&nbsp;&nbsp;&nbsp;超强的附着力，为面漆施工奠下良好的基础，墙面物质不易脱落。</li>
+      <li>&nbsp;&nbsp;&nbsp;&nbsp;能有效控制墙体底层水分的渗透性，全面抵御霉菌藻类滋生，确保墙面美观，呵护家人健康。</li>
+      <li>&nbsp;&nbsp;&nbsp;&nbsp;能提供良好的遮盖力和白度，一涂到位，提高面漆的色彩饱和度，展现更完美的墙面效果。</li>
+    </ol>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;同时，立邦“墙面卫士”系列底漆经过长期的试验验证，与立邦品牌下的各个档次的面漆产品有着优异的匹配性。如：“净味底漆”搭配立邦“净味全效”面漆；“全效底漆”搭配立邦“全效”系列产品；“高效抗碱底漆”搭配立邦“五合一”系列面漆等等。只有良好的底面匹配性，才能真正的发挥面漆的产品性能。</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;立邦“永得丽”系列家装专用乳胶漆，独有的Easy  Application+ Total Solution流变体系，适合于多种不同的墙面基层（砂浆、混凝土、石膏板、旧水性涂层等），通过家装公司专业人士的施工，能够更好的展现涂料的墙面效果。</p>
+  </div>
+  
+  
+  <div class="content_title_a"><strong><a name="4" id="4">内墙涂料有害物质的种类</strong><span class="back"><a href="#" target="_self">返回顶部</a></span></div>
+  <div class="content_a">&nbsp;&nbsp;&nbsp;&nbsp;当前市场上的内墙涂料主要是以合成乳液为基础的乳胶漆，经济不发达地区还存在大量的106涂料，国家标准限制的水性内墙涂料主要有害物质包括VOC（有机挥发物）、重金属（铅、镉、汞、铬）、甲醛及其聚合物，这些有害物质在涂料中的产生有它的起源，但对乳胶漆来说并不太适用，如有机挥发物源于油性涂料，乳胶漆中VOC的实际含量只有3%左右（注：国标中的VOC检测并不科学，所检测出的数据很不客观，即使是同一家检测机构、同一人员检测出来的数据也没有重现性，有关部门正在商议解决办法），这些VOC的主要成份是丙二醇（化装品中可使用）、十二酯醇等，不能列入有害物质范畴。同时过分控制VOC不利于提高产品质量。重金属源自传统低档油漆所使用的大量含重金属的彩色颜料，对白色漆和用新型有机颜料调配的乳胶漆来说，重金属含量远低于国家标准中的规定量。对甲醛的限定源自106涂料，因为该类涂料生产所用的材料即含有大量甲醛，现代乳胶漆的生产一般不存在人为添加甲醛，微量甲醛的存在是部分原材料合成过程中的副产物导致的。与家庭装修中的其它材料（如胶粘剂、人造板材）相比，乳胶漆中的甲醛含量要少得多。因此，我们一般不需要考虑乳胶漆对人体的伤害，从预防医学的检测结果来看，乳胶漆属于无毒级产品。</div>
+  
+  
+  
+  <div class="content_title_a"><strong><a name="5" id="5">旧墙面施工涂料的方式</strong><span class="back"><a href="#" target="_self">返回顶部</a></span></div>
+  <div class="content_a">
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;旧墙面一般为水泥面、涂料面、水刷石面、砖墙面等，施工上的主要难度和关键点在于基层处理，基层处理得好坏直接影响到涂料的施工效果和装饰效果。实际施工中要根据不同的基材设计不同的处理方案和施工程序。主要的施工步聚为：<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;a) 清理墙面：如果墙面有松动和起鼓的部位，一定要彻底铲除。有粉化脱落不耐水的旧涂料涂层，要用高压水将旧涂层冲刷掉。有油污和灰尘的墙面应以洗涤灵或碱液清洗干净。<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;b) 清洗墙面：清理后的墙面要用清水进行清洗干净，确保墙面无油污、无灰尘等杂质。<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;c) 修补墙面：对局部损坏部位进行修补，修补后的墙面要进行必要的养护。<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;d) 涂料施工：为增强涂膜的附着力，旧墙面施工一定要涂刷封闭底漆，待封闭底漆完全干燥后再涂刷面漆。</p>
+  </div>
+  
+  
+  <div class="content_title_a"><strong><a name="6" id="6">墙壁上涂防水涂料的方法</strong><span class="back"><a href="#" target="_self">返回顶部</a></span></div>
+  <div class="content_a">
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;1、采用长板刷或滚筒刷涂刷。涂刷要横、竖交叉进行，达到平整均匀、厚度一致<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;2、第一层涂层表干后(即不粘手，常温约2~4小时)，可进行第二层涂刷，以此类推，涂刷3一5遍，厚度可达到1.O~2.0mm，每平方米用料约为1.5~3.Okg。如有特殊要求的结构，可以根据用户要求增加厚度。<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;注：一般，情况下，墙面或地下防水可不加无纺布附加层。对于结构变形大的建筑，平、立面交接处容易受温差、变形影响的节点处，应加无纺布(规格;45-60g/㎡)附加层以提高抗拉性能，无纺布搭接要100mm以上，涂刷第三遍的同时辅无纺布<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;3、防水涂料施工温度为5~30℃，使用温度为－20℃~150℃。</p>
+  </div>
+  
+  
+  <div class="content_title_a"><strong><a name="7" id="7"></a>木器漆的种类、价格、单位成本核算方法</strong><span class="back"><a href="#" target="_self">返回顶部</a></span></div>
+  <div class="content_a">
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;一、聚酯漆 聚酯漆是用聚酯树脂为主要成膜物。高档家具常用的为不饱和聚酯漆，也就是通称的钢琴漆 不饱和聚酯漆的特性为：</p>
+    <p>1、一次施工膜厚度可达1毫米，是其他漆种无法比拟的;</p>
+    <p>2、漆膜丰满，清澈透明，其硬度、光泽度均高于其他漆种；</p>
+    <p>3、耐水、耐热及短时耐轻度火焰性能优于其他漆种；</p>
+    <p>4、不饱和聚酯漆的柔韧性差，受力时容易脆裂，一旦漆膜受损不易修复，故搬迁时应注意保护家具。 </p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;二、聚氨酯漆 聚氨酯漆漆膜坚硬耐磨，经过抛光有较高的光泽，其耐水、耐热、耐酸碱性能好，是优质的高级木器用漆。</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;三、丙烯酸漆 丙烯酸漆是由甲基丙烯酸酯与丙烯酸酯的共聚物制成的涂料，其中有水白色的清漆及色泽纯白的白磁漆。  丙烯酸漆漆膜光亮、坚硬，具有良好的保色、保光性能。耐水、附着力良好，经抛沅修饰漆膜平滑如镜，并能经久不变。</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;四、亚光漆 亚光漆是以清漆为主，加入适量的消光剂和辅助材料调合而成的，由于消光剂的用量不同，漆膜光泽度亦不同。  亚光漆漆膜光泽度柔和、匀薄，平整光滑，耐温，耐水，耐酸碱。</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;五、硝基漆  硝基漆又称喷漆、蜡克。它以硝化棉为主，加入合成树脂、增韧剂、溶剂与稀释剂制成基料。其中不含养料的透明基料即为硝基清漆，含有颜色的不透明液体则为硝基磁漆。  硝基漆膜经过抛光可获得很高的光泽，是一种普遍使用的装饰性能较好的涂料。硝基漆漆膜附着力差，漆膜硬度不及聚氨酯漆、不饱和聚酯漆与丙稀酸漆。<br />
+      1、透明底漆<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;透明底漆涂刷一遍的干膜厚度约30微米。换算成湿膜厚度（漆配好后涂刷的厚度）70微米。<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;故 1平方米木板需要配好的透明底漆的量为：1平方米*70*1.2*10-6米=85*10--6立方米  * 1*106=85克<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;1公斤漆（配好后）涂刷面积约为：1000/85=12平方米<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;结论:一组透明底漆7.5公斤涂刷面积为： 12*7.5=90平方米<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;一张板面积为2.88平方米,故一组底漆涂刷板数: 90/3=30张板(一遍)</p>
+    <p>2、透明面漆<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;按干膜厚度：25微米，换算成湿膜厚度（漆配好后涂刷的厚 度）：约70微米<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;1平方米木板需要配好的透明面漆的量为：1平方米*70*0.9*10-6米=63克<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;1公斤漆（配好后）涂刷面积约为：1000/63=16平方米<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;结论:一组透明面漆7.5公斤涂刷面积为： 16*7.5=120平方米<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;一张板面积为2.88平方米,故一组透明面漆涂刷板数：120/3=40张板(一遍)<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;注意：计算时按工艺三底两面算。</p>
+    <p>3、封闭底漆<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;一组4.2公斤,其中主漆3公斤,固化剂1.2公斤。配好后,每公斤刷板20平方米,故可刷板：4.2*20/2.88=30张。共84平方米。</p>
+    <p>4、白色底漆(刷涂)<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;白色底漆1公斤漆（配好后）涂刷面积约为：1000/95=10.5平方米<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;一组白色底漆7.5公斤涂刷面积为：10.5*7.5=78平方米<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;一张板面积为2.88平方米,故一组白底漆涂刷板数:78/2.88=26张板(一遍)</p>
+    <p>5、白色面漆(刷涂)<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;白色面漆1公斤（配好后）涂刷面积约为：1000/85=12平方米。一组透明面漆7.5公斤涂刷面积为：12*7.5=90平方米<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;一张板面积为2.88平方米,故一组白面漆涂刷板数:90/2.88=31张板(一遍)</p>
+    <p>6、白底、白面采用喷涂施工<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;一组白底漆（7.5公斤)喷成品30平方米.<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;一组白面漆（7.5公斤）喷成品30平方米.<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;注意事项：喷白底前要用透明底漆封闭.</p>
+    <p>7、有色透明漆<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;底漆用透明漆，计算方法见1。面漆：1公斤主漆喷10平方米。</p>
+  </div>
+  
+  
+  <div class="content_title_a"><strong><a name="8" id="8">水性木器漆的优缺点</strong><span class="back"><a href="#" target="_self">返回顶部</a></span></div>
+  <div class="content_a">
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;A、水溶性涂料，无毒环保，不含苯类等有害溶剂，不含游离TDI。</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;B、施工简单方便，不易出现气泡、颗粒等油性漆常见毛病，且漆膜手感好。</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;C、固体含量高，漆膜丰满坚韧。</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;D、不黄变，耐水性优良，不燃烧。</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;E、防锈、耐高温。</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;F、可与乳胶漆等其他油漆同时施工</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;G、部分水性漆的硬度不高，容易出划痕，这一点在选择时要特别注意。</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;总体来说，水性漆除价格稍高以外，无论从施工和环保方面都是不错的选择。</p>
+  </div>
+  
+  
+  <div class="content_title_a"><strong><a name="9" id="9"></a>鉴别乳胶漆质量的方法</strong><span class="back"><a href="#" target="_self">返回顶部</a></span></div>
+  <div class="content_a">
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;乳胶漆分为内、外墙两种，居室装修一般选用内墙乳胶漆。好的内墙乳胶漆有如下特点：</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;① 具有色泽持久、涂膜坚固、遮盖力强、防霉变、耐洗刷、易施工等优点。<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;② 涂刷后表面光洁，无杂质和粒子悬浮、无刷痕、流平度良好，涂刷后的墙面有明显化的张力特征。<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;③ 每公斤的涂刷面积应不少于６平方米。</p>
+  &nbsp;&nbsp;&nbsp;&nbsp;④ 对人体无任何危害，具有无毒无味，不含铅、汞等有毒添加剂。如不具备以上特征，就不能称为乳胶漆。如墙面遇潮易起皮，涂层面看上去无张力、有粉层感，摸墙面手会沾粉等，这类只能称为普通涂料。 另外，目前市面上较为流行的是具有净味功能的内墙乳胶漆。真正的净味乳胶漆采用的是特殊的乳液技术，涂料本身几乎就没有什么气味，比如立邦的净味全效和净味120。另外有一些其他品牌的产品采用的是香精遮盖气味的“假净味”技术，不是真正的净味产品，要注意区分。</div>
+  
+  
+  
+  <div class="content_title_a"><strong><a name="10" id="10">乳胶漆出现开裂的处理方法</strong><span class="back"><a href="#" target="_self">返回顶部</a></span></div>
+  <div class="content_a">
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;前在很多的新房中，都有带有保温层的新型保温墙体。这种墙体在装修中，很容易出现乳胶漆开裂的问题。其实这种开裂是由于墙体的水泥出现裂缝，或墙体“保温板”的接缝开裂而造成的，并不是装修的质量问题，而是建筑上无法克服的缺陷。  为了追求最好的装饰效果，用装修来弥补建筑缺陷，装饰公司的技术人员想出很多办法来对付保温墙裂缝，您可以根据自家的实际情况和装修预算来选择：</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;1、在将墙面基底处理干净后，先在墙面上贴上一层的确良布、牛皮纸或报纸，利用纤维的张力，来保证乳胶漆漆膜的完整。这种办法比较简单易行，但效果一般。</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;2、将墙面表面的保温板去掉，或将水泥墙面除去，在保温层外面先安装一层石膏板或“五厘板”，然后在上面做乳胶漆。这种做法可以将不规则的裂纹全部去除，裂缝的地方一般就是板材之间的接缝，比较好处理。但这种办法造价较高、施工难度大。</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;3、采用带有弹性的装饰材料。目前在墙面基底处理上，有一种“弹性腻子”可以在一定程度上弥补墙壁裂缝问题。立邦涂料的“三合一”产品也能起到弥盖墙面细小裂纹的作用。但这些材料本身的“弹性”较小，在裂缝很厉害的墙面上就不起作用了。</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;4、有些消费者干脆将墙体的保温层去掉。虽然这种办法可以一劳永逸，但是会降低墙面的保温、隔热性能，因此不建议您采用。</p>
+  </div>
+  
+  
+  <div class="content_title_a"><strong><a name="11" id="11"></a>油漆工程质量通病的防治措施</strong><span class="back"><a href="#" target="_self">返回顶部</a></span></div>
+  <div class="content_a">
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;油漆工程中，常见质量通病产生原因及防治措施如下：<br />
+      1．流挂<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;流挂是指垂直面上部分油漆在重力作用下产生流淌，漆膜厚薄不匀，或珠滴，或挂幕下垂状态。<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;原因：漆料太稀、漆膜太厚或施工环境温度过高；漆膜干燥太快或太慢，出现流注；漆料中含重质颜料过多，涂漆附着力差；稀释剂挥发太快或太慢，影响漆膜干燥速度；油漆物面不平整，或有油、水等，造成漆膜下垂。<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;防治：选用优质油漆和配套的稀释剂；物面处理要干净、平整，表面无油污、水分；环境温度应符合涂漆要求；操作人员应有熟练的技术，保证涂刷均匀。<br />
+      2．疙瘩<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;疙瘩是指油漆涂在物面上，漆膜不光滑，手摸有粗粒突出感觉。<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;原因：物理清理不干净，有砂粒等混入漆中；施工环境不清洁，灰尘、杂物混入油刷中，转而混在漆料中；油漆本身不干净，过箩不细致；漆料内颜料颗粒太粗或过多；调配油漆时，漆内气泡未散开，尤其是天气冷时，气泡更不易散开。<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;防治：选用优质油漆，过箩要细致，调合要均匀，无气泡后再用；物面要清理干净；施工环境应无灰尘、杂物等。<br />
+      3．咬底<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;咬底是指涂刷面漆时将刷好的底漆咬起来。 <br />
+      &nbsp;&nbsp;&nbsp;&nbsp;原因：底漆未干透，不牢固；面漆涂刷太早；底漆与面漆不配套，底漆膜承受不了面漆强溶剂的作用，被咬起溶解。 <br />
+      &nbsp;&nbsp;&nbsp;&nbsp;防治：选用配套的油漆材料；底漆膜干燥后再涂面漆。 <br />
+      4．露底<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;露底是指漆膜厚度在正常情况下，部分或棱角处有露出底色。<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;原因：材料配合不匀，密度大的下沉；稀释剂较多，且未调匀；操作技术不熟练，涂刷不均匀，特别是棱角处轻刷或漏刷。<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;防治：油漆调合均匀后再进行涂刷，涂刷时力求均匀不漏刷。<br />
+      5．慢干<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;慢干是指油漆涂刷后，超过干燥规定时间，漆膜表面仍有粘手指感觉。<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;原因：漆膜涂刷太厚，漆膜表面千燥，里面长期不干；底漆未干透就涂刷面漆，造成漆膜柔软不干结；催干刑过多造成漆膜不干；物面不干净；有蜡质、盐分、油脂等杂质混入漆膜中；漆料中含有不干性油。<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;防治：选用优质油漆；调配后不得任意再加催干剂；选择良好的施工环境；物面要清理干净；使用合适的漆刷，漆膜不得一次涂刷太厚，要等底漆干透后再涂刷面漆。<br />
+      6．倒光<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;倒光是指漆膜干燥后表面无光泽，或有一层白雾状物凝聚在漆膜上(有时呈蓝色光彩)。<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;原因：物面不平整或物面吸油不一致而失去光泽；底漆未干透又涂面漆，面漆中的强力溶剂使底漆回软而失去光泽；漆料质量不良或稀释剂过量，漆膜光泽不能持久；油漆未干前受到烟熏，或水蒸气凝结在漆膜中；室内外温差较大，油漆干后也容易失去光泽。<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;防治：选用优质油漆，不得任意加入稀释剂；前遍油漆干透后才能涂刷后遍油漆；选择良好的施工环境，在潮湿或烟雾大的情况下不宜涂刷油漆；物面要处理平整，无粗糙的腻子疤。<br />
+      7．皱纹<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;皱纹是指漆膜干燥后表面不光滑，不光亮，表面收缩形成很多弯曲的棱脊。<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;原因：油漆质量不好，溶剂挥发太快，催于剂过多或油漆调配不匀；漆膜涂刷过厚，且不均匀；在高温或日光曝晒下涂刷。<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;防治：选用优质油漆，不得任意加人催干剂；避免在烈日高温条件下涂刷；选用刷毛较硬的漆刷涂漆，涂刷力求均匀一致。<br />
+      8．起泡<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;起泡是指漆膜干透后，漆膜表面有气泡鼓起。<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;原因：油漆涂刷太厚，漆膜表面已干燥而溶剂来不及挥发，将漆膜顶起；环境温度太高，或日光曝晒；底漆未干透又涂上面漆，底漆干结产生气体，将漆膜顶起；木材含水率较大，有的木材含松香及挥发油，受热蒸发产生气体将漆膜顶起。<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;防治：木材要干燥，松节囊或节疤处要点虫胶清漆封闭；不在高温下涂刷；涂漆不宜太厚，要分层进行。<br />
+      9．咬色<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;咬色是指面漆成膜后，底漆颜色透到面漆上，造成色泽不一致现象。<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;原因：物面上有油污；木材节疤处没有点虫胶清漆封闭；底漆未充分干燥或底漆太稀，底漆膜不牢固；面漆中的稀释剂溶解力强，使底漆颜色泛出。<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;防治：物面要清理干净；松木的节疤、脂囊必须点虫胶清漆封闭；面漆应与底漆配套使用，并在底漆干透后涂刷面漆。<br />
+      10．木纹浑浊<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;木纹浑浊是指清漆涂于木材面，木纹不透亮，色泽有深有浅。<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;原因：油漆存放时间较长，颜料沉淀，上部浅，下部深，涂刷前又未搅拌均匀；木材质地不同，着色不均匀；漆刷毛头太硬或太软；操作技术不熟练，重刷处色深。<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;防治：用重颜料配制的油色，使用时要经常搅拌，避免比重大的颜料沉淀，色泽不匀；不同材质采用不同涂刷方法，必要时应进行修色；如发现木材色泽不匀，应对深色木材表面进行漂白，浅色部分进行染色；涂漆操作要迅速准确，并选用合适的漆刷进行涂刷。<br />
+      11．发笑(收缩)<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;发笑是指漆膜形成后，面上有部分收缩成锯齿、圆珠、针孔等形状，面漆可见底漆，底漆可见物面。<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;原因：底漆中掺加不干性稀释剂；物面上沾有油污或刷后受烟熏；底漆光泽太大。<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;防治：涂刷时发生收缩应停刷，用汽油或松香水擦净物面，用布包石灰粉拍擦物面，再清扫干净，或刷一遍虫胶清漆封闭。底漆光泽大可用砂纸打磨去光泽，再用干布揩擦干净。</p>
+  </div>
+  
+  
+  <div class="content_title_a"><strong><a name="12" id="12">小面积的油漆剥落的处理方式</strong><span class="back"><a href="#" target="_self">返回顶部</a></span></div>
+  <div class="content_a">&nbsp;&nbsp;&nbsp;&nbsp;油漆剥落：可能是表面过于光滑的缘故，若原涂料是有光漆或者是粉质的（加未经处理的色浆涂料）， 新上的油漆在表面就粘不牢。或可能是木料腐朽或金属有锈斑，也有因油漆质量不好而剥落的。小面积的油漆剥落，可用细砂纸打磨，然后抹上腻子，刷上底漆，再重新上漆。 大面积的脱落必须把漆全部剥去，重新涂刷。</div>
+  
+  
+  <div class="content_title_a"><strong><a name="13" id="13">涂料变色的原因和防治办法</strong><span class="back"><a href="#" target="_self">返回顶部</a></span></div>
+  <div class="content_a">
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;新刷的门颜色比涂料本身的深，是不是涂料变色了？其实涂料的变色主要指清漆的变色。清漆原本是透明无色或极浅淡的黄色，变色后便成了棕黄或黑色。色漆也有变色的现象，主要表现为色彩浅的色漆颜色变深。 </p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;产生涂料变色的原因可能有如下几种： </p>
+    <p>(1) 清漆中酯类溶剂遇水后与铁容器反应变黑。 </p>
+    <p>(2) 松节油在铁桶中很容易生成红棕色素。 </p>
+    <p>(3) 金银粉与清漆易发生酸蚀作用，使涂料颜色变绿、变暗、失去光泽。 </p>
+    <p>(4) 贮存期过长，沉淀变色。 </p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;防治的办法是： </p>
+    <p>(1) 对最易发生变色的虫胶清漆，用非金属容器盛装。 </p>
+    <p>(2) 使用清漆前再加入金粉、银粉，不要过早加入清漆中存放。 </p>
+    <p>(3) 对沉淀变色的涂料，如不是质量问题，在进行充分搅拌后还可以使用。</p>
+  </div>
+  
+  
+  <div class="content_title_a"><strong><a name="14" id="14">不同地区对涂料质量的要求</strong><span class="back"><a href="#" target="_self">返回顶部</a></span></div>
+  <div class="content_a">&nbsp;&nbsp;&nbsp;&nbsp;有差别。由于不同地区的环境条件不同，对涂料质量的认识不同，因此对涂料的质量有不同的要求，比如南方，天气潮湿，要求涂料的耐水性、防霉性要好。北方天气干燥，特别是东北，一年四季温度差别很大，所以对涂料涂膜的耐温变性、耐冻融稳定性要求很高。再比如东北的建筑物外墙基面一般作拉毛处理，表面粗糙，因此对涂料的细度要求不高，但东北人对涂料的附着力要求很严。又如北京的建筑工期都很紧，基层养护一般不符合涂料施工要求，所以对涂料的抗碱性和抗返碱性能要求很高。总的来说，涂料的选用应根据市场需求而定。</div>
+  
+  
+  <div class="content_title_a"><strong><a name="15" id="15">挑选涂料颜色应注意事项</strong><span class="back"><a href="#" target="_self">返回顶部</a></span></div>
+  <div class="content_a">&nbsp;&nbsp;&nbsp;&nbsp;一般涂料色卡中的色块都比较小，顾客在挑选颜色时很难确定实际大面积涂刷后的色彩效果，经常出现改色和不满意现象，造成营销上的障碍。因此，选色时有两点需要注意：外墙涂料颜色宜深不宜浅。由于室外光线较强，四周缺乏映衬色，导致外墙涂料涂刷后，感觉上颜色比色卡要浅；内墙涂料颜色宜浅不宜深。由于室内光线较弱，墙面四周又都是同一颜色映衬，导致内墙涂料涂刷后，感觉上颜色比色卡要深，同时还要注意，由于内墙的各个面光线强弱不同，视觉上也有一定的颜色差异，这是客观存在的现象，无法避免。</div>
+  
+  
+  <div class="content_title_a"><strong><a name="16" id="16">影响涂料涂刷面积的因素</strong><span class="back"><a href="#" target="_self">返回顶部</a></span></div>
+  <div class="content_a">&nbsp;&nbsp;&nbsp;&nbsp;影响涂料涂刷面积的因素有很多，如基层的平整度、施工工具、涂料的质量等均影响到涂料的涂刷面积。基层越平整涂料施工时损耗越少，涂刷面积越大。涂刷面积也与施工工具有很大的联系，一般情况下喷涂施工损耗最少，其次是刷涂，由于滚涂时有飞溅现象，因此是最耗料的一种施工方式。涂料的遮盖力越强，涂刷面积越大。另外，正确合理地使用配套底漆，按照“一底两面”的规律进行涂刷，也能够节约面漆的使用量，并且获得更好的涂刷效果。立邦“墙面卫士”底漆的超强遮盖力和白度，一涂到位，节省面漆。</div>
+  
+  <div class="content_title_a"><strong><a name="17" id="17">保存油漆和漆刷的方法</strong><span class="back"><a href="#" target="_self">返回顶部</a></span></div>
+  <div class="content_a">
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;油漆完家具后，剩下的清漆、调和漆若短期内不用，可将漆装在一个瓶子里。用葡萄糖瓶最好，酒瓶也可以。盖严盖子后，把瓶倒立放置（即瓶口朝下），一两天后，再把瓶正立放到暗处。 <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;象这样长期存放，油漆不会出现硬皮和凝固。 漆完家具后，若一两天内还要再漆一遍，刷子可以不必用汽油清洗。找一个空罐头瓶，把刷子直接放进瓶子里，里面装上清水（柴油或煤油更好），使水全部淹没刷子头部。再用时，把刷子上的水甩净即可。</p>
+  </div>
+  
+  
+  
+  <div class="content_title_a"><strong><a name="18" id="18"></a>油漆涂料施工的工艺流程</strong><span class="back"><a href="#" target="_self">返回顶部</a></span></div>
+  <div class="content_a">
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;1.主要施工工艺<br />
+      （1）清漆施工工艺：<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;清理木器表面→磨砂纸打光→上润泊粉→打磨砂纸→满刮第一遍腻子,砂纸磨光→满刮第二遍腻子,细砂纸磨光→涂刷油色→刷第一遍清漆→拼找颜色,复补腻子,细砂纸磨光→刷第二遍清漆,细砂纸磨光→刷第三遍清漆、磨光→水砂纸打磨退光,打蜡,擦亮。<br />
+      （2）混色油漆施工工艺：<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;首先清扫基层表面的灰尘,修补基层→用磨砂纸打平→节疤处打漆片→打底刮腻子→涂干性油→第一遍满刮腻子→磨光→涂刷底层涂料→底层涂料干硬→涂刷面层→复补腻子进行修补→磨光擦净第三遍面漆涂刷第二遍涂料→磨光→第三遍面漆→抛光打蜡。<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;2．施工要点<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;清油涂刷的施工规范<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;打磨基层是涂刷清漆的重要工序,应首先将木器表面的尘灰、油污等杂质清除干净。上润油粉也是清漆涂刷的重要工序,施工时用棉丝蘸油粉涂抹在木器的表面上,用手来回揉擦,将油粉擦入到木材的察眼内。涂刷清油时,手握油刷要轻松自然,手指轻轻用力,以移动时不松动、不掉刷为准。涂刷时要按照蘸次要多、每次少蘸油、操作时勤,顺刷的要求,依照先上后下、先难后易、先左后右、先里后外的顺序和横刷竖顺的操作方法施工。<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;木质表面混油的施工规范<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;基层处理时,除清理基层的杂物外,还应进行局部的腻子嵌补,打砂纸时应顺着木纹打磨。在涂刷面层前,应用漆片(虫胶漆)对有较大色差和木脂的节疤处进行封底。应在基层涂干性油或清泊,涂刷干性油层要所有部位均匀刷遍,不能漏刷。底子油干透后,满刮第一遍腻子,干后以手工砂纸打磨,然后补高强度腻子,腻子以挑丝不倒为准。涂刷面层油漆时,应先用细砂纸打磨。<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;3．注意事项<br />
+      （1）基层处理要按要求施工，以保证表面油漆涂刷不会失败。<br />
+      （2）清理周围环境，防止尘土飞扬。<br />
+    （3）因为油漆都有一定毒性，对呼吸道有较强的刺激作用，施工中一定要注意做好通风。</p>
+  </div>
+  
+  
+  <div class="content_title_a"><strong><a name="19" id="19"></a>市场主流涂料产品的类别</strong><span class="back"><a href="#" target="_self">返回顶部</a></span></div>
+  <div class="content_a">
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;随着社会的进步，人们对环境的认识更加深刻，环保是当前发展的主题，因此具有环保功能的内外墙乳胶漆是建筑涂料的主流产品。最常用的乳胶漆有苯丙涂料（苯乙烯-丙烯酸酯）、醋丙涂料（醋酸乙烯-丙烯酸酯）、纯丙涂料（纯丙烯酸酯）、硅丙涂料（有机硅-丙烯酸酯）、溶剂型丙烯酸涂料。此外，随着生活水平的提高，人们对建筑涂料的使用提出了更高的要求，功能性建筑涂料，比如防火涂料、防水涂料、保温涂料、杀菌涂料等得到了广泛地应用。功能性建筑涂料是建筑涂料发展的一个重要方向。<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;另外现在不少家庭会选择能够去除空气中游离甲醛的涂料，比如立邦的醛净全效涂料，利用化学方法分解空气中的游离甲醛。但是其他品牌的部分产品，采用的物理吸附甲醛的方式，容易导致甲醛的二次释放和污染，因此消费者在选择的时候要注意仔细辨别。一般物理吸附甲醛的涂料具有颗粒感，颜色也不够纯白。 </p>
+  </div>
+  
+  <div class="content_title_a"><strong><a name="20" id="20">常见的用于建筑物上的金属漆类型</strong><span class="back"><a href="#" target="_self">返回顶部</a></span></div>
+  <div class="content_a">&nbsp;&nbsp;&nbsp;&nbsp;溶剂型金属漆是以树脂的种类和结构不同而进行分类的，主要有单组份丙烯酸金属漆、双组份丙烯酸-聚氨酯金属漆、单组份氟碳金属漆和双组份氟碳金属漆等不同的类型。单组份金属漆施工后干燥快，漆膜较软；双组份丙烯酸-聚氨酯金属漆的漆膜硬度高而且有一定的韧性。双组份氟碳金属漆施工后干燥慢，漆膜的耐久性和耐候性最好，硬度介于上述二者之间。</div>
+  
+  
+  <div class="content_b">
+    
+    <div class="content_title_a"><strong><a name="21" id="21"></a>问题</strong><span class="back"><a href="#" target="_self">返回顶部</a></span></div>
+    <div class="content_a">
+      <ul class="contents_li">
+        <% for topic in @topics %>
+          <li><a href="<%=BASEURL%>visitor/question/<%= topic.id %>" target="_blank"><%= topic.subject %></a></li>
+        <% end %>
+      </ul>
+    </div>
+    
+    <div class="content_title_a"><strong><a name="22" id="22"></a>标签</strong><span class="back"><a href="#" target="_self">返回顶部</a></span></div>
+    <div class="content_a">
+      <ul class="contents_li">
+        <li>化工，防腐，涂料，油漆，涂装</li>
+      </ul>
+    </div>
+    
+  </div>
+</div>
+<%= render :partial => 'foot' %>

@@ -1,0 +1,14 @@
+<div id="main">
+  <%= render :partial => 'head_start' %>
+  <%= render :partial => 'head_end' %>
+  <%= render :partial => 'visitor/ads_tonglang' %>
+  <%= render :partial => 'visitor/share/question_navigation' %>
+  <%= render :partial => 'visitor/share/question' %>
+  <%= render :partial => 'visitor/share/answers' %>
+  <div id="answer1">
+    <form name="ftiwen" method="post" action="/user/reply_entry" onSubmit="return checkreplyform(this);">
+      <%= render :partial => 'visitor/share/reply' %>
+    </form>
+  </div>
+  <%= render :partial => 'foot' %>
+</div>

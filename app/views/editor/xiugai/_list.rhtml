@@ -1,0 +1,39 @@
+<%= render :partial => 'editor/xiugai/view' %>
+<form name="ftiwen" method="post" action="/editor/update_post">
+  <table width="80%" border="0" cellpadding="0" cellspacing="0" >
+    <tr valign="top">
+      <td width="110" class="f14" nowrap><B class=ttc>帖子标题：</B></td>
+      <TD class=tdof id=td1>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+          <TR>
+            <TD><input name="ti" id="ti" type="text" value="<%= @topic.subject %>" size="50" class=formfont>&nbsp;<A 
+            href="javascript:autotenms();void(0);"></A></TD></TR>
+          <TR>
+      <TD style="PADDING-RIGHT: 25px" align=middle><FONT class=lh15 color=#999999>可输入50个汉字</FONT></TD></TR></TBODY></TABLE>
+    </tr>
+  </table>
+  <br>
+  <table width="80%" border="0" cellpadding="0" cellspacing="0" class="zhtable" >
+    <tr valign="top">
+    <td width="110" class="f14" nowrap><B class=ttc>帖子发表时间:</B></td>
+    <td class=tdof id=td2>
+    <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+      <TBODY>
+        <TR>
+          <TD colSpan=2><input name="time" id="time" type="text" value="<%= @topic.created_at.strftime("%Y-%m-%d %H:%M:%S") %>" size="48" onfocus ="new Calendar(1990,2050,0,'yyyy-MM-dd hh:mm:ss').show(this);" class=formfont>&nbsp;<A 
+          href="javascript:autotenms();void(0);"></A></TD></TR>
+    </TBODY></TABLE>
+  </table>
+  <br>
+  <table width="80%" border="0" cellpadding="0" cellspacing="0" >
+    <tr>
+      <td width="110" class="f14">&nbsp;</td>
+      <td valign="top" align=middle>
+        <input type="submit" name="s" value="提交修改" class="bnsrh">
+        <input type="hidden" name="cid" value=0>
+        <input type="hidden" name="tid" value="<%= @topic.id %>">
+      </td>
+    </tr>
+  </table>
+</form>

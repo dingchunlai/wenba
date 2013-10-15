@@ -1,0 +1,7 @@
+<h1>新增版主</h1>
+<form  name="thisForm" action="create_moderator" method="post" onsubmit="return checkmoderator(this);">
+  <div>选择用户名字:<input type="text" name="username" /></div><br />
+  <div><%= flash[:notice] %></div>
+  <br /><br />
+  <div><input type="submit" value="提交" /></div>
+</form>

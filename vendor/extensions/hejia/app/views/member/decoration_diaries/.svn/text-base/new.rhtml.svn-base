@@ -1,0 +1,78 @@
+<% javascript 'http://ajax.microsoft.com/ajax/jquery.validate/1.7/jquery.validate.min.js',
+  'http://js.51hejia.com/js/jquery/plugins/validate/1.5.5/messages_cn.js',
+  #'plugins/city_select/jquery.hejia.city-select-v0.1.js',
+'http://js.51hejia.com/js/admin/new.js'
+%>
+
+<style type="text/css" media="screen">
+  .ui-autocomplete-loading { background: white url('http://js.51hejia.com/img/ajax-loader.gif') right center no-repeat; }
+  label.error {
+    float: none; color: red; padding-left: 1.5em; vertical-align: top;
+    background :url(http://js.51hejia.com/img/icons/alert.gif) no-repeat left center;
+  }
+</style>
+<div class="zx_diary_wzdh"><a href="#" target="_self">装修日记</a> 新建日记</div>
+<div class="zx_diary_xinxi">
+  <% url = @decoration_diary.new_record? ? "/decoration_diaries/" : "/decoration_diaries/#{@decoration_diary.id}" %>
+  <% method =  @decoration_diary.new_record? ? "POST" : "PUT" %>
+	
+  <% form_for :decoration_diary, @decoration_diary,:url => url, :html=>{:id => "diary_form", :method => method } do |f| -%>
+    <ul>
+      <li><%=error_messages_for :decoration_diary%></li>
+      <li><strong>日记标题：</strong> <%= f.text_field :title, :class=>"required zx_diary_iptsty", :size => "30", :maxlength => "30" %>&nbsp;提示：标题限制在30个字以内</li>
+      <li>
+        <strong>所属房型：</strong>  <%= f.select :room , ROOM.sort.map {|p| [ p[1], p[0]] } , {:prompt => "请选择"},:class=>"required" %>
+        <strong>装修价格：</strong>  <%= f.select :price , PRICE.sort.map {|p| [ p[1], p[0]] } , { :prompt => "请选择" } ,:class=>"required"%>
+        <strong>装修方式：</strong>  <%= f.select :model , MODELS.sort.map {|p| [ p[1], p[0]] } , { :prompt => "请选择" },:class=>"required" %>
+        <strong>装修风格：</strong>  <%= f.select :style , STYLES.sort.map {|p| [ p[1], p[0]] } , { :prompt => "请选择" },:class=>"required" %>
+      </li>
+      <li class="clearfix">
+        <label><strong>所属区域：</strong></label><label>省/市<%= f.select :city , CITIES.collect { |item| [item[0], "#{item[1].to_pinyin[0].chr.upcase}#{item[1]}"] }.sort_by { |city| city[1][0].chr }.map {|p| [ p[1], p[0]] } , {:prompt => "请选择"},:class=>"required" %>
+          市/区<span id="select_city_area">
+            <select id ="decoration_diary_district" class="required" name="decoration_diary[district]">
+              <% if @decoration_diary.district %>
+                <%@areas.each do |a|%>
+                  <option value="<%=a[0]%>" <%if @decoration_diary.district.to_i==a[0].to_i%>selected<%end%>><%=a[1]%></option>
+                <% end %>
+              <% else %>
+                <option value="0">请选择</option>
+              <% end %>
+            </select>
+          </span>
+        </label>
+      </li>
+      <li>
+        <strong>小区名称：</strong> <%= f.text_field :building_name,:class=>"required zx_diary_iptsty", :size => "30" %>
+        <input type="hidden" name="token" value="<%= @token %>" id="token" />
+      </li>
+      <li>
+        <strong>案例所属装修公司：</strong>
+        <input type="text" size="30" value="<%= @decoration_diary.deco_firm.name_zh if @decoration_diary.deco_firm %>" id="deco_firm_name" name="deco_firm_name" class="ui-autocomplete-input required no-onfocusout-validation zx_diary_iptsty" role="textbox" aria-autocomplete="list" aria-haspopup="true"/>
+        提示:请输入至少二个关键字进行对公司的搜索
+        <%= f.hidden_field :deco_firm_id %>
+      </li>
+
+      <li>
+        <strong>合同价格：</strong> <%= f.text_field :deal_price, :size => 8,:class=>"required number zx_diary_iptsty" %>万 &nbsp; 提示：可精确到一位小数 
+      </li>
+
+      <% if staff_logged_in? || current_user.mobile_verified %>
+        <li id="mobile_verify_wrapper" class="passed"></li>
+      <% else  %>
+        <li id="mobile_verify_wrapper"><strong>手机号：</strong>
+          <input id="mobile" type="text" size="12" class="required zx_diary_iptsty"/>
+          <input  id="send_sms" type="button" value="获取验证码" class="zx_diary_btnsty" />
+          <strong>手机验证码：</strong>
+          <input id="code" type="text"  size="8" class="required zx_diary_iptsty"/>
+          <input  type="button" id="mobile_verify" value="验证" class="zx_diary_btnsty" />
+        </li>
+        <li id="notice"></li>
+      <% end %>
+      <li class="zx_diary_xinxibtn">
+        <input name="" type="submit" value="提交确认信息" />
+      </li>
+
+
+    </ul>
+  <% end -%>
+</div>

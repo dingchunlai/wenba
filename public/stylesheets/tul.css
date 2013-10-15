@@ -1,0 +1,40 @@
+BODY {
+	MARGIN: auto; LINE-HEIGHT: 170%
+}
+.navigation {
+	CLEAR: both; BORDER-RIGHT: #ff9900 1px solid; PADDING-RIGHT: 5px; BORDER-TOP: #ff9900 1px solid; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; BORDER-LEFT: #ff9900 1px solid; WIDTH: 948px; COLOR: #ff6500; PADDING-TOP: 5px; BORDER-BOTTOM: #ff9900 1px solid
+}
+.content {
+	CLEAR: both; WIDTH: 960px
+}
+.content_title {
+	FONT-SIZE: 24px; MARGIN: 20px
+}
+.contents {
+	BORDER-RIGHT: #dddddd 1px solid; PADDING-RIGHT: 10px; BORDER-TOP: #dddddd 1px solid; PADDING-LEFT: 10px; FLOAT: left; PADDING-BOTTOM: 10px; BORDER-LEFT: #dddddd 1px solid; WIDTH: 250px; PADDING-TOP: 10px; BORDER-BOTTOM: #dddddd 1px solid
+}
+.contents_title {
+	FONT-SIZE: 18px; MARGIN: 10px
+}
+.contents_li {
+	FONT-SIZE: 14px; LINE-HEIGHT: 24px
+}
+.contents_li LI {
+	MARGIN-LEFT: 20px; LIST-STYLE-TYPE: none;
+}
+.content_title_a {
+	CLEAR: both; FONT-SIZE: 18px; MARGIN: 10px; PADDING-TOP: 30px; BORDER-BOTTOM: #dddddd 2px solid; HEIGHT: 30px
+}
+.content_a {
+	FONT-SIZE: 14px; MARGIN: 20px
+}
+.content_b {
+	CLEAR: both; BORDER-RIGHT: #dddddd 1px solid; PADDING-RIGHT: 10px; BORDER-TOP: #dddddd 1px solid; PADDING-LEFT: 10px; BACKGROUND: #eeeeee; PADDING-BOTTOM: 10px; BORDER-LEFT: #dddddd 1px solid; PADDING-TOP: 10px; BORDER-BOTTOM: #dddddd 1px solid
+}
+.back {
+	FLOAT: right
+}
+.tupian{ float:left; margin-left:30px; position:relative;}
+.tupian img{ width:120px; height:161px; margin-right:15px;}
+.zhishi{ position:absolute; top:-40px; right:-130px;}
+.zhishi img{ width:103px;; height:36px;;}

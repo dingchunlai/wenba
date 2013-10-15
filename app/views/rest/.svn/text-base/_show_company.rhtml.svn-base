@@ -1,0 +1,31 @@
+<div class="same_cha1">
+  <ul>
+    <li id="sa1" onclick="show_intro('sa','samea',2,1);" class="menu_on">我的回答</li>
+    <li id="sa2" onclick="show_intro('sa','samea',2,2);" class="menu_off">知识分享</li>
+  </ul>
+</div>
+<div id="samea1">    
+  <div class="huida">
+    <%- for topic in @topics -%>
+      <h4><a target="_blank" href="<%=BASEURL%>visitor/question/<%= topic.id %>.html"><%= topic.subject %></a></h4>
+      <ul>
+        <li class="miao">
+          作者: <a href="http://blog.51hejia.com/u/<%= topic.user_id %>/" class="gray"><%= get_user_name_by_user_id(topic.user_id) %></a>
+          分类: <a href="<%= get_link_of_tag_for_company(topic.tag_id) %>" class="gray"><%= get_tag_name_by_tag_id(topic.tag_id) %></a>
+          浏览次数: <%= topic.view_counter %>
+        </li>
+        <li class="des"><%= topic.description %></li>
+        <li class="more">[<a href="<%=BASEURL%>visitor/question/<%= topic.id %>.html" target="_blank">阅读全文</a>]</li>
+      </ul>
+    <%- end -%>
+    <div class="fenye">
+      <%= link_to '上一页', { :page => @topic_pages.current.previous.to_i, :params => { :aid => params[:aid], :cid => params[:cid] } } if @topic_pages.current.previous %>
+      <%= pagination_links(@topic_pages, :params => { :aid => params[:cid], :cid => params[:cid] }) %>
+      <%= link_to '下一页', { :page => @topic_pages.current.next.to_i, :params => { :aid => params[:aid], :cid => params[:cid] } } if @topic_pages.current.next %>
+    </div>
+  </div>
+</div>
+<div id="samea2">
+  <div class="huida">
+  </div>
+</div>

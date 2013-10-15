@@ -1,0 +1,14 @@
+<%if @user_id > 0%>
+document.writeln("<div class=\"wrap1\">");
+document.writeln("<div class=\"info_box\">");
+document.writeln("		<div>");
+document.writeln("			<p><a href=\"http:\/\/member.51hejia.com\/member\/userinfo\" target=\"_blank\" style=\"color:#F60; font:bold 12px \"宋体\";\"><%=cookies["ind_username"][0]%><\/a><%=session[:is_expert]%>您好：<\/p>");
+document.writeln("            [<a href=\"\/mine\/index\" target=\"_blank\">个人中心<\/a>|<a href=\"http:\/\/member.51hejia.com\/member\/loginout?forward=http:\/\/wb.51hejia.com\" target=\"hideiframe\"> 退出<\/a>]");
+document.writeln("            <span class=\"span1\"><a href='http://member.51hejia.com/member/note_list' target='_blank' style='color:#666666'>[短信息]</a>&nbsp;&nbsp;<\/span>");
+document.writeln("			<span class=\"span2\">积分：<a href=\"\/personal.html?tabid=6\" target=\"_blank\"><b><%=session[:my_point]%><\/b><\/a><\/span>&nbsp;&nbsp;");
+document.writeln("			<span class=\"span3\">提问数：<%=session[:ask_num]%><\/span>&nbsp;&nbsp;");
+document.writeln("			<span class=\"span4\">回答数：<%=session[:answer_num]%><\/span>&nbsp;&nbsp;&nbsp;");
+document.writeln("		<\/div>");
+document.writeln("	<\/div>");
+document.writeln("<\/div>");
+<%end%>

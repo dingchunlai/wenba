@@ -1,0 +1,54 @@
+<%unless params[:upload_save].nil?%>
+  <script type="text/javascript">
+    <%if @imgurl.type == Fixnum%>
+      window.parent.UploadAbort('<%=@imgurl%>');
+    <%else%>
+      window.parent.UploadSussess('<%=@imgurl%>');
+    <%end%>
+  </script>
+<%end%>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>上传文件</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<script type="text/javascript" src="http://www.51hejia.com/js/wb/prototype.js"></script>
+    <script type="text/javascript">
+      window.onload = function(){
+          //$('fileUpload').onpropertychange = function(){Submit($('fileUpload').value)};
+          $('FindFile').onchange = function(){
+            window.parent.InsertImage();
+            Submit($('FindFile').value)
+          };
+
+        }
+        function Submit(oldValue){
+            if($('FindFile').value!=''){
+               try{
+               var form1 = document.getElementById("form1");
+               form1.submit();
+               }catch(e){}
+            }
+        }
+   </script>
+
+<style type="text/css">
+body {
+	margin: 0px;
+}
+</style>
+
+</head>
+<body style="padding: 5px 0px 0px 5px">
+    <form id="form1" method="post" enctype="multipart/form-data">
+    <div>
+	<input type="hidden" id="TypeID" value="0" />
+    <input type="hidden" name="upload_save" value="1" />
+    <input type="hidden" name="save_path" value="/uploads/posts/" />
+    上传图片: 　<input type="file" name="FindFile" id="FindFile" style="width:300px;"/>
+    </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,3 @@
+<%= render :partial => 'best_answer' %>
+<br>
+<%= render :partial => 'other_answers' %>

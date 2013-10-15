@@ -1,0 +1,9 @@
+<% user_id = get_user_id_by_cookie_name() %>
+<% if user_id <= 0 %>
+  <tr>
+    <td width="80" class="f14" nowrap><a name="reply"></a>昵称：</td>
+    <td>
+      <input name="gn" id="gn" type="text" value="和家网友" size="24"><FONT class=lh15 color=#999999> 您可在此修改昵称，不超过20个字符或10个汉字，不需要密码</FONT>
+    </td>
+  </tr>
+<% end %>

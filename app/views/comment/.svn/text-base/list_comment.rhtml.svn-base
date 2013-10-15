@@ -1,0 +1,75 @@
+<div class="leftbox02">
+  <div class="pinlunbox1">
+    <% for comment in @comments %>
+      <h4><%= get_user_name_by_user_id(comment.user_id) %><span><%= comment.created_at.strftime("%Y-%m-%d %H:%M:%S") %></span></h4>
+    <ul>
+      <li>设计能力:<span><%= comment.design_ability %></span></li>
+      <li>预算报价合理性:<span><%= comment.buget_reasonality %></span></li>
+      <li>施工质量:<span><%= comment.construct_quality %></span></li>
+      <li>售后服务:<span><%= comment.construct_quality %></span></li>
+      <li class="sjs">推荐设计师:<span><%= comment.recommend_designer %></span></li>
+    </ul>
+    <p><%= comment.description %></p>
+    <% end %>
+    <div class="more"><%= link_to '上一页', { :page => @comment_pages.current.previous.to_i, :params => { :company_id => params[:company_id]} } if @comment_pages.current.previous %>
+          <%= pagination_links(@comment_pages, :params => { :company_id => params[:company_id]}) %>
+          <%= link_to '下一页', { :page => @comment_pages.current.next.to_i, :params => { :company_id => params[:company_id]} } if @comment_pages.current.next %></div>
+  </div>
+  <h3>我要评论</h3>
+  <div class="pinlunbox2">
+    <form id="form1" name="form1" method="post" action="add_comment">
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td><strong>设计能力：</strong><select name="design_ability">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+          </select>      </td>
+          <td><strong>预算报价合理性：</strong><select name="buget_reasonality">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+          </select></td>
+          <td><strong>施工质量：</strong><select name="construct_quality">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+          </select></td>
+          <td><strong>售后服务：</strong><select name="after_source">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+          </select></td>
+        </tr>
+      </table>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td><strong>我要推荐设计师：</strong>
+            <input type="text" name="recommend_designer" />
+          </td>
+        </tr>
+        <tr>
+          <td>评论内容（请控制在40字内）：</td>
+        </tr>
+        <tr>
+          <td><textarea name="description" rows="5" class="txt"></textarea></td>
+        </tr>
+        <tr>
+          <td class="bt"><input type="submit" name="Submit" value="发表评论" /></td>
+        </tr>
+        <tr>
+          <td>发言请遵守有关法律法规，并注意语言文明，您在51hejia.com发表的作品，51hejia.com有权转载或引用。</td>
+        </tr>
+      </table>
+      <input type="hidden" name="company_id" value="<%= @company_id %>">
+    </form>
+  </div>
+</div>

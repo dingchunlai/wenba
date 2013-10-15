@@ -1,0 +1,203 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/!svn/ver/113/51hejia/repos/wenba/release/db/migrate
+END
+008_create_tags.rb
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/!svn/ver/113/51hejia/repos/wenba/release/db/migrate/008_create_tags.rb
+END
+006_create_ask_zhidao_topic_posts.rb
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/!svn/ver/113/51hejia/repos/wenba/release/db/migrate/006_create_ask_zhidao_topic_posts.rb
+END
+010_create_ask_topic_tag_urls.rb
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/!svn/ver/113/51hejia/repos/wenba/release/db/migrate/010_create_ask_topic_tag_urls.rb
+END
+013_create_ask_blocked_ips.rb
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/!svn/ver/113/51hejia/repos/wenba/release/db/migrate/013_create_ask_blocked_ips.rb
+END
+028_add_ask_zhidao_topics_ip.rb
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/!svn/ver/113/51hejia/repos/wenba/release/db/migrate/028_add_ask_zhidao_topics_ip.rb
+END
+015_create_ask_user_operations.rb
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/!svn/ver/113/51hejia/repos/wenba/release/db/migrate/015_create_ask_user_operations.rb
+END
+031_create_ask_zhishi_topic_posts.rb
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/!svn/ver/113/51hejia/repos/wenba/release/db/migrate/031_create_ask_zhishi_topic_posts.rb
+END
+021_create_ask_user_tags.rb
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/!svn/ver/113/51hejia/repos/wenba/release/db/migrate/021_create_ask_user_tags.rb
+END
+026_create_ask_search_keywords.rb
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/!svn/ver/113/51hejia/repos/wenba/release/db/migrate/026_create_ask_search_keywords.rb
+END
+025_add_sessions.rb
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/!svn/ver/113/51hejia/repos/wenba/release/db/migrate/025_add_sessions.rb
+END
+005_create_ask_zhidao_topics.rb
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/!svn/ver/113/51hejia/repos/wenba/release/db/migrate/005_create_ask_zhidao_topics.rb
+END
+017_create_ask_user_scores.rb
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/!svn/ver/113/51hejia/repos/wenba/release/db/migrate/017_create_ask_user_scores.rb
+END
+033_create_ask_authorized_users.rb
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/!svn/ver/113/51hejia/repos/wenba/release/db/migrate/033_create_ask_authorized_users.rb
+END
+007_create_ask_zhidao_topic_post_votes.rb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/!svn/ver/113/51hejia/repos/wenba/release/db/migrate/007_create_ask_zhidao_topic_post_votes.rb
+END
+012_create_ask_topic_subscriptions.rb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/!svn/ver/113/51hejia/repos/wenba/release/db/migrate/012_create_ask_topic_subscriptions.rb
+END
+003_create_ask_tieba_topics.rb
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/!svn/ver/113/51hejia/repos/wenba/release/db/migrate/003_create_ask_tieba_topics.rb
+END
+036_create_hejia_cases.rb
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/!svn/ver/113/51hejia/repos/wenba/release/db/migrate/036_create_hejia_cases.rb
+END
+002_create_ask_tiebas.rb
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/!svn/ver/113/51hejia/repos/wenba/release/db/migrate/002_create_ask_tiebas.rb
+END
+032_create_replies.rb
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/!svn/ver/113/51hejia/repos/wenba/release/db/migrate/032_create_replies.rb
+END
+023_create_ask_zhidao_editor_topics.rb
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/!svn/ver/113/51hejia/repos/wenba/release/db/migrate/023_create_ask_zhidao_editor_topics.rb
+END
+027_add_ask_zhidao_topics_guest_email.rb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/!svn/ver/113/51hejia/repos/wenba/release/db/migrate/027_add_ask_zhidao_topics_guest_email.rb
+END
+020_create_ask_tag_links.rb
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/!svn/ver/113/51hejia/repos/wenba/release/db/migrate/020_create_ask_tag_links.rb
+END
+001_create_ask_user_infos.rb
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/!svn/ver/113/51hejia/repos/wenba/release/db/migrate/001_create_ask_user_infos.rb
+END
+004_create_ask_tieba_topic_posts.rb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/!svn/ver/113/51hejia/repos/wenba/release/db/migrate/004_create_ask_tieba_topic_posts.rb
+END
+024_create_ask_zhidao_editor_uploads.rb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/!svn/ver/113/51hejia/repos/wenba/release/db/migrate/024_create_ask_zhidao_editor_uploads.rb
+END
+030_create_ask_zhishi_topics.rb
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/!svn/ver/113/51hejia/repos/wenba/release/db/migrate/030_create_ask_zhishi_topics.rb
+END
+035_create_ruser_channels.rb
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/!svn/ver/113/51hejia/repos/wenba/release/db/migrate/035_create_ruser_channels.rb
+END
+014_create_ask_operations.rb
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/!svn/ver/113/51hejia/repos/wenba/release/db/migrate/014_create_ask_operations.rb
+END
+029_add_ask_zhidao_topic_posts_guest_email_and_ip.rb
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/!svn/ver/113/51hejia/repos/wenba/release/db/migrate/029_add_ask_zhidao_topic_posts_guest_email_and_ip.rb
+END
+022_create_ask_topic_user_tags.rb
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/!svn/ver/113/51hejia/repos/wenba/release/db/migrate/022_create_ask_topic_user_tags.rb
+END
+011_create_ask_topic_reads.rb
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/!svn/ver/113/51hejia/repos/wenba/release/db/migrate/011_create_ask_topic_reads.rb
+END
+034_create_urls.rb
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/!svn/ver/113/51hejia/repos/wenba/release/db/migrate/034_create_urls.rb
+END
+016_create_ask_score_orders.rb
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/!svn/ver/113/51hejia/repos/wenba/release/db/migrate/016_create_ask_score_orders.rb
+END

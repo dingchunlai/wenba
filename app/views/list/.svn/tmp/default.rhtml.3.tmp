@@ -1,0 +1,228 @@
+<div class="wrap1">
+  <div class="con_left">
+    <div class="blueBox">
+      <div class="title">
+        <h6>问答分类</h6>
+      </div>
+      <div class="body" style="padding: 0;">
+        <!---- 改了这里 ---->
+        <div class="number_of_problem">
+          <div>共提问问题数：<b><%=get_all_topics_num%></b></div>
+          <div>已解决问题数：<b><%=get_resolved_topics_num%></b></div>
+        </div>
+        <div class="sb_tab">公告区</div>
+        <ul class="hot_office">
+          <%for notice in get_notices(7)%>
+            <li><a href="<%=notice.url%>" title="<%=notice.title%>" target="_blank"><%=notice.title%></a></li>
+          <%end%>
+        </ul>
+
+        <div class="lnWrap">
+          <%for parent_tag_id in Tag.level1_tags%>
+            <div class="blueSpace"> </div>
+            <div class="topWrap">
+              <div class="top"><a href="/list/s/<%=parent_tag_id%>.html" target="_self"><%=get_tag_name_by_tag_id(parent_tag_id)%></a></div>
+              <div class="more"><a href="/list/s/<%=parent_tag_id%>.html" target="_self">更多</a></div>
+            </div>
+            <div class="conWrap">
+              <div class="disease">
+                <ul>
+                  <%for tag in Tag.get_tags_by_parent_id(parent_tag_id)%>
+                    <li><a href="/list/sort/<%=tag.id%>.html" target="_self"><%=tag.name%></a></li>
+                  <%end%>
+                </ul>
+              </div>
+            </div>
+          <%end%>
+
+        </div>
+
+        <div class="wrap_iframe">
+          <div class="blueBox">
+            <div class="title">
+              <h1>问吧热门点击排行榜</h1>
+            </div>
+            <div class="body event">
+              <!--
+              <div class="hotArt">
+              <a href="http://ask.39.net/zt/tangshishaicha.html"><img src="http://image.39.net/094/30/360288_200.jpg" alt="唐氏筛查，孕育健康宝宝" /></a>
+              <a href="http://ask.39.net/zt/tangshishaicha.html">唐氏筛查，孕育健康宝宝</a>
+              </div>
+              -->
+              <ul class="point">
+                <%for r in AskZhidaoTopic.get_hot_topics(10, 30)%>
+                  <li><a href="/q/<%=r.id%>.html" target="_blank" style="font-size:12px;"><%=utf8_left(r.subject,11,"...")%></a></li>
+                <%end%>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="sb_tab" style="margin-top: -6px; -margin-top: -2px;"> 联系我们</div>
+        <div class="contact_box"> 电话：86-21-6267-6666<br />
+          邮箱：wangxiaoyan#51hejia.com<br />
+          请将#替换成@使用
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="con_middle">
+    <!-- 焦点图文 -->
+    <div class="" style="width:540px; height:276px; float:left;">
+      <div class="focus">
+        <script language="javascript" type="text/javascript" src="http://js.51hejia.com/javascripts/slider.js"></script>
+        <div id="slider" class="sliderwrapper">
+<%#53890%>
+          <%focus = parse_xml("http://api.51hejia.com/rest/build/xml/53998.xml",["title","url","image-url"],3)%>
+          <%for r in focus%>
+            <div class="contentdiv"><a href="<%=r["url"]%>" target="_blank"><img src="<%=r["image-url"]%>" alt="<%=r["title"]%>" /></a></div>
+          <%end%>
+        </div>
+        <div id="paginate-slider" class="pagination">
+          <%for r in focus%>
+            <a href="<%=r["url"]%>" class="toc" target="_blank"><%=r["title"]%></a>
+          <%end%>
+        </div>
+        <script type="text/javascript">
+          featuredcontentslider.init({
+            id: "slider",
+            contentsource: ["inline", ""],
+            revealtype: "mouseover",
+            enablefade: [true, 0.2],
+            autorotate: [true, 3000],
+            onChange: function(previndex, curindex){}
+          })
+        </script>
+      </div>
+
+      <ul class="topline">
+        <%for ftopic in Url.get_focus_topics(9)%>
+          <li><a href="<%=ftopic.url%>" target="_blank"><%=ftopic.title%></a></li>
+        <%end%>
+      </ul>
+    </div>
+    <!---- 交点图文结束 ---->
+    <div class="index_rank">
+
+
+      <%=render :partial => "list/default/hot_topics_by_parent_tag_id", :locals => {:title => "装修人气排行", :parent_tag_id => 173}%>
+
+      <%=render :partial => "list/default/hot_topics_by_parent_tag_id", :locals => {:title => "建材人气排行", :parent_tag_id => 38}%>
+
+      <%=render :partial => "list/default/hot_topics_by_parent_tag_id", :locals => {:title => "家居人气排行", :parent_tag_id => 1}%>
+
+    </div>
+  </div>
+  <div class="con_right">
+    <div class="onlineBox"> 当前在线：<b><%=get_online_num%></b>人 </div>
+
+    <div class="wrap_zj">
+      <div class="wrap_nyzjzt">
+        <%=adspace('问吧-首页-宽幅1')%>
+        <!--
+        <div class="ztzt_title">建材百科知识</div>
+        <center>
+          <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000"
+                  codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0"
+                  width="180" height="54" id="Untitled-1" align="middle">
+            <param name="movie" value="http://www.51hejia.com/flash/tulbk139.swf?2323" />
+            <param name="quality" value="high" />
+            <embed src="http://www.51hejia.com/flash/tulbk139.swf?2323" quality="high" bgcolor="#ffffff" width="180"
+                   height="54" name="mymovie" align="middle" allowScriptAccess="sameDomain"
+                   type="application/x-shockwave-flash" pluginspage="http://www.adobe.com/go/getflashplayer" />
+          </object>
+        </center>
+        -->
+      </div>
+    </div>
+
+    <div class="wrap_zj">
+      <div class="wrap_nyzjzt">
+         <%=adspace('问吧-首页-宽幅2')%>
+        <!--
+        <div class="ztzt_title">厨房百科知识</div>
+        <center>
+          <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000"
+                  codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0"
+                  width="180" height="54" id="Untitled-1" align="middle">
+            <param name="movie" value="http://js.51hejia.com/img/ad/bb.swf" />
+            <param name="quality" value="high" />
+            <embed src="http://js.51hejia.com/img/ad/bb.swf" quality="high" bgcolor="#ffffff" width="180"
+                   height="54" name="mymovie" align="middle" allowScriptAccess="sameDomain"
+                   type="application/x-shockwave-flash" pluginspage="http://www.adobe.com/go/getflashplayer" />
+          </object>
+        </center>
+        -->
+      </div>
+    </div>
+
+    <div class="blueBox">
+      <div class="title">
+        <h6> 明星专家</h6>
+      </div>
+      <%cache 'ming_xing_zhuan_jia' do%>
+        <div class="body">
+          <div class="sb_tab"> 明星专家</div>
+          <div class="star">
+            <%ming_xing_zhuan_jia = parse_xml("http://api.51hejia.com/rest/build/xml/55037.xml",["title","url","image-url","person_style"],20)%>
+            <%ming_xing_zhuan_jia.each do |api|%>
+              <div>
+                <p>
+                  <a href="<%=api["url"]%>" target="_blank">
+                    <img src="<%=api['image-url']%>" alt="<%=api["title"]%>" width="65" height="80" /></a>
+                </p>
+                <%=api["title"]%><br />
+                <%=api["person_style"]%>
+              </div>
+            <%end%>
+          </div>
+        </div>
+      <%end%>
+
+      <div class="clearer"> </div>
+      <!--
+      <div class="blueBox">
+        <div class="title">
+          <h6>常用建材</h6>
+        </div>
+        <div class="body" style="padding: 5px 10px;">
+          <div class="familiar_disease">
+            <ul>
+              <li><a href="#" target="_blank">常用建材</a></li>
+              <li><a href="#" target="_blank">常用建材</a></li>
+              <li><a href="#" target="_blank">常用建材</a></li>
+              <li><a href="#" target="_blank">常用建材</a></li>
+              <li><a href="#" target="_blank">常用建材</a></li>
+              <li><a href="#" target="_blank">常用建材</a></li>
+              <li><a href="#" target="_blank">常用建材</a></li>
+              <li><a href="#" target="_blank">常用建材</a></li>
+              <li><a href="#" target="_blank">常用建材</a></li>
+              <li><a href="#" target="_blank">常用建材</a></li>
+              <li><a href="#" target="_blank">常用建材</a></li>
+              <li><a href="#" target="_blank">常用建材</a></li>
+              <li><a href="#" target="_blank">常用建材</a></li>
+              <li><a href="#" target="_blank">常用建材</a></li>
+              <li><a href="#" target="_blank">常用建材</a></li>
+              <li><a href="#" target="_blank">常用建材</a></li>
+              <li><a href="#" target="_blank">常用建材</a></li>
+              <li><a href="#" target="_blank">常用建材</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      -->
+      <div class="clearer"> </div>
+    </div>
+
+  </div>
+
+<%#=render :partial => "list/default/excellent_expert" %>
+
+  <%=render :partial => "list/default/point_top_list"%>
+
+  <div style="margin:0 auto; width:900px; padding:20px 0px 30px 0px" class="clearfix">
+    <%=hejia_ext_links("wb.51hejia.com", "友情链接:")%>
+  </div>
+
+  <%=render :partial => "share/cmp_adtv"%>

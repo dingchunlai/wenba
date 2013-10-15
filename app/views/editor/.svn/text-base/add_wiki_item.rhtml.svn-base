@@ -1,0 +1,24 @@
+<font color="green">增加百科条目</font>
+<br>
+<font color="red"><%= flash[:notice] %></font>
+<br>
+百科名称:<%= @wiki_content.content_name %><br />
+百科目录:<%= @wiki_catalog.catalog_name %><br /><br />
+<% if !@wiki_items.nil? %>
+  <%  for wiki_item in @wiki_items %>
+    条目标题:<%= wiki_item.title %><br/>
+    条目描述:<%= wiki_item.description %>
+    <a href="/editor/modify_wiki_item?item_id=<%= wiki_item.id %>&content_id=<%= wiki_item.content_id %>&catalog_id=<%= wiki_item.catalog_id %>">编辑</a>&nbsp;&nbsp;&nbsp;
+    <a href="/editor/del_wiki_item?item_id=<%= wiki_item.id %>&content_id=<%= wiki_item.content_id %>&catalog_id=<%= wiki_item.id %>" onclick="if (confirm('确定要删除吗?')) { var f = document.createElement('form'); f.style.display = 'none'; this.parentNode.appendChild(f); f.method = 'POST'; f.action = this.href;f.submit(); };return false;">删除</a><br /><br />
+  <%end%>
+<% end %>
+<br /><br />
+<form action="save_wiki_item?content_id=<%= @content_id %>&catalog_id=<%= @catalog_id %>" method="post">
+  <input type="hidden" name="content_id" value="<%= @content_id %>">
+  <input type="hidden" name="catalog_id" value="<%= @catalog_id %>">
+  条目标题：<input type="text" name="title" size="59"><span style="color: red;">*</span><br><br>
+  条目描述：<textarea name="description" rows="20"></textarea><span style="color: red;">*</span><br><br>
+  <input type="submit" value="增加">
+</form>
+<br>
+<a href="/editor/add_wiki_catalog?content_id=<%= @content_id %>">返回百科目录页</a><br>

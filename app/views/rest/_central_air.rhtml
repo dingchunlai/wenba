@@ -1,0 +1,25 @@
+document.writeln("<!DOCTYPE html PUBLIC \"-\/\/W3C\/\/DTD XHTML 1.0 Transitional\/\/EN\" \"http:\/\/www.w3.org\/TR\/xhtml1\/DTD\/xhtml1-transitional.dtd\">");
+document.writeln("<html xmlns=\"http:\/\/www.w3.org\/1999\/xhtml\">");
+document.writeln("  <head>");
+document.writeln("    <meta http-equiv=\"Content-Type\" content=\"text\/html; charset=gb2312\" \/>");
+document.writeln("    <title>中央空调_和家装修家居网<\/title>");
+document.writeln("    <link href=\"http:\/\/d.51hejia.com\/css\/kongtiao1024\/kongtiao1024.css\" rel=\"stylesheet\" type=\"text\/css\" \/>");
+document.writeln("  <\/head>");
+document.writeln("  <body>");
+document.writeln("<div class=\"rightbox\">");
+document.writeln("  <h3>中央空调问吧<span><a href=\"http:\/\/ask.51hejia.com\/\" target=\"_blank\">更多>><\/a><\/span><\/h3>");
+document.writeln("  <form id=\"form1\" name=\"form1\" method=\"post\" action=\"\/visitor\/s\">");
+document.writeln("    <ul>");
+document.writeln("      <li>");
+document.writeln("          <input type=\"text\" name=\"wd\" class=\"txt01\" value=\"<%= session[:wd] %>\" \/>");
+document.writeln("          <input type=\"submit\" name=\"Submit\" value=\"搜索\" class=\"bt01\" \/>");
+document.writeln("          <input type=\"submit\" name=\"Submit2\" value=\"提问\" class=\"bt01\" onclick=\"javascript:document.getElementById(\'form1\').action=\'\/visitor\/s?wd=中央空调\' ; document.getElementById(\'form1\').submit();\"\/>");
+document.writeln("      <\/li>");
+<%- for topic in @topics -%>
+document.writeln("        <li>·<a href=\"http:\/\/ask.51hejia.com\/visitor\/question\/<%= topic.id %>.html\" target=\"_blank\" title=\"<%= topic.subject %>\"><%= get_short_str(topic.subject, 14) %><\/a><\/li>");
+<%- end -%>
+document.writeln("    <\/ul>");
+document.writeln("  <\/form>");
+document.writeln("<\/div>");
+document.writeln("  <\/body>");
+document.writeln("<\/html>")

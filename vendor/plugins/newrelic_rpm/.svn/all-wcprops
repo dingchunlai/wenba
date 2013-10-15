@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/!svn/ver/113/51hejia/repos/wenba/release/vendor/plugins/newrelic_rpm
+END
+install.rb
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/!svn/ver/113/51hejia/repos/wenba/release/vendor/plugins/newrelic_rpm/install.rb
+END
+newrelic.yml
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/!svn/ver/113/51hejia/repos/wenba/release/vendor/plugins/newrelic_rpm/newrelic.yml
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/!svn/ver/113/51hejia/repos/wenba/release/vendor/plugins/newrelic_rpm/README
+END
+LICENSE
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/!svn/ver/113/51hejia/repos/wenba/release/vendor/plugins/newrelic_rpm/LICENSE
+END
+version.txt
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/!svn/ver/113/51hejia/repos/wenba/release/vendor/plugins/newrelic_rpm/version.txt
+END
+init.rb
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/!svn/ver/113/51hejia/repos/wenba/release/vendor/plugins/newrelic_rpm/init.rb
+END

@@ -1,0 +1,146 @@
+<script src="http://www.51hejia.com/js/wenba/tabs.js" type="text/javascript"></script>
+<div class="wrap1">
+        <div class="art_con_left">
+            <div class="blueBox"><div class="title">
+                             <h6>我是专家</h6>
+                         </div>
+                          <div class="body exwid_1">
+                             <div class="doctor_info">
+                                 <div class="doctor">
+                                     <div><img src="<%=@expert.HEADIMG%>" /></div>
+<h6>
+  <span><%=@expert.USERNAME%></span>
+  <span><%=@expert.tag.name rescue ""%></span>
+  <span><a href="/detail/new_topic?expert=<%=u(@expert.USERNAME)%>" target="_blank">[点这里向他/她提问]</a></span>
+</h6>
+<h2><span>积分:<%=CommunityUser.get_point(@expert.USERBBSID)%></span> <!--<span>39认证:<img src="http://images.39.net/ask/images/0.gif" /></span>--></h2>
+<p><%=@expert.USERBBSREADME%> </p>
+</div></div></div>
+</div>
+
+<!--
+<div class="greenBox">
+<div class="title">
+<h6>对我的提问</h6>
+</div>
+<div class="body">
+<div class="statusBar">
+<div class="theme">主题(共340项)－待解决(共28项)</div>
+<div class="time">&nbsp;&nbsp;&nbsp;提问时间</div>
+<div class="status">状态</div>
+</div>
+<ul class="dash">
+<li><h6><a href="/question/6052056.html" target="_blank">发抖没有规律</a></h6><p class="time">2009.06.22</p><p class="icon"><img src="http://img.baidu.com/img/iknow/icn_time.gif" alt="待解决" /></p></h6></li>
+<li><h6><a href="/question/6050613.html" target="_blank">这样是不是失眠症好了?</a></h6><p class="time">2009.06.22</p><p class="icon"><img src="http://img.baidu.com/img/iknow/icn_time.gif" alt="待解决" /></p></h6></li>
+<li><h6><a href="/question/6050512.html" target="_blank">偏头痛</a></h6><p class="time">2009.06.22</p><p class="icon"><img src="/images/ok.jpg" alt="医生解决" /></p></h6></li>
+<li><h6><a href="/question/6048918.html" target="_blank">谢谢</a></h6><p class="time">2009.06.22</p><p class="icon"><img src="/images/ok.jpg" alt="医生解决" /></p></h6></li>
+<li><h6><a href="/question/6045384.html" target="_blank">怎么做会好</a></h6><p class="time">2009.06.21</p><p class="icon"><img src="/images/ok.jpg" alt="医生解决" /></p></h6></li>
+</ul>
+
+<div class="pageNavi">
+<span style="color:Red">1</span>&nbsp;<a href="/userinfo-1919961-1-1-2.html">2</a>&nbsp;<a href="/userinfo-1919961-1-1-3.html">3</a>&nbsp;<a href="/userinfo-1919961-1-1-4.html">4</a>&nbsp;<a href="/userinfo-1919961-1-1-5.html">5</a>&nbsp;<a href="/userinfo-1919961-1-1-6.html">6</a>&nbsp;<a href="/userinfo-1919961-1-1-7.html">7</a>&nbsp;<a href="/userinfo-1919961-1-1-8.html">8</a>&nbsp;<a href="/userinfo-1919961-1-1-9.html">9</a>&nbsp;<a href="/userinfo-1919961-1-1-10.html">10</a>&nbsp;<a href="/userinfo-1919961-1-1-11.html">11</a>&nbsp;<a href="/userinfo-1919961-1-1-2.html" class="next">下一页</a>&nbsp;<a href="/userinfo-1919961-1-1-12.html" class="last">尾页</a>
+</div>
+
+</div>
+</div>
+-->
+<div class="greenBox">
+<div class="title">
+<h6>网友向<%=@expert.USERNAME%>提的问题</h6>
+</div>
+<div class="body">
+<div class="statusBar">
+<div class="theme">问题列表</div>
+<div class="time">&nbsp;&nbsp;&nbsp;回答时间</div>
+</div>
+<ul class="dash">
+<%for topic in @questions%>
+<li>
+  <h6><a href="/q/<%=topic.id%>.html" target="_blank"><%=topic.subject%></a></h6>
+    <p class="time"><%=topic.created_at.strftime("%Y-%m-%d") rescue ""%></p><p class="icon">
+      <%if topic.post_counter.to_i == 0%>
+        <img src="http://img.baidu.com/img/iknow/icn_time.gif" alt="待解决" />
+      <%else%>
+        <img src="/images/ok.jpg" alt="已解决" />
+      <%end%>
+    </p>
+ </li>
+<%end%>
+</ul>
+
+</div>
+</div>
+
+
+<div class="greenBox">
+<div class="title">
+<h6><%=@expert.USERNAME%>参与回答的问题　<a href="/user_answer/<%=@expert_id%>.html?&username=<%=u(@expert.USERNAME)%>" target="_blank">【更多】</a></h6>
+</div>
+<div class="body">
+<div class="statusBar">
+<div class="theme">问题列表</div>
+<div class="time">&nbsp;&nbsp;&nbsp;回答时间</div>
+</div>
+<ul class="dash">
+<%for topic in @my_answers%>
+<li>
+  <h6><a href="/q/<%=topic.id%>.html" target="_blank"><%=topic.subject%></a></h6>
+    <p class="time"><%=topic.created_at.strftime("%Y-%m-%d") rescue ""%></p><p class="icon">
+      <%if topic.post_counter.to_i == 0%>
+        <img src="http://img.baidu.com/img/iknow/icn_time.gif" alt="待解决" />
+      <%else%>
+        <img src="/images/ok.jpg" alt="已解决" />
+      <%end%>
+    </p>
+ </li>
+<%end%>
+</ul>
+
+</div>
+</div>
+
+<div class="greenBox">
+<div class="title">
+<h6><%=@expert.USERNAME%>提出的问题　<a href="/user_question/<%=@expert_id%>.html?&username=<%=u(@expert.USERNAME)%>" target="_blank">【更多】</a></h6>
+</div>
+<div class="body">
+<div class="statusBar">
+<div class="theme">问题列表</div>
+<div class="time">&nbsp;&nbsp;&nbsp;回答时间</div>
+</div>
+<ul class="dash">
+<%for topic in @my_questions%>
+<li>
+  <h6><a href="/q/<%=topic.id%>.html" target="_blank"><%=topic.subject%></a></h6>
+    <p class="time"><%=topic.created_at.strftime("%Y-%m-%d") rescue ""%></p><p class="icon">
+      <%if topic.post_counter.to_i == 0%>
+        <img src="http://img.baidu.com/img/iknow/icn_time.gif" alt="待解决" />
+      <%else%>
+        <img src="/images/ok.jpg" alt="已解决" />
+      <%end%>
+    </p>
+ </li>
+<%end%>
+</ul>
+
+</div>
+</div>
+
+            
+        </div>
+           <input id="txt_url" style="display:none"  type="text"/>
+    <input id="txt_pwd" style="display:none" type="text"/>
+    <input id="txt1" style="display:none" type="text"/>
+        <div class="art_con_right">
+          
+            <!-- 公告/专题/活动 -->
+            <%=render :partial => "common/right_notice", :locals =>{:rows => 5, :cols => 12}%>
+
+            <!-- 积分排行榜 -->
+            <%=render :partial => "common/right_point_top", :locals =>{:rows => 12}%>
+
+            <!-- 答题数排行榜 -->
+            <%=render :partial => "common/right_answer_top", :locals =>{:rows => 12}%>
+
+        </div>
+    </div>

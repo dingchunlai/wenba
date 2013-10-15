@@ -1,0 +1,15 @@
+<div id="main">
+  <%= render :partial => 'head_start' %>
+  <%= render :partial => 'head_end' %>
+  <%= render :partial => 'visitor/ads_tonglang' %>
+  <%#= render :partial => 'visitor/discussion/search' %>
+  <%= render :partial => 'visitor/discussion/question_navigation' %>
+  <%= render :partial => 'visitor/discussion/question' %>
+  <%= render :partial => 'visitor/discussion/answers' %>
+  <div id="answer1">
+    <form name="ftiwen" method="post" action="/user/reply_discussion" onSubmit="return checkreplyform(this);">
+      <%= render :partial => 'visitor/discussion/reply' %>
+    </form>
+  </div>
+  <%= render :partial => 'foot' %>
+</div>

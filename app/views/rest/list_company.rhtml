@@ -1,0 +1,29 @@
+<div class="tiwen" style="display:block">
+  <form action="/rest/save_company" method="post" onSubmit="return checklistform(this);">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>    
+        <th valign="top">问题分类：</th>
+        <td>公司</td>
+      </tr>
+      <tr>
+        <th valign="top">问题标题(*)：</th>
+        <td><input id="co_subject" name="co_subject" type="text" value="" class="textear"></td>
+      </tr>
+      
+      <tr>
+        <th valign="top">问题描述(*)：</th>
+        <td><textarea id="co_desc" name="co_desc" cols="10" rows="15" class="textear1"></textarea></td>
+      </tr>
+      
+      <tr>
+        <th valign="top">邮件地址(*)：</th>
+        <td><input id="co_guest_email" name="co_guest_email" type="text" class="textear"><td>
+      </tr>
+      <tr>
+        <th valign="top">&nbsp;</th>
+        <td align="center"><input type="submit" value="提问" class="ask"></td>
+      </tr> 
+    </table>
+  </form>
+</div>
+<%= render :partial => 'show_company' %>

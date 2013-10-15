@@ -1,0 +1,247 @@
+/* CSS Document */
+
+*{margin:0 auto;padding:0;}
+body{color:#4c4c4c; margin:0 auto; font-family:"宋体"; font-size:12px; color:#333; line-height:20px;}
+html,body { height:100%;} 
+a{color:#4c4c4c;text-decoration:none;}
+a:hover {color:#f60; text-decoration:underline}
+li {list-style:none;}
+img{border:0}
+.main {width:960px; margin:0 auto;}
+span {color:#f60;}
+span a {color:#f60;}
+.left {width:713px; float:left;}
+.lefttitle {width:960px; float:left;background: url(http://www.51hejia.com/images/pindao613/tl_lefttitle.gif) repeat-x left top; height:22px; padding-top:4px; margin-bottom:4px; position:relative;}
+.lefttitle h3 { color:#fff; font-size:14px; text-align:left; text-indent:28px;}
+.lefttitle .hot {position:absolute; right:7px; top:5px; width:360px;}
+.lefttitle .hot li {float:left; margin-left:15px;}
+.right {width:243px; float:right;}
+
+.right .ad { margin:0 0 4px 0;}
+.right .ad1 { margin:0 0 4px 0;}
+
+.right h3 {background: url(http://www.51hejia.com/images/pindao613/cf_righttitle.gif) no-repeat left top; line-height:28px; text-indent:19px; font-size:14px; color:#005097; padding-top:2px; position:relative; height:28px; width:243px; float:left;}
+.right h3 span {position:absolute; right:9px; bottom:0; font-size:12px; font-weight:normal;}
+.right h3 span a {color:#333;}
+
+.banner {margin:4px 0; height:85px; width:960px; float:left}
+
+.banner img {width:960px; height:85px;}
+
+.topbanner {margin:0 0 4px 0; height:85px; width:960px; float:left}
+
+.topbanner li {float:left}
+
+.topbanner img {float:left}
+
+.topbanner .logo {width:216px; height:85px; margin-right:4px; float:left;}
+
+.topbanner .banner {width:740px;}
+
+#focuspic {width:304px; float:left; margin-right:4px; margin-bottom:4px; border:1px solid #608db6; padding:10px 10px 12px 10px; height:300px; }
+
+.rightbox { margin-bottom:4px; border:1px solid #cecece; border-top:0;}
+.leftbox { margin-bottom:4px; border:1px solid #f9ecd9; border-top:0; width:711px; float:left; padding-top:10px; padding-bottom:10px;}
+.gonggao {border:1px solid #dededc;width:241px;background: url(http://www.51hejia.com/images/pindao613/cf_gonggao_bg.gif) repeat-x left top; line-height:23px; padding-top:2px; text-indent:12px; margin-bottom:4px;}
+.gonggao a {color:#f60; font-weight:bold;}
+
+/*焦点图*/
+.fpic {
+    BACKGROUND: #fff;   WIDTH: 304px; POSITION: relative; height:260px; text-align:center; float:left;}
+.bpic {
+    FLOAT: left; MARGIN: 0px; WIDTH: 244px; POSITION: relative; HEIGHT: 243px
+}
+#focpic {
+    BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; LEFT: 1px; BORDER-BOTTOM-WIDTH: 0px; POSITION: absolute; TOP: 1px; BORDER-RIGHT-WIDTH: 0px
+}
+.thubpic {
+    WIDTH: 54px; CURSOR: pointer; HEIGHT: 36px;float:left; margin-left:1px;
+}
+.thubpiccur {
+    WIDTH: 54px; CURSOR: pointer; HEIGHT: 36px;float:left; margin-left:1px;
+}
+.thubpic IMG {
+    BORDER: #fff 2px solid; WIDTH: 54px; HEIGHT: 36px
+}
+.thubpiccur IMG {
+    BORDER: #fff 2px solid; WIDTH: 54px; HEIGHT: 36px
+}
+.thubpiccur IMG {
+    BORDER: #666; 
+}
+/*#################################*/
+
+
+/*本周热点*/
+
+.bzrd { width:367px; float:left; padding:0 4px 10px 10px; margin-bottom:4px;}
+
+.bzrd h3 {background: url(http://www.51hejia.com/images/pindao613/cf_rdzx.gif) no-repeat 16px top; color:#005097; font-size:14px; height:23px; text-indent:35px; padding-top:6px;border-bottom:1px solid #c8e0f8; margin-bottom:10px;}
+
+.bzrd h4 {font-size:14px; margin-bottom:3px;}
+
+.bzrd h4 a {color:#114c84; font-weight:700; font-size:14px; text-align:center;}
+
+.bzrd p {font-size:12px; font-weight:normal; margin-bottom:5px; text-indent:2em; border-bottom:1px dashed #cecece; padding-bottom:4px;}
+.bzrd p a {color:#000;}
+.bzrd ul{ margin:0px; padding:0px; list-style:none outside none;}
+.bzrd li {line-height:24px; font-size:14px; width:100%; float:left; position:relative;}
+.bzrd li a#n1{ text-decoration:none; float:left; line-height:22px;}
+.bzrd li span { float:right; padding-right:9px;color:#999; position:absolute; right:9px; bottom:0;}
+.bzrd .more {color:#f60}
+.bzrd .more a{color:#f60}
+.bzrd span {color:#999; font-size:12px; margin-left:10px;}
+
+/*本周热点结束*/
+
+/*厨房布置*/
+.cfbz {padding:6px 6px 7px 3px; margin-bottom:4px; border:1px solid #608db6; border-top:0; width:232px; float:left;}
+.cfbz ul {width:232px; float:left; }
+.cfbz li {line-height:20px; width:100%; float:left;}
+.cfbz a {color:#797979;}
+.cfbz dl { width:108px; float:left; margin-left:4px;margin-bottom:4px;}
+.cfbz img {width:102px; height:75px; border:1px solid #dcdcdc; padding:2px;}
+.cfbz dd {text-align:center;}
+
+.cfbz1 {padding:6px 6px 4px 3px; margin-bottom:4px; border:1px solid #608db6; border-top:0; width:232px; float:left;}
+.cfbz1 ul {width:232px; float:left; }
+.cfbz1 li {line-height:20px; width:100%; float:left;}
+.cfbz1 a {color:#797979;}
+.cfbz1 dl { width:108px; float:left; margin-left:4px;margin-bottom:2px;}
+.cfbz1 img {width:102px; height:75px; border:1px solid #dcdcdc; padding:2px;}
+.cfbz1 dd {text-align:center;}
+/*厨房布置结束*/
+
+/*选购指南*/
+.xgzn {margin-bottom:4px; width:326px; float:left; margin-right:4px;}
+.xgzn .box {padding:9px 6px 9px 3px;  border:1px solid #608db6; border-top:0; width:315px; float:left;}
+.xgzn .box ul {width:232px; float:left; }
+.xgzn .box li {line-height:21px; width:100%; float:left;}
+.xgzn .box dl { width:184px; float:left; margin-left:4px;}
+.xgzn .box dt {font-weight:bold;}
+.xgzn .box img {width:119px; height:87px; border:1px solid #dcdcdc; padding:3px; float:left;}
+.xgzn .box dd {}
+.xgzn .box .xiangxi a { color:#f60;}
+.xgzn h3 {background: url(http://www.51hejia.com/images/pindao613/cf_xgzn.gif) no-repeat left top; line-height:28px; text-indent:19px; font-size:14px; color:#005097; padding-top:2px; position:relative; height:28px;}
+.xgzn h3 span {position:absolute; right:9px; bottom:0; font-size:12px; font-weight:normal;}
+.xgzn h3 span a {color:#333;}
+/*选购指南结束*/
+
+/*新品上市*/
+.xpss {margin-bottom:4px; width:381px; float:left; border:1px solid #608db6; padding-bottom:10px;}
+.xpss .box ul {width:205px; float:left; border-bottom:1px dashed #cecece; margin-bottom:7px; padding-bottom:2px;}
+.xpss .box li {line-height:20px; width:100%; float:left;}
+.xpss .box dl { width:92px; float:left;}
+.xpss .box dd {text-align:center; line-height:22px;}
+.xpss .box dl img {width:86px; height:65px;border:1px solid #dcdcdc; padding:1px; }
+.xpss .box img {width:161px; height:150px; border:1px solid #dcdcdc; padding:1px; float:left; margin-left:5px; margin-right:4px;}
+.xpss .box .xiangxi a { color:#f60;}
+.xpss .box p {width:205px; float:left; }
+.xpss h3 {background: url(http://www.51hejia.com/images/pindao613/cf_title_bg.gif) repeat-x left top; line-height:27px; text-indent:19px; font-size:14px; color:#005097; padding-top:2px; position:relative; height:27px; margin-bottom:9px;}
+.xpss h3 span {position:absolute; right:9px; bottom:0; font-size:12px; font-weight:normal;}
+.xpss h3 span a {color:#333;}
+.same_cha1 {height:27px; background: url(http://www.51hejia.com/images/pindao613/cz_same_bg.gif) repeat-x left top; margin-bottom:3px; }
+.same_cha1 li{float:left; line-height:25px; cursor:pointer; text-align:center; margin-left:7px;}
+.same_cha1 .menu_off{font-size:12px;width:60px;line-height:25px; padding-top:2px;background: url(http://www.51hejia.com/images/pindao613/db_menu_off.gif) no-repeat left top; float:left }
+.same_cha1 .menu_on{font-size:12px;width:60px;line-height:25px; padding-top:2px;background: url(http://www.51hejia.com/images/pindao613/db_menu_on.gif) no-repeat left top; font-weight:bold; float:left }
+#samea1 {}
+#samea2,#samea3,#samea4,#samea5 {display:none;}
+.same_cha1 .sa1 { color:#f00;}
+.same_cha1 .sa2 { color:#f98f2b;}
+.same_cha1 .sa3 { color:#008400;}
+.same_cha1 .sa4 { color:#015198;}
+.same_cha1 .sa5 { color:#ff0090;}
+/*新品上市结束*/
+
+/*橱柜测评*/
+.cgcp {padding:6px 6px 7px 3px; margin-bottom:4px; border:1px solid #608db6; border-top:0; width:232px; float:left; }
+.cgcp ul {}
+.cgcp li {line-height:21px; border-bottom:1px dashed #ddd; color:#104c82; padding-top:2px;}
+.cgcp a {color:#104c82;}
+/*橱柜测评结束*/
+
+/*厨房产品*/
+.cfcp {margin-bottom:4px; width:352px; float:left; border:1px solid #608db6; padding-bottom:4px; margin-right:5px; margin-bottom:4px;}
+.cfcp img {width:312px; height:148px; margin-left:18px; }
+.cfcp li {float:left; width:50%;}
+.cfcp h3 {background: url(http://www.51hejia.com/images/pindao613/cf_title_bg.gif) repeat-x left top; line-height:27px; text-indent:19px; font-size:14px; color:#005097; padding-top:2px; position:relative; height:27px; margin-bottom:6px;}
+.cfcp h3 span {position:absolute; right:9px; bottom:0; font-size:12px; font-weight:normal;}
+.cfcp h3 span a {color:#333;}
+
+
+.cfcp1 {margin-bottom:4px; width:352px; float:left; border:1px solid #608db6; padding-bottom:7px; margin-bottom:4px;}
+
+.cfcp1 h3 {background: url(http://www.51hejia.com/images/pindao613/cf_title_bg.gif) repeat-x left top; line-height:27px; text-indent:19px; font-size:14px; color:#005097; padding-top:2px; position:relative; height:27px; margin-bottom:6px;}
+.cfcp1 h3 span {position:absolute; right:9px; bottom:0; font-size:12px; font-weight:normal;}
+.cfcp1 h3 span a {color:#333;}
+.cfcp1 .box {border-bottom:1px dashed #cecece; padding:7px; width:338px; float:left;}
+.cfcp1 .box h4 { font-size:14px; width:199px; float:left }
+.cfcp1 .box h4 a {color:#000;}
+.cfcp1 .box p {width:199px;float:left}
+.cfcp1 .box img {width:126px; height:72px; border:2px solid #dcdcdc; padding:1px; float:right;}
+.cfcp1 .box1 {padding:7px; width:338px; float:left;}
+.cfcp1 .box1 h4 { font-size:14px; width:199px; float:left }
+.cfcp1 .box1 h4 a {color:#000;}
+.cfcp1 .box1 p {width:199px;float:left}
+.cfcp1 .box1 img {width:126px; height:72px; border:2px solid #dcdcdc; padding:1px; float:right;}
+
+.cfcp2 {margin-bottom:4px; width:352px; float:left; border:1px solid #608db6; padding-bottom:4px; margin-bottom:4px; margin-right:4px;}
+.cfcp2 .box { padding-left:4px; padding-bottom:5px;}
+.cfcp2 .box ul {width:232px; float:left; }
+.cfcp2 .box li {line-height:21px; width:100%; float:left;}
+.cfcp2 .box dl { width:208px; float:left; margin-left:4px;}
+.cfcp2 .box dt {font-weight:bold;}
+.cfcp2 .box img {width:119px; height:87px; border:1px solid #dcdcdc; padding:3px; float:left;}
+.cfcp2 .box dd {}
+.cfcp2 .box .xiangxi a { color:#f60;}
+.cfcp2 h3 {background: url(http://www.51hejia.com/images/pindao613/cf_title_bg.gif) repeat-x left top; line-height:27px; text-indent:19px; font-size:14px; color:#005097; padding-top:2px; position:relative; height:27px; margin-bottom:6px;}
+.cfcp2 h3 span {position:absolute; right:9px; bottom:0; font-size:12px; font-weight:normal;}
+.cfcp2 h3 span a {color:#333;}
+/*厨房产品结束*/
+
+/*厨房生活*/
+.cfsh {padding:6px 6px 6px 3px; margin-bottom:4px; border:1px solid #608db6; border-top:0; width:232px; float:left;}
+.cfsh ul {width:232px; float:left; }
+.cfsh li {line-height:21px; width:100%; float:left;}
+.cfsh img {width:227px; height:83px; margin-left:4px; margin-bottom:5px;}
+/*厨房生活结束*/
+
+/*美食菜谱*/
+.mscp {padding:9px 6px 4px 6px; margin-bottom:4px; border:1px solid #608db6; border-top:0;}
+.mscp img { width:107px; height:79px; float:left; margin-right:6px;border:1px solid #dcdcdc; padding:1px; }
+.mscp p {line-height:21px; margin-bottom:10px;}
+.mscp h4 {color:#333; font-size:12px; }
+.mscp h4 a {color:#333;}
+/*美食菜谱结束*/
+
+.jsq {margin-bottom:4px;}
+
+/*瓷砖问吧*/
+.czwb {margin-bottom:4px; width:352px; float:left; border:1px solid #608db6; padding-bottom:8px; margin-bottom:4px;}
+.czwb h3 {background: url(http://www.51hejia.com/images/pindao613/cf_title_bg.gif) repeat-x left top; line-height:27px; text-indent:19px; font-size:14px; color:#005097; padding-top:2px; position:relative; height:27px; margin-bottom:8px;}
+.czwb h3 span {position:absolute; right:9px; bottom:0; font-size:12px; font-weight:normal;}
+.czwb h3 span a {color:#333;}
+.czwb .box li {background: url(images/cz_yhd.gif) no-repeat 4px center; text-indent:24px; line-height:22px;}
+.czwb .box1 li {background: url(images/cz_whd.gif) no-repeat 4px center; text-indent:24px; line-height:22px;}
+.same_cha {height:27px; background: url(http://www.51hejia.com/images/pindao613/cz_same_bg.gif) repeat-x left top; margin-bottom:3px; }
+.same_cha li{float:left; line-height:25px; cursor:pointer; text-align:center; margin-left:7px;}
+.same_cha .menu_off{font-size:12px;width:96px;color:#055298; line-height:25px; padding-top:2px;background: url(http://www.51hejia.com/images/pindao613/cz_menu_off.gif) no-repeat left top; }
+.same_cha .menu_on{font-size:12px;color:#055298;width:96px;line-height:25px; padding-top:2px;background: url(http://www.51hejia.com/images/pindao613/cz_menu_on.gif) no-repeat left top; font-weight:bold; }
+#same1 {}
+#same2,#same3 {display:none;}
+
+
+/*瓷砖问吧结束*/
+
+.same_cha2 {background: url(http://www.51hejia.com/images/pindao613/cf_righttitle.gif) no-repeat left top; line-height:28px; font-size:14px; color:#005097; padding-top:2px;  height:28px; width:228px; float:left; padding-left:15px;}
+.same_cha2 li{float:left; line-height:24px; cursor:pointer; text-align:center;}
+.same_cha2 .menu_off{font-size:12px;width:79px;color:#015198; line-height:24px; padding-top:2px;}
+.same_cha2 .menu_on{font-size:14px;color:#015198;width:79px;line-height:24px; padding-top:2px;background: url(http://www.51hejia.com/images/pindao613/tl_menu_on.gif) no-repeat left top; font-weight:bold; }
+#samec1 {}
+#samec2,#samec3 {display:none;}
+
+/*涂料知识*/
+.tlzs {padding:6px 6px 1px 3px; margin-bottom:4px; border:1px solid #608db6; border-top:0; width:232px; float:left; }
+.tlzs .box ul {}
+.tlzs .box li {line-height:21px; border-bottom:1px dashed #ddd; color:#104c82; padding-top:2px;}
+.tlzs .box a {color:#104c82;}

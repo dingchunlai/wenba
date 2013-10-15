@@ -1,0 +1,26 @@
+<%@path = request.env["PATH_INFO"]%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>家居知识,装修知识,建材知识,学知识,问问题,问产品,问专家-和家网_社区_问吧_首页</title>
+    <link href="http://www.51hejia.com/css/wenba0505/hejiaask.css" rel="stylesheet" type="text/css" />
+	<link href="http://d.51hejia.com/css/shouye/header914.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="http://www.51hejia.com/js/wb/public.js"></script>
+</head>
+<body>
+  
+<%=  render :partial => "/share/head_start"%>
+
+<%=  render :partial => "/share/head_end"%>
+
+<%=  render :partial => "/common/top_search"%>
+
+<iframe name="hideiframe" width="0" height="0" style='display: none;'></iframe>
+
+<%=yield%>
+
+<%=  render :partial => "/share/foot"%>
+
+</body>
+</html>

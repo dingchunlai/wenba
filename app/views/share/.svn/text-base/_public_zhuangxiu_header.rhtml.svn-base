@@ -1,0 +1,44 @@
+<div style="width:960px; margin:5px auto 5px auto;">
+<!--/* OpenX Javascript标签 v2.6.2 */-->
+
+<script type='text/javascript'><!--//<![CDATA[
+   var m3_u = (location.protocol=='https:'?'https://a.51hejia.com/www/delivery/ajs.php':'http://a.51hejia.com/www/delivery/ajs.php');
+   var m3_r = Math.floor(Math.random()*99999999999);
+   if (!document.MAX_used) document.MAX_used = ',';
+   document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
+   document.write ("?zoneid=320");
+   document.write ('&amp;cb=' + m3_r);
+   if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
+   document.write (document.charset ? '&amp;charset='+document.charset : (document.characterSet ? '&amp;charset='+document.characterSet : ''));
+   document.write ("&amp;loc=" + escape(window.location));
+   if (document.referrer) document.write ("&amp;referer=" + escape(document.referrer));
+   if (document.context) document.write ("&context=" + escape(document.context));
+   if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
+   document.write ("'><\/scr"+"ipt>");
+//]]>--></script><noscript><a href='http://a.51hejia.com/www/delivery/ck.php?n=aa52fe9f&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://a.51hejia.com/www/delivery/avw.php?zoneid=320&amp;n=aa52fe9f' border='0' alt='' /></a></noscript>
+
+</div>
+
+<!--new_header-->
+<div id="new_header">
+	<div class="main_menu">
+		<div class="menubg">
+			<ul class="first_menu">
+				<li><a id="1" class="off" href="http://z.51hejia.com/"   target="_blank">装修点评</a></li>
+				<li><a id="2" class="off" href="http://z.51hejia.com/zhuangxiugongsi/"  target="_blank">公司点评</a></li>
+				<li><a id="3" class="off" href="http://z.51hejia.com/dianping/"   target="_blank">装修故事</a></li>
+				<li><a id="4" class="off" href="http://z.51hejia.com/zhuangxiuanli/"  target="_blank">案例图片</a></li>
+				<li><a id="5" class="on" href="http://d.51hejia.com/"  target="_blank">装修资讯</a></li>
+			</ul>
+
+			<ul class="sc_menu" id="U1"  >
+				<li>
+  <% for result in parse_xml("http://api.51hejia.com/rest/build/xml/54719.xml", ["title", "url", "image-url", "description"], 12) %>
+    <a href="<%= result["url"] %>" target="_blank"><%= result["title"] %></a>
+  <%end%>
+				</li>
+            </ul>
+		</div>
+	</div>
+</div>
+<!--new_header_end-->

@@ -1,0 +1,230 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+        <title>全国最大的家居问答平台</title>
+
+    <meta name="keywords" content="家居资讯-有装修问题先上和家问吧" />
+    <meta name="description" content="家居咨询-和家问吧是全国最大的家居在线问答平台，有任何装修问题都可以在这里得到全国各地的专业师和网友的解答，良好的交流平台吸引着全国越来越多的专家、设计师、网友加入进来针对装修中出现的各类问题进行问答。有装修问题，先上和家问吧。" />
+    <link href="http://www.51hejia.com/css/wenba0505/hejiaask.css" rel="stylesheet" type="text/css" />
+	<link href="http://d.51hejia.com/css/shouye/header914.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="http://www.51hejia.com/js/wb/public.js"></script>
+    <style type="text/css">
+      .xml_link_style0 {
+      }
+      .xml_link_style1 {
+          font-weight: bold;
+      }
+      .xml_link_style2 {
+          color: #FF0000;
+      }
+      .xml_link_style3 {
+          font-weight: bold;
+          color: #FF0000;
+      }
+      </style>
+</head>
+<body>
+
+
+
+<!--begin_top_nav_links-->
+<div class="Top_title" style="margin-top:0;">
+<a href="http://www.51hejia.com/" target="_blank"><img src="http://js.51hejia.com/img/h_logo.gif" border="0" /></a>
+  <ul class="Top_Navtion">
+		<li><a href="http://tuku.51hejia.com/" id="tukuid">看图片</a></li>
+		<li><a href="http://z.51hejia.com/" id="zhuangxiuid">选装修</a></li>
+		<li><a href="http://b.51hejia.com/" id="pinpaiid">挑品牌</a></li>
+		<li><a href="http://p.51hejia.com/" id="chanpinid">找低价</a></li>
+		<li><a href="http://wb.51hejia.com/" id="wenbaid">问专家</a></li>
+	</ul>
+<div class="Top_Anniu">
+		<div id="show_login">
+			<SCRIPT LANGUAGE="JavaScript" Src="http://js.51hejia.com/js/show_login2.js"></SCRIPT>
+			<iframe name="hideiframe_loginout" width="0" height="0" style="display: none;"></iframe>
+		</div>
+  </div>
+</div>
+<div class="Div_center">
+	<ul class="Pindao">
+		<li><a id="shouye" href="http://www.51hejia.com/" target="_blank">首页</a>
+		<br />
+		<a id="zhoukan" href="http://www.51hejia.com/xinwen/" target="_blank">新闻</a>
+		</li>
+		<li class="topic"><a href="http://d.51hejia.com/" target="_blank"><img src="http://js.51hejia.com/img/h_deco.gif" alt="装修频道" width="77" height="50" /></a></li>
+		<li><a id="tuliao" href="http://www.51hejia.com/youqituliao/" target="_blank">涂料</a><a id="cizhuan" href="http://www.51hejia.com/cizhuan/" target="_blank">瓷砖</a><a id="gediao" href="http://www.51hejia.com/jiajuchanpin/" target="_blank">家具</a><a id="zhaoming" href="http://www.51hejia.com/zhaomingpindao/" target="_blank">灯具</a><a id="chugui" href="http://www.51hejia.com/chuguipindao/" target="_blank">厨房橱柜</a><a id="kongtiao" href="http://www.51hejia.com/kongtiao/" target="_blank">中央空调</a><br />
+		<a id="diban" href="http://www.51hejia.com/diban/" target="_blank">地板</a><a id="buyili" href="http://www.51hejia.com/buyi/" target="_blank">布艺</a><a id="jiadian" href="http://www.51hejia.com/jiadian/" target="_blank">家电</a><a id="cainuan" href="http://www.51hejia.com/cainuan/" target="_blank">采暖</a><a id="weiyu" href="http://www.51hejia.com/weiyupindao/" target="_blank">卫浴产品</a><a id="shuichulili" href="http://www.51hejia.com/shuichuli/" target="_blank">水&nbsp;处&nbsp;理</a></li>
+		<li class="topic"><a href="http://www.51hejia.com/jushang/" target="_blank"><img src="http://js.51hejia.com/img/h_jushang.gif" alt="居尚频道" width="77" height="50" /></a></li>
+		<li><a id="chufang" href="http://www.51hejia.com/chufang/" target="_blank">厨房</a><a id="keting" href="http://www.51hejia.com/keting/" target="_blank">客厅</a><a id="shufang" href="http://www.51hejia.com/shufang/" target="_blank">书房</a><a id="beijingqiang" href="http://www.51hejia.com/beijingqiang/" target="_blank">背景墙</a><a id="xiaohuxing" href="http://www.51hejia.com/xiaohuxing/" target="_blank">小户型</a><a id="zhufu" href="http://www.51hejia.com/chaojizhufu/" target="_blank">主妇</a>
+		<br />
+		<a id="yushi" href="http://www.51hejia.com/weiyu/" target="_blank">卫浴</a><a id="woshi" href="http://www.51hejia.com/woshi/" target="_blank">卧室</a><a id="huayuan" href="http://www.51hejia.com/huayuanshenghuo/" target="_blank">花园</a><a id="ertongfang" href="http://www.51hejia.com/ertongfang/" target="_blank">儿童房</a><a id="ershoufang" href="http://www.51hejia.com/ershoufang/" target="_blank">二手房</a><a id="bieshu" href="http://www.51hejia.com/bieshu/" target="_blank">别墅</a></li>
+		<li class="topic_r"><a href="http://bbs.51hejia.com/list/484" target="_blank">装修论坛</a>|<a id="boke" href="http://blog.51hejia.com/" target="_blank">博客</a><br />
+		<a href="http://bbs.51hejia.com/list/472" target="_blank">家居论坛</a>|<a href="http://www.51hejia.com/maichang/" target="_blank">卖场</a></li>
+	</ul>
+</div>
+<SCRIPT LANGUAGE="JavaScript">
+var login_forward = location.href;
+</SCRIPT>
+<!--end_top_nav_links-->
+																																																						<div id="Login" style="display:none;border:0">
+																																																							<a href="#guanbi" title="关闭" class="Divopop-nonenei"><img src="http://www.51hejia.com/css/newback/images/x.png" alt="关闭" /></a>
+																																																								<iframe id="dengluiframe" style="width:222px;height:224px;border:0;overflow:hidden" frameborder="0" scrolling="no"></iframe>
+																																																									<script>
+																																																										function denglula()
+																																																											{
+																																																													var time = Math.random();
+																																																															document.getElementById('dengluiframe').src='http://member.51hejia.com/member/userlogin?forward=' + login_forward;
+																																																																}
+																																																																	</script>
+																																																																	</div>
+																																																																	 <script language="javascript">
+																																																																	 var BgDiv=document.createElement("div");
+																																																																	 function Divopop(ID){
+																																																																		denglula();
+																																																																			var Moled=document.getElementById(ID);
+																																																																				Moled.style.display="block";
+																																																																					var bodyw=document.body.scrollWidth;
+																																																																						var bodyh=document.body.scrollHeight;
+																																																																							var firefox = document.getElementById && !document.all;
+																																																																								BgDiv.style.position="absolute";
+																																																																									BgDiv.style.left="0";
+																																																																										BgDiv.style.top="0";
+																																																																											BgDiv.style.width=bodyw+"px";
+																																																																												BgDiv.style.height=bodyh+"px";
+																																																																													BgDiv.style.zindex="50";
+																																																																														if(firefox==false){
+																																																																																BgDiv.style.background="url(http://www.51hejia.com/css/newback/images/divbg.png)";
+																																																																																		BgDiv.style.filter="Alpha(Opacity=50)";
+																																																																																			}else{
+																																																																																					BgDiv.style.background="url(http://www.51hejia.com/css/newback/images/divbg.png)";
+																																																																																						}
+																																																																																							document.body.appendChild(BgDiv);
+																																																																																								BgDiv.style.display="";
+																																																																																									var As=document.getElementsByTagName("a");
+																																																																																										for (var i=0;i<As.length;i++){
+																																																																																											if(As[i].className=="Divopop-none"){
+																																																																																												As[i].onclick=function(){Moled.style.display="none";BgDiv.style.display="none";return false;};
+																																																																																													}
+																																																																																														else if(As[i].className=="othen"){
+																																																																																															As[i].onclick=function(){
+																																																																																																var othenId=this.getAttribute("toid");
+																																																																																																	var othenDiv=document.getElementById(othenId);
+																																																																																																		Moled.style.display="none";
+																																																																																																			othenDiv.style.display="block";
+																																																																																																				return false;
+																																																																																																					};
+																																																																																																						}
+																																																																																																							else if(As[i].className=="Divopop-nonenei"){
+																																																																																																								As[i].onclick=function(){this.parentNode.style.display="none";BgDiv.style.display="none";return false;};
+																																																																																																									}
+																																																																																																										}
+																																																																																																											}
+																																																																																																											 </script>
+
+
+<script>
+function checksearchform(thisform){
+  var wd = trim(ge("wd").value);
+  if (wd==""||wd=="请在这里输入您要搜索的关键字"){
+    thisform.action = "/list/s/0.html";
+  }
+}
+</script>
+
+
+<div id="main" style="text-align:center;">
+<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="960" height="450">
+            <param name="movie" value="http://www.51hejia.com/flash/index.swf" />
+            <param name="quality" value="high" />
+            <embed src="http://www.51hejia.com/flash/index.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="960" height="450"></embed>
+        </object>
+</div>
+
+
+<div id="footer">
+  <table style="margin:0 auto;MARGIN-TOP: 10px;clear:both" cellSpacing=0 cellPadding=0 width="900"
+         border=0>
+    <TBODY>
+      <tr>
+        <td style="text-align:center;margin:0 auto">
+          <SPAN class=font_link_s2>
+            <A href='http://www.51hejia.com/siteindex/' target='_blank'>全站索引</A> ->
+            <A href='http://www.51hejia.com/siteindex/letter/A.html' target='_blank'>A</A>
+
+            <A href='http://www.51hejia.com/siteindex/letter/B.html' target='_blank'>B</A>
+            <A href='http://www.51hejia.com/siteindex/letter/C.html' target='_blank'>C</A>
+            <A href='http://www.51hejia.com/siteindex/letter/D.html' target='_blank'>D</A>
+            <A href='http://www.51hejia.com/siteindex/letter/E.html' target='_blank'>E</A>
+            <A href='http://www.51hejia.com/siteindex/letter/F.html' target='_blank'>F</A>
+            <A href='http://www.51hejia.com/siteindex/letter/G.html' target='_blank'>G</A>
+
+            <A href='http://www.51hejia.com/siteindex/letter/H.html' target='_blank'>H</A>
+            <A href='http://www.51hejia.com/siteindex/letter/I.html' target='_blank'>I</A>
+            <A href='http://www.51hejia.com/siteindex/letter/J.html' target='_blank'>J</A>
+            <A href='http://www.51hejia.com/siteindex/letter/K.html' target='_blank'>K</A>
+            <A href='http://www.51hejia.com/siteindex/letter/L.html' target='_blank'>L</A>
+            <A href='http://www.51hejia.com/siteindex/letter/M.html' target='_blank'>M</A>
+
+            <A href='http://www.51hejia.com/siteindex/letter/N.html' target='_blank'>N</A>
+            <A href='http://www.51hejia.com/siteindex/letter/O.html' target='_blank'>O</A>
+            <A href='http://www.51hejia.com/siteindex/letter/P.html' target='_blank'>P</A>
+            <A href='http://www.51hejia.com/siteindex/letter/Q.html' target='_blank'>Q</A>
+            <A href='http://www.51hejia.com/siteindex/letter/R.html' target='_blank'>R</A>
+            <A href='http://www.51hejia.com/siteindex/letter/S.html' target='_blank'>S</A>
+
+            <A href='http://www.51hejia.com/siteindex/letter/T.html' target='_blank'>T</A>
+            <A href='http://www.51hejia.com/siteindex/letter/U.html' target='_blank'>U</A>
+            <A href='http://www.51hejia.com/siteindex/letter/V.html' target='_blank'>V</A>
+            <A href='http://www.51hejia.com/siteindex/letter/W.html' target='_blank'>W</A>
+            <A href='http://www.51hejia.com/siteindex/letter/X.html' target='_blank'>X</A>
+            <A href='http://www.51hejia.com/siteindex/letter/Y.html' target='_blank'>Y</A>
+
+            <A href='http://www.51hejia.com/siteindex/letter/Z.html' target='_blank'>Z</A>
+          </SPAN>
+          <BR>
+
+          <SPAN class=font_link_s2><A
+              href="http://corp.51hejia.com/login.jhtml" target=_blank>企业用户登录</A>
+            | <A href="http://www.51hejia.com/aboutus/about.html"
+                 target=_blank>关于我们</A> | <A
+              href="http://www.51hejia.com/aboutus/contactus.html"
+              target=_blank>联系我们</A> | <A
+              href="#top" onclick="Divopop('Login');return true;"
+              >会员登陆</A> | <A
+              href="http://www.51hejia.com/aboutus/priv.html"
+              target=_blank>版权声明</A> | <A href="http://www.51hejia.com/link/link/index.htm"
+                                        target=_blank>友情链接</A> | <A href="http://www.51hejia.com/siteindex/"
+                                      target=_blank>网站地图</A></SPAN><BR>
+          <SPAN class=font_link_s2>Copyright&copy;2005-2009 Hejia Net (shanghai) Information Technology Co. Ltd. All rights reserved <br />
+            <a href="http://www.51hejia.com">和家网</a>(上海)信息技术有限公司 版权所有
+            <BR>
+            违法及不良信息举报&nbsp;<A
+              href="mailto:webmaster@51hejia.com">webmaster@51hejia.com</A>&nbsp;沪ICP备<A
+              href="http://www.miibeian.gov.cn/"
+          target=_blank>06009042</A>号</SPAN></TD>
+      </tr>
+    </TBODY>
+  </table>
+</div>
+<input name="key_focus" type="hidden" id="key_focus_keykey">
+﻿
+<script src="http://js.51hejia.com/js/ga.js" type="text/javascript"></script>
+<script type="text/javascript">
+    setTimeout('startGA();', 1000);
+    var pageTracker = _gat._getTracker("UA-7619267-1");
+    pageTracker._addOrganic("baidu","kw");
+    pageTracker._addOrganic("baidu","word");
+    pageTracker._addOrganic("soso","w");
+    pageTracker._addOrganic("3721","name");
+    pageTracker._addOrganic("yodao","q");
+    pageTracker._addOrganic("vnet","kw");
+    pageTracker._addOrganic("sogou","query");
+    pageTracker._setDomainName("51hejia.com");
+     
+    pageTracker._trackPageview();
+</script>
+
+</body>
+</html>

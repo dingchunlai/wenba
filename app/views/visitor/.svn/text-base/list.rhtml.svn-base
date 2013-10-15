@@ -1,0 +1,95 @@
+<div id="main">
+  <%= render :partial => 'head_start' %>
+  <%= render :partial => 'head_end' %>
+  <%= render :partial => 'visitor/ads_tonglang' %>
+  <%= render :partial => 'search' %>
+  <%= render :partial => 'tags' %>
+
+<SCRIPT LANGUAGE="JavaScript">
+var checkflag = "false";
+function SelectAll(field) { //全选checkbox
+  if (checkflag == "false") {
+    if (field.length==undefined)
+      field.checked = true;
+    else
+      for (i = 0; i < field.length; i++) field[i].checked = true;
+    checkflag = "true";
+    return "false";
+  }
+  else {
+    if (field.length==undefined)
+      field.checked = false;
+    else
+      for (i = 0; i < field.length; i++) field[i].checked = false;
+    checkflag = "false";
+    return "true";
+  }
+}
+function getids(){
+    var ids = "0";
+    if (document.form1.topic_id.length==undefined){
+        if (document.form1.topic_id.checked) ids = document.form1.topic_id.value;
+    }else{
+        for (i=0; i<document.form1.topic_id.length;i++){
+            if (document.form1.topic_id[i].checked) ids += ", " + document.form1.topic_id[i].value;
+        }
+    }
+    if (ids=="0"){alert("请选择记录！"); return "";} else return ids;
+}
+
+function deleteAll(){
+    if (confirm('您确定要删除这些记录吗？')){
+      var ids = getids();
+      if (ids!=""){
+        hideiframe.location="/visitor/del_topic?ids="+ids;
+        document.getElementById("delete_button").disabled = true;
+        }
+    }
+}
+</SCRIPT>
+
+  <div id="right2">
+    <div class="rightbox1">
+      <h3>
+        装修问答分类
+      </h3>
+      <div class="same_cha">
+        <ul>
+          <li>
+            <strong><%= @state %>问题</strong>
+            <%if @is_askadmin%>
+            　<a href="javascript://" target="_self" onclick="SelectAll(document.form1.topic_id);">全选</a>
+            　<a href="javascript:void(0);" target="_self" id="delete_button" onclick="deleteAll();">批量删除</a>
+            <%end%>
+          </li>
+          <li class="jieguo">共搜到相关问题：<span><%= @topic_pages.item_count rescue ""%></span>条</li>
+        </ul>
+      </div>
+      <div id="same1">
+        <form name="form1">
+        <%- for topic in @topics -%>
+          <div class="fenleibox">
+            
+            <ul>
+              <li>
+                <%if @is_askadmin%><input name="topic_id" type="checkbox" value="<%=topic.id%>" /><%end%>
+                <a href="<%= get_link_of_tag(topic.tag_id) %>" class="gray">[<%= get_tag_name_by_tag_id(topic.tag_id) %>]</a>
+                <a target="_blank" href="/visitor/question/<%= topic.id %>.html"><%= topic.subject %></a>
+                <%= get_html_of_admin_operations_by_topic_id(@user_id, topic.id, topic.tag_id) %>
+                <span class="yuedu"><%= topic.view_counter %>阅读</span>
+                <span class="pinlun"><%= topic.post_counter.to_i-1 %>次评论</span>
+              </li>
+            </ul>
+          </div>
+        <%- end -%>
+        </form>
+      </div>
+    </div>
+    <div class="fenye1">
+      <%= link_to '上一页', { :page => @topic_pages.current.previous.to_i, :params => { :tp => params[:tp], :tid => params[:tid] } } if @topic_pages.current.previous %>
+      <%= pagination_links(@topic_pages, :params => { :tp => params[:tp], :tid => params[:tid] }) %>
+      <%= link_to '下一页', { :page => @topic_pages.current.next.to_i, :params => { :tp => params[:tp], :tid => params[:tid] } } if @topic_pages.current.next %>
+    </div>
+  </div>
+  <%= render :partial => 'foot' %>
+</div>

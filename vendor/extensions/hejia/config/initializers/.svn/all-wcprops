@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/!svn/ver/113/51hejia/repos/wenba/release/vendor/extensions/hejia/config/initializers
+END
+001_load_rails_ext.rb
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/!svn/ver/113/51hejia/repos/wenba/release/vendor/extensions/hejia/config/initializers/001_load_rails_ext.rb
+END
+alias_has_finder.rb
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/!svn/ver/113/51hejia/repos/wenba/release/vendor/extensions/hejia/config/initializers/alias_has_finder.rb
+END
+dictionaries.rb
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/!svn/ver/113/51hejia/repos/wenba/release/vendor/extensions/hejia/config/initializers/dictionaries.rb
+END

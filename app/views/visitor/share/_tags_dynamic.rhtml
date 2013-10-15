@@ -1,0 +1,13 @@
+<div id="left">
+  <h3>装修知识分类</h3>
+  <%- for tag_level1 in @tags_level1 -%>
+    <div class="leftbox1">
+      <h4><a href="/visitor/entrybrowse/<%= tag_level1.id %>.html"><%= tag_level1.name %></a></h4>
+      <div class="sabrosus">
+        <%- for tag_level2 in get_tags_level2_by_tag_level1_id(tag_level1.id) -%>
+          <a href="/visitor/entrybrowse/<%= tag_level2.id %>.html"><%= tag_level2.name %></a>
+        <%- end -%>
+      </div>
+    </div>
+  <%- end -%>
+</div>

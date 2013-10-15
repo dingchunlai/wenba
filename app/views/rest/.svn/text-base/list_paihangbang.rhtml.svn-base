@@ -1,0 +1,10 @@
+<div class="Hd_Border4 wenba">
+  <div class="Wb">问吧</div>
+  <ul>
+    <%- for topic in @topics -%>
+      <li>
+      <a href="<%=BASEURL%>visitor/browse/<%= topic.tag_id %>.html" target="_blank">[<%= get_short_str(get_tag_name_by_tag_id(topic.tag_id), 4) %>]</a>
+      <a href="<%=BASEURL%>visitor/question/<%= topic.id %>.html" target="_blank"><%= get_short_str(topic.subject, 10) %></a>
+    <%- end -%>
+  </ul>
+</div>

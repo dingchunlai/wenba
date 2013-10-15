@@ -1,0 +1,9 @@
+<style type="text/css">
+body{
+background-color:#dfd6b5;
+}
+-->
+</style>
+<%- for topic in @topics -%>
+  ·<a href="<%=BASEURL%>visitor/discussion/<%= topic.id %>.html" target="_blank" title="<%= topic.subject %>"><span style="font-size:12px; text-decoration:none; color:#000; line-height:20px;"><%= get_short_str(topic.subject, 20) %></span></a><br />
+<%- end -%>

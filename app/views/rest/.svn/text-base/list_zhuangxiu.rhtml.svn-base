@@ -1,0 +1,15 @@
+<link href="http://d.51hejia.com/css/zhuangxiu108/zhuangxiu108.css" rel="stylesheet" type="text/css" />
+<div class="leftbox09">
+  <h3>问吧</h3>
+  <ul>
+    <%- for topic in @topics -%>
+      <li>·<a href="<%=BASEURL%>visitor/question/<%= topic.id %>.html" target="_blank" title="<%= topic.subject %>"><%= get_short_str(topic.subject, 15) %></a></li>
+    <%- end -%>
+  </ul>
+  <h3>论坛</h3>
+  <ul>
+    <%- for bbs in @bbss -%>
+      <li>·<a href="http://bbs.51hejia.com/topic/<%= bbs.id %>" target="_blank" title="<%= bbs.subject %>"><%= get_short_str(bbs.subject, 15) %></a></li>
+    <%- end -%>
+  </ul>
+</div>

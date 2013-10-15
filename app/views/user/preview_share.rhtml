@@ -1,0 +1,35 @@
+<div id="main">
+  <%= render :partial => 'visitor/head_start' %>
+  <%= render :partial => 'visitor/head_end' %>
+  <%= render :partial => 'visitor/ads_tonglang' %>
+  <%#= render :partial => 'visitor/search' %>
+  <div id="question">
+    <h3><img src="http://www.51hejia.com/images/wenba/question2.gif" /></h3>
+    <div class="qscontain">
+      <div class="top">
+        <ul>
+          <li class="louzhu"><%= get_user_name_by_user_id(@user_id) %></li>
+          <%#*<li class="pic"><img src="http://www.51hejia.com/images/wenba/wenhao.gif" /></li>%>
+          <%#*<li class="pic"><img src="http://www.51hejia.com/images/wenba/daijj.gif" /></li>%>
+          <li class="title"><%= @title %></li>
+          <li class="date"><%=Time.now.strftime("%Y-%m-%d %H:%M:%S")%></li>
+        </ul>
+      </div>
+      <div class="info">
+        <ul>
+          <li><img src="<%= get_user_icon_link_by_user_id(@user_id) %>" alt="" border="0" /></li>
+          <li>评价数：<strong>0</strong></li>
+          <li>浏览数：<strong>1</strong></li>
+        </ul>
+      </div>
+      <div class="art"><%= @description %></div>
+      <div class="wyhd"><img src="http://www.51hejia.com/images/wenba/wyhd2.gif" alt="我要评价" border="0" /></div>
+      <div class="tags"><strong>TAG：<%= @user_tags %></div>
+      <div class="ref"><strong>参考资料：<%= @reference %></div>
+      <div id="box1"style="display:none" class="pinlun">
+      <h3>评论<span><img src="http://www.51hejia.com/images/wenba/guanbi.gif" /></span></h3></div>
+    </div>
+  </div>
+  <%= render :partial => 'visitor/foot' %>
+</div>
+

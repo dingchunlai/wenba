@@ -1,0 +1,14 @@
+<font color="green">修改百科条目</font>
+<br>
+  <font color="red"><%= flash[:notice] %></font>
+<br>
+<form action="/editor/save_modify_wiki_item" method="post">
+  <input type="hidden" name="item_id" value="<%= @item_id %>">
+  <input type="hidden" name="content_id" value="<%= @content_id %>">
+  <input type="hidden" name="catalog_id" value="<%= @catalog_id %>">
+  条目标题：<input type="text" name="title" size="59" value="<%= @wiki_item.title %>"><span style="color: red;">*</span><br><br>
+  条目描述：<textarea name="description" rows="20"><%= @wiki_item.description %></textarea><span style="color: red;">*</span><br><br>
+  <input type="submit" value="提交">
+</form>
+<br>
+<a href="/editor/add_wiki_item?catalog_id=<%= @catalog_id %>&content_id=<%= @content_id %>">返回百科条目页</a><br><br>

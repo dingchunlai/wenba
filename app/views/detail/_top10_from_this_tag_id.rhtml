@@ -1,0 +1,17 @@
+<div class="yellowBox" >
+  <div class="title">
+    <h6 class="wy_answer">
+      <div class="hot_bg">网友最关注的10大<a href="/list/sort/<%=tag_id%>.html" target="_blank"><%=get_tag_name_by_tag_id(tag_id)%></a>问题</div>
+      <!-- （搜索相关问题： <a href="/so/?words=%b9%c7%d6%ca%ca%e8%cb%c9&amp;f1=313&amp;" target="_blank" class="keysearch">骨质疏松</a>&nbsp;&nbsp;<a href="/so/?words=%cd%b4%b7%e7&amp;f1=313&amp;" target="_blank" class="keysearch">痛风</a>&nbsp;&nbsp;<a href="/so/?words=%c4%f2%b3%a3%b9%e6&amp;f1=313&amp;" target="_blank" class="keysearch">尿常规</a>&nbsp;&nbsp;）-->
+    </h6>
+  </div>
+  <div class="body">
+    <ul class="hot_PH1">
+      <%i = 1%>
+      <%for r in @this_tops%>
+        <li><span class="span1"><a href="/q/<%=r.id%>.html" target="_blank"><%=utf8_left(r.subject,18,"...")%></a></span><span class="span2">[<%=r.view_counter%>]</span></li>
+        <%i+=1%><%if i==6%></ul><ul class="hot_PH1 hot_PH2"><%end%>
+      <%end%>
+    </ul>
+  </div>
+</div>

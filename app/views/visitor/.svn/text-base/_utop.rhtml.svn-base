@@ -1,0 +1,31 @@
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>装修建材设计 - 问知识，问产品，问专家 - 和家问吧</title>
+  <meta name="keywords" content="装修，装潢，建材，设计，家居，问答，知识分享，互动交流">
+  <meta name="description" content="和家问吧为网友提供装修装潢相关类信息共享，以互动问答的方式为提问者和回答者建立知识经验的交流分享平台，获取大量的装修知识，汇聚广大网友的知识结晶和业内专家及设计师的专业解答，第一时间为你真正解决装修过程中遇到的实际问题和难题。">
+  <link href="http://d.51hejia.com/css/wenba/sjs.css" rel="stylesheet" type="text/css" />
+  <script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+  </script>
+  <script type="text/javascript">
+        var fUrlStr = window.location.href.replace(/.+?:\/\/[^\/]+/,"");
+        _uacct = "UA-649153-2";
+        _udn="51hejia.com";
+        _uOsr[34]="soso"; _uOkw[34]="w";
+        _uOsr[35]="sogou"; _uOkw[35]="query";
+        _uOsr[36]="so.163"; _uOkw[36]="q";
+        _uOsr[37]="image.baidu"; _uOkw[37]="word";
+        urchinTracker(fUrlStr);
+
+        //标准广告统计函数
+        function googleAdStat(path)
+        {
+            _uacct = "UA-649153-1";
+            _udn="51hejia.com";
+            _uOsr[34]="soso"; _uOkw[34]="w";
+            _uOsr[35]="sogou"; _uOkw[35]="query";
+            _uOsr[36]="so.163"; _uOkw[36]="q";
+            _uOsr[37]="image.baidu"; _uOkw[37]="word";
+            urchinTracker(path);	
+        }
+    </script>
+</head>

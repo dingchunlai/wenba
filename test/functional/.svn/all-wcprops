@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/!svn/ver/113/51hejia/repos/wenba/release/test/functional
+END
+editor_controller_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/!svn/ver/113/51hejia/repos/wenba/release/test/functional/editor_controller_test.rb
+END
+expert_controller_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/!svn/ver/113/51hejia/repos/wenba/release/test/functional/expert_controller_test.rb
+END
+index_controller_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/!svn/ver/113/51hejia/repos/wenba/release/test/functional/index_controller_test.rb
+END
+admin_controller_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/!svn/ver/113/51hejia/repos/wenba/release/test/functional/admin_controller_test.rb
+END
+mine_controller_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/!svn/ver/113/51hejia/repos/wenba/release/test/functional/mine_controller_test.rb
+END
+fangtai_controller_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/!svn/ver/113/51hejia/repos/wenba/release/test/functional/fangtai_controller_test.rb
+END
+user_handle_controller_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/!svn/ver/113/51hejia/repos/wenba/release/test/functional/user_handle_controller_test.rb
+END
+list_controller_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/!svn/ver/113/51hejia/repos/wenba/release/test/functional/list_controller_test.rb
+END
+rest_controller_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/!svn/ver/113/51hejia/repos/wenba/release/test/functional/rest_controller_test.rb
+END
+user_controller_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/!svn/ver/113/51hejia/repos/wenba/release/test/functional/user_controller_test.rb
+END
+visitor_controller_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/!svn/ver/113/51hejia/repos/wenba/release/test/functional/visitor_controller_test.rb
+END
+detail_controller_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/!svn/ver/113/51hejia/repos/wenba/release/test/functional/detail_controller_test.rb
+END
+admin_handle_controller_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/!svn/ver/113/51hejia/repos/wenba/release/test/functional/admin_handle_controller_test.rb
+END
+upload_controller_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/!svn/ver/113/51hejia/repos/wenba/release/test/functional/upload_controller_test.rb
+END

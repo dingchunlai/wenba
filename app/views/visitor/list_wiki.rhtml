@@ -1,0 +1,63 @@
+<%= render :partial => 'head_start' %>
+<%= render :partial => 'head_end' %>
+<DIV class=navigation><SPAN><STRONG>您现在的位置：</STRONG></SPAN><A href="http://www.51hejia.com/">和家首页</A> &gt; <A href="<%=BASEURL%>">问吧</A> &gt; <A 
+  href="<%=BASEURL%>visitor/list_wiki?id=<%= @wiki.id %>"><%= @wiki.name %>百科知识</A></DIV>
+<DIV class=content>
+  <DIV class=content_title><STRONG><%= @wiki.name %></STRONG></DIV>
+  <DIV class=contents>
+    <DIV class=contents_title><STRONG>目录</STRONG></DIV>
+    <UL class=contents_li>
+      <%- for wiki_list in @wiki_lists -%>
+        <li><a style="cursor: pointer" onclick="Show(<%= wiki_list.id %>,img<%= wiki_list.id %>)">
+        <img src="http://www.51hejia.com/images/Images_zhuce/Zhan.gif" width="7" height="7" align="absmiddle" id="img<%= wiki_list.id %>"/><span><%= wiki_list.wiki_content %></span></a></li>
+        <ul id="c_<%= wiki_list.id %>" style="display: none">
+          <LI><%= get_wiki_title_by_wiki_id(wiki_list.id) %> </LI>
+        </ul>
+      <%- end -%>
+      <LI><A href="<%=BASEURL%>visitor/list_dope_wiki#21" 
+             target=_self>问题</A>
+      <LI><A href="<%=BASEURL%>visitor/list_dope_wiki#22" 
+           target=_self>标签</A> </LI></UL>
+  </DIV>
+  <div class="tupian"><img src="http://www.51hejia.com/images/Images_zhuce/1.JPG"/>
+  <img src="http://www.51hejia.com/images/Images_zhuce/2.JPG"/>
+  <img src="http://www.51hejia.com/images/Images_zhuce/3.JPG"/>
+  <img src="http://www.51hejia.com/images/Images_zhuce/4.JPG"/>
+    <div class="zhishi"><a href="javascript:isLogin()"><img src="http://www.51hejia.com/images/wenba/wenzhang.gif"/></a>
+    <a href="<%=BASEURL%>visitor/s?page=1&wd=%E6%B6%82%E6%96%99"><img src="http://www.51hejia.com/images/wenba/sousuozhishi.gif"/></a></div>
+  </div>
+  <div style="clear:both; height:20px;"></div>
+  <%- for wiki_list in @wiki_lists -%>
+        <input type="hidden" value="<%= titles=get_title_by_content_id(wiki_list.id) %>">      
+        <%- for title in titles -%>
+            <div class="content_title_a">
+              <strong><a name="<%= title.id %>" id="<%= title.id %>"></a><%= title.title %></strong>
+              <span class="back"><a href="#" target="_self">返回顶部</a></span></div>
+              <div class="content_a">
+                <%= get_description_by_id(title.id) %>
+              </div>
+            
+        <%- end -%>
+  <%- end -%>
+  
+  <div class="content_b">
+    
+    <div class="content_title_a"><strong><a name="21" id="21"></a>问题</strong><span class="back"><a href="#" target="_self">返回顶部</a></span></div>
+    <div class="content_a">
+      <ul class="contents_li">
+        <% for topic in @topics %>
+          <li><a href="<%=BASEURL%>visitor/question/<%= topic.id %>" target="_blank"><%= topic.subject %></a></li>
+        <% end %>
+      </ul>
+    </div>
+    
+    <div class="content_title_a"><strong><a name="22" id="22"></a>标签</strong><span class="back"><a href="#" target="_self">返回顶部</a></span></div>
+    <div class="content_a">
+      <ul class="contents_li">
+        <li><%= @tag.tag %></li>
+      </ul>
+    </div>
+    
+  </div>
+</div>
+<%= render :partial => 'foot' %>

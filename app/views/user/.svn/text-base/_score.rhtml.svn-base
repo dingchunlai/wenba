@@ -1,0 +1,21 @@
+<table width="80%" border="0" cellpadding="0" cellspacing="0" >
+  <tr>
+    <td width="110" valign="top" nowrap class="f14"><B class=ttc>悬赏分：</B></td>
+    <td class=tdof id=td4>
+      <div style="height:28px;" class="f14">
+        <select name="mpn">
+          <option value=0>0</option>
+          <option value=5>5</option>
+          <option value=10>10</option>
+          <option value=15>15</option>
+          <option value=20>20</option>
+          <option value=30>30</option>
+          <option value=50>50</option>
+          <option value=80>80</option>
+          <option value=100>100</option>
+        </select>您目前的积分：181 。
+      </div>
+      <div><img src="#" width="16" height="16">悬赏分越高，您的问题会越受关注，从而得到更佳答案。</div>
+    </td>
+  </tr>
+</table>

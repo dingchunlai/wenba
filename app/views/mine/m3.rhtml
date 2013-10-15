@@ -1,0 +1,30 @@
+<div class="statusBar">
+<div class="theme">标题(共<%=@recordcount%>条)</div>
+<div class="time">提问时间</div>
+<div class="status">状态</div>
+<div class="status">操作</div>
+<div class="click">回答数</div>
+</div>
+<table>
+<tbody>
+<%for mt in @my_topics%>
+<tr>
+<td style="width: 550px;"><a target="_blank" href="/q/<%=mt.id%>.html"><span style="color: rgb(0, 0, 204); display: inline; font-size: 14px;"><%=mt.subject%></span></a></td>
+<td style="width: 100px; text-align: center;"><p class="lgy"><%=mt.post_counter%></p></td>
+<td style="width: 60px; text-align: center;"><p class="lgy"><a href="/user_handle/del_topic?topic_id=<%=mt.id%>&refresh=f" target="hideiframe">删除</a></td>
+<td style="width: 60px; text-align: center;"><p class="lgy"><%if mt.post_counter.to_i == 0%>未解决<%else%>已解决<%end%></p></td>
+<td style="width: 80px; text-align: center;"><p class="time"><%=mt.created_at.strftime("%Y-%m-%d") rescue ""%></p></td>
+</tr>
+<%end%>
+</tbody></table>
+<center style="margin-top:5px;">
+<span id='pagelist'></span>
+<script type="text/javascript">
+recordcount = <%=@recordcount%>;
+pagesize = <%=@pagesize%>;
+curpage = <%=@curpage%>;
+cur_list = 0;
+listsize = <%=@listsize%>;
+page_index_list(recordcount, pagesize, curpage, cur_list, listsize);
+</script>
+</center>

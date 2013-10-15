@@ -1,0 +1,38 @@
+<div class="left">
+  <div class="title">
+    <h2><%=title%></h2>
+    <span><a href="/list/s/173.html" target="_blank">更多</a></span> </div>
+  <ul>
+    <% if parent_tag_id == 173 %>
+        <% topics_api = parse_xml("http://api.51hejia.com/rest/build/xml/55517.xml",["title","description","url"]) %>
+        <% if topics_api.size > 0 %>
+            <% topics_api.each do |r| %>
+              <% tui_data = AskZhidaoTopic.find(r['title'].to_i,:select =>'id,post_counter,view_counter') %>
+              <li><a href="/q/<%=r['title'].to_i%>.html" target="_blank" class="ranleft"><%=utf8_left(r['description'],22,"...")%></a><span class="ranmd"><%= tui_data ? tui_data.post_counter : 1188%>个回答</span><span class="ranright"><%=tui_data ? tui_data.view_counter : 38799%>次阅读</span></li>
+            <% end %>
+            <%
+               tui_num = topics_api.size
+               tui_num_ids  = topics_api.map {|ta| ta['title'].to_i}
+               all_azt_data = AskZhidaoTopic.get_hot_topics_by_parent_tag_id(parent_tag_id, 10)
+               all_num_ids = all_azt_data.map {|azt| azt.id}
+               join_ids = all_num_ids & tui_num_ids
+               leave_ids = all_num_ids - join_ids
+               leave_num = tui_num - join_ids.size
+               1.upto(leave_num) { leave_ids.pop } if leave_num > 0
+               leave_result = all_azt_data.select {|aad| leave_ids.include? aad.id}
+            %>
+        <% else %>
+            <% leave_result = AskZhidaoTopic.get_hot_topics_by_parent_tag_id(parent_tag_id, 10) %>
+        <% end %>
+    <% else %>
+         <% leave_result = AskZhidaoTopic.get_hot_topics_by_parent_tag_id(parent_tag_id, 10) %>
+    <% end %>
+    <% leave_result.each do |r| %>
+      <%
+      #临时去掉第二条不显示
+      next if r.id.to_i == 281348
+      %>
+      <li><a href="/q/<%=r.id%>.html" target="_blank" class="ranleft"><%=utf8_left(r.subject,22,"...")%></a><span class="ranmd"><%=r.post_counter%>个回答</span><span class="ranright"><%=r.view_counter%>次阅读</span></li>
+    <% end %>
+  </ul>
+</div>

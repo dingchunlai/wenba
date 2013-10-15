@@ -1,0 +1,19 @@
+document.writeln("<!DOCTYPE html PUBLIC \"-\/\/W3C\/\/DTD XHTML 1.0 Transitional\/\/EN\" \"http:\/\/www.w3.org\/TR\/xhtml1\/DTD\/xhtml1-transitional.dtd\">");
+document.writeln("<html xmlns=\"http:\/\/www.w3.org\/1999\/xhtml\">");
+document.writeln("  <head>");
+document.writeln("    <meta http-equiv=\"Content-Type\" content=\"text\/html; charset=utf-8\" \/>");
+document.writeln("    <title>无标题文档<\/title>");
+document.writeln("    <link href=\"http:\/\/d.51hejia.com\/css\/luntancss\/luntan.css\" rel=\"stylesheet\" type=\"text\/css\" \/>");
+document.writeln("  <\/head>");
+document.writeln("  <body>");
+document.writeln("<div class=\"Lungonggao\">推荐问答<\/div>");
+document.writeln("<div class=\"LunBorder LunMBb\">");
+document.writeln("  <ul class=\"LunIconwF\">");
+<% for topic in @topics %>
+document.writeln("      <%=  %>");
+document.writeln("      <li>·<a href=\"http:\/\/ask.51hejia.com\/visitor\/question\/<%= topic.id %>.html\" target=\"_blank\"><%= get_short_str(topic.subject, 13) %><\/a><\/li>");
+<% end %>
+document.writeln("  <\/ul>");
+document.writeln("<\/div>")
+document.writeln("  <\/body>");
+document.writeln("<\/html>")

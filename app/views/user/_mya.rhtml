@@ -1,0 +1,18 @@
+<div id="answer">
+  <%- for post in @posts -%>
+    <ul>
+      <li>
+        <a target="_blank" href="<%=BASEURL%>visitor/question/<%= post.zhidao_topic_id %>.html">
+        <%= get_zhidao_topic_by_zhidao_topic_id(post.zhidao_topic_id).subject %></a>
+        回答数：<%= get_zhidao_topic_by_zhidao_topic_id(post.zhidao_topic_id).post_counter.to_i-1 %>
+      </li>
+    </ul>
+  <%- end -%>
+</div>
+<div id="paginate">
+  <ul>
+    <li><%= link_to '上一页', { :page => @post_pages.current.previous.to_i, :params => { :tp => params[:tp] } } if @post_pages.current.previous %></li>
+    <li><%= pagination_links(@post_pages, :params => { :tp => params[:tp] }) %></li>
+    <li><%= link_to '下一页', { :page => @post_pages.current.next.to_i, :params => { :tp => params[:tp] } } if @post_pages.current.next %></li>
+  </ul>
+</div>

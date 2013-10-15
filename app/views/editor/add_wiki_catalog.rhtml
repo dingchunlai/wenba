@@ -1,0 +1,19 @@
+<font color="green">增加百科目录</font><br />
+<font color="red"><%= flash[:notice] %></font><br />
+百科名称:<%= @wiki_content.content_name %><br/><br />
+<% if !@wiki_catalogs.nil? %>
+  <% for catalog in @wiki_catalogs %>
+    百科目录:<%= catalog.catalog_name %>&nbsp;&nbsp;&nbsp;
+    <a href="/editor/add_wiki_item?content_id=<%= catalog.content_id %>&catalog_id=<%=  catalog.id%>">新增百科条目</a>&nbsp;&nbsp;&nbsp;
+    <a href="/editor/modify_wiki_catalog?content_id=<%= catalog.content_id %>&catalog_id=<%=  catalog.id%>">编辑</a>&nbsp;&nbsp;&nbsp;
+    <a href="/editor/del_wiki_catalog?content_id=<%= catalog.content_id %>&catalog_id=<%= catalog.id %>" onclick="if (confirm('确定要删除吗?')) { var f = document.createElement('form'); f.style.display = 'none'; this.parentNode.appendChild(f); f.method = 'POST'; f.action = this.href;f.submit(); };return false;">删除</a>&nbsp;&nbsp;&nbsp;<br />
+  <%  end %>
+<% end %>
+<br/><br />
+<form action="/editor/save_wiki_catalog" method="post">
+  百科目录：<input type="text" name="catalog" ><span style="color: red;">*</span><br><br>
+  <input type="hidden" name="content_id" value="<%= @content_id %>">
+  <input type="submit" value="增加">
+</form>
+<br>
+<a href="/editor/list_wiki">返回百科列表页</a><br>

@@ -1,0 +1,53 @@
+<div id="right2">
+  <div class="rightbox1">
+    <h3>装修问答分类 <span><a href="http://bbs.51hejia.com/btopic/224658" target="_blank" style="font-size:12px;color:black">人气夏被特卖</a></span></h3>
+    <div class="same_cha">
+      <ul>
+        <li><strong>问题过滤</strong></li>
+        <%= get_html_of_menu_for_b2list_by_type_id(@tag_id) %>
+        <li class="jieguo">共搜到相关问题：<span><%= @topic_pages.item_count %></span>条</li>
+      </ul>
+    </div>
+    <div id="same1">
+      <%- for topic in @topics -%>
+        <div class="fenleibox">
+          <%- if topic.best_post_id.nil? -%>
+            <h4 class="wen">
+          <%- else -%>
+            <h4 class="da">
+            <%- end -%>
+          <a target="_blank" href="<%=BASEURL%>visitor/question/<%= topic.id %>.html"><%= get_short_str(topic.subject, 40) %></a>
+          <%= get_html_of_admin_operations_by_topic_id(@user_id, topic.id, @tag_id) %>
+          </h4>
+          <dl>
+            <dd>提问者：
+              <%- if topic.user_id.to_i == 0 -%>
+                <%= get_user_name_by_user_id(topic.user_id )%>
+              <%- else -%>
+                <a href="http://blog.51hejia.com/u/<%= topic.user_id %>" target="_blank">
+                <%= get_user_name_by_user_id(topic.user_id )%></a>
+              <%- end -%>
+            &nbsp;&nbsp;&nbsp;已浏览：<%= topic.view_counter %>&nbsp;&nbsp;&nbsp;已回答：<%= topic.post_counter.to_i-1 %>&nbsp;&nbsp;&nbsp;<%= get_html_of_best_post_user_for_b2list_by_best_post_id(topic.best_post_id) %></dd>
+            <dd>分类：<a target="_blank" href="<%=BASEURL%>visitor/browse/<%= topic.tag_id %>.html"><%= get_tag_name_by_tag_id(topic.tag_id) %></a>&nbsp;&nbsp;&nbsp;Tag：<%= get_html_of_user_tags_by_topic_id(topic.id) %></dd>
+          </dl>
+          <p>
+            <%- if topic.best_post_id -%>
+              <%= get_short_str(strip_tags(get_zhidao_topic_post_by_best_post_id(topic.best_post_id).content), 300) %>
+            <%- else -%>
+              <%= get_short_str(strip_tags(topic.description), 300) %>
+            <%- end -%>
+          </p>
+          <ul>
+            <li class="edwyhd"><a target="_blank" href="<%=BASEURL%>visitor/question/<%= topic.id %>.html#reply">我要回答</a>&nbsp;&nbsp;<a target="_blank" href="<%=BASEURL%>nipponpaint_wiki.html">涂料百科知识</a></li>
+            <li></li>
+          </ul>
+        </div>
+      <%- end -%>
+    </div>
+  </div>
+  <div class="fenye1">
+    <%= link_to '&lt; 上一页', { :controller => 'visitor', :action => 'browse', :page => @topic_pages.current.previous.to_i, :params => { :tp => params[:tp], :tid => params[:tid] } } if @topic_pages.current.previous %>
+    <%= pagination_links(@topic_pages, :controller => 'visitor', :action => 'browse', :params => { :tp => params[:tp], :tid => params[:tid] }) %>
+    <%= link_to '下一页 &gt;', { :controller => 'visitor', :action => 'browse', :page => @topic_pages.current.next.to_i, :params => { :tp => params[:tp], :tid => params[:tid] } } if @topic_pages.current.next %>
+  </div>
+</div>

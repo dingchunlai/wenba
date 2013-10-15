@@ -1,0 +1,9 @@
+<div class="rightbox04">
+	  <h3>问吧<span><a href="<%=BASEURL%>" target="_blank">更多>></a></span></h3>
+	  <ul>
+		<% for topic in @topics %>
+                <li>·<a href="<%=BASEURL%>visitor/question/<%= topic.id %>" target="_blank"><%= get_short_str topic.subject, 16 %></a></li>
+               <% end %>
+		 
+	  </ul>
+	</div>

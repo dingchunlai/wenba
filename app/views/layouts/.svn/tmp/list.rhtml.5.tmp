@@ -1,0 +1,166 @@
+<%@title = "全国最大的家居问答平台" if @title.nil?%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <%if pp(@username)%>
+        <title>问吧会员_<%=@username%>_问题列表_家居知识_装修知识_建材知识_和家问吧</title>
+    <%else%>
+        <title><%=@title%></title>
+    <%end%>
+    <meta name="keywords" content="家居资讯-有装修问题先上和家问吧" />
+    <meta name="description" content="家居咨询-和家问吧是全国最大的家居在线问答平台，有任何装修问题都可以在这里得到全国各地的专业师和网友的解答，良好的交流平台吸引着全国越来越多的专家、设计师、网友加入进来针对装修中出现的各类问题进行问答。有装修问题，先上和家问吧。" />
+    <link href="http://js.51hejia.com/css/hejiaask.css" rel="stylesheet" type="text/css" />
+    <%= javascript_include_tag "http://js.51hejia.com/js/jquery/1.5/jquery.min.js" %>
+    <%= javascript_include_tag "http://js.51hejia.com/js/jquery/plugins/tmpl/1.0.0/jquery.tmpl.min.js" %>
+    <script type="text/javascript" src="http://www.51hejia.com/js/wb/public.js"></script>
+    <style type="text/css">
+      .xml_link_style0 {
+      }
+      .xml_link_style1 {
+          font-weight: bold;
+      }
+      .xml_link_style2 {
+          color: #FF0000;
+      }
+      .xml_link_style3 {
+          font-weight: bold;
+          color: #FF0000;
+      }
+      </style>
+	  <!--script src="http://js.51hejia.com/js/zb-ad.js" type="text/javascript"></script-->
+	  <script type="text/javascript">
+		function rember_cookies()
+		{
+		    document.cookie = "jie_sheng" + "="+ escape("jie_sheng") + ";path=/;domain=.51hejia.com";
+		    $('#jie_sheng_ad').hide();
+		}
+	  </script>
+	  <link href="http://js.51hejia.com/css/zb20120510.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+
+<%= render :partial => '/share/public_header' %>
+
+<%if @action_name == "default" || @action_name == "sindex"%>
+    <%=adspace('问吧-首页-通栏1', '', '<div style="width:960px;margin-bottom:5px;"></div>') do
+      render :partial => "/common/ad/default_top_banner01"
+    end%>
+<%end%>
+
+<%if @action_name == "sort"%>
+    <%=adspace('问吧-列表页-通栏1', '', '<div style="width:960px;margin-bottom:5px;"></div>')%>
+<%end%>
+
+<%=  render :partial => "/common/top_search"%>
+
+<iframe name="hideiframe" width="0" height="0" style='display: none;'></iframe>
+
+<%=yield%>
+
+<%= render :partial => '/share/public_footer' %>
+
+<style type="text/css">
+    .footer_ad {
+        z-index: 9999;
+        position: fixed;
+        width: 100%;
+        bottom: 0px;
+        left: 0px;
+        _position: absolute;
+        _left: expression(eval(document.documentElement.scrollLeft));
+        _top: expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0)));
+        background: url(http://js.51hejia.com/img/ad_bg.gif) no-repeat top center;
+    }
+
+    .footer_ad .footer_ad_img {
+        width: 1000px;
+        height: 84px;
+        margin: 0 auto;
+        position: relative;
+    }
+
+    .footer_ad a.footer_ad_close {
+        width: 16px;
+        height: 16px;
+        margin: 0px;
+        position: absolute;
+        top: 15px;
+        right: 10px;
+        background: url(http://js1.51hejia.com/img/zxdpimg/contrast_li_close.jpg) no-repeat;
+        z-index: 99;
+    }
+
+    .footer_ad a.footer_ad_link {
+        display: block;
+        width: 1000px;
+        height: 84px;
+        margin: 0 auto;
+    }
+</style>
+<div class="footer_ad" id="footer_ad">
+  <div class="footer_ad_img">
+    <!--a href="javascript:void(0);" onclick="open_gongyi_ad_url();" class="footer_ad_link"></a-->
+    <%= render_ad(81071, '社区首页-飘带底', 'afp') %>
+    <a class="footer_ad_close" href="javascript:void(0);" onclick="$('#footer_ad').hide();"></a>
+  </div>
+</div>
+
+<script type="text/javascript" src="http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js"></script>
+	<% if render_ad(83267, '问吧-左漂浮', 'afp').include?("<span>") %>
+	    <div style="left: 0px; position: absolute; top: 100px;" id="ALayer1">
+	      <div align="left">
+	        <img border="0" style="cursor:pointer" onclick="closeBanner();" src="http://js.51hejia.com/img/dl_close.gif">
+	      </div>
+	      <%= render_ad(83267, '问吧-左漂浮', 'afp') %>
+	    </div>
+    <% end %>
+    <% if render_ad(83265, '问吧-右漂浮', 'afp').include?("<span>") %>
+	    <div style="right: 0px; position: absolute; top: 100px;" id="ALayer2">
+	      <div align="right"><img border="0" onclick="closeBanner();" src="http://js.51hejia.com/img/dl_close.gif"></div>
+	      <%= render_ad(83265, '问吧-右漂浮', 'afp') %>
+	    </div>
+    <% end %>
+    <% if render_ad(83267, '问吧-左漂浮', 'afp').include?("<span>") || render_ad(83265, '问吧-右漂浮', 'afp').include?("<span>") %>
+	<script type="text/javascript">
+	    if (remote_ip_info.city == '上海') {
+	        lastScrollY = 0;
+	        function heartBeat() {
+	            var diffY;
+	            if (document.documentElement && document.documentElement.scrollTop) {
+	                diffY = document.documentElement.scrollTop;
+	            }
+	            else if (document.body) {
+	                diffY = document.body.scrollTop
+	            }
+	            else {
+	            }
+	            percent = .1 * (diffY - lastScrollY);
+	            if (percent > 0) {
+	                percent = Math.ceil(percent);
+	            }
+	
+	            else {
+	                percent = Math.floor(percent);
+	            }
+	            document.getElementById("ALayer1").style.top = parseInt(document.getElementById("ALayer1").style.top) + percent + "px";
+	            document.getElementById("ALayer2").style.top = parseInt(document.getElementById("ALayer1").style.top) + percent + "px";
+	            lastScrollY = lastScrollY + percent;
+	        }
+	
+	        window.setInterval("heartBeat()", 1);
+	        function closeBanner() {
+	            document.getElementById("ALayer1").style.display = 'none';
+	            document.getElementById("ALayer2").style.display = 'none';
+	        }
+	    }
+	</script>
+	<% end %>
+	<% if cookies["jie_sheng"].blank? %>
+		<div id="jie_sheng_ad" style="bottom: 0px; right: 0px; " class="zb-ad" title="">
+			<%= render_ad(81073, '社区首页-弹窗右下', 'afp') %>
+			<a class="close" id="jie_sheng" onclick="rember_cookies();"></a>
+		</div>
+	<% end %>
+</body>
+</html>

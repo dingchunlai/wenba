@@ -1,0 +1,30 @@
+<%= render :partial => 'delet' %>
+<form name="ftiwen" method="post" action="/editor/del_huifu">
+  <table width="80%" border="0" cellpadding="0" cellspacing="0" >
+    <%- for topic in @topics -%>
+      <li>
+        <%= topic.subject %>
+      </li>
+    <%- end -%>
+  </table>
+  <table width="80%" border="0" cellpadding="0" cellspacing="0" >
+    <input id="check_all" name="check_all" type="checkbox" value="0" onclick="CheckAll('posts[]', 'check_all')"/>全选<br>
+    <br>
+    <%- for post in @posts -%>
+      <input id="posts[]" name="posts[]" type="checkbox" value="<%= post.id %>" />
+      <li>
+        <a href="/visitor/question/<%= topic.id %>.html" target="_blank"><%= post.content %></a>
+      </li>
+      <br>
+    <%- end -%>
+  </table>
+  <table width="80%" border="0" cellpadding="0" cellspacing="0" >
+    <tr>
+      <td width="110" class="f14">&nbsp;</td>
+      <td valign="top" align=middle>
+        <input type="submit" name="s" value="删除" class="bnsrh">
+        <input type="hidden" name="cid" value=0>
+      </td>
+    </tr>
+  </table>
+</form>

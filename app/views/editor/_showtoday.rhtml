@@ -1,0 +1,26 @@
+<%= render :partial => 'stoday' %>
+<table>
+  <tr>
+    <th>帖子名</th>
+    <th>发帖人</th>
+    <th>发帖时间</th>
+    <th>IP</th>
+  </tr>
+  <%- for subject in @subjects -%>
+    <tr> 
+      <td><a href="/visitor/question/<%= subject.id %>.html" target="_blank"><%= get_short_str(subject.subject, 20) %></a></td>
+      <td><%if subject.user_id ==0 %>
+          匿名
+        <%else%>
+          <a href="/visitor/u/<%= subject.user_id %>.html" target="_blank"><%= get_user_name_by_user_id(subject.user_id) %></a>
+      <%-end-%></td>
+      <td><%= subject.created_at.strftime("%Y-%m-%d") %></td> 
+      <td><%= subject.ip %></td>
+    </tr>
+  <%- end -%>
+  <tr>
+    <%= link_to '上一页', { :page => @topic_pages.current.previous.to_i, :params => { :date1 => params[:date1], :date2 => params[:date2] } } if @topic_pages.current.previous %>
+    <%= pagination_links(@topic_pages,  :params => { :date1 => params[:date1], :date2 => params[:date2] }) %>
+    <%= link_to '下一页', { :page => @topic_pages.current.next.to_i,  :params => { :date1 => params[:date1], :date2 => params[:date2] } } if @topic_pages.current.next %>
+  </tr>
+</table>

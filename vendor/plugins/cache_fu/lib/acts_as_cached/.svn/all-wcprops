@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/!svn/ver/113/51hejia/repos/wenba/release/vendor/plugins/cache_fu/lib/acts_as_cached
+END
+cache_methods.rb
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/!svn/ver/113/51hejia/repos/wenba/release/vendor/plugins/cache_fu/lib/acts_as_cached/cache_methods.rb
+END
+fragment_cache.rb
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/!svn/ver/113/51hejia/repos/wenba/release/vendor/plugins/cache_fu/lib/acts_as_cached/fragment_cache.rb
+END
+disabled.rb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/!svn/ver/113/51hejia/repos/wenba/release/vendor/plugins/cache_fu/lib/acts_as_cached/disabled.rb
+END
+benchmarking.rb
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/!svn/ver/113/51hejia/repos/wenba/release/vendor/plugins/cache_fu/lib/acts_as_cached/benchmarking.rb
+END
+recipes.rb
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/!svn/ver/113/51hejia/repos/wenba/release/vendor/plugins/cache_fu/lib/acts_as_cached/recipes.rb
+END
+local_cache.rb
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/!svn/ver/113/51hejia/repos/wenba/release/vendor/plugins/cache_fu/lib/acts_as_cached/local_cache.rb
+END
+config.rb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/!svn/ver/113/51hejia/repos/wenba/release/vendor/plugins/cache_fu/lib/acts_as_cached/config.rb
+END

@@ -1,0 +1,34 @@
+document.writeln("<!DOCTYPE html PUBLIC \"-\/\/W3C\/\/DTD XHTML 1.0 Transitional\/\/EN\" \"http:\/\/www.w3.org\/TR\/xhtml1\/DTD\/xhtml1-transitional.dtd\">");
+document.writeln("<html xmlns=\"http:\/\/www.w3.org\/1999\/xhtml\">");
+document.writeln("  <head>");
+document.writeln("    <meta http-equiv=\"Content-Type\" content=\"text\/html; charset=utf-8\">");
+document.writeln("    <title>无标题文档<\/title>");
+document.writeln("    <link href=\"\/stylesheets\/cizhuan.css\" rel=\"stylesheet\" type=\"text\/css\" \/>");
+document.writeln("    <SCRIPT src=\"\/javascripts\/cha.js\" type=\"text\/javascript\"><\/SCRIPT>");
+document.writeln("  <\/head>");
+document.writeln("  <body>");
+document.writeln("<div class=\"czwb\">");
+document.writeln("  <h3>瓷砖问吧<span><a href=\"http:\/\/ask.51hejia.com\/visitor\/s?wd=%E7%93%B7%E7%A0%96\" target=\"_blank\">>>更多<\/a><\/span><\/h3>");
+document.writeln("  <div class=\"same_cha\">");
+document.writeln("    <ul>");
+document.writeln("      <li id=\"s1\" onmouseover=\"show_intro(\'s\',\'same\',2,1);\" class=\"menu_on\">已解决问题<\/li>");
+document.writeln("      <li id=\"s2\" onmouseover=\"show_intro(\'s\',\'same\',2,2);\" class=\"menu_off\">待解决问题<\/li>");
+document.writeln("    <\/ul>");
+document.writeln("  <\/div>");
+document.writeln("  <div id=\"same1\">");
+document.writeln("    <ul class=\"box\">");
+<%- for topic1 in @topics1 -%>
+document.writeln("        <li><a href=\"http:\/\/ask.51hejia.com\/visitor\/question\/<%= topic1.id %>.html\" target=\"_blank\" title=\"<%= topic1.subject %>\">[<%= get_tag_name_by_tag_id(topic1.tag_id) %>]<%= get_short_str(topic1.subject, 18) %><\/a><\/li>");
+<%- end -%>
+document.writeln("    <\/ul>");
+document.writeln("  <\/div>");
+document.writeln("  <div id=\"same2\">");
+document.writeln("    <ul class=\"box1\">");
+<%- for topic0 in @topics0 -%>
+document.writeln("        <li><a href=\"http:\/\/ask.51hejia.com\/visitor\/question\/<%= topic0.id %>.html\" target=\"_blank\" title=\"<%= topic0.subject %>\">[<%= get_tag_name_by_tag_id(topic0.tag_id) %>]<%= get_short_str(topic0.subject, 18) %><\/a><\/li>");
+<%- end -%>
+document.writeln("    <\/ul>");
+document.writeln("  <\/div>");
+document.writeln("<\/div>")
+document.writeln("  <\/body>");
+document.writeln("<\/html>");

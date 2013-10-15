@@ -1,0 +1,5 @@
+<%= render :partial => 'tags_navigation' %>
+<br>
+<%= render :partial => 'tags' %>
+<br>
+<%= render :partial => 'blist' %>

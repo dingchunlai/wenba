@@ -1,0 +1,473 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/!svn/ver/113/51hejia/repos/wenba/release/app/models
+END
+ask_hejia_company.rb
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/!svn/ver/113/51hejia/repos/wenba/release/app/models/ask_hejia_company.rb
+END
+ask_blog_config.rb
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/!svn/ver/113/51hejia/repos/wenba/release/app/models/ask_blog_config.rb
+END
+ask_topic_read.rb
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/!svn/ver/113/51hejia/repos/wenba/release/app/models/ask_topic_read.rb
+END
+picture.rb
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/!svn/ver/113/51hejia/repos/wenba/release/app/models/picture.rb
+END
+ask_zhidao_topic_post.rb
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/!svn/ver/113/51hejia/repos/wenba/release/app/models/ask_zhidao_topic_post.rb
+END
+ask_wiki_item.rb
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/!svn/ver/113/51hejia/repos/wenba/release/app/models/ask_wiki_item.rb
+END
+ask_blog_topic.rb
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/!svn/ver/113/51hejia/repos/wenba/release/app/models/ask_blog_topic.rb
+END
+ask_forum_tag.rb
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/!svn/ver/113/51hejia/repos/wenba/release/app/models/ask_forum_tag.rb
+END
+ask_tieba.rb
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/!svn/ver/113/51hejia/repos/wenba/release/app/models/ask_tieba.rb
+END
+community_user.rb
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/!svn/ver/113/51hejia/repos/wenba/release/app/models/community_user.rb
+END
+ask_blog_topic_post.rb
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/!svn/ver/113/51hejia/repos/wenba/release/app/models/ask_blog_topic_post.rb
+END
+ask_tieba_topic_post.rb
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/!svn/ver/113/51hejia/repos/wenba/release/app/models/ask_tieba_topic_post.rb
+END
+ask_user_info.rb
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/!svn/ver/113/51hejia/repos/wenba/release/app/models/ask_user_info.rb
+END
+ask_forum_topic_post.rb
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/!svn/ver/113/51hejia/repos/wenba/release/app/models/ask_forum_topic_post.rb
+END
+oracle_hejia_company.rb
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/!svn/ver/113/51hejia/repos/wenba/release/app/models/oracle_hejia_company.rb
+END
+wiki_content.rb
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/!svn/ver/113/51hejia/repos/wenba/release/app/models/wiki_content.rb
+END
+ask_operation.rb
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/!svn/ver/113/51hejia/repos/wenba/release/app/models/ask_operation.rb
+END
+ask_blog_album.rb
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/!svn/ver/113/51hejia/repos/wenba/release/app/models/ask_blog_album.rb
+END
+ask_taolun_topic_post.rb
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/!svn/ver/113/51hejia/repos/wenba/release/app/models/ask_taolun_topic_post.rb
+END
+ask_score_order.rb
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/!svn/ver/113/51hejia/repos/wenba/release/app/models/ask_score_order.rb
+END
+ask_editor_operation.rb
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/!svn/ver/113/51hejia/repos/wenba/release/app/models/ask_editor_operation.rb
+END
+ask_statistic.rb
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/!svn/ver/113/51hejia/repos/wenba/release/app/models/ask_statistic.rb
+END
+ask_hejia_company_post.rb
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/!svn/ver/113/51hejia/repos/wenba/release/app/models/ask_hejia_company_post.rb
+END
+hejia_user_tag.rb
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/!svn/ver/113/51hejia/repos/wenba/release/app/models/hejia_user_tag.rb
+END
+ask_zhidao_topic.rb
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/!svn/ver/113/51hejia/repos/wenba/release/app/models/ask_zhidao_topic.rb
+END
+hejia_user.rb
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/!svn/ver/113/51hejia/repos/wenba/release/app/models/hejia_user.rb
+END
+ask_blog_choices.rb
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/!svn/ver/113/51hejia/repos/wenba/release/app/models/ask_blog_choices.rb
+END
+ask_blog_category.rb
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/!svn/ver/113/51hejia/repos/wenba/release/app/models/ask_blog_category.rb
+END
+filter_word.rb
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/!svn/ver/113/51hejia/repos/wenba/release/app/models/filter_word.rb
+END
+oracle_hejia_user_bbs.rb
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/!svn/ver/113/51hejia/repos/wenba/release/app/models/oracle_hejia_user_bbs.rb
+END
+reply.rb
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/!svn/ver/113/51hejia/repos/wenba/release/app/models/reply.rb
+END
+ask_taolun_topic.rb
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/!svn/ver/113/51hejia/repos/wenba/release/app/models/ask_taolun_topic.rb
+END
+ask_zhishi_topic_post.rb
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/!svn/ver/113/51hejia/repos/wenba/release/app/models/ask_zhishi_topic_post.rb
+END
+ask_user_tag.rb
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/!svn/ver/113/51hejia/repos/wenba/release/app/models/ask_user_tag.rb
+END
+ask_search_keyword.rb
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/!svn/ver/113/51hejia/repos/wenba/release/app/models/ask_search_keyword.rb
+END
+notifications.rb
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/!svn/ver/113/51hejia/repos/wenba/release/app/models/notifications.rb
+END
+tag.rb
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/!svn/ver/113/51hejia/repos/wenba/release/app/models/tag.rb
+END
+ask_user_message.rb
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/!svn/ver/113/51hejia/repos/wenba/release/app/models/ask_user_message.rb
+END
+ask_topic_subscription.rb
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/!svn/ver/113/51hejia/repos/wenba/release/app/models/ask_topic_subscription.rb
+END
+ask_blog_state.rb
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/!svn/ver/113/51hejia/repos/wenba/release/app/models/ask_blog_state.rb
+END
+oracle_hejia_user_role.rb
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/!svn/ver/113/51hejia/repos/wenba/release/app/models/oracle_hejia_user_role.rb
+END
+oracle_hejia_role.rb
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/!svn/ver/113/51hejia/repos/wenba/release/app/models/oracle_hejia_role.rb
+END
+ask_blocked_ip.rb
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/!svn/ver/113/51hejia/repos/wenba/release/app/models/ask_blocked_ip.rb
+END
+ask_topic_tag_url.rb
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/!svn/ver/113/51hejia/repos/wenba/release/app/models/ask_topic_tag_url.rb
+END
+hejia_user_activity.rb
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/!svn/ver/113/51hejia/repos/wenba/release/app/models/hejia_user_activity.rb
+END
+ask_zhishi_topic.rb
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/!svn/ver/113/51hejia/repos/wenba/release/app/models/ask_zhishi_topic.rb
+END
+wenba_user.rb
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/!svn/ver/113/51hejia/repos/wenba/release/app/models/wenba_user.rb
+END
+ask_wiki_catalog.rb
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/!svn/ver/113/51hejia/repos/wenba/release/app/models/ask_wiki_catalog.rb
+END
+ask_taolun_tag.rb
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/!svn/ver/113/51hejia/repos/wenba/release/app/models/ask_taolun_tag.rb
+END
+ask_editor_choice.rb
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/!svn/ver/113/51hejia/repos/wenba/release/app/models/ask_editor_choice.rb
+END
+hejia_user_role.rb
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/!svn/ver/113/51hejia/repos/wenba/release/app/models/hejia_user_role.rb
+END
+wiki_descript.rb
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/!svn/ver/113/51hejia/repos/wenba/release/app/models/wiki_descript.rb
+END
+url.rb
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/!svn/ver/113/51hejia/repos/wenba/release/app/models/url.rb
+END
+hejia_user_bbs.rb
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/!svn/ver/113/51hejia/repos/wenba/release/app/models/hejia_user_bbs.rb
+END
+ask_topic_user_tag.rb
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/!svn/ver/113/51hejia/repos/wenba/release/app/models/ask_topic_user_tag.rb
+END
+ask_user_score.rb
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/!svn/ver/113/51hejia/repos/wenba/release/app/models/ask_user_score.rb
+END
+ask_blog_statistic.rb
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/!svn/ver/113/51hejia/repos/wenba/release/app/models/ask_blog_statistic.rb
+END
+ask_authorized_user.rb
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/!svn/ver/113/51hejia/repos/wenba/release/app/models/ask_authorized_user.rb
+END
+hejia_case.rb
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/!svn/ver/113/51hejia/repos/wenba/release/app/models/hejia_case.rb
+END
+ask_zhidao_topic_post_vote.rb
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/!svn/ver/113/51hejia/repos/wenba/release/app/models/ask_zhidao_topic_post_vote.rb
+END
+ask.rb
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/!svn/ver/113/51hejia/repos/wenba/release/app/models/ask.rb
+END
+decoration_diary.rb
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/!svn/ver/113/51hejia/repos/wenba/release/app/models/decoration_diary.rb
+END
+ask_zhidao_editor_topic.rb
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/!svn/ver/113/51hejia/repos/wenba/release/app/models/ask_zhidao_editor_topic.rb
+END
+ask_user_upload.rb
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/!svn/ver/113/51hejia/repos/wenba/release/app/models/ask_user_upload.rb
+END
+ask_tieba_topic.rb
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/!svn/ver/113/51hejia/repos/wenba/release/app/models/ask_tieba_topic.rb
+END
+time_mechanism.rb
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/!svn/ver/113/51hejia/repos/wenba/release/app/models/time_mechanism.rb
+END
+ask_zhidao_admin.rb
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/!svn/ver/113/51hejia/repos/wenba/release/app/models/ask_zhidao_admin.rb
+END
+ask_forum_topic.rb
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/!svn/ver/113/51hejia/repos/wenba/release/app/models/ask_forum_topic.rb
+END
+ask_tag_link.rb
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/!svn/ver/113/51hejia/repos/wenba/release/app/models/ask_tag_link.rb
+END
+ask_zhidao_editor_upload.rb
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/!svn/ver/113/51hejia/repos/wenba/release/app/models/ask_zhidao_editor_upload.rb
+END
+ask_company_comment.rb
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/!svn/ver/113/51hejia/repos/wenba/release/app/models/ask_company_comment.rb
+END
+oracle_hejia_users.rb
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/!svn/ver/113/51hejia/repos/wenba/release/app/models/oracle_hejia_users.rb
+END
+email.rb
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/!svn/ver/113/51hejia/repos/wenba/release/app/models/email.rb
+END
+ruser_channel.rb
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/!svn/ver/113/51hejia/repos/wenba/release/app/models/ruser_channel.rb
+END
+ask_blog_sort.rb
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/!svn/ver/113/51hejia/repos/wenba/release/app/models/ask_blog_sort.rb
+END
+ask_wiki_content.rb
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/!svn/ver/113/51hejia/repos/wenba/release/app/models/ask_wiki_content.rb
+END
+ask_user_operation.rb
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/!svn/ver/113/51hejia/repos/wenba/release/app/models/ask_user_operation.rb
+END
+hejia_role.rb
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/!svn/ver/113/51hejia/repos/wenba/release/app/models/hejia_role.rb
+END

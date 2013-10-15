@@ -1,0 +1,5 @@
+<%- if params[:tp].to_s == "all" -%>
+  <input id="tp" name="tp" type="hidden" value="all" />
+<%- else -%>
+  &nbsp;&nbsp;
+<%- end -%>

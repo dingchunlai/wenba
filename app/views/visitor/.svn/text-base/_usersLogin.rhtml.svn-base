@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <title>无标题文档</title>
+    <link rel="stylesheet" rev="stylesheet" href="http://d.51hejia.com/css/newback/loginindex.css" type="text/css" media="all" />
+    <script type="text/javascript" src="/js/newback/login1.js"></script>
+    <script type="text/javascript">
+        function Divopop(ID){
+            var Moled=document.getElementById(ID);
+            Moled.style.display="block";
+            var bodyw=document.body.scrollWidth;
+            var bodyh=document.body.scrollHeight;
+            var BgDiv=document.createElement("div");
+
+            var firefox=document.getElementById && !document.all;
+            BgDiv.style.position="absolute";
+            BgDiv.style.left="0";
+            BgDiv.style.top="0";
+            BgDiv.style.width=bodyw+"px";
+            BgDiv.style.height=bodyh+"px";
+            BgDiv.style.zindex="50";
+            BgDiv.style.backgroundColor="#000";
+            if(firefox==false){BgDiv.style.filter="Alpha(Opacity=50)";}else{BgDiv.style.opacity=".6";}
+            document.body.appendChild(BgDiv);
+            var As=document.getElementsByTagName("a");
+            for (var i=0;i<As.length;i++){
+                if(As[i].className=="Divopop-none"){
+                    As[i].onclick=function(){Moled.style.display="none";BgDiv.style.display="none";return false;};
+                }
+                else if(As[i].className=="othen"){
+                    As[i].onclick=function(){
+                        var othenId=this.getAttribute("toid");
+                        var othenDiv=document.getElementById(othenId);
+                        Moled.style.display="none";
+                        othenDiv.style.display="block";
+                        return false;
+                    };
+                }
+                else if(As[i].className=="Divopop-nonenei"){
+                    As[i].onclick=function(){this.parentNode.style.display="none";BgDiv.style.display="none";return false;};
+                }
+            }
+        }
+    </script>
+  </head>
+  <body>
+    <div id="Login" style="display:none;border:0">
+        <a href="#guanbi" title="关闭" class="Divopop-nonenei"><img src="http://d.51hejia.com/css/newback/images/x.png" alt="关闭" /></a>
+        <iframe id="dengluiframe" style="width:222px;height:224px;border:0;overflow:hidden" frameborder="0" scrolling="no"></iframe>
+        <script>
+        function denglula()
+        {
+            var time = Math.random();
+            document.getElementById('dengluiframe').src='http://member.51hejia.com/member/userlogin?forward=' + location.href;
+        }
+        </script>
+    </div>
+    <div id="zhucewar" style="display:none">
+      <a href="#guanbi" title="关闭" class="Divopop-nonenei"><img src="http://d.51hejia.com/css/newback/images/x.png" alt="关闭" /></a>
+      <iframe src="http://www.51hejia.com/user_reg!regFile.jhtml" style="width:582px;height:500px;border:0;overflow:hidden" frameborder="0" scrolling="no"></iframe>
+    </div>
+  </body>
+</html>

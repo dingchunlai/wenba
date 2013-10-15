@@ -1,0 +1,15 @@
+<table>
+  <tr>
+    <th>编辑ID</th>
+    <th>操作类型</th>
+    <th>操作次数</th>
+  </tr>
+  <%- for statistic in @statistics -%>
+    <tr>
+      <td><%= session[:wd] %></td>
+      <td><%= get_select_name_by_select_value(session[:tp]) %></td>
+      <td><%= statistic.counter %></td>
+    </tr>
+  <%- end -%><br>
+</table>
+<a href="/admin/tongji">后退</a>

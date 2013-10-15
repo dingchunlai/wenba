@@ -1,0 +1,30 @@
+<%= render :partial => 'editor/del_ip/ip1' %>
+<form name="ftiwen" method="post" action="/editor/delete_allip">
+  <table width="80%" border="0" cellpadding="0" cellspacing="0" >
+    <%- for topic in @topics -%>
+      <input id="topics[]" name="topics[]" type="checkbox" value="<%= topic.ip %>" />
+      <li>
+        <%= topic.subject %>
+        <%= get_user_name_by_user_id(topic.user_id) %>
+      </li>
+      <br>
+    <%- end -%>
+    <%- for post in @posts -%>
+      <input id="posts[]" name="posts[]" type="checkbox" value="<%= post.ip %>" />
+      <li>
+        <%= post.content %>
+        <%= get_user_name_by_user_id(post.user_id) %>
+      </li>
+      <br>
+    <%- end -%>
+  </table>
+  <table width="80%" border="0" cellpadding="0" cellspacing="0" >
+    <tr>
+      <td width="110" class="f14">&nbsp;</td>
+      <td valign="top" align=middle>
+        <input type="submit" name="s" value="添加进黑名单" class="bnsrh">
+        <input type="hidden" name="cid" value=0>
+      </td>
+    </tr>
+  </table>
+</form>

@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/!svn/ver/256/51hejia/repos/wenba/release/config/environments
+END
+staging.rb
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/!svn/ver/113/51hejia/repos/wenba/release/config/environments/staging.rb
+END
+test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/!svn/ver/113/51hejia/repos/wenba/release/config/environments/test.rb
+END
+development.rb
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/!svn/ver/256/51hejia/repos/wenba/release/config/environments/development.rb
+END
+production.rb
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/!svn/ver/113/51hejia/repos/wenba/release/config/environments/production.rb
+END
+rehearsal.rb
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/!svn/ver/113/51hejia/repos/wenba/release/config/environments/rehearsal.rb
+END

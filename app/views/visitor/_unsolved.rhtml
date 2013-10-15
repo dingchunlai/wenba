@@ -1,0 +1,14 @@
+<h3>待解决问题<span><a href="javascript:isLogin()">我要提问</a></span></h3>
+<div class="midbox">
+  <ul class="wen1">
+    <%- for topic in @topics0 -%>
+      <li>
+        <a href="<%= get_link_of_tag(topic.tag_id) %> " class="gray">[<%= get_tag_name_by_tag_id(topic.tag_id) %>]</a>
+        <a target="_blank" href="<%=BASEURL%>visitor/question/<%= topic.id %>.html"><%= get_short_str(topic.subject, 20) %></a> 
+        <span class="yuedu"><%= topic.view_counter %>阅读</span>
+        <span class="pinlun"><%= topic.post_counter.to_i-1 %>次评论</span>
+      </li>
+    <%- end -%>
+  </ul>
+  <div class="more"><a target="_blank" href="<%=BASEURL%>visitor/list?page=2&tp=2">更多>></a></div>
+</div>

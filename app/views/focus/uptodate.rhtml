@@ -1,0 +1,16 @@
+<h1>一张焦点图的更新</h1>
+<div><%= flash[:notice] %></div>
+
+<form action="/focus/uptodate" method="post">
+  <label for="upload_dir2">焦点图URL:</label>
+  <input id="wd" name="wd" size="60" type="text"/>
+  <br>
+  <label for="upload2">焦点图文章URL:</label>
+  <input id="tp" name="tp" size="60" type="text"/>
+  <br>
+  <label for="upload2">焦点图文章标题:</label>
+  <input id="ry" name="ry" size="60" type="text"/>
+  <br>
+  <p><input name="commit" onclick="return check_blank()" type="submit" value="更新焦点图" />
+</form>
+<a href="/focus/index">返回</a>

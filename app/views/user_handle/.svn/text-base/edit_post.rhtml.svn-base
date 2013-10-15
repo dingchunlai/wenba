@@ -1,0 +1,29 @@
+<script type="text/javascript">
+function UploadSussess(url){
+  img = "[img]" + url + "[/img]"
+  document.getElementById('content').value = document.getElementById('content').value.replace("正在上传图片，请稍候 ...","");
+  document.getElementById('content').value += img;
+}
+function UploadAbort(num){
+  document.getElementById('content').value = document.getElementById('content').value.replace("正在上传图片，请稍候 ...","");
+  alert("您不能上传超过" + num + "的文件！");
+}
+function InsertImage(){
+  str = "\n正在上传图片，请稍候 ..."
+  document.getElementById('content').value += str;
+}
+</script>
+
+<form method="post" action="/user_handle/edit_post_save" target="hideiframe">
+  <div style="font-size:12pt; padding:5px;">编辑回复内容[<a href="javascript://" onclick="top.Loading.style.display='none';">关闭</a>]</div>
+  <div style="font-size:12pt; padding:5px;">
+      <textarea id="content" rows="14" name="content" style="width:470px"><%=@post.content%></textarea>
+  </div>
+  <div style="font-size:12px; padding:5px;">
+      <iframe id="fUpload" width="100%" height="30" frameborder="0" scrolling="no" src="/upload/uploadfile"></iframe>
+  </div>
+  <div style="font-size:12px; padding:15px 5px 5px 180px;">
+      <input type="hidden" name="post_id" value="<%=@post.id%>" />
+      <input type="image" src="/images/39/answer.gif">
+  </div>
+</form>

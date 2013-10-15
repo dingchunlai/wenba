@@ -1,0 +1,73 @@
+<script>
+  function checksearchform(thisform){
+    var wd = trim(ge("wd").value);
+    if (wd==""||wd=="请在这里输入您要搜索的关键字"){
+      thisform.action = "/list/s/0.html";
+    }
+  }
+</script>
+
+<div id="main">
+  <div id="topmenu">
+    <div class="wenba"><a href="/"><img src="/images/menu_wenba.gif" alt="问吧首页" border="0" /></a></div>
+    <div class="search">
+      <form name="fsearch" method="post" action="/list/sort/0.html" onSubmit="return checksearchform(this);" style="float:left;">
+        <div class="left"></div>
+        <%if pp(@wd)%>
+          <input name="wd" id="wd" type="text" class="text" value="<%=@wd%>" onfocus="this.style.color='#333333'" />
+        <%else%>
+          <input name="wd" id="wd" type="text" class="text" value="请在这里输入您要搜索的关键字" onfocus="this.value=''; this.style.color='#333333'" />
+        <%end%>
+        <input type="submit" value="搜索知识" class="button02"/>
+        <input type="button" value="我要提问" class="button022" onclick="window.open('/detail/new_topic','_blank');"/>
+      </form>
+      <div class="zc_login">
+        <span class="span1">
+          <SCRIPT LANGUAGE="JavaScript" Src="/common/user_entry"></SCRIPT>
+          <!-- <a href="/mine/goto_mine" target="hideiframe">问吧个人中心</a> -->
+          <!-- |<a href="#" target="_blank">专家注册</a>|<a href="#" target="_blank">会员登录</a> -->
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript" src="/common/user_navigation"></script>
+
+<div class="join_gg">
+  <ul>
+    <%if @action_name=="default"%>
+      <li>
+        <%=render_ad(52047, "问吧首页顶部文字链1")%>
+      </li>
+      <li>
+        <%=render_ad(52045, "问吧首页顶部文字链2")%>
+      </li>
+      <li>
+        <%=render_ad(52043, "问吧首页顶部文字链3")%>
+      </li>
+    <%elsif @action_name=="sort"%>
+      <li>
+        <%=render_ad(52053, "问吧列表页顶部文字链1")%>
+      </li>
+      <li>
+        <%=render_ad(52051, "问吧列表页顶部文字链2")%>
+      </li>
+      <li>
+        <%=render_ad(52049, "问吧列表页顶部文字链3")%>
+      </li>
+    <%else%>
+      <li>
+        <%=render_ad(52091, "问吧终端页顶部文字链1")%>
+      </li>
+      <li>
+        <%=render_ad(52089, "问吧终端页顶部文字链2")%>
+      </li>
+      <li>
+        <%=render_ad(52087, "问吧终端页顶部文字链3")%>
+      </li>
+    <%end%>
+  </ul>
+</div>
+
+<%#=render :partial => "common/user_navigation" if get_user_id_by_cookie_name != 0%>

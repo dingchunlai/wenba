@@ -1,0 +1,9 @@
+document.writeln("<style type=\"text\/css\">");
+document.writeln("body{");
+document.writeln("background-color:#dfd6b5;");
+document.writeln("}");
+document.writeln("-->");
+document.writeln("<\/style>");
+<%- for topic in @topics -%>
+document.writeln("  ·<a href=\"http:\/\/ask.51hejia.com\/visitor\/discussion\/<%= topic.id %>.html\" target=\"_blank\" title=\"<%= topic.subject %>\"><span style=\"font-size:12px; text-decoration:none; color:#000; line-height:20px;\"><%= get_short_str(topic.subject, 20) %><\/span><\/a><br \/>");
+<%- end -%>

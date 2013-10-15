@@ -1,0 +1,50 @@
+<div id="list_bill" class="contain">
+<div class="wenzhang">
+<span style="vertical-align:50%;padding-right:80px;"><a href="http://www.nipponpaint.com.cn/space/120/home.html" target="_blank" style="color:black;">快速净味120分满意</a></span>
+<a href="javascript:isLogin()"><img src="http://www.51hejia.com/images/wenba/wenzhang.gif" alt="发新文章" border="0" /></a></div>
+<div class="huifu" id="answer0" onClick="location.hash='reply';" style="cursor:pointer"><img src="http://www.51hejia.com/images/wenba/huifu.gif" alt="回复话题" border="0" /></div>
+<div id="question">
+<h3><img src="http://www.51hejia.com/images/wenba/question.gif"/></h3>
+<div class="qscontain">
+  <div class="top">
+    <ul>
+      <%- if @topic.user_id.to_i == 0 and @topic.guest_name.nil? -%>
+        <li class="louzhu">和家网友</li>
+      <%- elsif @topic.user_id.to_i == 0 and !@topic.guest_name.nil? -%>
+        <li class="louzhu"><%= @topic.guest_name %></li>
+      <%- else -%>
+        <li class="louzhu"><a href="http://blog.51hejia.com/u/<%= @topic.user_id %>" target="_blank">
+        <%= get_user_name_by_user_id(@topic.user_id) %></a></li>
+      <%- end -%>
+      <% best_post_id = @topic.best_post_id %>
+      <%- if best_post_id.nil? -%>
+        <li class="pic"><img src="http://www.51hejia.com/images/wenba/wenhao.gif" /></li>
+      <%- else -%>
+        <li class="pic"><img src="http://www.51hejia.com/images/wenba/da.gif" /></li>
+      <%- end -%>
+      <li class="pic"><%= get_html_of_question_state_by_topic_id(@topic.id) %></li>
+      <li class="title"><%= @topic.subject %><%= get_html_of_admin_operations_by_topic_id(@user_id, @topic.id, @topic.tag_id) %></li>
+      <li class="date"><%= @topic.created_at.strftime("%Y-%m-%d %H:%M:%S") %></li>
+    </ul>
+  </div>
+  <div class="info">
+    <ul>
+      <%- if @topic.user_id.to_i == 0 -%>
+        <li><img src="<%= get_user_icon_link_by_user_id(@topic.user_id) %>" alt="" border="0" /></li>
+      <%- else -%>
+        <li><a href="http://blog.51hejia.com/u/<%= @topic.user_id %>" target="_blank">
+        <img src="<%= get_user_icon_link_by_user_id(@topic.user_id) %>" alt="" border="0" /></a></li>
+      <%- end -%>
+                                                                                                                                                      
+      <li><strong>楼主</strong></li>                                                                                                                 
+      <li>回答数：<strong><%=@topic.post_counter.to_i-1 %></strong></li>
+      <li>浏览数：<strong><%= @topic.view_counter %></strong></li>
+      
+    </ul>
+  </div>
+  <div class="art"><%= @topic.description %></div>
+  <%= get_html_of_user_sign_by_user_id(@topic.user_id) %>
+  <div  class="wyhd" id="answer0" ><img src="http://www.51hejia.com/images/wenba/wyhd.gif" alt="我要回答" border="0" onClick="location.hash='reply';" style="cursor:pointer" /></div>
+  <div class="tags">TAG：<%= get_html_of_user_tags_by_topic_id(@topic_id) %>&nbsp;&nbsp;
+<a href="<%=BASEURL%>nipponpaint_wiki.html" target=\"_blank\">涂料百科知识</a></div>
+</div>

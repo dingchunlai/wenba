@@ -1,0 +1,8 @@
+<form name="b" method="post" action="/editor/delete" onSubmit="return checkform_select(this); ">
+  <h5>删除不符合主题的帖子</h5>
+  文章编号：
+  <input name="wd" type="text" id="wd" size="10" maxlength="20">
+  <input type="hidden" name="tp" value="wd">
+  <input type="button" value ="预览" class ="button02" onclick="Preview1()"> 
+  <input type="submit" value ="删除" class ="button02" /> 
+</form>

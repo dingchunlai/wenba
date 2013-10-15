@@ -1,0 +1,23 @@
+<div class="czwb">
+  <h3>涂料问吧<span><a href="<%=BASEURL%>visitor/s?wd=%E6%B6%82%E6%96%99" target="_blank">>>更多</a></span></h3>
+  <div class="same_cha">
+    <ul>
+      <li id="s1" onmouseover="show_intro('s','same',2,1);" class="menu_on">已解决问题</li>
+      <li id="s2" onmouseover="show_intro('s','same',2,2);" class="menu_off">待解决问题</li>
+    </ul>
+  </div>
+  <div id="same1">
+    <ul class="box">
+      <%- for topic1 in @topics1 -%>
+        <li><a href="<%=BASEURL%>visitor/question/<%= topic1.id %>.html" target="_blank" title="<%= topic1.subject %>">[<%= get_tag_name_by_tag_id(topic1.tag_id) %>]<%= get_short_str(topic1.subject, 18) %></a></li>
+      <%- end -%>
+    </ul>
+  </div>
+  <div id="same2">
+    <ul class="box1">
+      <%- for topic0 in @topics0 -%>
+        <li><a href="<%=BASEURL%>visitor/question/<%= topic0.id %>.html" target="_blank" title="<%= topic0.subject %>">[<%= get_tag_name_by_tag_id(topic0.tag_id) %>]<%= get_short_str(topic0.subject, 18) %></a></li>
+      <%- end -%>
+    </ul>
+  </div>
+</div>

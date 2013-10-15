@@ -1,0 +1,20 @@
+<div class="title01">问题列表<span><a href="<%=BASEURL%>visitor/browse/<%= @tag_id %>.html" target="_blank">更多</a></span></div>
+<div class="wtlb">
+  <%- for topic in @topics1 -%>
+    <h3><a href="<%=BASEURL%>visitor/question/<%= topic.id %>.html" target="_blank"><%= get_short_str(strip_tags(topic.subject), 20) %></a>
+    <%= get_html_of_admin_operations_by_topic_id(@user_id, topic.id, @tag_id) %></h3>
+    <ul>
+      <%- if topic.user_id.to_i == 0 -%>
+        <li>作者 [<%= get_user_name_by_user_id(topic.user_id) %>]</li>
+      <%- else -%>
+        <li>作者 [<a href="http://blog.51hejia.com/u/<%= topic.user_id %>" target="_blank">
+        <%= get_user_name_by_user_id(topic.user_id) %></a>]</li>
+      <%- end -%>
+      <li>分类 [<a href="<%=BASEURL%>visitor/browse/<%= topic.tag_id %>.html" target="_blank"><%= get_tag_name_by_tag_id(topic.tag_id) %></a>]</li>
+      <li>浏览次数：<%= topic.view_counter %></li>
+    </ul>
+    <p><a href="<%=BASEURL%>visitor/question/<%= topic.id %>.html" target="_blank"><%= get_short_str(strip_tags(topic.description), 40) %></a></p>
+    <div class="detail">[<a href="<%=BASEURL%>visitor/question/<%= topic.id %>.html" target="_blank">阅读全文</a>]</div>
+    <br>
+  <%- end -%>
+</div>

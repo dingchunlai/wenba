@@ -1,0 +1,17 @@
+document.writeln("<link href=\"http:\/\/d.51hejia.com\/css\/wenba\/answerlist.css\" rel=\"stylesheet\" type=\"text\/css\"\/>");
+document.writeln("<div class=\"mdbox05l\">");
+document.writeln("  <h3>排行榜<\/h3>");
+document.writeln("  <div class=\"box1l\">");
+document.writeln("    <ul>");
+<% number = 0 %>
+<%- for topic in @topics -%>
+  <% number = number + 1 %>
+  <%- if number == 10 -%>
+document.writeln("          <li><span><%= number %>&nbsp;<\/span>[<%= get_tag_name_by_tag_id(topic.tag_id) %>]&nbsp;<a href=\"http:\/\/ask.51hejia.com\/visitor\/question\/<%= topic.id %>.html\" target=\"_blank\" title=\"<%= topic.subject %>\"><%= get_short_str(topic.subject, 8) %><\/a><\/li>");
+<%- else -%>
+document.writeln("          <li><span><%= number %>&nbsp;&nbsp;<\/span>[<%= get_tag_name_by_tag_id(topic.tag_id) %>]&nbsp;<a href=\"http:\/\/ask.51hejia.com\/visitor\/question\/<%= topic.id %>.html\" target=\"_blank\" title=\"<%= topic.subject %>\"><%= get_short_str(topic.subject, 8) %><\/a><\/li>");
+<%- end -%>
+<%- end -%>
+document.writeln("    <\/ul>");
+document.writeln("  <\/div>");
+document.writeln("<\/div>")

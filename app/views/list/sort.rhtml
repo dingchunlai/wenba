@@ -1,0 +1,232 @@
+<%s_path = "/list/sort/#{@tag_id}.html"%>
+<div class="wrap1">
+  <form name="form1">
+    <div class="con_left">
+      <div class="blueBox">
+        <div class="title">
+          <h6>问题分类</h6>
+        </div>
+        <div class="body" style="padding:10px 0; padding-bottom: 10px;">
+          <!---- 改了这里 ---->
+          <div class="number_of_problem">
+            <div>共提问问题数：<b><%=get_all_topics_num%></b></div>
+            <div>已解决问题数：<b><%=get_resolved_topics_num%></b></div>
+          </div>
+
+          <%
+          if @tag_level == 3
+            parent_tag_id = get_parent_tag_id(@parent_tag_id)
+          else
+            parent_tag_id = @parent_tag_id
+          end
+        %>
+          <%for parent_tag_id in Tag.level1_tags%>
+            <div class="lnWrap">
+              <div class="topWrap">
+                <div class="top"><a href="/list/s/<%=parent_tag_id%>.html" target="_self"><%=get_tag_name_by_tag_id(parent_tag_id)%></a></div>
+                <div class="more"><a href="/list/s/<%=parent_tag_id%>.html" target="_self">更多</a></div>
+              </div>
+              <div class="conWrap">
+                <div class="disease">
+                  <ul>
+                    <%for tag in Tag.get_tags_by_parent_id(parent_tag_id)%>
+                      <li><a href="/list/sort/<%=tag.id%>.html" target="_self"><%=tag.name%></a></li>
+                    <%end%>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          <%end%>
+
+        </div>
+      </div>
+      <div class="wrap_iframe">
+        <div class="blueBox">
+          <div class="title">
+            <h1>问吧热门点击排行榜</h1>
+          </div>
+          <div class="body event">
+
+            <ul class="point">
+              <%for r in AskZhidaoTopic.get_hot_topics(15, 60)%>
+                <li><a href="/q/<%=r.id%>.html" target="_blank" style="font-size:12px;"><%=utf8_left(r.subject,11,"...")%></a></li>
+              <%end%>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="list_con_right">
+      <div class="blueBox">
+        <div class="title">
+          <h6>
+            <%=render :partial => "/common/cur_location"%>
+          </h6>
+          <div class="add_fav"><!--<a href="addfavorite.html" target="_blank"><img src="http://askimg.39.net/ask/images/0.gif" /></a>--></div>
+          <div class="friend"><!--<a href="/browse/friend/313-1.html">装修圈(684837人)</a>--></div>
+          <div style="text-align:right ;"><!--<a href ="/rss/313.xml" target="_blank"><img src ="http://www.51hejia.com/images/wenba/rss_xml.gif" alt="rss订阅" /></a>--></div>
+        </div>
+
+        <%=render :partial => "/common/tag_list"%>
+
+      </div>
+      <div class="blueBox">
+        <div class="body">
+          <div class="listPage_askBtn">
+
+            <a href="/detail/new_topic" target="_blank"><img src="http://js.51hejia.com/img/ask/btn_iask.gif" /></a>　
+
+            
+              <%for r in parse_xml("http://api.51hejia.com/rest/build/xml/55191.xml",["title","url","text-style-id"],5)%>
+                <a href="<%=r["url"]%>" target="_blank" class="xml_link_style<%=r["text-style-id"]%>"><%=r["title"]%></a>　
+              <%end%>
+            <div style="float:right;"><%= adspace("问吧-列表页-#{get_tag_name_by_tag_id(@tag_id).strip}-宽幅") %></div>
+          </div>
+          <!--
+				<div class="masterBox">
+				 <h6><a href="/userinfo-143-1-1.html" target="_blank">戴阳阳</a></h6>
+<h6><a href="/userinfo-155-1-1.html" target="_blank">李江红</a></h6>
+<h6><a href="/userinfo-210193-1-1.html" target="_blank">彭文典</a></h6>
+<h6><a href="/userinfo-2028888-1-1.html" target="_blank">肖明第</a></h6>
+<h6><a href="/userinfo-2029202-1-1.html" target="_blank">杜修海dxh</a></h6>
+
+  				 <p><a href="/aspx/doctor_attestation.aspx?fid=313" target="_blank">申请加入专家团</a></p>
+				</div>
+          -->
+
+          <div id="tab1" class="tabs_c">
+            <div class="tab">
+              <h3 <%= @tp==0 ? "class='up'":""%>><a href="<%=s_path%>?tp=0&wd=<%=u(@wd)%>">全部问题</a></h3>
+              <h3 <%= @tp==1 ? "class='up'":""%>><a href="<%=s_path%>?tp=1&wd=<%=u(@wd)%>">待解决</a></h3>
+              <h3 <%= @tp==2 ? "class='up'":""%>><a href="<%=s_path%>?tp=2&wd=<%=u(@wd)%>">已解决</a></h3>
+              <h3 <%= @tp==3 ? "class='up'":""%>><a href="<%=s_path%>?tp=3&wd=<%=u(@wd)%>">高分题</a></h3>
+              <h3 <%= @tp==4 ? "class='up'":""%>><a href="<%=s_path%>?tp=4&wd=<%=u(@wd)%>">点击排行</a></h3>
+            </div>
+            <div class="statusBar">
+              <div class="theme">主题(共<%=@recordcount%>项) </div>
+              <div class="time">最后回复</div>
+              <div class="status">状态</div>
+              <div class="click">回复/点击</div>
+            </div>
+            <h4 class="block">
+              <ul class="dash">
+                <%for topic in @topics%>
+                  <li id="tr_<%=topic.id%>">
+                    <%unless topic.score==0%><p class="money"><%=topic.score%></p><%end%>
+                    <h6>
+                      <%if current_staff && current_staff.wenba_editor?%>
+                        <input type="checkbox" name="arid" id="arid<%=topic.id%>" value="<%=topic.id%>" />
+                      <%end%>
+                      <%if @tag_level == 3%>
+                        <a href="/q/<%=topic.id%>.html" target="_blank"><%=utf8_left(topic.subject,33,"...")%></a>
+                      <%else%>
+                        <a href="/q/<%=topic.id%>.html" target="_blank"><%=utf8_left(topic.subject,28,"...")%></a>
+                        [<a href="/list/sort/<%=topic.tag_id%>.html" class="lgy"><%=get_tag_name_by_tag_id(topic.tag_id)%></a>]
+                      <%end%>
+                      <!--
+                      <img src="http://images.39.net/ask/images/dqzd.gif" />
+                      -->
+                    </h6>
+                    <p class="time"><%=topic.last_reply_time.strftime("%Y-%m-%d") rescue "--------"%></p>
+                    <p class="icon">
+                      <%if topic.post_counter == 0%>
+                        <img src="http://img.baidu.com/img/iknow/icn_time.gif" alt="待解决" />
+                      <%else%>
+                        <img src="/images/ok.jpg" alt="已解决" />
+                      <%end%>
+                    </p>
+                    <p class="click"><%=topic.post_counter%>/<%=topic.view_counter%></p>
+                  </li>
+                <%end%>
+
+              </ul>
+
+            </h4>
+          </div>
+
+          <%if current_staff && current_staff.wenba_editor?%>
+            <input type="button" value="批量删除" class="searchAnswer" onclick="deleteAll();" />
+          <%end%>
+
+          <style type="text/css">
+            #pagelist{
+              font-family:Verdana;
+              color:#999999;
+              font-size:14px;
+              letter-spacing:1px;
+              vertical-align: middle;
+            }
+            #pagelist a{
+              color:#000040;
+              text-decoration:none;
+            }
+            #pagelist a:hover{
+              background-color: #000040;
+              color:white;
+              text-decoration:none;
+            }
+          </style>
+          <script type="text/javascript">
+            function gotopage(page){
+              window.open("<%=s_path%>?page=" + page + "&recordcount=<%=@recordcount%>&tp=<%=@tp%>&wd=<%=u(@wd)%>", "_self");
+            }
+            recordcount = <%=@recordcount%>;
+            pagesize = <%=@pagesize%>;
+            curpage = <%=@curpage%>;
+            cur_list = 0;
+            listsize = <%=@listsize%>;
+            document.write("<div id='pagelist' class='pageNavi'></div>");
+            page_index_list(recordcount, pagesize, curpage, cur_list, listsize);
+          </script>
+
+        </div>
+      </div>
+
+      <div class="blueBox">
+        <div class="body">
+          <div class="askForList" style="height: 26px;">
+            <!-- <input name="words" type="text" value="" /> -->
+            <div>
+              <!-- <input name="" type="submit" class="searchAnswer" value="" /> -->
+              <input type="button" class="wannaAsk" onclick="javascript:window.open('/detail/new_topic','_blank')" />
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<script type="text/javascript">
+  function hidden_record(ids){
+    ids = ids.split(",");
+    for (var id in ids){
+      if (ge('arid' + ids[id])!=null){
+        ge('arid' + ids[id]).value = '0';
+        ge('tr_' + ids[id]).style.display = "none";
+      }
+    }
+  }
+  function getids(){
+    var ids = [];
+    if (document.form1.arid.length==undefined){
+      if (document.form1.arid.checked) ids = document.form1.arid.value;
+    }else{
+      for (i=0; i<document.form1.arid.length;i++){
+        if (document.form1.arid[i].checked && document.form1.arid[i].value!='0') ids.push(document.form1.arid[i].value);
+      }
+      ids = ids.join(",");
+    }
+    if (ids==""){alert("请选择记录！"); return "";} else return ids;
+  }
+  function deleteAll(){
+    if (confirm('您确定要删除这些记录吗？')){
+      var ids = getids();
+      if (ids!=""){
+        hideiframe.location="/admin_handle/del_topics?ids=" + ids;
+        hidden_record(ids);
+      }
+    }
+  }
+</script>

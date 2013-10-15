@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/!svn/ver/113/51hejia/repos/wenba/release/vendor/plugins/attachment_fu/test/processors
+END
+core_image_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/!svn/ver/113/51hejia/repos/wenba/release/vendor/plugins/attachment_fu/test/processors/core_image_test.rb
+END
+image_science_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/!svn/ver/113/51hejia/repos/wenba/release/vendor/plugins/attachment_fu/test/processors/image_science_test.rb
+END
+gd2_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/!svn/ver/113/51hejia/repos/wenba/release/vendor/plugins/attachment_fu/test/processors/gd2_test.rb
+END
+rmagick_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/!svn/ver/113/51hejia/repos/wenba/release/vendor/plugins/attachment_fu/test/processors/rmagick_test.rb
+END
+mini_magick_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/!svn/ver/113/51hejia/repos/wenba/release/vendor/plugins/attachment_fu/test/processors/mini_magick_test.rb
+END

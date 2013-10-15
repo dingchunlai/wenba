@@ -1,0 +1,7 @@
+问吧管理员后台<br>
+<a href="/admin/list">推荐专家列表</a><br>
+<a href="/admin/zomelist">讨论版列表</a><br>
+<a href="/admin/top">讨论版帖子固顶/置顶设置</a><br>
+<a href="/admin/bugaolist">讨论版公告列表</a><br>
+<%#*<span style="color: red;">[new]</span><a href="/admin/tongji">问吧统计</a><br />%>
+<%#*<a href="/admin/list_ask_choice">问吧今日头条</a>%>

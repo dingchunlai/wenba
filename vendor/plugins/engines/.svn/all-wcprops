@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/!svn/ver/113/51hejia/repos/wenba/release/vendor/plugins/engines
+END
+CHANGELOG
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/!svn/ver/113/51hejia/repos/wenba/release/vendor/plugins/engines/CHANGELOG
+END
+install.rb
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/!svn/ver/113/51hejia/repos/wenba/release/vendor/plugins/engines/install.rb
+END
+MIT-LICENSE
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/!svn/ver/113/51hejia/repos/wenba/release/vendor/plugins/engines/MIT-LICENSE
+END
+about.yml
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/!svn/ver/113/51hejia/repos/wenba/release/vendor/plugins/engines/about.yml
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/!svn/ver/113/51hejia/repos/wenba/release/vendor/plugins/engines/README
+END
+UPGRADING
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/!svn/ver/113/51hejia/repos/wenba/release/vendor/plugins/engines/UPGRADING
+END
+Rakefile
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/!svn/ver/113/51hejia/repos/wenba/release/vendor/plugins/engines/Rakefile
+END
+init.rb
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/!svn/ver/113/51hejia/repos/wenba/release/vendor/plugins/engines/init.rb
+END

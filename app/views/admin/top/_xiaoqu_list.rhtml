@@ -1,0 +1,37 @@
+<h1>设置讨论版帖子的特权</h1>
+<form name="ftiwen" method="post" action="/admin/gu_top">
+
+<%- for topic in @topics -%>
+    <%- if topic.is_top == 2 -%>
+      <li class="pic">[固顶]</li>
+    <%- elsif topic.is_top == 1 -%>
+      <li class="pic">[置顶]</li>
+    <%- else -%>
+      <li class="pic">[无]</li>
+    <%- end -%>
+    <a href="/visitor/discussion/<%= topic.id %>.html" target="_blank"><%= topic.subject %></a>
+    <%- if topic.is_top == 2 -%>
+      <%= link_to "设置置顶", {:action => 'zhi_top', :id => topic.id },
+        :confirm => "确定要置顶吗?",:method  => :post %>
+      <%= link_to "取消固顶", {:action => 'cancel_top', :id => topic.id },
+        :confirm => "确定要取消固顶吗?",:method  => :post %>
+    <%- elsif topic.is_top == 1 -%>
+      <%= link_to "设置固顶", {:action => 'gu_top', :id => topic.id },
+        :confirm => "确定要固顶吗?",:method  => :post %>
+      <%= link_to "取消置顶", {:action => 'cancel_top', :id => topic.id },
+        :confirm => "确定要取消置顶吗?",:method  => :post %>
+    <%- else -%>
+      <%= link_to "设置固顶", {:action => 'gu_top', :id => topic.id },
+        :confirm => "确定要固顶吗?",:method  => :post %>
+      <%= link_to "设置置顶", {:action => 'zhi_top', :id => topic.id },
+        :confirm => "确定要置顶吗?",:method  => :post %>
+    <%- end -%>
+  <br>
+<%- end -%>
+<table width="80%" border="0" cellpadding="0" cellspacing="0" >
+  <%= link_to '&lt; 上一页', { :controller => 'admin', :action => 'view', :page => @topic_pages.current.previous.to_i } if @topic_pages.current.previous %>
+  <%= pagination_links(@topic_pages, :controller => 'admin', :action => 'view') %>
+  <%= link_to '下一页 &gt;', { :controller => 'admin', :action => 'view', :page => @topic_pages.current.next.to_i } if @topic_pages.current.next %>
+</table>
+
+<a href="/admin/top">返回小区列表</a>

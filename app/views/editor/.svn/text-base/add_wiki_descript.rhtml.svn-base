@@ -1,0 +1,12 @@
+<font color="green">增加<%= @wiki_name %>百科知识</font>
+<br>
+  <font color="red"><%= flash[:notice] %></font>
+<br>
+<form action="/editor/save_wiki_descript" method="post">
+  <input type="hidden" name="wc_id" value="<%= @wc_id %>">
+  知识标题：<input type="text" name="title" size="59"><span style="color: red;">*</span><br><br>
+  知识描述：<textarea name="descript" rows="20"></textarea><span style="color: red;">*</span><br><br>
+  <input type="submit" value="增加">
+</form>
+<br>
+<a href="/editor/list_wiki_descript?wc_id=<%= @wc_id %>">返回上一级</a><br>

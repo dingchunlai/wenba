@@ -1,0 +1,10 @@
+<%= render :partial => 'wenzhang' %>
+<% if @ids.size >= 1 %>
+  <%= flash[:notice] %>
+<% elsif @ids1.size >= 1 %>
+  <%= flash[:notice] %>
+<% elsif @ids1.size >= 1 && @ids.size >= 1 %>
+  <%= flash[:notice] %>
+<% else %>
+  <%= flash[:notice] %>
+<% end %>

@@ -1,0 +1,6 @@
+<h5>删除指定的回复</h5>
+<form name="date" method="post" action="/editor/delete_p" onSubmit="return checkform_select(this); ">
+帖子ID: <input name="wd" type="text" id="wd" size="10" maxlength="20">
+<input type="hidden" name="tp" value="wd">
+<input type="submit" value ="查看回复" class ="button02" />
+</form>

@@ -1,0 +1,6 @@
+<ul class="xhrightbox01a">
+  <%- for topic in @topics -%>
+    <li>·<a href="<%=BASEURL%>visitor/question/<%= topic.id %>.html" target="_blank"><%= get_short_str(topic.subject, 17) %></a></li>
+  <%- end -%>
+  <li class="more"><a href="<%=BASEURL%>visitor/s?wd=%E5%B0%8F%E6%88%B7%E5%9E%8B" target="_blank">更多</a></li>
+</ul>

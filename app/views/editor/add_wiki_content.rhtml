@@ -1,0 +1,12 @@
+<font color="green">增加<%= @wiki_name %>百科目录</font>
+<br>
+  <font color="red"><%= flash[:notice] %></font>
+<br>
+<form action="/editor/save_wiki" method="post">
+  <input type="hidden" name="wn" value="<%= @wiki_name %>">
+  百科目录：<input type="text" name="wc" ><span style="color: red;">*</span><br><br>
+  百科标签：<input type="text" name="tag" ><br><br>
+  <input type="submit" value="增加">
+</form>
+<br>
+<a href="/editor/list_wiki_content?wiki_name=<%= @wiki_name %>">返回上一级</a><br>

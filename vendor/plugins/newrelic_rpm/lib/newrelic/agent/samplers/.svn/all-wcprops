@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/!svn/ver/113/51hejia/repos/wenba/release/vendor/plugins/newrelic_rpm/lib/newrelic/agent/samplers
+END
+memory.rb
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/!svn/ver/113/51hejia/repos/wenba/release/vendor/plugins/newrelic_rpm/lib/newrelic/agent/samplers/memory.rb
+END
+mongrel.rb
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/!svn/ver/113/51hejia/repos/wenba/release/vendor/plugins/newrelic_rpm/lib/newrelic/agent/samplers/mongrel.rb
+END
+cpu.rb
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/!svn/ver/113/51hejia/repos/wenba/release/vendor/plugins/newrelic_rpm/lib/newrelic/agent/samplers/cpu.rb
+END

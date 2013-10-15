@@ -1,0 +1,19 @@
+<table width="80%" border="0" cellpadding="0" cellspacing="0" >
+  <tr valign="top">
+    <td width="110" nowrap class="f14"><B class=ttc>所属论坛（*）：</B></td>
+    <td class=tdof id=td2>
+      <span id="classid">
+        <table border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td valign="top">
+              <select name="ClassLevel1" size="8" style="width: 125px; height: 165px;" id="ClassLevel1">
+                <%- for tag in @tags -%>
+                <option value="<%= tag.id %>"><%= tag.name %></option>
+                <%- end -%>
+              </select>
+            </td>
+        </table>
+      </span>
+    </td>
+  </tr>
+</table>

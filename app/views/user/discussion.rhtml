@@ -1,0 +1,28 @@
+<div id="main">
+  <%= render :partial => 'visitor/head_start' %>
+  <%= render :partial => 'visitor/head_end' %>
+  <%= render :partial => 'visitor/ads_tonglang' %>
+  <%#= render :partial => 'visitor/search' %>
+  <form name="ftiwen" method="post" action="/user/save_discussion" onSubmit="return checkdiscussionform(this);">
+    <%= render :partial => 'user/discussion/d_title' %>
+    <br>
+    <%= render :partial => 'user/discussion/d_description' %>
+    <br>
+    <%= render :partial => 'user/discussion/d_tags' %>
+    <br>
+    <%= render :partial => 'user/discussion/d_user_tags' %>
+    <br>
+    <%= render :partial => 'user/discussion/d_email' %>
+    <table width="80%" border="0" cellpadding="0" cellspacing="0" >
+      <tr>
+        <td width="110" class="f14">&nbsp;</td>
+        <td valign="top" align=middle>
+          <input type="button" name="b" value="预&nbsp;览" class="bnsrh" onclick="Preview_discussion()">
+          <input type="submit" name="s" value="提&nbsp;交" class="bnsrh">
+          <%#*<input type="hidden" name="cid" value=0>%>
+        </td>
+      </tr>
+    </table>
+  </form>
+  <%= render :partial => 'visitor/foot' %>
+</div>

@@ -1,0 +1,35 @@
+<div id="Login" style="display:none;border:0">
+  <a href="#guanbi" title="关闭" class="Divopop-nonenei"><img src="http://d.51hejia.com/css/newback/images/x.png" alt="关闭" /></a>
+  <iframe id="dengluiframe" style="width:222px;height:224px;border:0;overflow:hidden" frameborder="0" scrolling="no"></iframe>
+  <script>
+      function denglula()
+      {
+          var time = Math.random();
+          document.getElementById('dengluiframe').src='http://member.51hejia.com/member/userlogin?forward=' + location.href;
+      }
+  </script>
+
+</div>
+<div id="zhucewar" style="display:none">
+  <a href="#guanbi" title="关闭" class="Divopop-nonenei"><img src="http://d.51hejia.com/css/newback/images/x.png" alt="关闭" /></a>
+  <iframe id="zhuceiframe" style="width:582px;height:500px;border:0;overflow:hidden" frameborder="0" scrolling="no"></iframe>
+  <script>
+      function zhucela()
+      {
+          var time = Math.random();
+          document.getElementById('zhuceiframe').src='http://www.51hejia.com/user_reg!regFile.jhtml?time='+time;
+      }
+  </script>
+</div>
+<div id="pswwar" style="display:none">
+  <a href="#guanbi" title="关闭" class="Divopop-nonenei"><img src="http://d.51hejia.com/css/newback/images/x.png" alt="关闭" /></a>
+  <iframe id="pswiframe" frameborder="0" scrolling="no"></iframe>
+
+  <script>
+      function pswla()
+      {
+          var time = Math.random();
+          document.getElementById('pswiframe').src='http://www.51hejia.com/user_reg!userPsw.jhtml?time='+time;
+      }	
+  </script>
+</div>

@@ -1,0 +1,11 @@
+<ul>
+<li>user_id:<%= @admin.user_id %></li>
+<li>专家姓名:<%= iconv_gb2312(get_admin_info_by_user_id(@admin.user_id).username) %></li>
+<li>editor_id:<%= @admin.editor_id %></li>
+<li>QQ:<%= iconv_gb2312(get_admin_info_by_user_id(@admin.user_id).qq) %></li>
+<li>MSN:<%= iconv_gb2312(get_admin_info_by_user_id(@admin.user_id).msn) %></li>
+<li>创建日期: <%= @admin.created_at %></li>
+<li>修改日期: <%= @admin.updated_at %></li>
+</ul>
+
+<p><%= link_to '后退', {:action => 'list'} %></p>

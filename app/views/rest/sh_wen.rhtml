@@ -1,0 +1,23 @@
+<div class="rightbox">
+  <h3>问吧<span><a href="http://wb.51hejia.com" target="_blank">更多</a></span></h3>
+  <div class="tiwen">
+    <form id="form1" name="form1" method="post" action="/visitor/s">
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <input type="text" name="wd" class="txt01" />
+          </td>
+          <td><input type="submit" name="Submit" value="搜索" class="bt" /></td>
+          <td><input type="submit" name="Submit2" value="提问" class="bt" onclick="javascript:document.getElementById('form1').action='/user/ask' ; document.getElementById('form1').submit(); " /></td>
+        </tr>
+      </table>
+    </form>
+  </div>
+  <div class="zhanhui">
+    <ul>
+      <% for topic in @topics %>
+        <li>·[<%= get_tag_name_by_tag_id(topic.tag_id) rescue "" %>]<a href="<%=BASEURL%>visitor/question/<%= topic.id %>" target="_blank"><%= get_short_str(topic.subject, 12) rescue "" %></a></li>
+      <% end %>
+    </ul>
+  </div>
+</div>

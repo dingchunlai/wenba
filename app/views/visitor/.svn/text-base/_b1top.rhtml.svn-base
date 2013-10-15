@@ -1,0 +1,46 @@
+<div id="focus">
+  <!--flash幻灯展示开始-->
+  <div id=flash_show_out>
+    <div id=flash_show>
+      <div id=flash_img></div>
+      <div id=flashtrans></div>
+      <div id=flash_btn>
+        <div><a id=aimg0 onClick="javascript:showImage(0);return false;"
+                  href="#" target=_self
+                name=Home/community/topic/lantern>1</a></div>
+        <div><a id=aimg1 onClick="javascript:showImage(1);return false;"
+                  href="#" target=_self
+                name=Home/community/topic/lantern>2</a></div>
+        <div><a id=aimg2 onClick="javascript:showImage(2);return false;"
+                  href="#" target=_self
+                name=Home/community/topic/lantern>3</a></div>
+      </div>
+    </div>
+    <div id=flash_show_ctl>
+      <div id=flash_show_ctl_msg><a id=flash_title></a></div>
+    </div>
+  </div>
+  <script language=javascript type="text/javascript">
+      var fImgs = new Array();
+<%- if @tag_id.to_i == 173 -%>
+      fImgs[0] = {title:"新房装修，请教客厅颜色问题",img:"http://www.51hejia.com/bianjibu/askimages/zhuanghuangjiaodiantu1030.jpg",href:"<%=BASEURL%>visitor/question/111745.html"};
+      fImgs[1] = {title:"三室一厅的房子如何装修？请教房子颜色问题。",img:"http://www.51hejia.com/bianjibu/askimages/zhuanghuangjiaodiantu1016.jpg",href:"<%=BASEURL%>visitor/question/111500.html"};
+      fImgs[2] = {title:"隔断问题",img:"http://www.51hejia.com/bianjibu/askimages/wenbalanmujiaodiantu001.jpg",href:"<%=BASEURL%>visitor/question/109211.html"};
+
+<%- end -%>
+<%- if @tag_id.to_i == 38 -%>
+      fImgs[0] = {title:"中国十大名牌油漆有哪些?",img:"http://www.51hejia.com/bianjibu/askimages/jiancaijiaodiantu1030.jpg",href:"<%=BASEURL%>visitor/question/111773.html"};
+      fImgs[1] = {title:"家庭装门 是实木门好 还是复合实木门好？",img:"http://www.51hejia.com/bianjibu/askimages/jiancaijiaodiantu1016.jpg",href:"<%=BASEURL%>visitor/question/111531.html"};
+      fImgs[2] = {title:"橱柜台面用什么材料比较经济实惠?白橡木复合地板配色? ",img:"http://www.51hejia.com/bianjibu/askimages/wenbalanmujiaodiantu002.jpg",href:"<%=BASEURL%>visitor/question/111098.html"};
+
+<%- end -%>
+<%- if @tag_id.to_i == 1 -%>
+      fImgs[0] = {title:"请问窗帘和沙发选什么颜色好？",img:"http://www.51hejia.com/bianjibu/askimages/jiajujiaodiantu1030.jpg",href:"<%=BASEURL%>visitor/question/111711.html"};
+      fImgs[1] = {title:"藤条家具好看吗",img:"http://www.51hejia.com/bianjibu/askimages/wenbajiajujiaodiantu1016.jpg",href:"<%=BASEURL%>visitor/question/111559.html"};
+      fImgs[2] = {title:"窗帘质地",img:"http://www.51hejia.com/bianjibu/askimages/wenbalanmujiaodiantu003.jpg",href:"<%=BASEURL%>visitor/question/109212.html"};
+
+<%- end -%>
+    imagePlay();
+  </script>
+  <!--flash幻灯展示控制结束-->
+</div>

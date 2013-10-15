@@ -1,0 +1,14 @@
+<div class="rightbox03">
+  <h3>瓷砖问答</h3><form id="form1" name="form1" method="post" action="/visitor/s">
+    <ul>
+      <li>
+        <input type="text" name="wd" class="txt01" />
+        <input type="submit" name="Submit" value="搜索" class="bt01" />
+        <input type="submit" name="Submit2" value="提问" class="bt01" onclick="javascript:document.getElementById('form1').action='/visitor/s?wd=瓷砖' ; document.getElementById('form1').submit(); " />
+      </li>
+      <% for topic in @topics %>
+        <li>·<a href="<%=BASEURL%>visitor/question/<%= topic.id %>" target="_blank"><%= get_short_str topic.subject, 17 %></a></li>
+      <% end %>
+    </ul>
+  </form>
+</div>

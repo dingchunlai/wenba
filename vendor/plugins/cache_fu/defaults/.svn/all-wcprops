@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/!svn/ver/113/51hejia/repos/wenba/release/vendor/plugins/cache_fu/defaults
+END
+memcached.yml.default
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/!svn/ver/113/51hejia/repos/wenba/release/vendor/plugins/cache_fu/defaults/memcached.yml.default
+END
+memcached_ctl.default
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/!svn/ver/113/51hejia/repos/wenba/release/vendor/plugins/cache_fu/defaults/memcached_ctl.default
+END
+extensions.rb.default
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/!svn/ver/113/51hejia/repos/wenba/release/vendor/plugins/cache_fu/defaults/extensions.rb.default
+END

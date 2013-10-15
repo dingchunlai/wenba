@@ -1,0 +1,17 @@
+<link href="http://d.51hejia.com/css/wenba/answerlist.css" rel="stylesheet" type="text/css"/>
+<div class="mdbox05">
+  <h3>排行榜</h3>
+  <div class="box1">
+    <ul>
+      <% number = 0 %>
+      <%- for topic in @topics -%>
+        <% number = number + 1 %>
+        <%- if number == 10 -%>
+          <li><span><%= number %>&nbsp;</span>[<%= get_tag_name_by_tag_id(topic.tag_id) %>]&nbsp;<a href="<%=BASEURL%>visitor/question/<%= topic.id %>.html" target="_blank" title="<%= topic.subject %>"><%= get_short_str(topic.subject, 10) %></a></li>
+        <%- else -%>
+          <li><span><%= number %>&nbsp;&nbsp;</span>[<%= get_tag_name_by_tag_id(topic.tag_id) %>]&nbsp;<a href="<%=BASEURL%>visitor/question/<%= topic.id %>.html" target="_blank" title="<%= topic.subject %>"><%= get_short_str(topic.subject, 10) %></a></li>
+        <%- end -%>
+      <%- end -%>
+    </ul>
+  </div>
+</div>

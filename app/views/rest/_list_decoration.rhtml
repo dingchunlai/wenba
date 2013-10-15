@@ -1,0 +1,20 @@
+document.writeln("<!DOCTYPE html PUBLIC \"-\/\/W3C\/\/DTD XHTML 1.0 Transitional\/\/EN\" \"http:\/\/www.w3.org\/TR\/xhtml1\/DTD\/xhtml1-transitional.dtd\">");
+document.writeln("<html xmlns=\"http:\/\/www.w3.org\/1999\/xhtml\">");
+document.writeln("  <head>");
+document.writeln("    <meta http-equiv=\"Content-Type\" content=\"text\/html; charset=gb2312\" \/>");
+document.writeln("    <title>装饰_和家装修家居网<\/title>");
+document.writeln("    <link href=\"http:\/\/d.51hejia.com\/css\/zhuangshi916\/zhuangshi916.css\" rel=\"stylesheet\" type=\"text\/css\" \/>");
+document.writeln("    ");
+document.writeln("  <\/head>");
+document.writeln("  ");
+document.writeln("  <body>");
+document.writeln("<div class=\"rightbox04\">");
+document.writeln("  <h3>问吧<span><a href=\"\/visitor\/s?wd=装饰\" target=\"_blank\">我要提问>><\/a><\/span><\/h3>");
+document.writeln("  <ul>");
+<% for topic in @topics %>
+document.writeln("        <li>·<a href=\"http:\/\/ask.51hejia.com\/visitor\/question\/<%= topic.id %>\" target=\"_blank\"><%= get_short_str topic.subject, 17 %><\/a><\/li>");
+<% end %>
+document.writeln("  <\/ul>");
+document.writeln("<\/div>");
+document.writeln("  <\/body>");
+document.writeln("<\/html>");

@@ -1,0 +1,36 @@
+<div id="main">
+  <%= render :partial => 'head_start' %>
+  <%= render :partial => 'head_end' %>
+  <div id="topwen_menu">
+    <%= render :partial => 'visitor/ads_tonglang' %>
+    <%= render :partial => 'visitor/discussion/search' %>
+    <%= render :partial => 'visitor/discussion/tags' %>
+    <%= render :partial => 'visitor/discussion/gonggao' %>
+    <div id="Wen_Right">
+      <%= render :partial => 'visitor/discussion/top' %>
+      <div id="right2">
+        <div class="rightbox1">
+          <div class="Wen_TaoB4">论坛列表</div>
+          <div id="same1">
+            <%- for tag in @tags -%>
+              <div class="fenleibox">
+                <ul>
+                  <li>
+                    <a href="<%=BASEURL%>visitor/discussionbrowse/<%= tag.id %>.html"><%= tag.name %></a>
+                    <span class="yuedu">共有<%= get_tags_count_by_tag_id_for_discussion(tag.id) %>帖子</span>
+                  </li>
+                </ul>
+              </div>
+            <%- end -%>
+          </div>
+        </div>
+      </div>
+      <div class="fenye1">
+        <%= link_to '上一页', { :page => @tag_pages.current.previous.to_i, :params => { :tp => params[:tp], :tid => params[:tid] } } if @tag_pages.current.previous %>
+        <%= pagination_links(@tag_pages, :params => { :tp => params[:tp], :tid => params[:tid] }) %>
+        <%= link_to '下一页', { :page => @tag_pages.current.next.to_i, :params => { :tp => params[:tp], :tid => params[:tid] } } if @tag_pages.current.next %>
+      </div>
+    </div>
+  </div>
+  <%= render :partial => 'foot' %>
+</div>

@@ -1,0 +1,11 @@
+<div class="pinlunlist">
+  <h3>最新回答/评论</h3>
+  <div class="more"><a href="<%=BASEURL%>visitor/u/<%= params[:uid] %>.html?utp=a" target="_blank">更多>></a></div>
+  <ul>
+    <%- for post in @posts -%>
+      <li><a href="<%=BASEURL%>visitor/question/<%= post.zhidao_topic_id %>.html" target="_blank">
+          <%= get_short_str(post.content, 15) %>
+      </a></li>
+    <%- end -%>
+  </ul>
+</div>

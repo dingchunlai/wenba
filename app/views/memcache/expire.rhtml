@@ -1,0 +1,16 @@
+<form action="/memcache/expire" method="post" target="hideiframe">
+
+  <div style="padding:20px">
+    MemCache缓存清除
+  </div>
+  <div style="padding:20px;">
+    请填写memcache关键词，一行一个：<br />
+    <textarea name="keywords" cols="100" rows="15"></textarea>
+  </div>
+  <div style="padding:20px;">
+    <input type="submit" value="清除缓存" />
+  </div>
+
+</form>
+
+<iframe name="hideiframe" width="0" height="0" style="display: none;"></iframe>

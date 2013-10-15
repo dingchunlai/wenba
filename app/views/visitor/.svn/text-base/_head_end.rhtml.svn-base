@@ -1,0 +1,101 @@
+<!--begin_top_nav_links--><div class="citypath">
+    <ul>
+	  <li><a href="http://shanghai.51hejia.com/">上海</a></li> 
+	  <li><a href="http://beijing.51hejia.com/">北京</a></li> 
+	  <li><a href="http://guangzhou.51hejia.com/">广州</a></li> 
+	  <li><a href="http://shenzhen.51hejia.com/">深圳</a></li>
+	  <li><a href="http://hangzhou.51hejia.com/">杭州</a></li>
+	  <li><a href="http://wuhan.51hejia.com/">武汉</a></li>
+	  <li><a href="http://chengdu.51hejia.com/">成都</a></li>
+	  <li><a href="http://tianjin.51hejia.com/">天津</a></li>
+	  <li><a href="http://nanjing.51hejia.com/">南京</a></li>                
+	  <li><a href="http://xian.51hejia.com/">西安</a></li>   
+	  <li><a href="http://chongqing.51hejia.com/">重庆</a></li>          
+	  <li><a href="http://zhengzhou.51hejia.com/">郑州</a></li>
+	</ul>
+	<div style="clear:both"></div>
+  </div>
+<div class="Top_title" style="margin-top:0;">
+<a href="http://www.51hejia.com/" target="_blank"><img src="http://js.51hejia.com/img/Logo.gif" border="0" /></a>
+	<ul class="Top_Navtion">
+		<li id="xinwenzhoukanid" class="Linew"><a href="http://www.51hejia.com/xinwen/">新闻周刊</a></li>
+		<li id="chanpinid"><a href="http://p.51hejia.com/">产品报价</a></li>
+		<li id="zhuangxiuid"><a href="http://d.51hejia.com/">装修设计</a></li>
+		<li id="jushangid"><a href="http://www.51hejia.com/jushang/">居尚生活</a></li>
+		<li id="tukuid"><a href="http://tuku.51hejia.com/">图库</a></li>
+		<li id=""><a href="http://bbs.51hejia.com/">社区</a></li>
+	</ul>
+<div class="Top_Anniu">
+		<span><img src="http://js.51hejia.com/img/Title.gif" border="0" align="absmiddle" /></span>
+		<div id="show_login">
+			<SCRIPT LANGUAGE="JavaScript" Src="http://js.51hejia.com/js/show_login.js"></SCRIPT>
+			<iframe name="hideiframe_loginout" width="0" height="0" style="display: none;"></iframe>
+		</div>
+  </div>
+</div>
+<div class="Div_center">
+	<ul class="Pindao">
+		<li><a id="shouye" href="http://www.51hejia.com/" target="_blank">首页</a>
+		<br />
+		<a id="zhoukan" href="http://www.51hejia.com/zhoukan/" target="_blank">周刊</a>
+		</li>
+		<li class="line"></li>
+		<li><a id="tuliao" href="http://www.51hejia.com/youqituliao/" target="_blank">涂料</a><a id="cizhuan" href="http://www.51hejia.com/cizhuan/" target="_blank">瓷砖</a><a id="gediao" href="http://www.51hejia.com/jiajuchanpin/" target="_blank">家具</a><a id="jiadian" href="http://www.51hejia.com/jiadian/" target="_blank">家电</a><a id="cainuan" href="http://www.51hejia.com/cainuan/" target="_blank">采暖</a><a id="kongtiao" href="http://www.51hejia.com/kongtiao/" target="_blank">中央空调</a><a id="dengshi" href="http://www.51hejia.com/maichang/" target="_blank">卖场</a><br />
+		<a id="diban" href="http://www.51hejia.com/diban/" target="_blank">地板</a><a id="weiyu" href="http://www.51hejia.com/weiyupindao/" target="_blank">卫浴</a><a id="buyili" href="http://www.51hejia.com/buyi/" target="_blank">布艺</a><a id="chugui" href="http://www.51hejia.com/chuguipindao/" target="_blank">橱柜</a><a id="zhaoming" href="http://www.51hejia.com/zhaomingpindao/
+" target="_blank">照明</a><a id="shuichulili" href="http://www.51hejia.com/chanpinzhishi_shuichuli.jhtml?tagFId=12859" target="_blank">水&nbsp;处&nbsp;理</a></li>
+		<li class="line"></li>
+		<li><a id="xiaohuxing" href="http://www.51hejia.com/xiaohuxing/" target="_blank">小户型</a><a id="keting" href="http://www.51hejia.com/zhuanqu/客厅.html" target="_blank">客厅</a><a id="shufang" href="http://www.51hejia.com/zhuanqu/书房.html" target="_blank">书房</a><a id="beijingqiang" href="http://www.51hejia.com/zhuanqu/背景墙.html" target="_blank">背景墙</a>		
+		<br />
+		<a id="ershoufang" href="http://www.51hejia.com/ershoufang/" target="_blank">二手房</a><a id="bieshu" href="http://www.51hejia.com/bieshu/" target="_blank">别墅</a><a id="woshi" href="http://www.51hejia.com/zhuanqu/卧室.html" target="_blank">卧室</a><a id="ertongfang" href="http://www.51hejia.com/zhuanqu/儿童房.html" target="_blank">儿童房</a></li>
+		<li class="line"></li>
+		<li><a id="chufang" href="http://www.51hejia.com/chufang/" target="_blank">厨房</a><a id="huayuan" href="http://www.51hejia.com/huayuanshenghuo/" target="_blank">花园</a><br /><a id="zhuangshi" href="http://www.51hejia.com/weiyu/" target="_blank">浴室</a><a id="zhufu" href="http://www.51hejia.com/chaojizhufu/" target="_blank">主妇</a></li>
+		<li class="line"></li>
+		<li><a id="wenba" href="<%=BASEURL%>" target="_blank">问吧</a><a href="http://bbs.51hejia.com/channel/471?tag_id=426" target="_blank">装修日记</a><br />
+		<a id="boke" href="http://blog.51hejia.com/" target="_blank">博客</a><a href="http://bbs.51hejia.com/channel/471?tag_id=443" target="_blank">居家论坛</a></li>
+	</ul>
+</div>
+<SCRIPT LANGUAGE="JavaScript">
+var login_forward = location.href;
+</SCRIPT>
+<!--end_top_nav_links-->
+<%= render :partial => 'login_div' %>
+<script>
+    var BgDiv=document.createElement("div");
+    function Divopop(ID){
+        denglula();
+        var Moled=document.getElementById(ID);
+        Moled.style.display="block";
+        var bodyw=document.body.scrollWidth;
+        var bodyh=document.body.scrollHeight;
+        var firefox = document.getElementById && !document.all;
+        BgDiv.style.position="absolute";
+        BgDiv.style.left="0";
+        BgDiv.style.top="0";
+        BgDiv.style.width=bodyw+"px";
+        BgDiv.style.height=bodyh+"px";
+        BgDiv.style.zindex="50";
+        if(firefox==false){BgDiv.style.background="url(http://d.51hejia.com/css/newback/images/divbg.png)";BgDiv.style.filter="Alpha(Opacity=50)";}else
+
+        {BgDiv.style.background="url(http://d.51hejia.com/css/newback/images/divbg.png)";}
+        document.body.appendChild(BgDiv);
+        BgDiv.style.display="";
+        var As=document.getElementsByTagName("a");
+        for (var i=0;i<As.length;i++){
+            if(As[i].className=="Divopop-none"){
+                As[i].onclick=function(){Moled.style.display="none";BgDiv.style.display="none";return false;};
+            }
+            else if(As[i].className=="othen"){
+                As[i].onclick=function(){
+                    var othenId=this.getAttribute("toid");
+                    var othenDiv=document.getElementById(othenId);
+                    Moled.style.display="none";
+                    othenDiv.style.display="block";
+                    return false;
+                };
+            }
+            else if(As[i].className=="Divopop-nonenei"){
+                As[i].onclick=function(){this.parentNode.style.display="none";BgDiv.style.display="none";return false;};
+            }
+        }
+    }
+</script>

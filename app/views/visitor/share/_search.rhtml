@@ -1,0 +1,14 @@
+<div id="topmenu">
+  <div class="wenba"><a href="http://ask.51hejia.com"><img src="http://www.51hejia.com/images/wenba/menu_wenba.gif" alt="问吧首页" border="0" /></a></div>
+  <div class="search">
+    <form name="fsearch" method="post" action="/visitor/s" onSubmit="return checksearchform(this);">
+      <input name="wd" id="wd" type="text" value="<%= session[:wd] %>" size="18">
+      <input type="submit" value="搜索知识" class="button02"/>
+      <input type="button" value="我要提问" class="button02" onclick="isLogin()"/>
+      <input type="button" value="涂料百科知识" class="button022" onclick="opendope()" />
+    </form>
+  </div>
+  <div class="huida"><a href="<%=BASEURL%>visitor/list?tp=2"><img src="http://www.51hejia.com/images/wenba/menu_huida.gif" alt="放心问你所感 用心答你所知" border="0" /></a></div>
+  <div class="tiwen"><a href="javascript:isLogin()"><img src="http://www.51hejia.com/images/wenba/menu_tiwen.gif" alt="用心答你所知" width="240" height="69" border="0" /></a></div>
+  <div class="zhishi"><a href="<%=BASEURL%>visitor/entrylist"><img src="http://www.51hejia.com/images/wenba/menu_zhishi.gif" alt="分享知识" width="240" height="69" border="0" /></a></div>
+</div>

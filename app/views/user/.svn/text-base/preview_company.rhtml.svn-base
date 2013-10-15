@@ -1,0 +1,45 @@
+<div id="main">
+  <%= render :partial => 'visitor/head_start' %>
+  <%= render :partial => 'visitor/head_end' %>
+  <%= render :partial => 'visitor/ads_tonglang' %>
+  <%#= render :partial => 'visitor/search' %>
+  <div id="question">
+<h3><img src="http://www.51hejia.com/images/wenba/company.gif"/></h3>
+<div class="qscontain">
+  <div class="top">
+    <ul>
+      <li class="louzhu"><a href="http://blog.51hejia.com/u/<%=@user_id %>/" target="_blank">
+      <%= get_user_name_by_user_id(@user_id) %></a></li>
+      
+      <li class="title"><%= @cn_name %></li>
+      <li class="date"><%= Time.now.strftime("%Y-%m-%d %H:%M:%S") %></li>
+    </ul>
+  </div>
+  <div class="info">
+    <ul>
+      <li><a href="http://blog.51hejia.com/u/<%= @user_id %>/" target="_blank"><img src="<%= get_user_icon_link_by_user_id(@user_id) %>" alt="" border="0" /></a></li>
+      <li>评论数：<strong>0</strong></li>
+      <li>浏览数：<strong>1</strong></li>
+    </ul>
+  </div>
+  <div class="art"><%= @description %><br/><br/>
+  <% if !@address.nil? %>
+  地址: <%= @address %><br/><br/>
+  <% end %>
+  <% if !@tel.nil? %>
+  电话: <%= @tel %><br/><br/>
+  <% end %>
+  <% if !@linkman.nil? %>
+  联系人: <%= @linkman %><br/><br/>
+  <% end %>
+  <% if !@web_stage.nil? %>
+  网址: <a href="<%= @web_stage %>" target="_blank"><%= @web_stage %></a><br/><br/>
+  <% end %>
+  <% if !@guild_id.nil? %>
+  协会编号: <%= @guild_id %><br/><br/>
+  <% end %>
+  国家: <%= @country %><br/><br/>
+  地区: <%= @area %></div>
+</div>  
+  <%= render :partial => 'visitor/foot' %>
+</div>

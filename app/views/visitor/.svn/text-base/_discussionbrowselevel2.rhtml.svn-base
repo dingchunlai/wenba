@@ -1,0 +1,13 @@
+<div id="main">
+  <%= render :partial => 'head_start' %>
+  <%= render :partial => 'head_end' %>
+  <%= render :partial => 'visitor/ads_tonglang' %>
+  <%= render :partial => 'visitor/discussion/search' %>
+  <%= render :partial => 'visitor/discussion/tags' %>
+  <div id="Wen_Right">
+    <%= render :partial => 'visitor/discussion/b2tags' %>
+    <br>
+    <%= render :partial => 'visitor/discussion/b2list' %>
+  </div>
+  <%= render :partial => 'foot' %>
+</div>

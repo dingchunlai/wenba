@@ -1,0 +1,17 @@
+document.writeln("<!DOCTYPE html PUBLIC \"-\/\/W3C\/\/DTD XHTML 1.0 Transitional\/\/EN\" \"http:\/\/www.w3.org\/TR\/xhtml1\/DTD\/xhtml1-transitional.dtd\">");
+document.writeln("<html xmlns=\"http:\/\/www.w3.org\/1999\/xhtml\">");
+document.writeln("  <head>");
+document.writeln("    <meta http-equiv=\"Content-Type\" content=\"text\/html; charset=gb2312\" \/>");
+document.writeln("    <title>无标题文档<\/title>");
+document.writeln("    <link href=\"http:\/\/d.51hejia.com\/css\/channel894\/xiaohu.css\" rel=\"stylesheet\" type=\"text\/css\" \/>");
+document.writeln("    <SCRIPT src=\"http:\/\/d.51hejia.com\/js\/product\/cha.js\" type=\"text\/javascript\"><\/SCRIPT>");
+document.writeln("  <\/head>");
+document.writeln("  <body>");
+document.writeln("<ul class=\"xhrightbox01a\">");
+<%- for topic in @topics -%>
+document.writeln("    <li>·<a href=\"http:\/\/ask.51hejia.com\/visitor\/question\/<%= topic.id %>.html\" target=\"_blank\"><%= get_short_str(topic.subject, 17) %><\/a><\/li>");
+<%- end -%>
+document.writeln("  <li class=\"more\"><a href=\"http:\/\/ask.51hejia.com\/visitor\/s?wd=%E5%B0%8F%E6%88%B7%E5%9E%8B\" target=\"_blank\">更多<\/a><\/li>");
+document.writeln("<\/ul>")
+document.writeln("  <\/body>");
+document.writeln("<\/html>")

@@ -1,0 +1,47 @@
+<h1>编辑公告消息</h1>
+
+<form name="ftiwen" method="post" action="/admin/update_bugao" onSubmit="return add_bugao(this);">
+  <table width="80%" border="0" cellpadding="0" cellspacing="0" >
+    <td width="110" class="f14" nowrap><B class=ttc>公告标题：</B></td>
+    <TD class=tdof id=td1>
+    <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+      <TR>
+        <TD><input name="ti" id="ti" type="text" value="<%= @bugao.title %>"  size="50" class=formfont>
+        </TD>
+      </TR>
+    </TABLE>
+  </table>
+  <table width="80%" border="0" cellpadding="0" cellspacing="0" >
+    <td width="110" class="f14" nowrap><B class=ttc>公告URL：</B></td>
+    <TD class=tdof id=td1>
+    <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+      <TR>
+        <TD><input name="li" id="li" type="text" value="<%= @bugao.url %>"  size="50" class=formfont>
+        </TD>
+      </TR>
+    </TABLE>
+  </table>
+  <table width="80%" border="0" cellpadding="0" cellspacing="0" >
+    <td width="110" class="f14" nowrap><B class=ttc>公告权重：</B></td>
+    <TD class=tdof id=td1>
+    <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+      <TR>
+        <select name="data">
+         <%- 1.upto(10)  do |i| -%> 
+            <option value="<%= i %>"<%= 'selected' if i == @bugao.order_number %>><%= i %></option>
+          <%- end -%>
+        </select><FONT class=lh15 color=#999999>权重分为1到10，权重10为最大值</FONT>
+      </TR>
+    </TABLE>
+  </table>
+  <table width="80%" border="0" cellpadding="0" cellspacing="0" >
+    <tr>
+      <td width="110" class="f14">&nbsp;</td>
+      <td valign="top" align=middle>
+        <input type="submit" name="s" value="提交修改" class="bnsrh">
+        <input type="hidden" name="cid" value=0>
+        <input type="hidden" name="tid" value="<%= @bugao.id %>">
+      </td>
+    </tr>
+  </table>
+</form>

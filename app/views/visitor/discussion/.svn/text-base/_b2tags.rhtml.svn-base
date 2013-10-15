@@ -1,0 +1,23 @@
+<div id="Wen_Right">
+  <div class="Wen_TaoLine"></div>
+  <div class="Wen_TaoB3">
+    <div class="Wen_TaoB5">
+      <ul>
+        <li>
+          <%- for top_topic in @top_topics -%>
+            <%- if top_topic.is_top == 2 -%>
+              <li class="WenTao_guding"> </li>
+            <%- else -%>
+              <li class="WenTao_zhiding"> </li>
+            <%- end -%>
+            <span class="WenTaoB66"><a target="_blank" href="<%=BASEURL%>visitor/discussion/<%= top_topic.id %>.html"><%= top_topic.subject %></a></span>
+            <span class="yuedu"><%= top_topic.view_counter %>阅读</span>
+            <span class="pinlun"><%= top_topic.post_counter.to_i-1 %>次评价</span>
+            <li class="WenTaoB8"></li>
+          <%- end -%>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="Wen_TaoLine"></div>
+</div>

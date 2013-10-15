@@ -1,0 +1,35 @@
+<div class="question">
+  <div class="huidatitle">
+    <%- if @posts.size > 1 -%>
+      <h3><img src="http://www.51hejia.com/images/wenba/qtda.gif" width="101" height="24" /></h3>
+    <%- end -%>
+    <%- for post in @posts -%>
+      <% if post.id.to_i == @topic.best_post_id.to_i %>
+      <% else %>
+        <div class="ascontain">
+          <div class="info">
+            <ul>
+              <%- if post.user_id.to_i == 0 -%>
+                <li><img src="<%= get_user_icon_link_by_user_id(post.user_id) %>" alt="" border="0" /></li>
+                <%- if post.guest_name.nil? -%>
+                    <li>回答者：和家网友</li>
+                <%- else -%>
+                    <li>回答者：<%= post.guest_name %></li>
+                <%- end -%>
+              <%- else -%>
+                <li><a href="http://blog.51hejia.com/u/<%= post.user_id %>" target="_blank">
+                <img src="<%= get_user_icon_link_by_user_id(post.user_id) %>" alt="" border="0" /></a></li>
+                <li>回答者：<a href="http://blog.51hejia.com/u/<%= post.user_id %>" target="_blank">
+                <%=get_user_name_by_user_id (post.user_id) %></a></li>
+              <%- end -%>
+              <li><%= post.created_at.strftime("%m-%d&nbsp;%H:%M") %></li>
+              <li><%= get_html_of_admin_operations_by_post_id_and_topic_id(@user_id, post.id, @topic_id) %></li>
+            </ul>
+          </div>
+          <div class="art"><%= post.content %></div>
+          <%= get_html_of_user_sign_by_user_id(post.user_id) %>
+        </div>
+      <% end %>
+    <%- end -%>
+  </div>
+</div>

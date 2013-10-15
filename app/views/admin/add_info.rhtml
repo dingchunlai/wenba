@@ -1,0 +1,31 @@
+<h1>签名信息</h1>
+<%= flash[:notice] %>
+<form id="form1" action="/admin/create_info" method="post" >
+  <p>
+    <select id ="t" name="t" onchange="show_data()">
+      <option value="0">请选择...</option>
+      <% @admins.each do |admin| -%>
+      <option value="<%= admin.user_id %>" <%= 'selected' if admin.user_id.to_i == session[:type].to_i %>><%= iconv_gb2312(get_admin_info_by_user_id(admin.user_id).username) %></option>
+      <% end -%>
+    </select>
+  </p>
+  <label for="admin_qq">QQ：</label>
+  <input id="admin_qq" name="admin[qq]" size="30" type="text" value="<%if !@bbs_info.nil? %><%= @bbs_info.qq %><% end %>" />
+  
+  <label for="admin_msn">MSN：</label>
+  <input id="admin_msn" name="admin[msn]" size="30" type="text" value="<%if !@bbs_info.nil? %><%= @bbs_info.msn %><% end %>" />
+  
+  <p><%= submit_tag '提交' %></p>
+</form>
+
+<%= link_to '后退', :action =>'list' %>
+<script>
+  function show_data(){
+      var user_id = document.getElementById("t").value;
+      document.getElementById("form1").action = "/admin/add_info?id=" + user_id;
+      if(user_id != 0 ){
+        document.getElementById("form1").submit(); 
+      }
+      
+  }
+</script>

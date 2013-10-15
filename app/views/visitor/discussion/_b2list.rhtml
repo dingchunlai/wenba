@@ -1,0 +1,43 @@
+<div id="right2">
+  <div class="rightbox1">
+    <h3><%= get_tag_name_by_tag_id_for_discussion(@tag_id) %></h3>
+    <div class="same_cha">
+      <ul>
+        <li><strong>帖子过滤</strong></li>
+        <%= get_html_of_menu_for_discussionb2list_by_type_id(@tag_id) %>
+        <li class="jieguo">共搜到相关帖子：<span><%= @topic_pages.item_count %></span>条</li>
+      </ul>
+    </div>
+    <div id="same1">
+      <%- for topic in @topics -%>
+        <div class="fenleibox">
+          <h4 class="share">
+          <a target="_blank" href="<%=BASEURL%>visitor/discussion/<%= topic.id %>.html"><%= get_short_str(topic.subject, 40) %></a></h4>
+          <dl>
+            <dd>发帖人：
+              <%- if topic.user_id.to_i == 0 -%>
+                <%= get_user_name_by_user_id(topic.user_id )%>
+              <%- else -%>
+                <a href="http://blog.51hejia.com/u/<%= topic.user_id %>" target="_blank">
+                <%= get_user_name_by_user_id(topic.user_id )%></a>
+              <%- end -%>
+            &nbsp;&nbsp;&nbsp;已浏览：<%= topic.view_counter %>&nbsp;&nbsp;&nbsp;已评价：<%= topic.post_counter.to_i-1 %></dd>
+            <dd>Tag：<%= get_html_of_user_tags_by_taolun_topic_id(topic.id) %></dd>
+          </dl>
+          <p>
+            <%= get_short_str(strip_tags(topic.description), 300) %>
+          </p>
+          <ul>
+            <li class="edwyhd"><a target="_blank" href="<%=BASEURL%>visitor/discussion/<%= topic.id %>.html#reply">我要评价</a></li>
+            <li></li>
+          </ul>		
+        </div>	
+      <%- end -%>
+    </div>
+  </div>
+  <div class="fenye1">
+    <%= link_to '&lt; 上一页', { :controller => 'visitor', :action => 'browse', :page => @topic_pages.current.previous.to_i, :params => { :tp => params[:tp], :tid => params[:tid] } } if @topic_pages.current.previous %>
+    <%= pagination_links(@topic_pages, :controller => 'visitor', :action => 'browse', :params => { :tp => params[:tp], :tid => params[:tid] }) %>
+    <%= link_to '下一页 &gt;', { :controller => 'visitor', :action => 'browse', :page => @topic_pages.current.next.to_i, :params => { :tp => params[:tp], :tid => params[:tid] } } if @topic_pages.current.next %>
+  </div>
+</div>

@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>方太 嵌入式厨房电器</title>
+<style type="text/css">
+<!--
+body{ font-family:Arial, Helvetica, sans-serif; font-size:12px; line-height:22px;}
+body,h1,h2,h3,p,ul,li,dl,dt,dd,form,input,textarea,table,td{ margin:0; padding:0;}
+div,img{ margin:0 auto; padding:0;}
+img{ border:none;}
+li{ list-style-type:none;}
+a:link,a:visited,a:active{ color:#c6f2f5; text-decoration:none;}
+a:hover{ color:#f60; text-decoration:underline;}
+table td{ vertical-align:top;}
+.clearfix:after, .container:after {content:".";display:block;height:0;clear:both;visibility:hidden;}
+.clearfix, .container {display:inline-block;}
+* html .clearfix, * html .container {height:1%;}
+.clearfix, .container {display:block;}
+.clear {clear:both;}
+h3{ color:#FFF; font-size:14px;}
+
+.body{ width:100%;background:url(/images/fangtai/botton.jpg) no-repeat center top;}
+.main{ width:960px;}
+.box1 { background:url(/images/fangtai/listzd2_01.jpg) no-repeat; width:960px; height:72px; display:block;}
+.box2 { background:url(/images/fangtai/<%="logo#{@kw1}.jpg"%>) no-repeat; width:960px; height:106px; display:block;}
+
+.box3 { background:url(/images/fangtai/listzd2_03.jpg) no-repeat; width:960px; height:234px; display:block;}
+.box3 .title{ padding-left:75px;}
+.box3 .title a{ float:left; padding:3px 5px;}
+.box3 .search{ float:right; padding-right:90px;}
+.box3 .search a{ float:left;}
+.box3 .search input{ float:left;border:1px solid #959392; border-top:none; border-left:none; padding: 2px 0; margin-top:10px;}
+.box3 .left {clear:both;float:left;font-size:13px;height:170px;line-height:40px;padding:20px 0 0 130px;width:560px;
+overflow:auto; overflow-x:hidden;scrollbar-3dlight-color:#999; /*- 最外左 -*/
+scrollbar-highlight-color:#fff; /*- 左二 -*/
+scrollbar-face-color:#E4E4E4; /*- 面子 -*/
+scrollbar-arrow-color:#507073; /*- 箭头 -*/
+scrollbar-shadow-color:#808080; /*- 右二 -*/
+scrollbar-darkshadow-color:#D7DCE0; /*- 右一 -*/
+scrollbar-base-color:#CCC; /*- 基色 -*/
+scrollbar-track-color:#;/*- 滑道 -*/}
+.box3 .right{ float:right;padding:8px 130px 0 0; *padding:10px 125px 0 0;}
+.box3 .right li{ padding-left:10px; background:url(/images/fangtai/dot.jpg) no-repeat 0px 10px;}
+.box3 .right li a{ color:#507073;}
+.box4 { background:url(/images/fangtai/listzd2_04.jpg) no-repeat; width:960px; height:210px; display:block;}
+.box4 .cont{ padding:13px 0 0 140px;}
+.box4 .cont ul { margin-top:10px;}
+.box4 li{ padding:0px; margin:0px;padding-left:10px; background:url(/images/fangtai/dot.jpg) no-repeat 0px 10px; float:left; width:350px;}
+.box4 .cont ul li a{color:#507073;}
+-->
+</style>
+<script type="text/javascript">
+<!--
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+//-->
+</script>
+</head>
+
+<body>
+
+<div class="body">
+<div class="main">
+<table id="__01" width="960" border="0" cellpadding="0" cellspacing="0">
+	<tr>
+		<td class="box1">
+			</td>
+	</tr>
+	<tr>
+		<td class="box2">
+
+			</td>
+	</tr>
+	<tr>
+		<td class="box3">
+        <div class="title">
+        <div class="search">
+        <form id="poll" action="/fangtai/list" method="post">
+        	<input type="text" name="stext" value="<%=@stext%>"/>
+            <input type="image" src="/images/fangtai/search.gif" />
+        </form>
+        </div>
+            	<a href="/fangtai/list?kw1=<%=@kw1%>&kw2=1"><img src="/images/fangtai/btn1.gif" id="Image1" onmouseover="MM_swapImage('Image1','','/images/fangtai/btn1a.gif',1)" onmouseout="MM_swapImgRestore()" /></a>
+                <a href="/fangtai/list?kw1=<%=@kw1%>&kw2=2"><img src="/images/fangtai/btn2.gif" id="Image2" onmouseover="MM_swapImage('Image2','','/images/fangtai/btn2a.gif',1)" onmouseout="MM_swapImgRestore()" /></a>
+                <a href="/fangtai/list?kw1=<%=@kw1%>&kw2=3"><img src="/images/fangtai/btn3.gif" id="Image3" onmouseover="MM_swapImage('Image3','','/images/fangtai/btn3a.gif',1)" onmouseout="MM_swapImgRestore()" /></a>
+
+            </div>
+            <div class="clear">
+            <ul class="left">
+            	<li>
+                  Q：<%=@q.subject%>
+                  <br />
+                  <%=text_to_html(@a.content)%>
+                </li>
+            </ul>
+            <div class="right">
+            <h3>其他相关问题</h3>
+            <ul>
+            	<%1.upto(7) do |i|%>
+                  <%break if @other_qs[i].nil?%>
+                  <li><a href="/fangtai/detail?id=<%=@other_qs[i]["id"]%>" title="<%=@other_qs[i]["subject"]%>" target="_blank">
+                        <%=utf8_left(@other_qs[i]["subject"], 9, "...")%></a>
+                  </li>
+                <%end%>
+            </ul>
+            </div>
+            </div>
+			</td>
+	</tr>
+	<tr>
+		<td class="box4">
+        <div class="cont">
+        <h3><%=@kws[@kw1]%>常见的十个问题</h3>
+        <ul>
+          <%1.upto(10) do |i|%>
+            <%break if @about_qs[i].nil?%>
+        	<li><a href="/fangtai/detail?id=<%=@about_qs[i]["id"]%>&kw1=<%=@kw1%>" title="<%=@about_qs[i]["subject"]%>" target="_blank">
+                  <%=utf8_left(@about_qs[i]["subject"], 27, "...")%></a>
+            </li>
+          <%end%>
+        </ul>
+        </div>
+			</td>
+	</tr>
+</table></div>
+</div>
+</body>
+</html>

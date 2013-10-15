@@ -1,0 +1,198 @@
+<% javascript 'http://ajax.googleapis.com/ajax/libs/swfobject/2/swfobject.js',
+  'ckeditor/ckeditor.js',
+  'jquery.livequery.js',
+  'http://js.51hejia.com/js/jquery.timers-1.2.js',
+  'jquery.uploadify.v2.1.0.min.js'
+'http://js.51hejia.com/js/admin/new.js'
+%>
+
+<% radmin_javascript 'decoration_diaries.js','jquery.praise.js','decoration_diary/score.js','decoration_diary/uploadify.js'%>
+<% radmin_stylesheet 'jquery.praise.css'%>
+
+<style type="text/css" media="screen">
+  .error_em{border:1px solid red;padding:3px;color:red;}
+  .right_em{border:1px solid green;padding:3px;color:green;}
+  .detail_praise strong{line-height:16px;}
+</style>
+<% form_for :diary , @diary ,:url => decoration_diaries_path(), :html=>{:id=>"diary_form"} do |f| -%>
+  <ul>
+    <li>标题：<%= f.text_field :title %><span class="tip">标题不能为空!</span><%= hidden_field_tag("its_id",its_id) %>  </li>
+    <% if isrole("页面制作") || isrole("管理员") || isrole("文章编辑") || isrole("装潢编辑") || current_user.mobile_verified %>
+    <%else%>
+
+    <% end -%>
+      <li>小区名称：<%= f.text_field :building_name %><span class="tip">小区名称不能为空!</span></li>
+      <li>所属区域：
+            省 / 市<select id="diary_city" name="diary[city]" onchange="$('#select_city_area').load('/decoration_diaries/select_city_area', {'cityid':this.value})">
+              <option value="" <% if @diary.city.nil? %>selected<% end %>>请选择</option>
+					<%Tag.provinces_to_hash.each do |c|%>
+					  <option value="<%=c[0]%>" <%if @diary.city.to_i==c[0].to_i%> selected <%end%> ><%=c[1]%></option>
+					<%end%>
+					</select><span class="tip">所属区域必选!</span>
+			市 / 区<span id="select_city_area">
+                          <select id="diary_district" name="diary[district]">
+                          <option value="" <% if @diary.district.nil? %>selected<% end %>>请选择</option>
+					<%@areas.each do |c|%>
+					  <option value="<%=c[0]%>" <%if @diary.district.to_i==c[0].to_i%> selected <%end%> ><%=c[1]%></option>
+					<%end%>
+					</select>
+                                        </span>
+          </li>
+    <li class="clearfix">
+      <div style="float:left;height:20px;line-height:20px;">案例所属装修公司：
+        <input id="selectproductinput" name="deco_firm" type="text" value="<%= @deco_firm_name%>" readOnly=true/>
+        <span class="tip">请选择日记所属公司!</span>
+        <%= f.hidden_field :deco_firm_id ,:id=>"deco_firm_id",:value=>@deco_firm_id %>
+      </div>
+      <span class="n5" id="st1" onclick="k('t1')"><a onFocus="blur()">选择装修公司</a></span>
+    </li>
+
+    <div id="t1" class="border1" style="display:none;">
+      <iframe src="/member/companylist" style="width:707px; height:200px" frameborder="0" scrolling="no" class="should_hide"></iframe>
+    </div>
+
+    <li class="should_hide">
+      <span>所属房型：</span><span class="nothing"><%= f.select :room , ROOM.map {|p| [ p[1], p[0]] } , {:prompt => "- 请选择 -"},:class=>"option" %></span>
+      <span>装修价格：</span><span class="nothing"><%= f.select :price , PRICE.map {|p| [ p[1], p[0]] } , { :prompt => "- 请选择 -" } ,:class=>"option"%></span>
+      <span>装修方式：</span><span class="nothing"><%= f.select :model , MODELS.map {|p| [ p[1], p[0]] } , { :prompt => "- 请选择 -" },:class=>"option" %></span>
+      <span>装修风格：</span><span class="nothing"><%= f.select :style , STYLES.map {|p| [ p[1], p[0]] } , { :prompt => "- 请选择 -" },:class=>"option" %></span>
+      <%= f.hidden_field :user_id ,:value => user_id %>
+      <%= f.hidden_field :status , :value =>  status  %>
+      <input type="hidden" name="token" value="<%= @token %>" id="token" />
+      <input type="hidden" name="score" value="<%= @score %>" id="score" />
+    </li>
+
+    <li>
+      <%= f.text_area :content ,:id=>"diary_content_editor" ,:style=>"width:750px;height:300px" %>
+      <script type="text/javascript">
+        //<![CDATA[
+        CKEDITOR.replace('diary[content]', {
+          height: '300px',width: '750px'
+        });
+        //]]>
+        CKEDITOR.instances.diary_content_editor.insertHtml($("diary_content_editor").val());
+      </script>
+    </li>
+    <li><font color="red">温馨提示：上传完图片后，请点击“插入”按钮把图片插入至编辑器中进行排版操作！</font></li>
+    <li class="scrj_caoz">
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="scrj_caoz_t01">
+        <tr>
+          <td width="55">操作</td>
+          <td width="100">文件名</td>
+          <td width="130">删除</td>
+          <td width="220">设定主图</td>
+          <td>局部空间</td>
+        </tr>
+      </table>
+      <!--<div id="swfupload_button">
+
+      </div> -->
+      <table width="600px" border="0" cellspacing="0" cellpadding="0" id="picyl" data_index="0" data_image_prefix_array='<%=IMAGE_PREFIX_ARRAY.join(",") %>' , picture_prefix = "<%=PICTURE_PREFIX%>">
+             <tbody>
+
+        </tbody>
+        <% if @diary.pictures.size > 0 %>
+          <% @diary.pictures.each_with_index do |picture,i| %>
+            <tr class="line">
+              <td width="55"><a href="<%= image_full_path(picture,'',i)%>" target="_blank" class="scrj_czt02_cr insert_img_to_editor" title="将该图片插入至文档">插入</a></td>
+              <td width="210">
+                <span class="scrj_czt02_pic" style="float:left;">
+                  <a rel="dropmenu<%=i+1%>"><img src="http://js.51hejia.com/img/zxdpimg/zxrj_picicon.gif" /></a>
+                  <%= picture.file_name %>
+                </span>
+                <div id="dropmenu<%=i+1%>" class="scrj_piclist">
+                  <img src="<%= image_full_path(picture,'160x120') %>" />
+                </div>
+                <a href="#" target="_self" id="<%= picture.id%>" title="删除图片" class="scrj_czt02_sc delete_picture">删除图片</a>
+
+              </td>
+              <td width="220">
+                <input name="pictures[][is_master]" type="radio" class="f_l master" value="<%= picture.image_id%>" <%= "checked='checked'" if picture.is_master == 1 %> />
+                <span class="scrj_czt02_jdt"><label style="width:155px;"></label></span>
+              </td>
+              <td>
+                <span  class="nothing should_hide"><%= select_tag "pictures[][space]" , options_for_select(SPACE.map {|p| [ p[1], p[0]] },picture.space),:class=>"space should_hide" %></span>
+                <input type="hidden" name="pictures[][image_id]"  value = "<%= picture.image_id %>"/>
+                <input type="hidden" name="pictures[][image_md5]"  value = "<%= picture.image_md5 %>"/>
+                <input type="hidden" name="pictures[][image_ext]"  value = "<%= picture.image_ext %>"/>
+                <input type="hidden" name="pictures[][file_name]" value="<%= picture.file_name %>" />
+                <input type="hidden" name="pictures[][id]" value = "<%= picture.id %>" class="image_id"/>
+              </td>
+            </tr>
+
+          <% end -%>
+        <% end -%>
+      </table>
+    </li>
+    <script type="text/javascript">
+      cssdropdown.startchrome("picyl")
+    </script>
+
+    <li class="scrj_tjtp clearfix">
+      <span  id="swfupload_button" ></span>
+      <span>提示：添加的图片可复选批量上传； 图片最佳尺寸500px*375px(长宽比4：3)； 单图大小不能超过200K</span>
+    </li>
+    <% if staff_logged_in? %>
+      <style type="text/css">
+        #tags caption { text-align: left; }
+        #tags thead th { font-size: 16px; font-weight:bold; border-bottom: 1px dashed #AD6415; padding-top: 5px; color: #C4930A; }
+        #tags li { width:150px; display: block;float: left; }
+        #tags ul, #tags li { margin: 0; padding: 0; }
+        #tags tbody th { font-size: 14px; font-weight:bold; width: 13px; vertical-align: top; color: blue; }
+        #tags tbody th, #tags tbody td { padding: 3px 0; }
+      </style>
+        <table id="tags">
+          <caption>添加标签</caption>
+        <% Label.roots.each do |diary_type| %>
+          <thead>
+            <tr>
+              <th colspan="2"><%= Label["#{diary_type}"].title %></th>
+            </tr>
+          </thead>
+          <tbody>
+          <% array = Array.new
+          Label["#{diary_type}"].children.each do |attr|
+            array << Label["#{attr}"].index
+          end
+          array = array.uniq
+          attr_index = Hash.new
+          for i in array
+            attr_index[i] = Array.new
+          end
+          Label["#{diary_type}"].children.each do |attr|
+            attr_index[Label["#{attr}"].index] << Label["#{attr}"].title
+          end
+        %>
+          <% array.each do |index| %>
+            <tr>
+              <th><%= index %></th>
+              <td>
+                <ul>
+                  <% attr_index["#{index}"].each do |diary_attrbute|%>
+                    <li>
+                      <input name="diary[tags][]" type="checkbox" value="<%= Label["#{diary_attrbute}"].title %>" <%=@diary.tags && @diary.tags.include?("#{Label["#{diary_attrbute}"].title}") ? "checked":""%>/> <%= Label["#{diary_attrbute}"].title %>
+                    </li>
+                  <% end %>
+                </ul>
+              </td>
+            </tr>
+          <% end %>
+          </tbody>
+        <% end %>
+      </table>
+    <% end %>
+    <li class="clearfix">
+      <div class="f_l" style="margin-top:20px;">
+        <input type="button" id="save_as_draft" class="zxrj_hf_btn4" value = "<%= controller.action_name == 'edit' ? '保存并续写' : '暂存为草稿' %>"/>
+        <span class="save_info"></span>
+        <input type="hidden" id="pic_count" value="0"/>
+      </div>
+      <div class="f_r" style="margin:12px 10px 0 0;">
+              <% if staff_logged_in? %><%= submit_tag("发表审核日记")%><% end %>
+      </div>
+      <div class="f_r">
+        <input type="button" id="submit_diary" class="bt2" value = "发表日记" />
+      </div>
+    </li>
+  </ul>
+<% end -%> <!-- form END -->

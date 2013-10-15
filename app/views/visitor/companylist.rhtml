@@ -1,0 +1,37 @@
+<div id="main">
+  <%= render :partial => 'head_start' %>
+  <%= render :partial => 'head_end' %>
+  <%= render :partial => 'visitor/ads_tonglang' %>
+  <%= render :partial => 'search' %>
+  <%= render :partial => 'tags' %>
+  <div id="right2">
+    <div class="rightbox1">
+      <%#*<div class="num">每页显示帖子数量：<span class="current">30</span><a href="#">60</a></div>%>
+      <h3>诚信档案</h3>
+      <div class="same_cha">
+        <ul>
+          <li class="jieguo">共搜到相关公司：<span><%= @companies_pages.item_count %></span>家</li>
+        </ul>
+      </div>
+      <div id="same1">
+        <%- for company in @companies -%>
+          <div class="fenleibox">
+            <ul>
+              <li>
+                <a target="_blank" href="<%=BASEURL%>visitor/company/<%= company.id %>.html"><%= company.cn_name %></a>
+                <span class="yuedu"><%= company.view_counter %>阅读</span>
+                <span class="pinlun"><%= company.post_counter.to_i-1 %>次评论</span>
+              </li>
+            </ul>
+          </div>
+        <%- end -%>
+      </div>
+    </div>
+    <div class="fenye1">
+      <%= link_to '上一页', { :page => @companies_pages.current.previous.to_i, :params => { :tp => params[:tp], :tid => params[:tid] } } if @companies_pages.current.previous %>
+      <%= pagination_links(@companies_pages, :params => { :tp => params[:tp], :tid => params[:tid] }) %>
+      <%= link_to '下一页', { :page => @companies_pages.current.next.to_i, :params => { :tp => params[:tp], :tid => params[:tid] } } if @companies_pages.current.next %>
+    </div>
+  </div>
+  <%= render :partial => 'foot' %>
+</div>

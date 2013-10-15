@@ -1,0 +1,371 @@
+<script type="text/javascript" src="http://www.51hejia.com/js/wb/prototype.js"></script>
+<script type="text/javascript">
+  p_index = 0;
+  function gotopage(page){
+    a_link("/mine/m" + p_index + "?page=" + page, "con" + p_index);
+  }
+</script>
+<style type="text/css">
+  #pagelist{
+    font-family:Verdana;
+    color:#999999;
+    font-size:14px;
+    letter-spacing:1px;
+    vertical-align: middle;
+  }
+  #pagelist a{
+    color:#000040;
+    text-decoration:none;
+  }
+  #pagelist a:hover{
+    background-color: #000040;
+    color:white;
+    text-decoration:none;
+  }
+</style>
+<div class="wrap1">
+	<div class="click_tab">
+	<script language="JavaScript" type="text/javascript">
+//<![CDATA[
+var cur_index=1
+var num=7 //该值记录标签的个数
+var settime
+function GetObj(objName){
+	if(document.getElementById){
+		return eval('document.getElementById("' + objName + '")');
+	}else if(document.layers){
+		return eval("document.layers['" + objName +"']");
+	}else{
+		return eval('document.all.' + objName);
+	}
+}
+function change_Menu(index){
+	for(var i=1;i<=num;i++){/* 最多支持8个标签 */
+		if(GetObj("con"+i)&&GetObj("m"+i)){
+			GetObj("con"+i).style.display = 'none';
+			GetObj("m"+i).className = "menu"+i+"Off";
+		}
+	}
+	if(GetObj("con"+index)&&GetObj("m"+index)){
+		GetObj("con"+index).style.display = 'block';
+		GetObj("m"+index).className = "menu"+index+"On";
+        if (index==3||index==4){
+          p_index = index;
+          a_link("/mine/m"+index, "con"+index);
+        }
+	}
+	cur_index=index
+	if(cur_index<num){
+	   cur_index++
+	  }
+	else{
+	    cur_index=1
+	  }
+	settime=setTimeout("change_Menu(cur_index)",90000)//设置延迟时间
+
+}
+function Menu(c_index){
+  clearTimeout(settime)
+  change_Menu(c_index)
+ }
+
+//]]>
+</script>
+		<div class="cards">
+			<ul>
+			<li id="m1" onClick="Menu(1)" class="menu1On" style="cursor:pointer"><a class="base_info">基本资料</a></li>
+			<!-- <li id="m2" onClick="Menu(2)" class="menu2Off" style="cursor:pointer"><a class="mail_box">收 件 箱</a></li> -->
+			<li id="m3" onClick="Menu(3)" class="menu3Off" style="cursor:pointer"><a class="question">我的提问</a></li>
+			<li id="m4" onClick="Menu(4)" class="menu4Off" style="cursor:pointer"><a class="answer">我的回答</a></li>
+			<!-- <li id="m5" onClick="Menu(5)" class="menu5Off" style="cursor:pointer"><a class="fav">问题收藏</a></li> -->
+			<!-- <li id="m6" onClick="Menu(6)" class="menu6Off" style="cursor:pointer"><a class="my_value">积分管理</a></li> -->
+			<!-- <li id="m7" onClick="Menu(7)" class="menu7Off" style="cursor:pointer"><a class="my_score">积分明细</a></li> -->
+			</ul>
+		</div>
+
+		<div class="box">
+			<div class="blueBox">
+				<div class="body">
+
+					<div class="space"></div>
+
+					<div style="display: block;" id="con1">
+<ul class="mongline">
+    <li><span>用户名</span>：<%=@username%>
+    </li>
+    <li><span>积分</span>：<%=session[:my_point]%>
+    </li>
+    <li><span>提问数</span>：<%=session[:ask_num]%>
+    </li>
+    <li><span>回答数</span>：<%=session[:answer_num]%>
+    </li>
+
+    <li>
+        <input type="button" class="grey_btn" value="修改基本资料" onclick="window.open('http://member.51hejia.com/member/userinfo','_blank');" />
+        <input type="button" class="grey_btn" value="修改用户密码" onclick="window.open('http://member.51hejia.com/member/userpw','_blank');" />
+    </li>
+    <li/>
+    <!--
+    <li>更改医生在线提示(请将数字限制在30个以内):
+        <p class="area">
+            <input type="text" style="width: 350px;" value="在线时间 每天9：00-18：00 周日休息" class="inputArea" id="onLineTime"/>
+            <input type="button" class="grey_btn" value="提交" id="btnOnline"/></p>
+    </li>
+    -->
+</ul>
+<!--
+<ul class="dataForm">
+
+				<li>
+					<p class="option">呢称</p>
+					<p class="area"><input type="text" value="axlrose" class="inputArea" id="NickName"/></p>
+				</li>
+				<li><input type="button" class="grey_btn" value="提交" id="btnSumbit"/> <input type="button" class="grey_btn" value="返回" id="btnGoBack"/></li>
+			</ul>
+ -->
+</div>
+
+					<div id="con2" style="display: none;">
+<div class="mailbox">
+							<div class="info">目前您有<span id="idrCount">[0]</span>条新短信息，收件箱共有<span id="InboxCount">[0]</span>条短信息，发件箱中共有<span id="SendCount">[0]</span>条短信息</div>
+							<div class="same_cha">
+		  <ul>
+		  <li id="s1" onClick="show_intro('s','same',5,1);" class="menu_on"><a class="get">收件箱</a></li>
+		  <li id="s2" onClick="show_intro('s','same',5,2);" class="menu_off"><a class="send">发件箱</a></li>
+          <li id="s3" onClick="show_intro('s','same',5,3);" class="menu_off"><a class="maildrop">已发送</a></li>
+		  <li id="s4" onClick="show_intro('s','same',5,4);" class="menu_off"><a class="rubbish">废件箱</a></li>
+          <li id="s5" onClick="show_intro('s','same',5,5);" class="menu_off"><a class="write">撰写</a></li>
+		  </ul>
+	    </div>
+		<div id="same1">
+		<div class="statusBar"><div class="theme">标题(共1条)</div><div class="time">  发送时间</div><div class="replier">   发件人</div></div>
+		<ul class="dash">
+<li><p class="choose"><input type="checkbox" value="256355" name="chEmailBox_1"/></p><h6><img alt="未读" src="http://askimg.39.net/images/mail_unread.gif"/><a href="Javascript:ViewInbox(256355)"><span style="color: Blue;">gfhgfdh</span></a></h6><p class="time">2009.05.19</p><h2><a target="_blank" href="/userinfo-2131985-1-1.html">axlrose</a></h2></li></ul>
+		<div class="function"><div><input type="checkbox" onclick="AllSelect(1)" class="check" value="" name="chAllEmail_1"/></div><div>←选中所有短信息</div><div><input type="button" onclick="DelEmail(1)" value="删除" class="grey_btn"/></div></div>
+		<div class="pageNavi">
+<span style="color: Red;">1</span>
+</div>
+
+		<ul class="dataForm">
+<li>
+<p class="option">发件人</p>
+<p class="area">axlrose</p>
+</li>
+<li>
+<p class="option">时间</p>
+<p class="area">2009年05月19日 09:53:49</p>
+</li>
+<li>
+<p class="option">消息标题</p>
+<p class="area">gfhgfdh</p>
+</li>
+<li>
+<p class="option">消息内容</p>
+<p class="area">fghgf</p>
+</li>
+<li>
+<div><input type="button" class="grey_btn" onclick="ReMessage(256355)" value="回复"/> <input type="button" class="grey_btn" value="返回收件箱" onclick="CEmailTab(1)"/></div>
+</li>
+</ul>
+		</div>
+        <div id="same2">
+		<div class="statusBar"><div class="theme">标题(共1条)</div><div class="time">发送时间</div><div class="replier">收件人</div></div>
+		<ul class="dash">
+<li><p class="choose"><input type="checkbox" value="9146" name="chEmailBox_2"/></p><h6><a href="Javascript:EditSendEmial(9146)">asfs</a></h6><p class="time">2009.05.19</p><h2><a target="_blank" href="/userinfo-2131985-1.html">axlrose</a></h2></li></ul>
+		<div class="function"><div><input type="checkbox" onclick="AllSelect(2)" class="check" value="" name="chAllEmail_2"/></div><div>←选中所有短信息</div><div><input type="button" onclick="DelEmail(2)" value="删除" class="grey_btn"/></div></div>
+		<div class="pageNavi">
+<span style="color: Red;">1</span>
+</div>
+
+		<ul class="dataForm">
+<input type="hidden" value="9146" id="MessageID"/>
+<li>
+<p class="option">收件人</p>
+<p class="area"><input type="text" value="axlrose" class="inputArea" id="ToName"/></p>
+</li>
+<li>
+<p class="option">消息标题</p>
+<p class="area"><input type="text" value="asfs" class="inputArea" id="Subject"/></p>
+</li>
+<li>
+<p class="option">消息内容</p>
+<p class="area"><textarea id="Content">ada</textarea></p>
+</li>
+<li>
+<p class="option">    </p>
+<p class="area"><input type="button" class="grey_btn" value="发送" id="btnEmailWriteSumbit"/> <input type="button" class="grey_btn" value="不发送并保存" id="btnEmailWriteSave"/> <input type="button" style="display: none;" class="grey_btn" value="取消" id="btnEmailWriteGoBack"/></p>
+</li>
+</ul>
+		</div>
+        <div id="same3">
+		<div class="statusBar"><div class="theme">标题(共1条)</div><div class="time">发送时间</div><div class="replier">收件人</div></div>
+		<ul class="dash">
+<li><p class="choose"><input type="checkbox" value="9146" name="chEmailBox_2"/></p><h6><a href="Javascript:EditSendEmial(9146)">asfs</a></h6><p class="time">2009.05.19</p><h2><a target="_blank" href="/userinfo-2131985-1.html">axlrose</a></h2></li></ul>
+		<div class="function"><div><input type="checkbox" onclick="AllSelect(2)" class="check" value="" name="chAllEmail_2"/></div><div>←选中所有短信息</div><div><input type="button" onclick="DelEmail(2)" value="删除" class="grey_btn"/></div></div>
+		<div class="pageNavi">
+<span style="color: Red;">1</span>
+</div>
+
+		<ul class="dataForm">
+<input type="hidden" value="9146" id="MessageID"/>
+<li>
+<p class="option">收件人</p>
+<p class="area"><input type="text" value="axlrose" class="inputArea" id="ToName"/></p>
+</li>
+<li>
+<p class="option">消息标题</p>
+<p class="area"><input type="text" value="asfs" class="inputArea" id="Subject"/></p>
+</li>
+<li>
+<p class="option">消息内容</p>
+<p class="area"><textarea id="Content">ada</textarea></p>
+</li>
+<li>
+<p class="option">    </p>
+<p class="area"><input type="button" class="grey_btn" value="发送" id="btnEmailWriteSumbit"/> <input type="button" class="grey_btn" value="不发送并保存" id="btnEmailWriteSave"/> <input type="button" style="display: none;" class="grey_btn" value="取消" id="btnEmailWriteGoBack"/></p>
+</li>
+</ul>
+		</div>
+		<div id="same4">
+		<div class="statusBar"><div class="theme">标题(共1条)</div><div class="time">  发送时间</div><div class="replier">   发件人</div></div>
+		<ul class="dash">
+<li><p class="choose"><input type="checkbox" value="256345" name="chEmailBox_4"/></p><h6><img alt="未读" src="http://askimg.39.net/images/mail_unread.gif"/><a href="Javascript:ViewInbox(256345)"><span style="color: Blue;">~~</span></a></h6><p class="time">2009.05.19</p><h2><a target="_blank" href="/userinfo-2131985-1-1.html">axlrose</a></h2></li></ul>
+		<div class="function"><div><input type="checkbox" onclick="AllSelect(4)" class="check" value="" name="chAllEmail_4"/></div><div>←选中所有短信息</div><div><input type="button" onclick="ReturnInboxEmail(4)" value="还原" class="grey_btn"/></div><div><input type="button" onclick="DelEmail(4)" value="删除" class="grey_btn"/></div></div>
+		<div class="pageNavi">
+<span style="color: Red;">1</span>
+</div>
+
+		<ul class="dataForm">
+<li>
+<p class="option">发件人</p>
+<p class="area"></p>
+</li>
+<li>
+<p class="option">时间</p>
+<p class="area">2009年05月19日 09:52:55</p>
+</li>
+<li>
+<p class="option">消息标题</p>
+<p class="area">~~</p>
+</li>
+<li>
+<p class="option">消息内容</p>
+<p class="area">~~</p>
+</li>
+<li>
+<div><input type="button" class="grey_btn" onclick="ReMessage(256345)" value="回复"/> <input type="button" class="grey_btn" value="返回收件箱" onclick="CEmailTab(1)"/></div>
+</li>
+</ul>
+		</div>
+        <div id="same5">
+		<ul class="dataForm">
+<input type="hidden" value="9146"/>
+								<li>
+									<p class="option">收件人</p>
+									<p class="area"><input type="text" value="" class="inputArea" id="ToName"/></p>
+								</li>
+								<li>
+									<p class="option">消息标题</p>
+									<p class="area"><input type="text" value="" class="inputArea" id="Subject"/></p>
+								</li>
+								<li>
+									<p class="option">消息内容</p>
+									<p class="area"><textarea id="Content"></textarea></p>
+								</li>
+								<li>
+								    <p class="option">    </p>
+									<p class="area"><input type="button" class="grey_btn" value="发送" id="btnEmailWriteSumbit"/> <input type="button" class="grey_btn" value="不发送并保存" id="btnEmailWriteSave"/> <input type="button" style="display: none;" class="grey_btn" value="取消" id="btnEmailWriteGoBack"/></p>
+								</li>
+							</ul>
+		</div>
+						</div>
+					</div>
+
+      <div id="con3" style="display: none;"><div style="padding:50px;font-size:15pt;color:#D94B00;">数据载入中，请稍候 ...</div></div>
+
+      <div id="con4" style="display: none;"><div style="padding:50px;font-size:15pt;color:#D94B00;">数据载入中，请稍候 ...</div></div>
+
+					<div id="con5" style="display: none;">
+<div class="statusBar">
+							<div class="theme">标题(共1条)</div>
+							<div class="time">提问时间</div>
+							<div class="status">状态</div>
+							<div class="click">回答数</div>
+						</div>
+						<ul class="dash" style="float:left">
+<li><p class="choose"><input type="checkbox" value="298730-5895023" name="chFavBox"/></p><h6><a target="_blank" href="/question/5895023.html">感冒注意事项、感冒的人早餐应该吃些什么？</a> <a target="_blank" class="lgy" href="/browse/705-1-1.html">[感冒]</a></h6><p class="time">2009.05.14</p><p class="icon"><img alt="待解决" src="http://images.39.net/ask/images/interrogation.gif"/></p><p class="click">2</p></li>
+</ul>
+<div class="function"><div><input type="checkbox" onclick="AllFav()" class="check" value="" name="chAllFav"/></div><div>←选中所有短信息</div><div><input type="button" onclick="DelFav()" value="删除" class="grey_btn"/></div></div>
+						<div class="pageNavi">
+<span style="color: Red;">1</span>
+</div>
+					</div>
+
+					<div id="con6" style="display: none;">
+<ul class="mongline">
+<li>
+<span>注册时间</span>：1900年01月01日
+</li>
+<li>
+<span>累积积分</span>：19
+</li>
+<li>
+<span>已兑换积分</span>：0
+</li>
+<li>
+<span>可用积分</span>：19
+</li>
+<li>
+<a target="_blank" href="/award/index.html"><img class="btn" alt="去积分乐园兑换奖品" src="http://images.39.net/ask/images/btn_5.gif"/></a>
+</li>
+</ul>
+<div class="encash_record">
+							<span>兑奖记录</span>
+								<table cellspacing="1" cellpadding="5" border="0" bgcolor="#d7ebff" width="100%">
+								  <tbody><tr class="title">
+									<td>奖品</td>
+									<td>兑换积分</td>
+									<td>奖品数量</td>
+									<td>兑换时间</td>
+									<td>状态</td>
+								  </tr>
+								  <tr>
+									<td>奖品</td>
+									<td>兑换积分</td>
+									<td>奖品数量</td>
+									<td>兑换时间</td>
+									<td>状态</td>
+								  </tr>
+
+								</tbody></table>
+						</div>
+					</div>
+
+					<div id="con7" style="display: none;">
+<div class="statusBar">
+                            <div class="theme">标题(共1条)-(列举2009-03-27以后的得分记录)</div>
+                            <div class="time">   得分时间</div>
+                        <div class="time">得分详情</div>
+                        </div>
+
+                        <table><tbody>
+<tr><td style="width: 600px;"><a target="_blank" href="/question/5910997.html"><span style="color: rgb(0, 0, 204); display: inline; font-size: 14px;">为什么最近老是咳嗽</span></a></td><td style="width: 100px; text-align: right;"><p class="lgy">发贴悬赏(-1)</p></td><td style="width: 100px; text-align: right;"><p class="time">2009.05.19</p></td>
+</tr></tbody></table>
+<ul class="dash">
+<li>
+</li>
+<li>
+<span>注册得分:</span>：0        注册时间:1900年01月01日
+</li>
+</ul>
+
+
+                        <div class="pageNavi">
+<span style="color: Red;">1</span>
+</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

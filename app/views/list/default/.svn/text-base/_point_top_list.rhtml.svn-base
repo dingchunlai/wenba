@@ -1,0 +1,83 @@
+<div class="rank_box">
+    <div class="cell">
+      <div class="blueBox">
+        <div class="title">
+          <h6> 专家积分排行榜</h6>
+        </div>
+        <div class="body">
+          <ul class="rank">
+            <li class="item">
+              <h6>专家</h6>
+              <h2>积分</h2>
+              <p>答题</p>
+            </li>
+
+            <%for user in get_point_top(10, true, "point")%>
+            <li><h6><a href="/expert_index/<%=user.user_id%>.html" target="_blank"><%=user.username rescue ""%></a></h6> <h2><%=user.point%></h2> <p><%=user.wenba_answer_num%></p></li>
+            <%end%>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="cell">
+      <div class="blueBox">
+        <div class="title">
+          <h6> 用户积分排行榜</h6>
+        </div>
+        <div class="body">
+          <ul class="rank">
+             <li class="item">
+              <h6>用户</h6>
+              <h2>积分</h2>
+              <p>答题</p>
+            </li>
+
+            <%for user in get_point_top(10, false, "point")%>
+            <li><h6><a href="/expert_index/<%=user.user_id%>.html" target="_blank"><%=user.username rescue ""%></a></h6> <h2><%=user.point%></h2> <p><%=user.wenba_answer_num%></p></li>
+            <%end%>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="cell">
+      <div class="blueBox">
+        <div class="title">
+          <h6> 专家答题数排行</h6>
+        </div>
+        <div class="body">
+          <ul class="rank">
+             <li class="item">
+              <h6>专家</h6>
+              <h2>积分</h2>
+              <p>答题</p>
+            </li>
+
+            <%for user in get_point_top(10, true, "answer")%>
+            <li><h6><a href="/expert_index/<%=user.user_id%>.html" target="_blank"><%=user.username rescue ""%></a></h6> <h2><%=user.point%></h2> <p><%=user.wenba_answer_num%></p></li>
+            <%end%>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="cell tail">
+      <div class="blueBox">
+        <div class="title">
+          <h6> 用户答题数排行</h6>
+        </div>
+        <div class="body">
+          <ul class="rank">
+             <li class="item">
+              <h6>用户</h6>
+              <h2>积分</h2>
+              <p>答题</p>
+            </li>
+
+            <%for user in get_point_top(10, false, "answer")%>
+            <li><h6><a href="/expert_index/<%=user.user_id%>.html" target="_blank"><%=user.username rescue ""%></a></h6> <h2><%=user.point%></h2> <p><%=user.wenba_answer_num%></p></li>
+            <%end%>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>

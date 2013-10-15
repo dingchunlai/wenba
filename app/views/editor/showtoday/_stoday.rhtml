@@ -1,0 +1,6 @@
+<form name="date" method="post" action="/editor/showtoday" onSubmit="return checksearchform(this);">
+  从<input name="date1" type="text" id="date1" onfocus ="new Calendar().show(this);" size="10" maxlength="10" value="<%= session[:date1] %>" >
+  到<input name="date2" type="text" id="date2" onfocus ="new Calendar().show(this);" size="10" maxlength="10" value="<%=  session[:date2] %>"/>
+  <input type="hidden" name="tp" value="wd">
+  <input type="submit" value ="查询" class ="button02" onfocus ="Showtoday()" />
+</form> 

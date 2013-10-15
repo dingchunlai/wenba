@@ -1,0 +1,252 @@
+<script type="text/javascript">
+  jQuery.fn.showMsg=function(json)
+  {
+    if(json==null)
+      json={};
+    var bodyScrollSize=this.getBodyScrollSize();
+    var bodySize=this.getBodySize();
+    var left=bodyScrollSize.left;
+    var top=bodyScrollSize.top;
+    if(json.autoMiddle!=true)
+    {
+      if(json.left)left=left+json.left;
+      if(json.top)top=top+json.top;
+    }
+    else if(json.autoMiddle==true)
+    {
+      var _w=this.width();
+      var _h=this.height();
+      top=(bodySize.height-_h)/2 + top;
+      left=(bodySize.width-_w)/2;
+    }
+    if(top+this.height()>bodyScrollSize.height)
+      bodyScrollSize.height=top+this.height();
+    if(left+this.width()>bodyScrollSize.width)
+      bodyScrollSize.width=left+this.width();
+
+    if(json.coverBody==true)
+    {
+      $("<iframe id='jq_effect_backGroundIframe' style='z-index:1;filter:mask();overflow:hidden;border:0px;margin:0; padding:0;position:absolute;width:"+bodyScrollSize.width+"px;height:"+bodyScrollSize.height+"px;top:0px;left:0px' scrolling='auto' frameborder='0' ></iframe>").appendTo("body");
+      var jqCover=$("<div id='jq_effect_backGroundDiv'></div>");
+      var _css = { "background-color":json.color==undefined?"#000":json.color, "position":"absolute","overflow":"hidden", "-moz-opacity": "0.45" , "filter":"alpha(opacity=45)","z-index":"2" ,"opacity":"0.45", "top" : "0px" , "left":"0px","width":bodyScrollSize.width,"height":bodyScrollSize.height };
+      jqCover.css(_css);
+      jqCover.appendTo("body");
+    }
+    if(typeof(json.msg)!="undefined")
+      this.html(json.msg);
+    this.css("height","auto");
+    this.css("position","absolute").css("z-index","100");
+    this.css("left",left+"px").css("top",top+"px").fadeIn("slow");
+    if(jQuery.msgShowObj!=undefined)
+    {
+      try{jQuery.msgShowObj.fadeOut('slow');}catch(e){};
+    }
+    jQuery.msgShowObj=this;
+    if(typeof(json.callback)!="undefined")
+      jQuery.msgCallBack=json.callback;
+    else
+      jQuery.msgCallBack=null;
+    jQuery.cc=undefined;
+    if(json.autoClose!=false)
+    {
+      jQuery.cc=window.setTimeout("try{jQuery.msgShowObj.closeMsg();}catch(e){}",json.time==undefined?2000:json.time);
+    }
+    return this;
+  }
+  jQuery.fn.closeMsg=function()
+  {
+    this.fadeOut('slow',jQuery.msgCallBack);
+    jQuery.msgShowObj=undefined;
+    $('#jq_effect_backGroundIframe').remove();
+    $('#jq_effect_backGroundDiv').remove();
+
+    return this;
+  }
+  jQuery.fn.getBodyScrollSize=function()
+  {
+    var bodySL, bodyST, bodySW, bodySH;
+    if(window.pageXOffset)
+    {
+      bodySL=window.pageXOffset;
+      bodySW=window.innerWidth;
+      bodyST=window.pageYOffset;
+      bodySH=window.innerHeight;
+    }
+    else if(document.documentElement)
+    {
+      bodySL=document.documentElement.scrollLeft;
+      bodySW=document.documentElement.scrollWidth; //-10
+      bodyST=document.documentElement.scrollTop;
+      bodySH=document.documentElement.clientHeight>document.documentElement.scrollHeight?document.documentElement.clientHeight:document.documentElement.scrollHeight;
+    }
+    else if(document.body)
+    {
+      bodySL=document.body.scrollLeft;
+      bodySW=document.body.scrollWidth;
+      bodyST=document.body.scrollTop;
+      bodySH=document.body.clientHeight>document.body.scrollHeight?document.body.clientHeight:document.body.scrollHeight;
+    }
+    return {"top":bodyST,"left":bodySL,"width":bodySW,"height":bodySH};
+  }
+  jQuery.fn.getBodySize=function()
+  {
+    var bodyCW, bodyCH;
+    if(window.innerWidth)
+      bodyCW=window.innerWidth;
+    else if(document.documentElement&&document.documentElement.clientWidth)
+      bodyCW=document.documentElement.clientWidth;
+    else if(document.body)
+      bodyCW=document.body.clientWidth; //author: meizz
+    if(window.innerHeight)
+      bodyCH=window.innerHeight;
+    else if(document.documentElement&&document.documentElement.clientHeight)
+      bodyCH=document.documentElement.clientHeight;
+    else if(document.body)
+      bodyCH=document.body.clientHeight;
+
+    return {"width":bodyCW,"height":bodyCH};
+  }
+  function _alert()
+  {
+    alert("OK");
+  }
+</script>
+<!--small_header-->
+<script>
+function sf(){document.f.q.focus();}
+window.gbar={};(function(){var g=window.gbar,j,k;function l(a){var d=window.encodeURIComponent&&(document.forms[0].q||"").value;if(d)a.href=a.href.replace(/([?&])q=[^&]*|$/,function(h,f){return(f||"&")+"q="+encodeURIComponent(d)})}g.qs=l;function m(a,d,h,f,b,c){var i=document.getElementById(a),e=i.style;if(i){e.left=f?"auto":d+"px";e.right=f?d+"px":"auto";e.top=h+"px";e.visibility=k?"hidden":"visible";if(b){e.width=b+"px";e.height=c+"px"}else{m(j,d,h,f,i.offsetWidth,i.offsetHeight);k=k?"":a}}}g.tg=function(a){a=a||window.event;var d=0,h,f=window.navExtra,b,c=a.target||a.srcElement;a.cancelBubble=true;if(c.className!="gb3")c=c.parentNode;if(!j){b=document.createElement(Array.every||window.createPopup?"iframe":"div");b.frameBorder="0";b.src="#";j=c.parentNode.appendChild(b).id="gbs";document.onclick=g.close}a=c.getAttribute("aria-owns")||"gbi";b=c.offsetWidth;var i=c.offsetTop>20?46:24,e;do d+=c.offsetLeft||-150;while(c=c.offsetParent);if(a=="gbi")for(b=document.getElementById(a);f&&(h=f.pop());)b.insertBefore(h,b.firstChild).className="gb2";else e=d=(document.documentElement.clientWidth||document.body.clientWidth)-d-b;k!=a&&g.close();m(a,d,i,e)};g.close=function(){k&&m(k,0,0)}})();
+</script>
+<div class="header_s">
+  <ul>
+    <li class="sshouye"><a href="http://www.51hejia.com/">和家首页</a></li>
+    <li class="spindao"><a href="http://tuku.51hejia.com/">看图片</a><a href="http://z.51hejia.com/">选装修</a><a href="http://p.51hejia.com/">找低价</a><a href="http://b.51hejia.com/">选品牌</a><a href="http://wb.51hejia.com/">问专家</a></li>
+    <li class="slei">
+    <nobr>
+    <a href="http://www.51hejia.com/xinwen/" target="_blank">新闻</a><a href="http://d.51hejia.com/" target="_blank">装修</a><a href="http://www.51hejia.com/jushang/" target="_blank">居尚</a><a href="http://www.51hejia.com/jiajuchanpin/" target="_blank">家具</a><a href="http://www.51hejia.com/jiadian/" target="_blank">家电</a><a href="http://www.51hejia.com/keting/" target="_blank">客厅</a><a href="http://www.51hejia.com/woshi/" target="_blank">卧室</a><a href="http://www.51hejia.com/chufang/" target="_blank">厨房</a><a href="http://www.51hejia.com/xiaohuxing/" target="_blank">小户型</a><a href="http://bbs.51hejia.com/list/484" target="_blank" class="snl">论坛</a>
+    <a onclick="this.blur();gbar.tg(event);return !1" class="snl more" style="cursor:pointer;"><u>更多</u><small>&#9660;</small></a>
+    <div id=gbi>
+<a href="http://www.51hejia.com/youqituliao/" target="_blank" class="gb2">涂料</a>
+<a href="http://www.51hejia.com/diban/" target="_blank" class="gb2">地板</a>
+<a href="http://www.51hejia.com/cizhuan/" target="_blank" class="gb2 snl">瓷砖</a>
+<a href="http://www.51hejia.com/buyi/" target="_blank" class="gb2">布艺</a>
+<a href="http://www.51hejia.com/zhaomingpindao/" target="_blank" class="gb2">灯具</a>
+<a href="http://www.51hejia.com/cainuan/" target="_blank" class="gb2 snl">采暖</a>
+<a href="http://www.51hejia.com/weiyu/" target="_blank" class="gb2">卫浴</a>
+<a href="http://www.51hejia.com/shufang/" target="_blank" class="gb2">书房</a>
+<a href="http://www.51hejia.com/huayuanshenghuo/" target="_blank" class="gb2 snl">花园</a>
+<a href="http://www.51hejia.com/gongyu/" target="_blank" class="gb2">公寓</a>
+<a href="http://www.51hejia.com/bieshu/" target="_blank" class="gb2">别墅</a>
+<a href="http://blog.51hejia.com/" target="_blank" class="gb2 snl">博客</a>
+<a href="http://www.51hejia.com/maichang/" target="_blank" class="gb2">卖场</a>
+<a href="http://www.51hejia.com/beijingqiang/" target="_blank" class="gb2 snl">背景墙</a>
+<a href="http://www.51hejia.com/ertongfang/" target="_blank" class="gb2 snl">儿童房</a>
+<a href="http://www.51hejia.com/ershoufang/" target="_blank" class="gb2">二手房</a>
+<a href="http://www.51hejia.com/shuichuli/" target="_blank" class="gb2">水处理</a>
+<a href="http://www.51hejia.com/chuguipindao/" target="_blank" class="gb2 snl">厨房橱柜</a>
+<a href="http://www.51hejia.com/weiyupindao/" target="_blank" class="gb2">卫浴产品</a>
+<a href="http://www.51hejia.com/kongtiao/" target="_blank" class="gb2">中央空调</a>
+<a href="http://bbs.51hejia.com/list/426" target="_blank" class="gb2 snl">装修日记</a>
+</div>
+    </nobr>
+    </li>
+  </ul>
+</div>
+<!--end_small_header-->
+<div class="zxdao">
+  <div class="zxdaoleft">
+    <ul>
+      <li class="dangq"><a href="http://d.51hejia.com/">装修首页</a></li>
+      <li><a href="http://d.51hejia.com/zhuanghuanglist.jhtml">案例中心</a></li>
+      <li class="zxline"></li>
+      <li><a href="http://d.51hejia.com/zHuangDesignerlist.jhtml">设计师</a></li>
+      <li class="zxline"></li>
+      <li><a href="http://d.51hejia.com/newArchives.jhtml">装潢公司</a></li>
+      <li class="zxline"></li>
+      <li><a href="http://bbs.51hejia.com/">装修论坛</a></li>
+    </ul>
+  </div>
+  <div class="zxdaoright">
+    <ul>
+      <li class="redian"><a onclick="$('#ybf').showMsg({autoMiddle:true,coverBody:true,autoClose:false});" title="多家公司施工工地、样板房大比拼，对比参观，设计风格、施工质量，一览无遗。">看样板房</a></li>
+      <li class="zxline"></li>
+      <li><a onclick="$('#mfsj').showMsg({autoMiddle:true,coverBody:true,autoClose:false});" title="优秀设计师免费设计，节约千元设计费。">设计</a></li>
+      <li class="zxline"></li>
+      <li><a onclick="$('#mfshys').showMsg({autoMiddle:true,coverBody:true,autoClose:false});" title="资深监理免费审核预算，压缩预算单水分。">审预算</a></li>
+      <li class="zxline"></li>
+      <li><a onclick="$('#mflf').showMsg({autoMiddle:true,coverBody:true,autoClose:false});" title="监理陪您新房验收，解决房屋问题，设计师为你提供专业设计意见，解决设计难题。">量房</a></li>
+      <li class="zxline"></li>
+      <li><a onclick="$('#sbpgd').showMsg({autoMiddle:true,coverBody:true,autoClose:false});" title="资深编辑亲自监督工地施工进程，为您装修保驾护航。">监理</a></li>
+      <li class="zxline"></li>
+      <li><a onclick="$('#mfshtz').showMsg({autoMiddle:true,coverBody:true,autoClose:false});" title="资深设计师和监理，免费审核图纸，少花冤枉钱。">审图纸</a></li>
+      <li class="zxline"></li>
+      <li><a onclick="$('#zhekou').showMsg({autoMiddle:true,coverBody:true,autoClose:false});" title="申请装潢公司优惠折扣，节约装修费用。">折扣</a></li>
+    </ul>
+  </div>
+</div>
+<div class="zxfeilei">
+  <ul class="feilei1">
+    <li class="fl">装修/设计/案例</li>
+    <li><a href="http://www.51hejia.com/zhuanqu/两房.html" target="_blank">两房</a>|<a href="http://www.51hejia.com/zhuanqu/三房.html" target="_blank">三房</a>|<a href="http://www.51hejia.com/xiaohuxing/" target="_blank">小户型</a>|<a href="http://www.51hejia.com/gongyu/" target="_blank">公寓</a>|<a href="http://www.51hejia.com/zhuanqu/复式.html" target="_blank">复式</a><br /><a href="http://www.51hejia.com/bieshu/" target="_blank">别墅</a>|<a href="http://www.51hejia.com/ershoufang/" target="_blank">二手房</a>|<a href="http://www.51hejia.com/zhuanqu/婚房.html" target="_blank">婚房</a>|<a href="http://d.51hejia.com/zhuanghuanglist/feiyong/5.jhtml" target="_blank">5万以下</a><br /><a href="http://d.51hejia.com/zhuanghuanglist/feiyong-5_8.jhtml" target="_blank">5-8万</a>|<a href="http://d.51hejia.com/zhuanghuanglist/feiyong/8_12.jhtml" target="_blank">8-12万</a>|<a href="http://d.51hejia.com/zhuanghuanglist/feiyong/12_20.jhtml" target="_blank">12-20万</a></li>
+  </ul>
+  <ul class="feilei2">
+    <li class="fl">风格/色彩</li>
+    <li><a href="http://www.51hejia.com/zhuanqu/田园.html" target="_blank">田园</a>|<a href="http://www.51hejia.com/zhuanqu/简约.html" target="_blank">简约</a>|<a href="http://www.51hejia.com/zhuanqu/欧式.html" target="_blank">欧式</a>|<a href="http://www.51hejia.com/zhuanqu/美式.html" target="_blank">美式</a><br /><a href="http://www.51hejia.com/zhuanqu/中式.html" target="_blank">中式</a><a href="http://www.51hejia.com/zhuanqu/地中海.html" target="_blank">地中海</a>|<a href="http://www.51hejia.com/zhuanqu/混搭.html" target="_blank">混搭</a><br /><a href="http://tuku.51hejia.com/zhuangxiu/yanse-baise.jhtml" target="_blank">白色</a>|<a href="http://tuku.51hejia.com/zhuangxiu/yanse-hongse.jhtml" target="_blank">红色</a>|<a href="http://tuku.51hejia.com/zhuangxiu/yanse-fense.jhtml" target="_blank">粉色</a>|<a href="http://tuku.51hejia.com/zhuangxiu/yanse-lanse.jhtml" target="_blank">蓝色</a></li>
+  </ul>
+  <ul class="feilei3">
+    <li class="fl">空间/墙面</li>
+    <li><a href="http://www.51hejia.com/chufang/" target="_blank">厨房</a>|<a href="http://www.51hejia.com/weiyu/" target="_blank">卫浴</a>|<a href="http://www.51hejia.com/zhuanqu/书房.html" target="_blank">书房</a>|<a href="http://www.51hejia.com/zhuanqu/卧室.html" target="_blank">卧室</a><br /><a href="http://www.51hejia.com/zhuanqu/客厅.html" target="_blank">客厅</a>|<a href="http://www.51hejia.com/zhuanqu/阳台.html" target="_blank">阳台</a>|<a href="http://www.51hejia.com/huayuanshenghuo/" target="_blank">花园</a>|<a href="http://www.51hejia.com/zhuanqu/儿童房.html" target="_blank">儿童房</a><br /><a href="http://www.51hejia.com/zhuanqu/阁楼.html" target="_blank">阁楼</a>|<a href="http://www.51hejia.com/zhuanqu/背景墙.html" target="_blank">背景墙</a></li>
+  </ul>
+  <ul class="feilei4">
+    <li class="fl">建材/卖场/家电/设备</li>
+    <li><a href="http://www.51hejia.com/youqituliao/" target="_blank">涂料</a>|<a href="http://www.51hejia.com/diban/" target="_blank">地板</a>|<a href="http://www.51hejia.com/cizhuan/" target="_blank">瓷砖</a>|<a href="http://www.51hejia.com/weiyupindao/" target="_blank">卫浴洁具</a>|<br /><a href="http://www.51hejia.com/zhaomingpindao/" target="_blank">照明</a>|<a href="http://www.51hejia.com/chuguipindao/" target="_blank">橱柜</a>|<a href="http://www.51hejia.com/zhuanqu/窗.html" target="_blank">窗</a>|<a href="http://www.51hejia.com/zhuanqu/门.html" target="_blank">门</a>|<a href="http://www.51hejia.com/zhuanqu/五金.html" target="_blank">五金</a>|<a href="http://www.51hejia.com/maichang/" target="_blank">卖场</a><br /><a href="http://www.51hejia.com/jiadian/" target="_blank">家电</a>|<a href="http://www.51hejia.com/cainuan/" target="_blank">采暖</a>|<a href="http://www.51hejia.com/kongtiao/" target="_blank">中央空调</a>|<a href="http://www.51hejia.com/zhuanqu/%E6%B0%B4%E5%A4%84%E7%90%86.html" target="_blank">水处理</a></li>
+  </ul>
+  <ul class="feilei5">
+    <li class="fl">家具/布艺/软装</li>
+    <li><a href="http://www.51hejia.com/jiajuchanpin/" target="_blank">家具</a>|<a href="http://www.51hejia.com/zhuanqu/沙发.html" target="_blank">沙发</a>|<a href="http://www.51hejia.com/zhuanqu/衣柜.html" target="_blank">衣柜</a>|<a href="http://www.51hejia.com/zhuanqu/床.html" target="_blank">床</a><br /><a href="http://www.51hejia.com/zhuanqu/桌.html" target="_blank">桌椅</a>|<a href="http://www.51hejia.com/zhuanqu/浴室柜.html" target="_blank">浴室柜</a>|<a href="http://www.51hejia.com/buyi/" target="_blank">布艺</a><br /><a href="http://www.51hejia.com/zhuanqu/壁纸.html" target="_blank">壁纸</a>|<a href="http://www.51hejia.com/zhuanqu/灯饰.html" target="_blank">灯饰</a>|<a href="http://www.51hejia.com/zhuanqu/地毯.html" target="_blank">地毯</a></li>
+  </ul>
+  <ul class="feilei6">
+    <li class="fl">居家</li>
+    <li><a href="http://www.51hejia.com/chaojizhufu/" target="_blank">主妇</a>|<a href="http://www.51hejia.com/zhuangshi/" target="_blank">装饰</a><br /><a href="http://www.51hejia.com/zhuanqu/收纳.html" target="_blank">收纳</a>|<a href="http://www.51hejia.com/zhuanqu/DIY.html" target="_blank">DIY</a><br /><a href="http://www.51hejia.com/zhuanqu/手绘.html" target="_blank">手绘</a>|<a href="http://www.51hejia.com/zhuanqu/家居风水.html" target="_blank">风水</a></li>
+  </ul>
+</div>
+
+
+<div class="jtanchu" id="ybf">
+<div class="jbut"><a onclick="$('#ybf').closeMsg();"><img src="http://www.51hejia.com/images/baoming/close.gif" /></a></div>
+<iframe frameborder="0" width="729" height="537" scrolling="no" src="http://www.51hejia.com/biaodan/bdybf.html"></iframe>
+</div>
+
+<div class="jtanchu" id="mfsj">
+<div class="jbut"><a onclick="$('#mfsj').closeMsg();"><img src="http://www.51hejia.com/images/baoming/close.gif" /></a></div>
+<iframe frameborder="0" width="729" height="538" scrolling="no" src="http://www.51hejia.com/biaodan/bdmfsj.html"></iframe>
+</div>
+
+<div class="jtanchu" id="mfshys">
+<div class="jbut"><a onclick="$('#mfshys').closeMsg();"><img src="http://www.51hejia.com/images/baoming/close.gif" /></a></div>
+<iframe frameborder="0" width="729" height="502" scrolling="no" src="http://www.51hejia.com/biaodan/bdmfshys.html"></iframe>
+</div>
+
+<div class="jtanchu" id="mflf">
+<div class="jbut"><a onclick="$('#mflf').closeMsg();"><img src="http://www.51hejia.com/images/baoming/close.gif" /></a></div>
+<iframe frameborder="0" width="729" height="462" scrolling="no" src="http://www.51hejia.com/biaodan/bdmflf.html"></iframe>
+</div>
+
+<div class="jtanchu" id="sbpgd">
+<div class="jbut"><a onclick="$('#sbpgd').closeMsg();"><img src="http://www.51hejia.com/images/baoming/close.gif" /></a></div>
+<iframe frameborder="0" width="729" height="502" scrolling="no" src="http://www.51hejia.com/biaodan/bdsbpgd.html"></iframe>
+</div>
+
+<div class="jtanchu" id="mfshtz">
+<div class="jbut"><a onclick="$('#mfshtz').closeMsg();"><img src="http://www.51hejia.com/images/baoming/close.gif" /></a></div>
+<iframe frameborder="0" width="729" height="502" scrolling="no" src="http://www.51hejia.com/biaodan/bdmfshtz.html"></iframe>
+</div>
+
+<div class="jtanchu" id="zhekou">
+<div class="jbut"><a onclick="$('#zhekou').closeMsg();"><img src="http://www.51hejia.com/images/baoming/close.gif" /></a></div>
+<iframe frameborder="0" width="729" height="405" scrolling="no" src="http://www.51hejia.com/biaodan/bdzhekou.html"></iframe>
+</div>
+
+<div class="jtanchu" id="zxgs">
+<div class="jbut"><a onclick="$('#zxgs').closeMsg();"><img src="http://www.51hejia.com/images/baoming/close.gif" /></a></div>
+<iframe frameborder="0" width="729" height="462" scrolling="no" src="http://www.51hejia.com/biaodan/bdzxgs.html"></iframe>
+</div> 

@@ -1,0 +1,27 @@
+<div class="Wen_TaoB1">
+  <div class="Wen_TaoB2"><div class="Wen_TaoB22">小区论坛</div></div>
+  <div class="Wen_TaoI">    
+    <a href="javascript:isLogindiscussion()"><img src="http://www.51hejia.com/images/wenba/wytl.gif" alt="我要讨论" border="0" /></a>
+  </div>
+</div>
+<div class="Wen_TaoB3">
+  <div class="Wen_TaoB5">
+    <ul>
+      <li>
+        <%- for top_topic in @top_topics -%>
+          <%- if top_topic.is_top == 2 -%>
+            <li class="WenTao_guding"> </li>
+          <%- else -%>
+            <li class="WenTao_zhiding"> </li>
+          <%- end -%>
+          <span class="WenTaoB66"><a href="<%= get_link_of_tag_for_discussion(top_topic.tag_id) %>" class="WenTaoB10">[<%= get_tag_name_by_tag_id_for_discussion(top_topic.tag_id) %>]</a>
+          <a target="_blank" href="<%=BASEURL%>visitor/discussion/<%= top_topic.id %>.html"><%= get_short_str(top_topic.subject,20) %></a></span>
+          <span class="yuedu"><%= top_topic.view_counter %>阅读</span>
+          <span class="pinlun"><%= top_topic.post_counter.to_i-1 %>次评价</span>
+          <li class="WenTaoB8"></li>
+        <%- end -%>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="Wen_TaoLine"></div>

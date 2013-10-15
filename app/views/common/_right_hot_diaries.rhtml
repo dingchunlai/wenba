@@ -1,0 +1,33 @@
+<style type="text/css">
+  .diary_list ul {width:101%;}
+  .diary_list li {width:50%;float:left;height:130px;overflow:hidden;text-align:center;}
+</style>
+<div class="redBox">
+  <div class="title">
+    <h1><%= @city_name%>网友装修日记</h1>
+  </div>
+  <div class="body event">
+    <div class="diary_list">
+      <ul>
+        <% @diary_api.each do |da|%>
+          <li>
+            <a href="<%= da.url %>" target="_blank">
+              <img src="http://d.51hejia.com/api<%= da.image_url %>" alt="<%= h da.title %>" width="95" height="80" />
+            </a><br/>
+            <%=link_to truncate_for_zh(da.title,26), da.url %>
+          </li>
+        <% end -%>
+      </ul>
+    </div>
+
+    <div class="ltext_list">
+      	<ul>
+            <% @diaries.each do |d| %>
+        	<li>·<a target="_blank" href="http://z.<%= @city_pinyin %>.51hejia.com/stories/<%= d.id %>"><%= h d.title %></a></li>
+            <% end %>
+        </ul>
+    </div>
+
+
+  </div>
+</div>

@@ -1,0 +1,8 @@
+<% user_id = get_user_id_by_cookie_name() %>
+<% if user_id > 0 %>
+  [<a id="my51" href="http://blog.51hejia.com/u/<%= user_id %>" title="我的博客">我的博客</a>] [<a href="http://www.51hejia.com/usersLogin!loginout.jhtml" title="退出">退出</a>]
+  <%#*根据不同角色显示不同导航条%>
+<% else %>
+    <a href="#de" id="dl" onclick="Divopop('Login');return false;"><img src="http://js.51hejia.com/img/Login_New.gif" width="64" height="20" border="0" align="absmiddle" /></a>
+    <a href="http://www.51hejia.com/activity!userReg.jhtml"><img src="http://js.51hejia.com/img/Reg_New.gif" width="36" height="20" border="0" align="absmiddle" /></a>
+<% end %>

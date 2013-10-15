@@ -1,0 +1,21 @@
+<h1> 公告列表 </h1>
+<%= flash[:notice] %>
+
+<%- for bugao in @bugaos -%>
+  <tr>
+    <ul>
+      <td><%= bugao.order_number %><a href="<%=  bugao.url %>" target="_blank"><%= bugao.title %></a></td>
+      <%= link_to "删除", {:action => 'delete_bugao', :id => bugao.id },
+        :confirm => "确定要删除吗?", :method  => :post %>
+      <%= link_to "编辑", {:action => 'edit_bugao', :id => bugao.id },
+        :method  => :post %>
+    </ul>
+  </tr>
+<%- end -%>
+<table width="80%" border="0" cellpadding="0" cellspacing="0" >
+  <%= link_to '&lt; 上一页', { :controller => 'admin', :action => 'bugaolist', :page => @bugao_pages.current.previous.to_i } if @bugao_pages.current.previous %>
+  <%= pagination_links(@bugao_pages, :controller => 'admin', :action => 'bugaolist') %>
+  <%= link_to '下一页 &gt;', { :controller => 'admin', :action => 'bugaolist', :page => @bugao_pages.current.next.to_i } if @bugao_pages.current.next %>
+</table>
+
+<p><%= link_to "新增公告", {:action => 'add_bugao'} %></p>

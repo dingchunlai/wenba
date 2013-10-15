@@ -1,0 +1,51 @@
+document.writeln("<!DOCTYPE html PUBLIC \"-\/\/W3C\/\/DTD XHTML 1.0 Transitional\/\/EN\" \"http:\/\/www.w3.org\/TR\/xhtml1\/DTD\/xhtml1-transitional.dtd\">");
+document.writeln("<html xmlns=\"http:\/\/www.w3.org\/1999\/xhtml\">");
+document.writeln("<head>");
+document.writeln("<meta http-equiv=\"Content-Type\" content=\"text\/html; charset=gb2312\" \/>");
+document.writeln("<title>室内装修设计,家庭室内装潢,家居装饰图片,家装效果图库-和家网<\/title>");
+document.writeln("<link href=\"http:\/\/d.51hejia.com\/css\/shouye\/1125index.css\" rel=\"stylesheet\" type=\"text\/css\" \/>");
+document.writeln("<script src=\"http:\/\/d.51hejia.com\/js\/product\/cha.js\" type=\"text\/javascript\"><\/script>");
+document.writeln("<\/head>");
+document.writeln("");
+document.writeln("<body>");
+document.writeln("<div class=\"same_cha\">");
+document.writeln("  <ul>");
+document.writeln("    <li class=\"line\"><\/li>");
+document.writeln("");
+document.writeln("    <li class=\"wenba\">问吧<\/li>");
+document.writeln("    <li id=\"s1\" onmouseover=\"show_intro(\'s\',\'same\',2,1);\" class=\"menu_on\">已解决<\/li>");
+document.writeln("    <li id=\"s2\" onmouseover=\"show_intro(\'s\',\'same\',2,2);\" class=\"menu_off\">排行榜<\/li>");
+document.writeln("  <\/ul>");
+document.writeln("<\/div>");
+document.writeln("<div id=\"same1\">");
+document.writeln("<div class=\"wenbabox\">");
+document.writeln("<ul>");
+<% number = 0 %>
+<%- for topic in @topics -%>
+  <% number = number + 1 %>
+  <%- if number >= 3 -%>
+document.writeln("    <li>[<%= get_tag_name_by_tag_id(topic.tag_id) %>]&nbsp;<a href=\"http:\/\/ask.51hejia.com\/visitor\/question\/<%= topic.id %>.html\" target=\"_blank\" title=\"<%= topic.subject %>\"><%= get_short_str(topic.subject, 7) %><\/a><\/li>");
+<%- else -%>
+document.writeln("    <li><span>[<%= get_tag_name_by_tag_id(topic.tag_id) %>]&nbsp;<a href=\"http:\/\/ask.51hejia.com\/visitor\/question\/<%= topic.id %>.html\" target=\"_blank\" title=\"<%= topic.subject %>\"><%= get_short_str(topic.subject, 7) %><\/span><\/a><\/li>");
+<%- end -%>
+<%- end -%>
+document.writeln("<\/ul>");
+document.writeln("<\/div>");
+document.writeln("<\/div>");
+document.writeln("<div id=\"same2\">");
+document.writeln("<div class=\"wenbabox\">");
+document.writeln("<ul>");
+<% number = 0 %>
+<%- for topic2 in @topics2 -%>
+  <% number = number + 1 %>
+  <%- if number >= 3 -%>
+document.writeln("    <li>[<%= get_tag_name_by_tag_id(topic2.tag_id) %>]&nbsp;<a href=\"http:\/\/ask.51hejia.com\/visitor\/question\/<%= topic2.id %>.html\" target=\"_blank\" title=\"<%= topic2.subject %>\"><%= get_short_str(topic2.subject, 7) %><\/a><\/li>");
+<%- else -%>
+document.writeln("    <li><span>[<%= get_tag_name_by_tag_id(topic2.tag_id) %>]&nbsp;<a href=\"http:\/\/ask.51hejia.com\/visitor\/question\/<%= topic2.id %>.html\" target=\"_blank\" title=\"<%= topic2.subject %>\"><%= get_short_str(topic2.subject, 7) %><\/span><\/a><\/li>");
+<%- end -%>
+<%- end -%>
+document.writeln("<\/ul>");
+document.writeln("<\/div>");
+document.writeln("<\/div>")
+document.writeln("<\/body>");
+document.writeln("<\/html>");

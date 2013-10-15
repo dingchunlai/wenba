@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/!svn/ver/113/51hejia/repos/wenba/release/app/views/visitor/discussion
+END
+_utlist.rhtml
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/!svn/ver/113/51hejia/repos/wenba/release/app/views/visitor/discussion/_utlist.rhtml
+END
+_search.rhtml
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/!svn/ver/113/51hejia/repos/wenba/release/app/views/visitor/discussion/_search.rhtml
+END
+_question_navigation.rhtml
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/!svn/ver/113/51hejia/repos/wenba/release/app/views/visitor/discussion/_question_navigation.rhtml
+END
+_question.rhtml
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/!svn/ver/113/51hejia/repos/wenba/release/app/views/visitor/discussion/_question.rhtml
+END
+_list.rhtml
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/!svn/ver/113/51hejia/repos/wenba/release/app/views/visitor/discussion/_list.rhtml
+END
+_reply.rhtml
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/!svn/ver/113/51hejia/repos/wenba/release/app/views/visitor/discussion/_reply.rhtml
+END
+_tags.rhtml
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/!svn/ver/113/51hejia/repos/wenba/release/app/views/visitor/discussion/_tags.rhtml
+END
+_b2list.rhtml
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/!svn/ver/113/51hejia/repos/wenba/release/app/views/visitor/discussion/_b2list.rhtml
+END
+_gonggao.rhtml
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/!svn/ver/113/51hejia/repos/wenba/release/app/views/visitor/discussion/_gonggao.rhtml
+END
+_answers.rhtml
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/!svn/ver/113/51hejia/repos/wenba/release/app/views/visitor/discussion/_answers.rhtml
+END
+_b2tags.rhtml
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/!svn/ver/113/51hejia/repos/wenba/release/app/views/visitor/discussion/_b2tags.rhtml
+END
+_tags_dynamic.rhtml
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/!svn/ver/113/51hejia/repos/wenba/release/app/views/visitor/discussion/_tags_dynamic.rhtml
+END
+_top.rhtml
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/!svn/ver/113/51hejia/repos/wenba/release/app/views/visitor/discussion/_top.rhtml
+END

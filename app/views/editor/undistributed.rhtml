@@ -1,0 +1,45 @@
+<div>
+  <form action="/editor/save" method="post">
+    <input id="check_all" name="check_all" type="checkbox" value="0" onclick="CheckAll('topics[]', 'check_all')"/>全选<br>
+    <br>
+    <%- for topic in @topics -%>
+      <input id="topics[]" name="topics[]" type="checkbox" value="<%= topic.id %>" />
+      <div>
+        <span class="in_place_editor_field" id="ask_zhidao_topic_subject_<%= topic.id %>_in_place_editor"><%= topic.subject %></span>
+        <script type="text/javascript">
+            new Ajax.InPlaceEditor("ask_zhidao_topic_subject_<%= topic.id %>_in_place_editor", "/editor/set_ask_zhidao_topic_subject/<%= topic.id %>", 
+            {cancelText:'取消', loadingText:'正在加载...', okText:'保存', rows:3, cols:40, savingText:'正在保存...', clickToEditText:'点击即可编辑标题'})
+        </script>
+        <% answer_id = "answer-#{topic.id}" %>
+        <div>
+          <%= link_to_remote "答案",
+            :update => answer_id,
+            :url => { :action => 'show_answer', :id => topic.id }, 
+            :position => "after" %>
+        </div>
+        <div id="<%= answer_id %>">
+        </div>
+      
+        <% tags_id = "tags-#{topic.id}" %>
+        <div>
+          <%= link_to_remote "标签",
+            :update => tags_id,
+            :url => { :action => 'show_tags', :id => topic.id }, 
+            :position => "after" %>
+        </div>
+        <div id="<%= tags_id %>">
+        </div>
+      
+      </div>
+      <br>
+    <%- end -%>
+    <input name="commit" type="submit" value="保存" />
+  </form>
+</div>
+<div>
+  <ul>
+    <li><%= link_to '上一页', { :page => @topic_pages.current.previous.to_i } if @topic_pages.current.previous %></li>
+    <li><%= pagination_links(@topic_pages) %></li>
+    <li><%= link_to '下一页', { :page => @topic_pages.current.next.to_i } if @topic_pages.current.next %></li>
+  </ul>
+</div>

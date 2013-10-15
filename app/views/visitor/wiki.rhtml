@@ -1,0 +1,51 @@
+<%=  render :partial => "/share/head_start"%>
+<%=  render :partial => "/share/head_end"%>
+<div class="bk_main bk_c">
+<div class="bk_c">
+<div class="bk_l"><a href="<%=BASEURL%>nipponpaint_wiki.html"><img src="http://www.51hejia.com/images/ask/lib_01.gif" /></a></div>
+<div class="bk_l"><a href="<%=BASEURL%>visitor/wiki/1?catalog=1"><img src="http://www.51hejia.com/images/ask/lib_02.gif" id="Image1" onmouseover="MM_swapImage('Image1','','http://www.51hejia.com/images/ask/lib_02_02.gif',1)" onmouseout="MM_swapImgRestore()" /></a></div>
+<div class="bk_l"><img src="http://www.51hejia.com/images/ask/lib_03.gif" /></div>
+<div class="bk_l"><a href="<%=BASEURL%>visitor/wiki/1?catalog=2"><img src="http://www.51hejia.com/images/ask/lib_04.gif" id="Image2" onmouseover="MM_swapImage('Image2','','http://www.51hejia.com/images/ask/lib_02_04.gif',1)" onmouseout="MM_swapImgRestore()" /></a></div>
+<div class="bk_l"><img src="http://www.51hejia.com/images/ask/lib_03.gif" /></div>
+<div class="bk_l"><a href="<%=BASEURL%>visitor/wiki/1?catalog=3"><img src="http://www.51hejia.com/images/ask/lib_06.gif" id="Image3" onmouseover="MM_swapImage('Image3','','http://www.51hejia.com/images/ask/lib_02_06.gif',1)" onmouseout="MM_swapImgRestore()" /></a></div>
+<div class="bk_l"><img src="http://www.51hejia.com/images/ask/lib_03.gif" /></div>
+<div class="bk_l"><a href="<%=BASEURL%>visitor/wiki/1?catalog=4"><img src="http://www.51hejia.com/images/ask/lib_08.gif" id="Image4" onmouseover="MM_swapImage('Image4','','http://www.51hejia.com/images/ask/lib_02_08.gif',1)" onmouseout="MM_swapImgRestore()" /></a></div>
+<div class="bk_l"><img src="http://www.51hejia.com/images/ask/lib_10.gif" /></div>
+</div>
+<div class="bk_c bk_content">
+<div class="bk_l bk_left">
+<div class="bk_c bk_content"><% if @wiki.catalog_id.to_i == 1 %><a href="<%=BASEURL%>visitor/wiki/1?catalog=1"><img src="http://www.51hejia.com/images/ask/lib_14.gif"/></a><% end %>
+<% if @wiki.catalog_id.to_i == 2 %><a href="<%=BASEURL%>visitor/wiki/1?catalog=2"><img src="http://www.51hejia.com/images/ask/lib_15.gif"/></a><% end %>
+<% if @wiki.catalog_id.to_i == 3 %><a href="<%=BASEURL%>visitor/wiki/1?catalog=3"><img src="http://www.51hejia.com/images/ask/lib_16.gif"/></a><% end %>
+<% if @wiki.catalog_id.to_i == 4 %><a href="<%=BASEURL%>visitor/wiki/1?catalog=4"><img src="http://www.51hejia.com/images/ask/lib_17.gif"/></a><% end %></div>
+<div class="bk_l bk_content" style="width:222px;">
+
+<div class="bk_leftmenu_4"><span style="margin-left:20px;"><strong><%= get_wiki_catalog_name_by_item_id(@wiki.id) %></strong></span></div>
+<% @wiki_items = get_wiki_item_names_by_item_id(@wiki.id) %>
+<% for wiki_item in @wiki_items %>
+<div class="bk_li"><span style="margin-left:20px;"><a href="<%=BASEURL%>visitor/wiki/<%=wiki_item.content_id%>?catalog=<%=wiki_item.catalog_id%>&item_id=<%=wiki_item.id%>" target="_self"><%= wiki_item.title %></a></span></div>
+<% end %>
+
+</div>
+
+<div class="bk_c bk_content"><a href="http://www.nipponpaint.com.cn/happiness/index.html" target="_blank"><img src="http://www.51hejia.com/images/ask/lib_18.gif" /></a></div>
+<div class="bk_c bk_content"><a href="http://www.nipponpaint.com.cn/" target="_blank"><img src="http://www.51hejia.com/images/ask/lib_20.gif" /></a></div>
+<div class="bk_c bk_content"><a href="http://zt.51hejia.com/youqituliao/005/nippon" target="_blank"><img src="http://www.51hejia.com/images/ask/lib_22.gif" /></a></div>
+<br/>
+</div>
+
+<div class="bk_r bk_right">
+<div class="bk_m bk_c" style="font-size:14px;">
+<div class="bk_c bk_text"><strong><%= @wiki.title %></strong></div>
+<div class="bk_c bk_content bk_text">
+  <p><%= @wiki.description %></p>
+</div>
+<div class="bk_c bk_textli">
+<div class="bk_l bk_m"><% if !@wiki_pre.nil? %><a href="<%=BASEURL%>visitor/wiki/<%=@wiki_pre.content_id%>?catalog=<%=@wiki_pre.catalog_id%>&item_id=<%=@wiki_pre.id%>" target="_self">上一篇:<%=@wiki_pre.title %></a><% else %>上一篇:无<% end %></div>
+<div class="bk_r bk_m"><% if !@wiki_next.nil? %><a href="<%=BASEURL%>visitor/wiki/<%=@wiki_next.content_id%>?catalog=<%=@wiki_next.catalog_id%>&item_id=<%=@wiki_next.id%>" target="_self">下一篇:<%=@wiki_next.title %></a><% else %>下一篇:无<% end %> </div>
+</div>
+<div class="bk_c"><img src="http://www.51hejia.com/images/ask/lib_25_01.gif" /><img src="http://www.51hejia.com/images/ask/lib_25_02.gif" /><img src="http://www.51hejia.com/images/ask/lib_25_03.gif" /></div>
+</div>
+</div>
+
+<%=  render :partial => "/share/foot"%>

@@ -1,0 +1,73 @@
+<link href="http://js.51hejia.com/css/2010/brandstyle.css" rel="stylesheet" type="text/css" />
+
+<div class="b_width960 clearfix">
+  <h1 class="b_logo f_l"><a href="/" target="_blank"><img src="http://js.51hejia.com/img/brandimg/b_logo.jpg" alt="和家网品牌库" /></a></h1>
+  <div class="b_ad01 f_r">
+    <%r = parse_xml("http://api.51hejia.com/rest/build/xml/55022.xml",["image-url","url"], 1)%>
+    <a href="<%=r[0]["url"]%>" target="_blank"><img src="<%=r[0]["image-url"]%>" /></a>
+  </div>
+</div>
+
+<div class="b_width960">
+  <div class="b_search">
+    <ul>
+      <li class="b_search_dh">
+
+        <!--[if lte IE 6]><a href="#"><table><tr><td><![endif]-->
+        <dl>
+          <dt><strong><a href="#" target="_blank">品类导航</a></strong></dt>
+
+            <dd><a href="http://youqituliao.51hejia.com/" alt="油漆涂料" target="_blank">油漆涂料</a></dd>
+
+            <dd><a href="http://chufangdianqi.51hejia.com/" alt="厨房电器" target="_blank">厨房电器</a></dd>
+
+            <dd><a href="http://diban.51hejia.com/" alt="地板" target="_blank">地板</a></dd>
+
+            <dd><a href="http://weiyu.51hejia.com/" alt="卫浴" target="_blank">卫浴</a></dd>
+
+            <dd><a href="http://chugui.51hejia.com/" alt="橱柜" target="_blank">橱柜</a></dd>
+
+            <dd><a href="http://b.51hejia.com/zq/采暖品牌/" alt="采暖" target="_blank">采暖</a></dd>
+
+            <dd><a href="http://b.51hejia.com/zq/中央空调品牌/" alt="中央空调" target="_blank">中央空调</a></dd>
+
+            <dd><a href="http://b.51hejia.com/zq/布艺品牌/" alt="布艺" target="_blank">布艺</a></dd>
+
+            <dd><a href="http://b.51hejia.com/zq/家具品牌/" alt="家具" target="_blank">家具</a></dd>
+
+            <dd><a href="http://b.51hejia.com/zq/家电品牌/" alt="家电" target="_blank">家电</a></dd>
+
+            <dd><a href="http://b.51hejia.com/zq/水处理品牌/" alt="水处理" target="_blank">水处理</a></dd>
+
+            <dd><a href="http://b.51hejia.com/zq/瓷砖品牌/" alt="瓷砖" target="_blank">瓷砖</a></dd>
+
+            <dd><a href="http://b.51hejia.com/zq/灯具品牌/" alt="照明灯具" target="_blank">照明灯具</a></dd>
+
+            <dd><a href="http://prod.51hejia.com/zq/门窗型材/" alt="门窗" target="_blank">门窗</a></dd>
+
+            <dd><a href="http://prod.51hejia.com/zq/衣柜/" alt="入墙式衣柜" target="_blank">入墙式衣柜</a></dd>
+
+          <dd class="b_menu_bottom"></dd>
+        </dl>
+        <!--[if lte IE 6]></td></tr></table></a><![endif]-->
+
+      </li>
+      <li>
+        <form action="http://p.51hejia.com/search" method="post" target="_blank">
+          <select name="search_type">
+            <option value="1">搜索产品</option>
+            <option value="2">搜索品牌</option>
+          </select><input type="text"  title="请输入关键词" onfocus="if(this.value=='请输入关键词') this.value='';" onblur="if(this.value=='')this.value='请输入关键词';" value="请输入关键词" name="query" /><select name="category">
+            <option value="">所有分类</option>
+          </select><input type="submit" name="commit" value="搜 索" class="b_search_btn" />
+        </form>
+      </li>
+      <li class="b_search_hot">
+        热门搜索：
+        <%for r in parse_xml("http://api.51hejia.com/rest/build/xml/54893.xml",["title","url"], 4)%>
+          <a href='<%=r["url"]%>' target='_blank'><%=r["title"]%></a>
+        <%end%>
+      </li>
+    </ul>
+  </div>
+</div>

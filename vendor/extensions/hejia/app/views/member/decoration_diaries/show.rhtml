@@ -1,0 +1,161 @@
+<% javascript 'http://ajax.googleapis.com/ajax/libs/swfobject/2/swfobject.js',
+  'http://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js','http://js2.51hejia.com/js/jquery/plugins/cookie/1.0.0/jquery.cookie.min.js',
+  'jquery.uploadify.v2.1.0.min.js'
+%>
+
+<%= include_kindeditor_js %>
+<% radmin_javascript 'decoration_diary/new_post.js','decoration_diary/uploadify.js','jquery.praise.js'%>
+
+<% stylesheet 'jquery.praise.css' %>
+<style type="text/css" media="screen">
+  .error_tip{color:red;}
+</style>
+
+<script type="text/javascript">
+jQuery(function($){
+    $.cookie('redis_cookie_is',"<%= $redis.get("remark:mark:user:#{current_user.USERBBSID}") if current_user && current_user.USERBBSID %>");
+
+	$(".zx_diarytancbox .btn2").click(
+		function(){
+            if($("input[type='checkbox']").attr("checked")) {
+              $.cookie('dont_remind_me','drm');
+            };
+			$(".zx_diarytancbg").hide();
+			$(".zx_diarytancbox").hide();
+	});
+
+	$(".zx_diarytancbox .btn1").click(
+		function(){
+            if($("input[type='checkbox']").attr("checked")) {
+              $.cookie('dont_remind_me','drm');
+            };
+			$(".zx_diarytancbg").hide();
+			$(".zx_diarytancbox").hide();
+	    });
+});
+</script>
+
+<!--tanc_code-->
+<% content_for :for_tancbg do %>
+<link href="http://js1.51hejia.com/css/rehearsal/zx_diary.css" rel="stylesheet" type="text/css" />
+<div class="zx_diarytancbg"></div>
+<div class="zx_diarytancbox">
+  <h3>您尚未对提交的装修日记进行评分，请在页面右上角进行评分！</h3>
+  <p>为了我们更有效的监督装修公司，提升更优质的服务，请及时给该装修公司真实的评价，谢谢！</p>
+  <table width="430" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+
+      <td width="150"><input name="" type="checkbox" value="" /> 不再提醒</td>
+      <td><input name="" type="submit" value="马上评分" class="btn1" /></td>
+      <td><input name="" type="submit" value="我知道了" class="btn2" /></td>
+    </tr>
+  </table>
+</div>
+<% end %>
+<!--end_tanc_code-->
+
+<div class="zx_diary_r f_r">
+  <div class="zx_diary_wzdh"><a href="#" target="_self">装修日记</a> > 新建日记</div>
+  <div class="zx_diaryfbgl_l f_l">
+    <% form_for :post, @post, :url => @form_url, :html => {:id => "post_form", "data-type" => @type } do |f| -%>
+      <ul>
+        <li>
+          <%= f.text_area :body , :id=>"post_content_editor" ,:style=>"width:550px;height:250px", :class=>"kindeditor", "data-toolbar" => "simple" %>
+        </li>
+        <li>
+        </li>
+        <li class="scrj_caoz">
+          <table width="500" border="0" cellspacing="0" cellpadding="0" id="picyl" data_index="0" data_image_prefix_array='<%=IMAGE_PREFIX_ARRAY.join(",") %>' , picture_prefix = "<%=PICTURE_PREFIX%>">
+                 <thead>
+              <tr><th width="60">操作</td><th width="200">文件名</td><th width="100">删除</td><th width="70">设定主图</td><th width="110"></td></tr>
+            </thead>
+            <tbody>
+            <style type="text/css" media="screen">
+              img.preview{
+                width:200px; height:150px;
+                position: absolute;
+                left:0;top:0;
+                float:left;
+                z-index:100;
+              }
+            </style>
+
+            <script id="pic_list_template" type="text/x-jquery-tmpl">
+                <td><%= link_to "插入", "${img_path_with_domain}", :class => "insert_img_to_editor", :title => "将该图片插入至文档" %></td>
+                <td>
+                <a class="preview_pic" href="#"><%= image_tag "http://js.51hejia.com/img/zxdpimg/zxrj_picicon.gif" %>${file_name}</a>
+                <div style="position:relative;z-index:140;display:none;"><img src="${img_path_with_domain}" class="preview"></div>
+                </td>
+                <td><%= link_to "删除图片", "#", :class=>"delete_picture","data-id" =>"",  :title => "删除图片"%></td>
+                <td><input name="pictures[][is_master]" type="radio" class="f_l master" value="${image_id}" /></td>
+                <td>
+
+                  <%= hidden_field_tag "pictures[][image_id]", "${image_id}" %>
+                  <%= hidden_field_tag "pictures[][image_md5]", "${image_md5}" %>
+                  <%= hidden_field_tag "pictures[][image_ext]", "${image_ext}" %>
+                  <%= hidden_field_tag "pictures[][file_name]", "${file_name}" %>
+                </td>
+            </script>
+
+            <% @pictures && @pictures.each do |picture|%>
+              <tr class="line"><!-- jQuery ERB -->
+                <td><%= link_to "插入", picture.url , :class => "insert_img_to_editor", :title => "将该图片插入至文档" %></td>
+                <td >
+                  <a class="preview_pic" href="#"><%= image_tag "http://js.51hejia.com/img/zxdpimg/zxrj_picicon.gif" %><%= picture.file_name%></a>
+                  <div style="position:relative;z-index:140;display:none;"><img src="<%= picture.url%>" class="preview"></div>
+                </td>
+                <td><%= link_to "删除图片", "#", :class=>"delete_picture","data-id" =>picture.id,  :title => "删除图片"%></td>
+                <td><input name="pictures[][is_master]" type="radio" class="f_l master"  <%= "checked='checked'" if picture.is_master == 1 %> value="<%= picture.image_id%>" /></td>
+                <td>
+
+                  <%= hidden_field_tag "pictures[][image_id]", picture.image_id %>
+                  <%= hidden_field_tag "pictures[][image_md5]", picture.image_md5 %>
+                  <%= hidden_field_tag "pictures[][image_ext]", picture.image_ext %>
+                  <%= hidden_field_tag "pictures[][file_name]", picture.file_name %>
+                  <%= hidden_field_tag "pictures[][id]", picture.id %>
+                </td>
+              </tr><!-- END jQuery ERB -->
+            <% end %>
+            </tbody>
+          </table>
+        </li>
+        <li class="scrj_tjtp clearfix">
+          <span  id="swfupload_button" ></span>
+        </li>
+      </ul>
+      <div class="zx_diaryfbgl_pic"></div>
+      <span class="zx_diaryfbgl_span02">提示：添加的图片可复选批量上传；图片最佳尺寸500px*375px(长宽比4：3)；单图大小不能超过200K</span>
+      <p>
+        <input name="" type="submit" value="发表提交" id="post_submit" class="zx_diaryfbgl_lbtn01" />
+        <%= link_to "查看日记",@decoration_diary.url, :class=>"zx_diaryfbgl_lbtn02",:style=>"",:target=>"_blank"%>
+      </p>
+    <% end -%>
+    <div class="zx_diaryfbgl_myriji clear">
+      <h3><%= @decoration_diary.title%></h3>
+      <ul id="posts_ul" style="overflow:hidden;width:530px;">
+        <script id="post_li" type="text/x-jquery-tmpl">
+            <li class="clearfix" data-post-id="${id}">
+            <span class="f_l">${created_at} 更新 </span>
+            <span class="f_r"><a href="#" target="_self" class="delete_post">删除</a><a href="?post_id=${id}" target="_self">编辑</a></span>
+            <div class="clear">{{html body}}</div>
+            </li>
+        </script>
+        <% @posts && @posts.each do |post|%>
+          <li class="clearfix" data-post-id="<%= post.id%>">
+            <span class="f_l"><%= post.created_at.strftime("%Y-%m-%d %X") %> 更新 </span>
+            <span class="f_r">
+              <a href="#" target="_self" class="delete_post">删除</a>
+              <a href="?post_id=<%= post.id%>" target="_self">编辑</a>
+                <%= post.state ? '已审核' : '未审核' %>
+            </span>
+            <div class="clear"><%= post.body %></div>
+          </li>
+        <% end %>
+      </ul>
+      <%= will_paginate @posts %>
+    </div>
+  </div>
+
+    <%= render :partial => "score" if current_user %>
+
+</div>

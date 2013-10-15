@@ -1,0 +1,12 @@
+<font color="green">修改百科知识</font>
+<br>
+  <font color="red"><%= flash[:notice] %></font>
+<br>
+<form action="/editor/save_modify_wiki_descript" method="post">
+  <input type="hidden" name="wd_id" value="<%= @wd.id %>">
+  知识标题：<input type="text" name="title" size="59" value="<%= @wd.title %>"><span style="color: red;">*</span><br><br>
+  知识描述：<textarea name="descript" rows="20"><%= @wd.description %></textarea><span style="color: red;">*</span><br><br>
+  <input type="submit" value="提交">
+</form>
+<br>
+<a href="/editor/list_wiki_descript?wc_id=<%= @wd.content_id %>">返回上一级</a><br>

@@ -1,0 +1,13 @@
+<a href="/list/s/0.html" target="_self">全部分类</a>
+
+<%if @tag_level == 3%>
+>> <a href="/list/sort/<%=get_parent_tag_id(@parent_tag_id)%>.html" target="_self"><%=get_tag_name_by_tag_id(get_parent_tag_id(@parent_tag_id))%></a>
+<%end%>
+
+<%if @tag_level == 2 || @tag_level == 3%>
+>> <a href="/list/sort/<%=@parent_tag_id%>.html" target="_self"><%=get_tag_name_by_tag_id(@parent_tag_id)%></a>
+<%end%>
+
+<%if @tag_level != 0%>
+>> <a href="/list/sort/<%=@tag_id%>.html" target="_self"><%=get_tag_name_by_tag_id(@tag_id)%></a>
+<%end%>

@@ -1,0 +1,17 @@
+<%= render :partial => 'editor/search_keyword/search' %>
+<% if @keywords.size > 0 %>
+  <table>
+    <tr>
+      <th>关键词</th>
+      <th>统计次数</th>
+    </tr>
+    <%- for keyword in @keywords -%>
+      <tr>
+        <td><a href="<%=BASEURL%>visitor/s?tp=1&wd=<%= u(keyword.keyword) %>" target="_blank"><%= keyword.keyword %></a></td>
+        <td><%= keyword.counter %></td>
+      </tr>
+    <%- end -%>
+  </table>
+<% else %>
+  该时间段无记录！
+<% end %>

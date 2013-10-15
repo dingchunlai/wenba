@@ -1,0 +1,14 @@
+<iframe scrolling="no" src="http://news.51hejia.com/newsPage/htmlName/1214468309331ad.jhtml" frameborder="0" width="960px" height="96px">
+</iframe>
+<div id="topmenu">
+  <div class="search">
+    <form name="fsearch" method="post" action="/visitor/s" onSubmit="return checksearchform(this);">
+      <input name="wd" id="wd" type="text" value="<%= session[:wd] %>" size="18">
+      <input type="submit" value="搜索知识" class="button02" />
+      <input type="button" value="我要提问" class="button02" onclick="window.open('<%=BASEURL%>user/ask')"/>
+    </form>
+  </div>
+  <div class="huida"><a href="<%=BASEURL%>visitor/list?tp=2"><img src="http://www.51hejia.com/images/wenba/menu_huida.gif" alt="放心问你所感 用心答你所知" border="0" /></a></div>
+  <div class="tiwen"><a href="<%=BASEURL%>user/ask"><img src="http://www.51hejia.com/images/wenba/menu_tiwen.gif" alt="用心答你所知" width="240" height="69" border="0" /></a></div>
+  <div class="zhishi"><a href="<%=BASEURL%>visitor/entrylist"><img src="http://www.51hejia.com/images/wenba/menu_zhishi.gif" alt="分享知识" width="240" height="69" border="0" /></a></div>
+</div>

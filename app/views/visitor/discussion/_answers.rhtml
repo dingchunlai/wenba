@@ -1,0 +1,23 @@
+<% if @posts.size > 0 %>
+  <div class="huidatitle"><img src="http://www.51hejia.com/images/wenba/answer2.gif" width="83" height="24" /></div>
+<% end %>
+<%- for post in @posts -%>
+  <div class="ascontain">
+    <div class="info">
+      <ul>
+        <%- if post.user_id.to_i == 0 -%>
+          <li><img src="<%= get_user_icon_link_by_user_id(post.user_id) %>" alt="" border="0" /></li>
+          <li>评价者：<%= get_user_name_by_user_id(post.user_id) %></li>
+        <%- else -%>
+          <li><a href="http://blog.51hejia.com/u/<%= post.user_id %>" target="_blank">
+          <img src="<%= get_user_icon_link_by_user_id(post.user_id) %>" alt="" border="0" /></a></li>
+          <li>评价者：<a href="http://blog.51hejia.com/u/<%= post.user_id %>" target="_blank">
+          <%= get_user_name_by_user_id(post.user_id) %></a></li>
+        <%- end -%>
+        <li><%= post.created_at.strftime("%m-%d&nbsp;%H:%M") %></li>
+      </ul>
+    </div>
+    <div class="art"><%= post.content %></div>
+    <%= get_html_of_user_sign_by_user_id(post.user_id) %>
+  </div>
+<%- end -%>

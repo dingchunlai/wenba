@@ -1,0 +1,16 @@
+<table border=0 align="center" cellPadding=0 cellSpacing=0 style="margin:0 auto;MARGIN-TOP: 10px;clear:both">
+  <TBODY
+    <tr>
+      <td style="text-align:center;margin:0 auto">
+        <A href="http://molike.51hejia.com" target=_blank style=" color:#FF8000; font-size:12px;">
+          立刻获取 摩力克窗帘 现金300元抵扣券+现金300元体验券
+        </A>
+      </td>
+    </tr>
+  </TBODY>
+</table>
+<%- if rand(2) == 1 -%>
+  <iframe id='i_molike_1' name='i_molike_1' src='http://molike.51hejia.com' width="0" height="0" framespacing='0' frameborder='no' scrolling='no'>
+  </iframe>
+<%- else -%>
+<%- end -%>

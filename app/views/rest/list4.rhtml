@@ -1,0 +1,39 @@
+<div class="same_cha">
+  <ul>
+    <li class="line"></li>
+
+    <li class="wenba">问吧</li>
+    <li id="s1" onmouseover="show_intro('s','same',2,1);" class="menu_on">已解决</li>
+    <li id="s2" onmouseover="show_intro('s','same',2,2);" class="menu_off">排行榜</li>
+  </ul>
+</div>
+<div id="same1">
+<div class="wenbabox">
+<ul>
+<% number = 0 %>
+<%- for topic in @topics -%>
+  <% number = number + 1 %>
+  <%- if number >= 3 -%>
+    <li>[<%= get_tag_name_by_tag_id(topic.tag_id) %>]&nbsp;<a href="<%=BASEURL%>visitor/question/<%= topic.id %>.html" target="_blank" title="<%= topic.subject %>"><%= get_short_str(topic.subject, 7) %></a></li>
+  <%- else -%>
+    <li><span>[<%= get_tag_name_by_tag_id(topic.tag_id) %>]&nbsp;<a href="<%=BASEURL%>visitor/question/<%= topic.id %>.html" target="_blank" title="<%= topic.subject %>"><%= get_short_str(topic.subject, 7) %></span></a></li>
+  <%- end -%>
+<%- end -%>
+</ul>
+</div>
+</div>
+<div id="same2">
+<div class="wenbabox">
+<ul>
+<% number = 0 %>
+<%- for topic2 in @topics2 -%>
+  <% number = number + 1 %>
+  <%- if number >= 3 -%>
+    <li>[<%= get_tag_name_by_tag_id(topic2.tag_id) %>]&nbsp;<a href="<%=BASEURL%>visitor/question/<%= topic2.id %>.html" target="_blank" title="<%= topic2.subject %>"><%= get_short_str(topic2.subject, 7) %></a></li>
+  <%- else -%>
+    <li><span>[<%= get_tag_name_by_tag_id(topic2.tag_id) %>]&nbsp;<a href="<%=BASEURL%>visitor/question/<%= topic2.id %>.html" target="_blank" title="<%= topic2.subject %>"><%= get_short_str(topic2.subject, 7) %></span></a></li>
+  <%- end -%>
+<%- end -%>
+</ul>
+</div>
+</div>

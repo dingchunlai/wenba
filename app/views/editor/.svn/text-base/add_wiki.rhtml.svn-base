@@ -1,0 +1,11 @@
+<font color="green">增加百科</font>
+<br>
+  <font color="red"><%= flash[:notice] %></font>
+<br>
+<form action="/editor/save_wiki" method="post">
+  百科名称：<input type="text" name="wn" size="59"><span style="color: red;">*</span><br><br>
+  百科标签：<input type="text" name="tag" size="59"><br><br>
+  <input type="submit" value="增加">
+</form>
+<br>
+<a href="/editor/list_wiki">返回百科列表页</a><br>

@@ -1,0 +1,35 @@
+<h1>公告的上传</h1>
+<form name="ftiwen" method="post" action="/admin/addbugao" onSubmit="return add_bugao(this);">
+  <table width="80%" border="0" cellpadding="0" cellspacing="0" >
+    <tr valign="top">
+      <B class=ttc>公告标题：</B>
+      <input name="ti" id="ti" type="text"  size="50" class=formfont>
+    </tr>
+  </table>
+  <br>
+  <table width="80%" border="0" cellpadding="0" cellspacing="0">
+    <tr valign="top">
+    <B class=ttc>公告URL: </B>
+    <input name="wd" id="wd" type="text"  size="50" class=formfont>
+  </table>
+  <br>
+  <table width="80%" border="0" cellpadding="0" cellspacing="0">
+    <tr valign="top">
+    <B class=ttc>公告权重: </B>
+    <select name="data">
+         <%- 1.upto(10)  do |i| -%> 
+            <option value="<%= i %>"><%= i %></option>
+          <%- end -%>
+        </select><FONT class=lh15 color=#999999>权重分为1到10，权重10为最大值</FONT>
+  </table>
+  <br>
+  <table width="80%" border="0" cellpadding="0" cellspacing="0" >
+    <tr>
+      <td width="110" class="f14">&nbsp;</td>
+      <td valign="top" align=left>
+        <input type="submit" name="s" value="提交公告" class="bnsrh">
+        <input type="hidden" name="cid" value=0>
+      </td>
+    </tr>
+  </table>
+</form>

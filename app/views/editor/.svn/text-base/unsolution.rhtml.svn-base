@@ -1,0 +1,34 @@
+<form name="ftiwen" method="post" action="/editor/solution" >
+  <%- for topic in @topics -%>
+    <li>
+      <td><span style="color: red;">帖子标题：</span><a href="<%=BASEURL%>visitor/question/<%= topic.id %>.html" target="_blank"><%= topic.subject %></a></td>
+      <input type="hidden" name="post[]" value="<%=  topic.id %>">
+      <br>
+      <li> 
+        <%post = get_zhidao_topic_post_by_topic_id(topic.id) %>
+        <td><span style="color: red;">待选最佳答案：</span></td><br>
+        <%- for p in post -%>
+          &nbsp;&nbsp;&nbsp;&nbsp;<input id="post[]" name="post[]" type="checkbox" value="<%= p.id %>"/>
+          <%= get_short_str(p.content, 50) %>
+          <br>
+        <%- end -%>
+      </li>
+      <input type="hidden" name="post[]" value="#">
+    </li>
+    <br>
+  <%- end -%>
+  <table width="80%" border="0" cellpadding="0" cellspacing="0" >
+    <%= link_to '&lt; 上一页', { :controller => 'editor', :action => 'unsolution', :page => @topic_pages.current.previous.to_i } if @topic_pages.current.previous %>
+    <%= pagination_links(@topic_pages, :controller => 'editor', :action => 'unsolution') %>
+    <%= link_to '下一页 &gt;', { :controller => 'editor', :action => 'unsolution', :page => @topic_pages.current.next.to_i } if @topic_pages.current.next %>
+  </table>
+  <table width="80%" border="0" cellpadding="0" cellspacing="0" >
+    <tr>
+      <td width="110" class="f14">&nbsp;</td>
+      <td valign="top" align=middle>
+        <input type="submit" name="s" value="设定为最佳答案" class="bnsrh">
+        <input type="hidden" name="cid" value=0>
+      </td>
+    </tr>
+  </table>
+</form>

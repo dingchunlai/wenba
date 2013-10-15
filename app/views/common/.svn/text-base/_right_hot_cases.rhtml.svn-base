@@ -1,0 +1,34 @@
+<style type="text/css">
+  .case_list ul {width:101%;}
+  .case_list li {width:50%;float:left;}
+</style>
+<div class="redBox">
+  <div class="title">
+    <h1><%= @city_name%>热门案例推荐</h1>
+  </div>
+  <div class="body event">
+    <div class="case_list">
+      <ul>
+        <% @cases[0,2].each do |ca|%>
+          <li>
+            <a href="<%= ca.url %>" target="_blank" title="<%= h ca.title %>">
+              <img width="95" height="80" src="http://d.51hejia.com/api<%= ca.image_url %>" alt="<%= h ca.title %>"/>
+            </a><br/>
+            <a href="<%= ca.url %>" target="_blank" title="<%= h ca.title %>"><%= truncate_for_zh(ca.title,26) %></a>
+          </li>
+        <% end -%>
+      </ul>
+    </div>
+
+    <div class="ltext_list">
+      	<ul>
+            <% if @cases[2,5] %>
+                <% @cases[2,5].each do |c| %>
+        	       <li>·<a target="_blank" href="<%= c.url %>"><%= h c.title %></a></li>
+                <% end %>
+            <% end %>
+        </ul>
+    </div>
+
+  </div>
+</div>

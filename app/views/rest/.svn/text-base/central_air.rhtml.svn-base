@@ -1,0 +1,15 @@
+<div class="rightbox">
+  <h3>中央空调问吧<span><a href="<%=BASEURL%>" target="_blank">更多>></a></span></h3>
+  <form id="form1" name="form1" method="post" action="/visitor/s">
+    <ul>
+      <li>
+          <input type="text" name="wd" class="txt01" value="<%= session[:wd] %>" />
+          <input type="submit" name="Submit" value="搜索" class="bt01" />
+          <input type="submit" name="Submit2" value="提问" class="bt01" onclick="javascript:document.getElementById('form1').action='/visitor/s?wd=中央空调' ; document.getElementById('form1').submit();"/>
+      </li>
+      <%- for topic in @topics -%>
+        <li>·<a href="<%=BASEURL%>visitor/question/<%= topic.id %>.html" target="_blank" title="<%= topic.subject %>"><%= get_short_str(topic.subject, 14) %></a></li>
+      <%- end -%>
+    </ul>
+  </form>
+</div>

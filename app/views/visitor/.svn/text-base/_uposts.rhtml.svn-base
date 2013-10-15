@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <%= render :partial => 'utop' %>
+  <body>
+    <div id="main">
+      <div id="path">
+        <h3><%= get_user_name_by_user_id(params[:uid]) %></h3>
+        <ul>
+          <li><%= get_user_name_by_user_id(params[:uid]) %>首页</li>
+          <%#*<li><span>擅长领域</span>－产品&nbsp;&nbsp;装修知识&nbsp;&nbsp;设计师</li>%>
+        </ul>
+      </div>
+      <div id="left">
+        <%= render :partial => 'uinfo' %><br>
+        <div id="leftlist">
+          <%= render :partial => 'ulatest_posts' %>
+          <%= render :partial => 'ulatest_topics' %>
+        </div>
+        <%#= render :partial => 'ustatistics' %>
+      </div>
+      <div id="right">
+        <div class="righttitle">回答/评论列表</div>
+        <div class="rightcontain">
+          <%- for post in @posts -%>
+            <div class="rightlist">
+              <h3><a href="<%=BASEURL%>visitor/question/<%= post.zhidao_topic_id %>.html" target="_blank">
+              <%= get_short_str(post.content, 100) %></a></h3>
+            </div>
+          <%- end -%>
+          <div class="fenye1">
+            <%= link_to '&lt; 上一页', { :controller => 'visitor', :action => 'u', :page => @post_pages.current.previous.to_i, :params => { :utp => params[:utp] } } if @post_pages.current.previous %>
+            <%= pagination_links(@post_pages, :controller => 'visitor', :action => 'u', :params => { :utp => params[:utp] }) %>
+            <%= link_to '下一页 &gt;', { :controller => 'visitor', :action => 'u', :page => @post_pages.current.next.to_i, :params => { :utp => params[:utp] } } if @post_pages.current.next %>
+          </div>
+        </div>
+      </div>  
+    </div>
+  </body>
+</html>

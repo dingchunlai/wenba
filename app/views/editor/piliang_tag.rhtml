@@ -1,0 +1,83 @@
+<form name="ftiwen" method="post" action="/editor/piliang_tagable" onSubmit="return piliang_tag(this);">
+  <input id="check_all" name="check_all" type="checkbox" value="0" onclick="CheckAll('topics[]', 'check_all')"/>全选<br>
+  <br>
+  <%- for topic in @topics -%>
+    <input id="topics[]" name="topics[]" type="checkbox" value="<%= topic.id %>" />
+    <li>
+      <a href="<%=BASEURL%>editor/show/<%= topic.id %>.html?tp=ut" target="_blank"><%= topic.subject %></a>
+    </li>
+    <br>
+  <%- end -%>
+  <table width="80%" border="0" cellpadding="0" cellspacing="0" >
+    <%= link_to '&lt; 上一页', { :controller => 'editor', :action => 'piliang_tag', :page => @topic_pages.current.previous.to_i } if @topic_pages.current.previous %>
+    <%= pagination_links(@topic_pages, :controller => 'editor', :action => 'piliang_tag') %>
+    <%= link_to '下一页 &gt;', { :controller => 'editor', :action => 'piliang_tag', :page => @topic_pages.current.next.to_i } if @topic_pages.current.next %>
+  </table>
+  <table width="80%" border="0" cellpadding="0" cellspacing="0" >
+    <tr valign="top">
+      <td width="110" nowrap class="f14"><B class=ttc>分类：</B></td>
+      <td class=tdof id=td2>
+        <span id="classid">
+          <table border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td valign="top"><SELECT id=ClassLevel1 style="WIDTH: 125px" size=8 name=ClassLevel1><OPTION selected></OPTION></SELECT></td>
+              <td width="20"><div align="center"><B>→</B></div></td>
+              <td valign="top"><SELECT id=ClassLevel2 style="WIDTH: 90px" size=8 name=ClassLevel2><OPTION selected></OPTION></SELECT></td>
+              <td width="20"><div align="center" id=jiantou><B>→</B></div></td>
+              <td valign="top"><SELECT id=ClassLevel3 style="WIDTH: 90px" size=8 onChange="getCidValue();" name=ClassLevel3><OPTION selected></OPTION></SELECT></td>
+            </tr>
+          </table>
+          <script src="http://js.51hejia.com/js/wb/tags_data.js?20100928"></script>
+          <SCRIPT language=javascript>
+              InitClassLevelList(document.ftiwen.ClassLevel1, document.ftiwen.ClassLevel2, document.ftiwen.ClassLevel3);
+              // auto-select the init class if need
+              var selected_id_list="0"
+              var blank_pos = selected_id_list.indexOf(" ");
+              var find_blank = true;
+              if (blank_pos == -1) {
+                  find_blank = false;
+                  blank_pos = selected_id_list.length;
+              }
+              var id_str = selected_id_list.substr(0, blank_pos);
+              g_ClassLevel1.value = id_str;
+              ClassLevel1_onchange();
+
+              if (find_blank == true) {
+                  selected_id_list = selected_id_list.substr(blank_pos + 1,
+                  selected_id_list.length - blank_pos - 1);
+                  blank_pos = selected_id_list.indexOf(" ");
+                  if (blank_pos == -1) {
+                      find_blank = false;
+                      blank_pos = selected_id_list.length;
+                  }
+                  id_str = selected_id_list.substr(0, blank_pos);
+                  g_ClassLevel2.value = id_str;
+                  ClassLevel2_onchange();
+
+                  if (find_blank == true) {
+                      selected_id_list = selected_id_list.substr(blank_pos + 1,
+                      selected_id_list.length - blank_pos - 1);
+                      blank_pos = selected_id_list.indexOf(" ");
+                      if (blank_pos == -1) {
+                          find_blank = false;
+                          blank_pos = selected_id_list.length;
+                      }
+                      id_str = selected_id_list.substr(0, blank_pos);
+                      g_ClassLevel3.value = id_str;
+                  }
+              }
+          </SCRIPT>
+        </span>
+      </td>
+    </tr>
+  </table>
+  <table width="80%" border="0" cellpadding="0" cellspacing="0" >
+    <tr>
+      <td width="110" class="f14">&nbsp;</td>
+      <td valign="top" align=middle>
+        <input type="submit" name="s" value="提交" class="bnsrh">
+        <input type="hidden" name="cid" value=0>
+      </td>
+    </tr>
+  </table>
+</form>

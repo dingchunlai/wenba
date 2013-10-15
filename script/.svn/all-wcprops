@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/!svn/ver/113/51hejia/repos/wenba/release/script
+END
+plugin
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/!svn/ver/113/51hejia/repos/wenba/release/script/plugin
+END
+console
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/!svn/ver/113/51hejia/repos/wenba/release/script/console
+END
+breakpointer
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/!svn/ver/113/51hejia/repos/wenba/release/script/breakpointer
+END
+server
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/!svn/ver/113/51hejia/repos/wenba/release/script/server
+END
+destroy
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/!svn/ver/113/51hejia/repos/wenba/release/script/destroy
+END
+runner
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/!svn/ver/113/51hejia/repos/wenba/release/script/runner
+END
+about
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/!svn/ver/113/51hejia/repos/wenba/release/script/about
+END
+generate
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/!svn/ver/113/51hejia/repos/wenba/release/script/generate
+END

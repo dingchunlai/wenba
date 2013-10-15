@@ -1,0 +1,9 @@
+<h1> 新增推荐专家 </h1>
+<%= flash[:now] %>
+
+<form action="/admin/create" method="post">
+  <p><label for="user_id">专家姓名：</label>
+  <input id="admin_user_name" name="username" size="30" type="text" /></p>
+  <input name="commit" type="submit" value="提交" />
+</form>
+<a href="/admin/list">后退</a>

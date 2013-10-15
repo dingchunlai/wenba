@@ -1,0 +1,12 @@
+<font color="green">修改百科目录</font>
+<br />
+  <font color="red"><%= flash[:notice] %></font>
+<br />
+<form action="save_modify_wiki_catalog" method="post">
+  目录：<input type="text" name="catalog_name" value="<%= @catalog.catalog_name %>" ><br>
+      <input type="hidden" name="catalog_id" value="<%= @catalog_id %>">
+      <input type="hidden" name="content_id" value="<%= @content_id %>">
+  <input type="submit" value="提交">  
+</form>
+<br>
+<a href="/editor/add_wiki_catalog?content_id=<%= @content_id %>">返回百科目录列表</a><br>

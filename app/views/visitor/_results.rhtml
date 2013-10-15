@@ -1,0 +1,59 @@
+<div id="main">
+  <%= render :partial => 'head_start' %>
+  <%= render :partial => 'head_end' %>
+  <%= render :partial => 'search' %>
+  <%= render :partial => 'tags' %>
+  <div class="rightbox1">
+    <%#*<div class="num">每页显示帖子数量：<span class="current">30</span><a href="#">60</a></div>%>
+    <h3>装修问答分类</h3>
+    <div class="same_cha">
+      <ul>
+        <li><strong>问题过滤</strong></li>
+        <%= get_html_of_menu_for_search_by_type_id(@tag_id) %>
+        <li class="jieguo">共搜到相关问题：<span><%= @topic_pages.item_count %></span>条</li>
+      </ul>
+    </div>
+    <% if @topics.size > 0 %>
+      <div id="same1">
+        <%- for topic in @topics -%>
+          <div class="fenleibox">
+            <%- if topic.best_post_id.nil? -%>
+              <h4 class="wen">
+            <%- else -%>
+              <h4 class="da">
+              <%- end -%>
+            <a target="_blank" href="<%=BASEURL%>visitor/question/<%= topic.id %>.html"><%= get_short_str(topic.subject, 40) %></a></h4>
+            <dl>
+              <dd>提问者：
+                <%- if topic.user_id.to_i == 0 -%>
+                  <%= get_user_name_by_user_id(topic.user_id) %>
+                <%- else -%>
+                  <a href="http://blog.51hejia.com/u/<%= topic.user_id %>" target="_blank">
+                  <%= get_user_name_by_user_id(topic.user_id) %></a>
+                <%- end -%>
+              &nbsp;&nbsp;&nbsp;已浏览：<%= topic.view_counter %>&nbsp;&nbsp;&nbsp;已回答：<%= topic.post_counter.to_i-1 %>&nbsp;&nbsp;&nbsp;<%= get_html_of_best_post_user_for_b2list_by_best_post_id(topic.best_post_id) %></dd>
+              <dd>分类：<a target="_blank" href="<%= get_link_of_tag(topic.tag_id) %>"><%= get_tag_name_by_tag_id(topic.tag_id) %></a>&nbsp;&nbsp;&nbsp;Tag：<%= get_html_of_user_tags_by_topic_id(topic.id) %></dd>
+            </dl>
+            <p>
+              <%- if topic.best_post_id -%>
+                <%= get_short_str(get_zhidao_topic_post_by_best_post_id(topic.best_post_id).content, 300) %>
+              <%- else -%>
+                <%= get_short_str(topic.description, 300) %>
+              <%- end -%>
+            </p>
+          </div>	
+        <%- end -%>
+      </div>
+      <div class="fenye1">
+        <%= link_to '&lt; 上一页', { :controller => 'visitor', :action => 's', :page => @topic_pages.current.previous.to_i, :params => { :tp => params[:tp], :wd => params[:wd] } } if @topic_pages.current.previous %>
+        <%= pagination_links(@topic_pages, :controller => 'visitor', :action => 's', :params => { :tp => params[:tp], :wd => params[:wd] }) %>
+        <%= link_to '下一页 &gt;', { :controller => 'visitor', :action => 's', :page => @topic_pages.current.next.to_i, :params => { :tp => params[:tp], :wd => params[:wd] } } if @topic_pages.current.next %>
+      </div>
+    </div>
+  <% else %>
+    <div id="no-result">
+      未找到和您的查询相匹配的“<%= @state %>问题”。
+    </div>
+  <% end %>
+</div>
+<%= render :partial => 'foot' %>

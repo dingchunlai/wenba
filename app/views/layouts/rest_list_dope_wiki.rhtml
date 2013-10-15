@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <title>涂料-涂料百科</title>
+    <link href="http://d.51hejia.com/css/shouye/index866.css" rel="stylesheet" type="text/css" />
+    <link href="http://d.51hejia.com/css/shouye/header914.css" rel="stylesheet" type="text/css" />
+    <script src="/javascripts/ask080723.js" type="text/javascript"></script>
+    <SCRIPT src="http://d.51hejia.com/js/product/cha.js" type="text/javascript"></SCRIPT>
+    <link href="/stylesheets/tul.css" rel="stylesheet" type="text/css" />
+    <script language="javascript" type="text/javascript" src="/javascripts/tiny_mce/tiny_mce.js"></script>
+    <script language="javascript" type="text/javascript">
+        tinyMCE.init({
+            mode : "exact",
+            elements : "ro",
+            language : "zh_cn_utf8",
+            theme : "advanced",
+            dialog_type : "modal",
+            convert_urls : false,
+            plugins : "advhr,advimage,advlink,emotions,fullscreen,preview,paste,table",
+            theme_advanced_layout_manager : "SimpleLayout",
+            theme_advanced_buttons1 : "preview,undo,redo,bold,italic,underline,separator,forecolor,backcolor,strikethrough,justifyleft,justifycenter,justifyright, justifyfull,bullist,numlist,link,unlink,advhr,image,advimage,advlink,emotions,pastetext,pasteword,fullscreen,selectall,code",
+            theme_advanced_buttons2 : "tablecontrols",
+            theme_advanced_buttons3 : "",
+            theme_advanced_toolbar_location : "top",
+            theme_advanced_toolbar_align : "left",
+            extended_valid_elements : "a[name|href|target|title|onclick],img[class|src|border=0|alt|title|hspace|vspace|width|height|align|onmouseover|onmouseout|name],hr[class|width|size|noshade],font[face|size|color|style],span[class|align|style]"
+        });
+    </script>
+    <script language="JavaScript" type="text/javascript">
+        function Show(id,i_id){
+            var on_img="http://www.51hejia.com/images/Images_zhuce/Suo.gif";//打开时图片
+            var off_img="http://www.51hejia.com/images/Images_zhuce/Zhan.gif";//隐藏时图片
+            var obj=document.getElementById('c_'+id);
+            if(obj.style.display=="none"){
+                obj.style.display="";
+                i_id.src=on_img;
+                //将子菜单Id放入Cookies
+                var curShow = readCookie('curShow');
+                if(curShow!='')
+                {
+                    var arr_curShow = curShow.split(',');
+                    var found = false;
+                    for(i=0;i<arr_curShow.length-1;i++)
+                    {
+                        if(arr_curShow[i].toString()==id) {found=true;}
+                    }
+                    if(!found){writeCookie('curShow',curShow+','+id,12)}
+                }
+                else {
+                    writeCookie('curShow',id,12)
+                }
+                //将子菜单Id放入Cookies End
+            }else{
+                obj.style.display="none";
+                i_id.src=off_img;
+                //将子菜单Id从Cookies中移除
+                var curShow = readCookie('curShow');
+                if(curShow!='')
+                {
+                    var arr_curShow = curShow.split(',');
+                    for(i=0;i<arr_curShow.length;i++)
+                    {
+                        if(arr_curShow[i].toString()==id) {arr_curShow=arr_curShow.del(i--);}
+                    }
+                    curShow = arr_curShow.join(',');
+                    //alert(curShow);
+                    writeCookie('curShow',curShow,12)
+                }
+                //将子菜单Id从Cookies中移除 End
+            }
+        }
+        function readCookie(name)
+        {
+            var cookieValue = "";
+            var search = name + "=";
+            if(document.cookie.length > 0)
+            { 
+                offset = document.cookie.indexOf(search);
+                if (offset != -1)
+                { 
+                    offset += search.length;
+                    end = document.cookie.indexOf(";", offset);
+                    if (end == -1) end = document.cookie.length;
+                    cookieValue = unescape(document.cookie.substring(offset, end))
+                }
+            }
+            return cookieValue;
+        }
+        function writeCookie(name, value, hours)
+        {
+            var expire = "";
+            if(hours != null)
+            {
+                expire = new Date((new Date()).getTime() + hours * 3600000);
+                expire = "; expires=" + expire.toGMTString();
+            }
+            document.cookie = name + "=" + escape(value) + expire;
+        }
+        Array.prototype.del=function(n) {  //n表示第几项，从0开始算起。
+            //prototype为对象原型，注意这里为对象增加自定义方法的方法。
+            if(n<0)  //如果n<0，则不进行任何操作。
+                return this;
+            else
+                return this.slice(0,n).concat(this.slice(n+1,this.length));
+        }
+        window.onload = function a()
+        {
+            var curShow = readCookie('curShow');
+            var totalShow = 1;  //自己修改一共有多少个二级分类
+            if(curShow!=''&&curShow!=null)
+            {
+                for(i=1;i<=totalShow;i++)
+                {
+                    document.getElementById('c_'+i).display="none";
+                }
+                var arr_curShow;
+                arr_curShow = curShow.split(',');
+                for(i=0;i<=arr_curShow.length-1;i++)
+                {
+                    if(arr_curShow[i]!=''){document.getElementById('c_'+arr_curShow[i]).style.display="";}
+                }
+            }
+        }
+    </script>    
+  </head>
+  <body>
+    <%= yield %>
+  </body>
+</html>

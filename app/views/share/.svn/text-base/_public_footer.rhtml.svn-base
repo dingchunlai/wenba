@@ -1,0 +1,2 @@
+<%= render_shared_footer %>
+<%= yield :html_body_end  %>

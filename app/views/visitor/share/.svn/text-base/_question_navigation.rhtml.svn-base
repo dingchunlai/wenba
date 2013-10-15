@@ -1,0 +1,1 @@
+<div class="path"><%= get_html_of_question_navigation_by_tag_id_for_share(@topic.tag_id) %><%= get_short_str(@topic.subject, 20) %></div>

@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/!svn/ver/690/51hejia/repos/wenba/release/app/views/detail
+END
+view.rhtml
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/!svn/ver/682/51hejia/repos/wenba/release/app/views/detail/view.rhtml
+END
+new_posts.rhtml
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/!svn/ver/113/51hejia/repos/wenba/release/app/views/detail/new_posts.rhtml
+END
+_top10_from_this_tag_id.rhtml
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/!svn/ver/113/51hejia/repos/wenba/release/app/views/detail/_top10_from_this_tag_id.rhtml
+END
+_ad_text_links.rhtml
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/!svn/ver/113/51hejia/repos/wenba/release/app/views/detail/_ad_text_links.rhtml
+END
+new_topic.rhtml
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/!svn/ver/690/51hejia/repos/wenba/release/app/views/detail/new_topic.rhtml
+END
+help.rhtml
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/!svn/ver/113/51hejia/repos/wenba/release/app/views/detail/help.rhtml
+END

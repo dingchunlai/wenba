@@ -1,0 +1,20 @@
+<p>
+  尊敬的和家问吧用户：
+</p>
+<% ask_zhidao_topic = AskZhidaoTopic.find(@zhidao_topic_id) %>
+<p>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;您在和家问吧的提问
+  “<a href="<%=BASEURL%>visitor/question/<%= @zhidao_topic_id %>.html" target="_blank">
+  <%= ask_zhidao_topic.subject %></a>”有了新的回复！
+</p>
+<p>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;详情请访问：
+  <a href="<%=BASEURL%>visitor/question/<%= @zhidao_topic_id %>.html#reply" target="_blank"><%= ask_zhidao_topic.subject %></a>
+</p>
+<br>
+<br>
+<br>
+<br>
+<p>
+  <a href="http://ask.51hejia.com" target="_blank">和家问吧</a>为网友提供家居知识、装修知识、装潢建材知识问答信息，以互动问答的方式为提问者和回答者建立家居知识、装修知识、装潢建材知识经验交流分享平台，汇聚广大网友的知识结晶和业内专家及设计师的专业解答，第一时间为你真正解决装修过程中遇到的实际问题和难题。
+</p>

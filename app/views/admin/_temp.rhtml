@@ -1,0 +1,7 @@
+<%= @topics.size %><br>
+<%- for topic in @topics -%>
+  <% topic_id = topic.id %>
+  <% post_id = get_post_id_by_topic_id(topic.id) %>
+  update ask_zhidao_topics set best_post_id = <%= post_id %> where id = <%= topic_id %>;
+  <br>
+<%- end -%>

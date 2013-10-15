@@ -1,0 +1,16 @@
+<font color="green"><%= @wiki_name %>百科目录</font>
+<br>
+  <font color="red"><%= flash[:notice] %></font>
+<br>
+<% if !@wiki_contents.nil? %>
+    <% for content in @wiki_contents %>
+        <a href="/editor/list_wiki_descript?wc_id=<%= content.id %>"><%= content.wiki_content %></a>&nbsp;&nbsp;&nbsp;
+        <a href="/editor/modify_wiki_content?wc_id=<%= content.id %>">编辑</a>&nbsp;&nbsp;&nbsp;
+        <a href="/editor/del_wiki_content?wc_id=<%= content.id %>"
+        onclick="if (confirm('确定要删除吗?')) { var f = document.createElement('form'); f.style.display = 'none'; this.parentNode.appendChild(f); f.method = 'POST'; f.action = this.href;f.submit(); };return false;">删除</a><br>
+    <% end %>
+<% end %>
+<br>
+<a href="/editor/add_wiki_content?wiki_name=<%= @wiki_name %>">增加百科目录</a>
+<br><br>
+<a href="/editor/list_wiki">返回上一级</a><br>

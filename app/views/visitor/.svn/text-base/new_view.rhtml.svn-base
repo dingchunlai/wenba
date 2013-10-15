@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>问吧管理后台</title>
+    <script type="text/javascript">
+      function ltrim(s){
+        return s.replace( /^\s*/, "");
+      }
+
+      function rtrim(s){
+        return s.replace( /\s*$/, "");
+      }
+
+      function trim(s){
+        return rtrim(ltrim(s));
+      }
+      function validatetext(obj)
+      {
+        if(trim(obj.ti.value).indexOf('q q')!=-1 || trim(obj.ti.value).indexOf('qq')!=-1)
+       {
+        alert("带特殊字样！");
+        return false;
+        }
+      }
+    </script>
+  </head>
+  <body>
+  <form id="form1" action="create_ask_choice" method="post" onsubmit="return validatetext(this)">
+  帖子id号<input type="text" name="ti">
+  <input type="submit" value="提交">
+</form>
+  </body>
+</html>
+

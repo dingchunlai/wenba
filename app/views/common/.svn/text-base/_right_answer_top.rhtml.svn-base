@@ -1,0 +1,41 @@
+<div class="blueBox">
+                <div class="title">
+                    <h6>答题数排行榜</h6>
+                </div>
+                <div class="body">
+                    <div id="tab3" class="tabs_b">
+                        <div class="tab">
+                            <h3 onmouseover="showHotTab(3,1);" class="up">
+                                专家排行</h3>
+                            <h3 onmouseover="showHotTab(3,2);">
+                                用户排行</h3>
+                        </div>
+                        <h4 class="block">
+                            <ul class="rank">
+                            <li class="item">
+                            <h6>　专家</h6>
+                            <h2>积分</h2>
+                            <p>答题数</p>
+                            </li>
+                            <%for user in get_point_top(rows, true, "answer")%>
+                            <li><h6>　<a href="/expert_index/<%=user.user_id%>.html" target="_blank"><%=user.username rescue ""%></a></h6> <h2><%=user.point%></h2> <p><%=user.wenba_answer_num%></p></li>
+                            <%end%>
+
+                            </ul>
+                        </h4>
+                        <h4>
+                            <ul class="rank">
+                            <li class="item">
+                            <h6>　用户</h6>
+                            <h2>积分</h2>
+                            <p>答题数</p>
+                            </li>
+                            <%for user in get_point_top(rows, false, "answer")%>
+                            <li><h6>　<a href="/user_question/<%=user.user_id%>.html?&username=<%=u(user.username)%>" target="_blank"><%=user.username%></a></h6> <h2><%=user.point%></h2> <p><%=user.wenba_answer_num%></p></li>
+                            <%end%>
+
+                            </ul>
+                        </h4>
+                    </div>
+                </div>
+            </div>

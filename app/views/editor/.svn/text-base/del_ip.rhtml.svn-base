@@ -1,0 +1,7 @@
+<h5>添加指定用户到黑名单</h5>
+
+<form name="date" method="post" action="/editor/delete_ip" onSubmit="return dele2(this); ">
+用户名: <input name="wd" type="text" id="wd" size="10" maxlength="20">
+<input type="hidden" name="tp" value="wd">
+<input type="submit" value ="添加进黑名单" class ="button02" />
+</form>

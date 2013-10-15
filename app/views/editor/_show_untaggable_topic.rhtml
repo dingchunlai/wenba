@@ -1,0 +1,112 @@
+<form name="ftiwen" method="post" action="/editor/taggable" onSubmit="return checkform(this);">
+  <table width="80%" border="0" cellpadding="0" cellspacing="0" >
+    <tr valign="top">
+      <TR>
+        <TD>&nbsp;</TD>
+        <TD height=40><IMG height=37 alt=提问 src="http://www.51hejia.com/images/wenba/tw_new.gif" 
+                         width=73 border=0></TD></TR>
+      <td width="110" class="f14" nowrap><B class=ttc>提问标题：</B></td>
+      <TD class=tdof id=td1>
+        <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+          <TBODY>
+            <TR>
+              <TD><input name="ti" id="ti" type="text" value="<%= @topic.subject %>" size="48" class=formfont>&nbsp;<A 
+              href="javascript:autotenms();void(0);"></A></TD></TR>
+            <TR>
+      <TD style="PADDING-RIGHT: 25px" align=middle><FONT class=lh15 color=#999999>可输入50个汉字</FONT></TD></TR></TBODY></TABLE></td>
+    </tr>
+  </table>
+  <br>
+  <table width="80%" border="0" cellpadding="0" cellspacing="0" class="zhtable" >
+    <tr valign="top">
+      <td width="110" class="f14" nowrap><B class=ttc>问题描述:</B></td>
+      <td class=tdof id=td2>
+      <DIV style="POSITION: relative">
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+          <TR>
+          <TD colSpan=2><TEXTAREA id=co name=co rows=8 cols=66><%= @topic.description %></TEXTAREA><BR></TD></TR>
+          <TD vAlign=top align=middle><FONT class=lh15 
+                                            color=#999999>可输入3000个汉字</FONT></TD>
+      </TBODY></TABLE>
+    </TR>
+  </table>
+  
+  <br>
+  <table width="80%" border="0" cellpadding="0" cellspacing="0" >
+    <tr valign="top">
+      <td width="110" nowrap class="f14"><B class=ttc>问题分类：</B></td>
+      <td class=tdof id=td2>
+        <span id="classid">
+          <table border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td valign="top"><SELECT id=ClassLevel1 style="WIDTH: 125px" size=8 name=ClassLevel1><OPTION selected></OPTION></SELECT></td>
+              <td width="20"><div align="center"><B>→</B></div></td>
+              <td valign="top"><SELECT id=ClassLevel2 style="WIDTH: 90px" size=8 name=ClassLevel2><OPTION selected></OPTION></SELECT></td>
+              <td width="20"><div align="center" id=jiantou><B>→</B></div></td>
+              <td valign="top"><SELECT id=ClassLevel3 style="WIDTH: 90px" size=8 onChange="getCidValue();" name=ClassLevel3><OPTION selected></OPTION></SELECT></td>
+            </tr>
+          </table>
+          <script src="http://js.51hejia.com/js/wb/tags_data.js?20100928"></script>
+          <SCRIPT language=javascript>
+              InitClassLevelList(document.ftiwen.ClassLevel1, document.ftiwen.ClassLevel2, document.ftiwen.ClassLevel3);
+              // auto-select the init class if need
+              var selected_id_list="0"
+              var blank_pos = selected_id_list.indexOf(" ");
+              var find_blank = true;
+              if (blank_pos == -1) {
+                  find_blank = false;
+                  blank_pos = selected_id_list.length;
+              }
+              var id_str = selected_id_list.substr(0, blank_pos);
+              g_ClassLevel1.value = id_str;
+              ClassLevel1_onchange();
+
+              if (find_blank == true) {
+                  selected_id_list = selected_id_list.substr(blank_pos + 1,
+                  selected_id_list.length - blank_pos - 1);
+                  blank_pos = selected_id_list.indexOf(" ");
+                  if (blank_pos == -1) {
+                      find_blank = false;
+                      blank_pos = selected_id_list.length;
+                  }
+                  id_str = selected_id_list.substr(0, blank_pos);
+                  g_ClassLevel2.value = id_str;
+                  ClassLevel2_onchange();
+
+                  if (find_blank == true) {
+                      selected_id_list = selected_id_list.substr(blank_pos + 1,
+                      selected_id_list.length - blank_pos - 1);
+                      blank_pos = selected_id_list.indexOf(" ");
+                      if (blank_pos == -1) {
+                          find_blank = false;
+                          blank_pos = selected_id_list.length;
+                      }
+                      id_str = selected_id_list.substr(0, blank_pos);
+                      g_ClassLevel3.value = id_str;
+                  }
+              }
+          </SCRIPT>
+        </span>
+      </td>
+    </tr>
+  </table>
+  <br>
+  <table width="80%" border="0" cellpadding="0" cellspacing="0" >
+    <tr valign="top">
+      <td width="110" class="f14" nowrap><B class=ttc>标签：</B></td>
+      <td class=tdof id=td4><input name="ut" id="ut" type="text" value="<%= get_user_tags_by_topic_id(@topic.id) %>" size="24" class=formfont></td>
+    </tr>
+  </table>
+  <br>
+  <table width="80%" border="0" cellpadding="0" cellspacing="0" >
+    <tr>
+      <td width="110" class="f14">&nbsp;</td>
+      <td valign="top" align=middle>
+        <input type="submit" name="s" value="提交分类" class="bnsrh">
+        <input type="hidden" name="cid" value=0>
+        <input type="hidden" name="tid" value="<%= @topic.id %>">
+      </td>
+    </tr>
+  </table>
+</form>

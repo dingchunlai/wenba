@@ -1,0 +1,27 @@
+<%= render :partial => 'editor/delete_ip/ip' %>
+<form name="ftiwen" method="post" action="/editor/delete_ip">
+  <table width="80%" border="0" cellpadding="0" cellspacing="0" >
+    <br>
+    <%- for topic in @topics -%>
+    <input id="topics[]" name="topics[]" type="hidden" value="<%= topic.ip %>" />
+      <li>
+        <%= topic.ip %>
+      </li>
+    <%- end -%>
+    <%- for post in @posts -%>
+    <input id="posts[]" name="posts[]" type="hidden" value="<%= post.ip %>" />
+      <li>
+        <%= post.ip %>
+      </li>
+    <%- end -%>
+  </table>
+   <table width="80%" border="0" cellpadding="0" cellspacing="0" >
+    <tr>
+      <td width="110" class="f14">&nbsp;</td>
+      <td valign="top" align=middle>
+        <input type="submit" name="s" value="删除" class="bnsrh">
+        <input type="hidden" name="cid" value=0>
+      </td>
+    </tr>
+  </table>
+</form>

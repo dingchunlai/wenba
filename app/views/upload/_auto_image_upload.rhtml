@@ -1,0 +1,18 @@
+<script type="text/javascript">
+  function UploadSussess(url){
+    var img = "[img]" + url + "[/img]"
+    document.getElementById('<%=textarea_id%>').value = document.getElementById('<%=textarea_id%>').value.replace("正在上传图片，请稍候 ...","");
+    document.getElementById('<%=textarea_id%>').value += img;
+  }
+  function UploadAbort(num){
+    document.getElementById('<%=textarea_id%>').value = document.getElementById('<%=textarea_id%>').value.replace("正在上传图片，请稍候 ...","");
+    alert("您不能上传超过" + num + "的文件！");
+  }
+  function InsertImage(){
+    var  str = "\n正在上传图片，请稍候 ..."
+    var description = document.getElementById('<%=textarea_id%>')
+    description.value += str;
+  }
+</script>
+
+<iframe id="fUpload" width="100%" height="30" frameborder="0" scrolling="no" src="/upload/uploadfile"></iframe>

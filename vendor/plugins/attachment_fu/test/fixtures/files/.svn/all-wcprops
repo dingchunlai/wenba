@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/!svn/ver/113/51hejia/repos/wenba/release/vendor/plugins/attachment_fu/test/fixtures/files
+END
+rails.png
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/!svn/ver/113/51hejia/repos/wenba/release/vendor/plugins/attachment_fu/test/fixtures/files/rails.png
+END
+foo.txt
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/!svn/ver/113/51hejia/repos/wenba/release/vendor/plugins/attachment_fu/test/fixtures/files/foo.txt
+END

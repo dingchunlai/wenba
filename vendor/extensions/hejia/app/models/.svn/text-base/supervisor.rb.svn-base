@@ -1,0 +1,5 @@
+class Supervisor < HejiaUserBbs
+
+  
+
+end

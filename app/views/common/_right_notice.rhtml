@@ -1,0 +1,12 @@
+<div class="blueBox">
+<div class="title">
+<h6>公告/专题/活动</h6>
+</div>
+<div class="body event exwid">
+<ul class="point">
+  <%for notice in get_notices(rows)%>
+          <li><a href="<%=notice.url%>" title="<%=notice.title%>" target="_blank"><%=utf8_left(notice.title,cols,"...")%></a></li>
+  <%end%>
+</ul>
+</div>
+</div>

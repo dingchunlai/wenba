@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/!svn/ver/113/51hejia/repos/wenba/release/vendor/plugins/engines/lib/engines/rails_extensions
+END
+routing.rb
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/!svn/ver/113/51hejia/repos/wenba/release/vendor/plugins/engines/lib/engines/rails_extensions/routing.rb
+END
+active_record.rb
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/!svn/ver/113/51hejia/repos/wenba/release/vendor/plugins/engines/lib/engines/rails_extensions/active_record.rb
+END
+rails.rb
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/!svn/ver/113/51hejia/repos/wenba/release/vendor/plugins/engines/lib/engines/rails_extensions/rails.rb
+END
+migrations.rb
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/!svn/ver/113/51hejia/repos/wenba/release/vendor/plugins/engines/lib/engines/rails_extensions/migrations.rb
+END
+rails_initializer.rb
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/!svn/ver/113/51hejia/repos/wenba/release/vendor/plugins/engines/lib/engines/rails_extensions/rails_initializer.rb
+END
+templates.rb
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/!svn/ver/113/51hejia/repos/wenba/release/vendor/plugins/engines/lib/engines/rails_extensions/templates.rb
+END
+public_asset_helpers.rb
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/!svn/ver/113/51hejia/repos/wenba/release/vendor/plugins/engines/lib/engines/rails_extensions/public_asset_helpers.rb
+END
+dependencies.rb
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/!svn/ver/113/51hejia/repos/wenba/release/vendor/plugins/engines/lib/engines/rails_extensions/dependencies.rb
+END

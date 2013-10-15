@@ -1,0 +1,24 @@
+<div id="middle1">
+  <%- for tag in @tags -%>
+    <div class="middlebox">
+      <h3><a href="<%=BASEURL%>visitor/browse/<%= tag.id %>.html" target="_blank"><%= get_tag_name_by_tag_id(tag.id) %></a></h3>
+      <ul>
+        <%- for topic in get_zhidao_topics_by_tag_id(tag.id) -%>
+          <div id="topic">
+            <ul>
+              <%- if topic.best_post_id.nil? -%>
+                <li class="wen">
+              <%- else -%>
+                <li class="da">
+                <%- end -%>
+                <a href="<%=BASEURL%>visitor/question/<%= topic.id %>.html" target="_blank" title="<%= topic.subject %>"><%= get_short_str(topic.subject, 15) %></a>
+                <span><%=topic.created_at.strftime("%y.%m.%d") %></span>
+              </li> 
+            </ul>
+          </div>
+        <%- end -%>
+      </ul> 
+    </div>
+  <%- end -%>
+</div>
+

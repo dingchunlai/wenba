@@ -1,0 +1,12 @@
+<%- for topic in @topics -%>
+  <ul>
+    <li>
+      <a href="<%=BASEURL%>editor/show/<%= topic.id %>.html?tp=ut" target="_blank"><%= topic.subject %></a>
+    </li>
+  </ul>
+<%- end -%>
+<div class="fenye1">
+  <%= link_to '&lt; 上一页', { :controller => 'editor', :action => 'untaggable', :page => @topic_pages.current.previous.to_i } if @topic_pages.current.previous %>
+  <%= pagination_links(@topic_pages, :controller => 'editor', :action => 'untaggable') %>
+  <%= link_to '下一页 &gt;', { :controller => 'editor', :action => 'untaggable', :page => @topic_pages.current.next.to_i } if @topic_pages.current.next %>
+</div>

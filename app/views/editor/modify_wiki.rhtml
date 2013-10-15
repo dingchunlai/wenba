@@ -1,0 +1,11 @@
+<font color="green">编辑百科</font><br>
+<font color="red"><%= flash[:notice] %></font>
+<br>
+<form action="save_modify_wiki" method="post">
+  百科名称：<input type="text" name="wn" value="<%= @wiki_content.content_name %>"><span style="color: red;">*</span><br />
+  百科标签：<input type="text" name="tag" value="<%=@wiki_content.tag%>">
+  <input type="hidden" name="content_id" value="<%=@wiki_content.id%>">
+  <input type="submit" value="提交"><br><br>
+</form>
+<br>
+<a href="/editor/list_wiki">返回百科列表页</a><br>

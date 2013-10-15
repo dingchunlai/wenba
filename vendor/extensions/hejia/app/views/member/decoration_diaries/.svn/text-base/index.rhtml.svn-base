@@ -1,0 +1,49 @@
+<div class="zx_diary_r f_r">
+  <div class="zx_diary_wzdh"><a href="#" target="_self">装修日记</a> > 新建日记</div>
+  <div id="flash_notice">
+    <% if flash[:error]%>
+      <div style="padding: 0.3em 0.7em; margin:5px"  class="ui-state-error ui-corner-all">
+        <p><span style="float: left; margin-right: 0.3em;" class="ui-icon ui-icon-alert"></span>
+          <strong>错误:</strong> <%= flash[:error]%>
+        </p>
+      </div>
+    <% end %>
+  </div>
+
+  
+  <ul>
+    <% if !@decoration_diaries.nil? && @decoration_diaries.size > 0  %>
+      <% @decoration_diaries.each do |decoration_diary|%>
+        <li class="clearfix">
+          <div class="zx_diarylistimg f_l">
+            <%= link_to image_tag(decoration_diary.master_picture.url('120x100')), decoration_diary.status == 1 ? decoration_diary.url : decoration_diary.url(:preview), :target=>"_blank"%>
+          </div>
+          <div class="zx_diarylisttxt f_r">
+            <h4><%= link_to decoration_diary.title, decoration_diary.status == 1 ? decoration_diary.url : decoration_diary.url(:preview), :target=>"_blank" %></h4>
+            <span>合同总价：￥<strong><%= decoration_diary.deal_price.to_s.gsub(/\.0/,'') if decoration_diary.deal_price %></strong>万元   创建时间：<%= decoration_diary.created_at.to_s(:db)%></span>
+            <span>评论：(<%= decoration_diary.remarks_count %>)篇    阅读：(<%= decoration_diary.pv%>)</span>
+            <span>
+              <%= link_to "修改日记信息", edit_decoration_diary_path(decoration_diary) %> |
+              <%#= link_to "删除本篇日记", decoration_diary_path(decoration_diary), :method =>:delete, :confirm => "确认删除吗?" %> 
+              <%= link_to "修改日记内容", decoration_diary_path(decoration_diary) %> |
+              <%= link_to "增加一段文字图片", decoration_diary_path(decoration_diary)%>
+            </span>
+          </div>
+        </li>
+      <% end %>
+    <% else %>
+      <div class="zx_diary_xinj">
+        <table width="70%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td align="right"><span class="zx_diary_size zx_diary_color01 zx_diary_meiy">目前无装修日记</span></td>
+            <td><a href="/decoration_diaries/new" target="_blank" class="zx_diary_xinjbtn">创建装修日记</a></td>
+          </tr>
+          <tr>
+            <td colspan="2" align="center"><span class="zx_diary_color02">温馨提示：在结束更新装修日记后，请及时给该装潢公司评价！</span></td>
+          </tr>
+        </table>
+      </div>
+    <% end %>
+  </ul>
+
+</div>

@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/!svn/ver/256/51hejia/repos/wenba/release/config
+END
+environment_waiwang.rb
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/!svn/ver/113/51hejia/repos/wenba/release/config/environment_waiwang.rb
+END
+routes.rb
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/!svn/ver/113/51hejia/repos/wenba/release/config/routes.rb
+END
+seo_template.rb
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/!svn/ver/113/51hejia/repos/wenba/release/config/seo_template.rb
+END
+database.yml
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/!svn/ver/256/51hejia/repos/wenba/release/config/database.yml
+END
+boot.rb
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/!svn/ver/113/51hejia/repos/wenba/release/config/boot.rb
+END
+environment.rb
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/!svn/ver/113/51hejia/repos/wenba/release/config/environment.rb
+END
+memcached.yml
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/!svn/ver/113/51hejia/repos/wenba/release/config/memcached.yml
+END
+memcached_ctl
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/!svn/ver/113/51hejia/repos/wenba/release/config/memcached_ctl
+END
+newrelic.yml
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/!svn/ver/113/51hejia/repos/wenba/release/config/newrelic.yml
+END
+amazon_s3.yml
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/!svn/ver/113/51hejia/repos/wenba/release/config/amazon_s3.yml
+END
+load_gems.rb
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/!svn/ver/113/51hejia/repos/wenba/release/config/load_gems.rb
+END
+database.yml.bak
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/!svn/ver/113/51hejia/repos/wenba/release/config/database.yml.bak
+END
+routes_old.rb
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/!svn/ver/113/51hejia/repos/wenba/release/config/routes_old.rb
+END

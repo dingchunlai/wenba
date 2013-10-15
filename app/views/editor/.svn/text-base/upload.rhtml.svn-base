@@ -1,0 +1,9 @@
+<% form_for(:ask_zhidao_editor_upload, :url => "analyze", :html => { :multipart => true }) do |f| -%>
+  <p>
+    <label for="upload">上传文件</label>
+    <%= f.file_field :uploaded_data %>
+  </p>
+  <p>
+    <%= submit_tag '上传' %>
+  </p>
+<% end -%>

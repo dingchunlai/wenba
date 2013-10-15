@@ -1,0 +1,37 @@
+<div class="statusBar">
+<div class="theme">标题(共<%=@recordcount%>条)</div>
+<div class="time">提问时间</div>
+<div class="status">操作</div>
+<div class="click"></div>
+</div>
+<table>
+<tbody>
+<%
+for mp in @my_posts
+title = utf8_left(strip_tags(mp.content),20,"...")
+#if pp(title)
+%>
+<tr>
+<td style="width: 550px;"><a target="_blank" href="/q/<%=mp.zhidao_topic_id%>.html"><span style="color: rgb(0, 0, 204); display: inline; font-size: 14px;"><%=title%></span></a></td>
+<td style="width: 100px; text-align: center;"><p class="lgy"></p></td>
+<td style="width: 60px; text-align: center;"><a href="/user_handle/del_post?post_id=<%=mp.id%>&topic_id=<%=mp.zhidao_topic_id%>&refresh=f" target="hideiframe">删除</a></td>
+<td style="width: 80px; text-align: center;"><p class="time"><%=mp.created_at.strftime("%Y-%m-%d") rescue ""%></p></td>
+</tr>
+<%
+#end
+end
+%>
+</tbody>
+</table>
+
+<center style="margin-top:5px;">
+<span id='pagelist'></span>
+<script type="text/javascript">
+recordcount = <%=@recordcount%>;
+pagesize = <%=@pagesize%>;
+curpage = <%=@curpage%>;
+cur_list = 0;
+listsize = <%=@listsize%>;
+page_index_list(recordcount, pagesize, curpage, cur_list, listsize);
+</script>
+</center>

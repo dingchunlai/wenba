@@ -1,0 +1,277 @@
+<!--script type="text/javascript" src="/javascripts/OpenDiv.js"></script-->
+<script type="text/javascript">
+  function accept_post(post_id){
+    if (confirm('是否确定要采纳该回答为最佳答案？')) hideiframe.location="/detail/accept_post?topic_id=<%=@topic_id%>&post_id=" + post_id;
+  }
+  function edit_post(topic_id, post_id){
+    self.location = "#";
+    OpenDiv(500,400,"<iframe scrolling='no' width='496' height='396' src='/user_handle/edit_post?topic_id=" + topic_id + "&post_id=" + post_id + "'></iframe>");
+  }
+</script>
+<div id="Loading" style="display:none" ondblclick="this.style.display='none'"></div>
+<div class="wrap1">
+  <div class="art_con_left">
+    <div class="blueBox">
+      <div class="title">
+        <h6><span><%=render :partial => "/common/cur_location"%></span></h6>
+        <%if current_staff && current_staff.wenba_editor?%>
+          <div class="collect2">
+            <%=link_to @topic.is_distribute.to_i==0 ? '未验证' : '已验证', "/admin_handle/change_status?topic_id=#{@topic_id}", :id => 'button_tgyz', :title => '点击更改状态...', :target => 'hideiframe'%>
+          </div>
+        <%end%>
+      </div>
+
+      <div class="body">
+        <div class="problem">
+          <div class="gg" style="display: none"> <a href="#" target="_blank"><font>广告信息1</font>广告信息2</a></div>
+          <h6><%=strip_tags(@subject)%></h6>
+          <div class="questioner"> 提问者：
+            <%if @topic.user_id.to_i==0%>
+              和家游客
+            <%else%>
+              <%username = HejiaUserBbs.username(@topic.user_id)%>
+              <a href="/user_question/<%=@topic.user_id%>.html?&username=<%=username%>" target="_blank"><%=username%></a>
+            <%end%>
+            <span>积分：<%=HejiaUserBbs.point(@topic.user_id)%></span>
+          </div>
+          <div class="price">悬赏分：<%=@topic.score%></div>
+          <div class="time"> 提问时间：<%=@topic.created_at.strftime("%Y-%m-%d %H:%M") rescue ""%></div>
+          <div class="answerBtn"> <a href="#myanswer" target="_self">我要回答</a></div>
+          <%if @user_id == @topic.user_id && @best_post_id == 0%>
+            <div class="answerBtn" style="margin-right:5px;">
+              <a href="javascript://" target="_self" onclick="ge('supply_area').style.display='block';">补充问题</a>
+            </div>
+          <%end%>
+          <div style="display:none" id="supply_area">
+            <form method="post" target="hideiframe" action="/detail/supply_topic?topic_id=<%=@topic.id%>">
+              <textarea style="width:660px;;height:100px;" name="supply_content"><%=strip_tags(@topic.supply) if pp(@topic.supply)%></textarea>
+              <input type="submit" value="提交补充问题" style="margin:5px 0px 10px 250px;" />
+            </form>
+          </div>
+
+          <p style="clear:both;margin-top:0px;padding-top:0px;">
+            <span id="sContent">
+              <%=text_to_html(@description)%>
+              <%if pp(@topic.supply)%>
+                <fieldset style='width:90%;border:1px dashed #ff9966' align='center'>
+                  <legend style='border:1px;background-color:white;'>问题补充</legend>
+                  <div style='padding:5px;' ><%=strip_tags(@topic.supply)%></div>
+                </fieldset>
+              <%end%>
+              <!--展示用户操作(编辑及删除)按钮-->
+              <%=render_user_operate_button(@user_id, @topic.user_id, @topic.id, 0, "topic")%>
+            </span>
+          </p>
+        </div>
+        <% if get_tag_name_by_tag_id(get_parent_tag_id(@tag_id)) == '油漆涂料' %>
+          <div style="padding: 0pt 10px 0 10px; ">你心目中的色彩能量和色彩趋势是什么呢？赶快参与多乐士色彩案例推荐活动，即有机会将你的作品展现在和家图库中，并能赢取精美礼品一份！<a target="_blank" href="http://zt.51hejia.com/dulux/color" style="color:#FF0000;">立即参与&gt;&gt;</a></div>
+        <% end %>
+      </div>
+    </div>
+    <div id="divAnswer">
+      <!--Start专家回答-->
+      <%top10_is_view = 0;%>
+      <%for post in @posts%>
+        <%username = HejiaUserBbs.username(post.user_id)%>
+        <%if post.expert==0 and top10_is_view == 0%>
+          <%= render :partial => "ad_text_links"%>
+          <%= render :partial => "top10_from_this_tag_id", :locals=>{:tag_id=>@tag_id} %>
+          <%top10_is_view = 1%>
+        <%end%>
+        <%if post.expert!=0%>
+          <div class="redBox">
+            <div class="title">
+              <h6 class="zj_answer">专家回答 <%if current_staff && current_staff.wenba_editor?%><a href="/admin_handle/del_posts?id=<%=post.id%>&topic_id=<%=@topic_id%>" title="管理员删除" target="hideiframe">删除</a><%end%></h6>
+            </div>
+            <div class="body">
+              <div class="answerBox">
+                <div>
+                  <span class="spAnswerer">回答者：<a href="/expert_index/<%=post.user_id%>.html" target="_blank"><%=username%></a></span>
+                  <span>[<a href="/detail/new_topic?expert=<%=u(username)%>" target="_blank" title="点这里向<%=username%>提问">向他/她提问</a>]</span>
+                  <span>积分：<%=HejiaUserBbs.point(post.user_id)%></span>
+                  <span>回答时间：<%=post.created_at.strftime("%Y-%m-%d %H:%M") rescue ""%></span>
+                  <span><%if @best_post_id==post.id%><img src="/images/best.gif" /><%end%></span>
+                </div>
+                <%=text_to_html(post.content)%>
+
+              </div>
+    <%#展示“采纳该答案”按钮%>
+              <%=render_accept_post_button(@user_id,@topic.user_id,post.user_id,post.id,@best_post_id)%>
+    <%#展示用户操作(编辑及删除)按钮%>
+              <%=render_user_operate_button(@user_id, post.user_id, @topic.id, post.id, "post")%>
+            </div>
+          </div>
+        <%else%>
+          <div class="greenBox">
+            <div class="title">
+              <h6 class="wy_answer">网友回答 <%if current_staff && current_staff.wenba_editor?%><a href="/admin_handle/del_posts?id=<%=post.id%>&topic_id=<%=@topic_id%>" title="管理员删除" target="hideiframe">删除</a><%end%></h6>
+            </div>
+            <div class="body">
+              <div class="answerBox">
+                <div>
+
+                  <%if post.user_id==0%>
+                    <span class="spAnswerer">回答者：匿名网友</span>
+                  <%else%>
+                    <span class="spAnswerer">回答者：<a href="/user_question/<%=post.user_id%>.html?&username=<%=username%>" target="_blank"><%=username%></a></span>
+                    <span>积分：<%=HejiaUserBbs.point(post.user_id)%></span>
+                  <%end%>
+
+                  <span>回答时间：<%=post.created_at.strftime("%Y-%m-%d %H:%M") rescue ""%></span>
+
+                  <span><%if @best_post_id==post.id%><img src="/images/best.gif" /><%end%></span>
+
+                </div>
+                <%=text_to_html(post.content)%>
+
+              </div>
+              <!--展示“采纳该答案”按钮-->
+              <%=render_accept_post_button(@user_id,@topic.user_id,post.user_id,post.id,@best_post_id)%>
+              <!--展示用户操作(编辑及删除)按钮-->
+              <%=render_user_operate_button(@user_id, post.user_id, @topic.id, post.id, "post")%>
+            </div>
+          </div>
+        <%end%>
+      <%end%>
+      <%if top10_is_view == 0%>
+        <%= render :partial => "ad_text_links"%>
+        <%= render :partial => "top10_from_this_tag_id", :locals=>{:tag_id=>@tag_id} %>
+        <%top10_is_view = 1%>
+      <%end%>
+
+    </div>
+    <style type="text/css">
+      .wenb_page .pagination{background:none;width:auto;color:#333;float:right;}
+      .wenb_page .pagination span.current{color:#f00;}
+      .wenb_page .pagination a,.wenb_page .pagination a:hover{float:none;width:auto;background:none;color:#333;font-size:12px;font-weight:normal;}
+    </style>
+    <div class="clearfix wenb_page">
+      <%=will_paginate @posts, :previous_label => "上一页", :next_label => "下一页"%>
+    </div>
+
+
+    <style type="text/css">
+      #pagelist{
+        font-family:Verdana;
+        color:#999999;
+        font-size:14px;
+        letter-spacing:1px;
+        vertical-align: middle;
+      }
+      #pagelist a{
+        color:#000040;
+        text-decoration:none;
+      }
+      #pagelist a:hover{
+        background-color: #000040;
+        color:white;
+        text-decoration:none;
+      }
+    </style>
+
+
+    <a name="myanswer" id="myanswer"></a>
+
+    <div class="greenBox">
+      <div class="body">
+        <!-- 快速回复区 -->
+        <div>
+          <div>
+            <div id="reply_editer">
+              <form method="post" action="/detail/reply_save" target="hideiframe">
+                <input type="hidden" name="topic_id" value="<%=@topic_id%>" />
+                <ul class="answerForm">
+                  <%if AskZhidaoTopic.is_allow_post_time%>
+                    <li>
+                      <textarea id="content" rows="20" name="content" style="width:670px"></textarea>
+                      <!--
+                      <a href="/question/2510318.html" target="_blank"><font color="red">如何获得积分？</font></a>
+                      -->
+
+                      <%=render :partial => "upload/auto_image_upload", :locals => {:textarea_id => "content"}%>
+
+                    </li>
+                    <!--li>
+                      <h6>验证码</h6>
+                      <div>
+                        <input name="image_code" type="text" size="6" style="font-size:12pt" />
+                        <img src="/user/get_image_code" id="image_code_area" />
+                        <input type="button" value="换一张" onclick="document.getElementById('image_code_area').src = '/user/get_image_code?' + Math.random();" />
+                      </div>
+                    </li-->
+                    <script language="javascript">
+                      function validate_info(post_type){
+                        if (post_type){
+                          ge('li_userinfo').style.display='none';
+                          ge('span_validate_code').style.display='';
+                        }else{
+                          ge('li_userinfo').style.display='';
+                          ge('span_validate_code').style.display='none';
+                        }
+                      }
+                    </script>
+                    <li id="li_userinfo">
+                      <b>用户名：</b>
+                      <input name="username" id="username" type="text" style="width:80px;" value="<%=@username%>" />　
+                      <b>密　码：</b>
+                      <input name="password" id="password" type="password" style="width:80px;" value="<%=@password%>" />　
+                      <a href="http://member.51hejia.com/member/reg" target="_blank"><font color="red">注册为和家会员</font></a>
+                    </li>
+                    <li style="display: none;">
+                      <input name="post_type" type="checkbox" value="1" onclick="validate_info(this.checked);" /> 匿名回复　
+                      <span id="span_validate_code" style="font-weight:bold;font-size:14px;letter-spacing:1px;color:#cc0000">
+                        验证码：<input name="validate_code" type="text" style="width:50px;" /> &nbsp;
+                        <%=session[:validate_reply]%>
+                      </span>
+                    </li>
+                    <li style="padding-left: 240px;">
+                      <input type="image" src="/images/39/answer.gif" />
+                    </li>
+                  <%else%>
+                    <div style="padding: 20px;">
+                      为了配合政府世博期间维稳需要，本站将在以下时间段关闭社区发言功能(论坛、问吧及博客)，尽情谅解。<br />
+                      一、4月30日 - 5月4日 全天<br />
+                      二、世博期间 0:00 - 8:00<br />
+                    </div>
+                  <%end%>
+
+                </ul>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 注释部分4 -->
+
+
+  </div>
+  <div class="art_con_right">
+    <!-- 注释部分3 -->
+    <%=adspace("问吧-终端页-#{get_tag_name_by_tag_id(get_parent_tag_id(@tag_id))}-宽幅1")%>
+    <div class="wrap_iframe">
+
+      <%=render :partial => "/common/right_new_topics"%>
+      <%=render :partial => "/common/right_hot_diaries"%>
+      <%=render :partial => "/common/right_hot_tops"%>
+      <%=render :partial => "/common/right_hot_cases"%>
+
+    </div>
+
+
+
+    <div class="wrap_iframe">
+
+      <!-- 注释部分1 -->
+
+
+    </div>
+
+  </div>
+</div>
+
+<script type="text/javascript">
+  document.write("<img src='http://api.51hejia.com/rest/analytics?type=w&key="+"<%=@topic_id%>-<%=RuserChannel.get_radmin_user_id_by_parent_tag_id(@parent_tag_id)%>" + "' width='0' height='0' />");
+</script>
+
+<%= render :partial => "share/cmp_adtv" if @adtv_is_view.to_s.blank? %>
